@@ -1,0 +1,2 @@
+class ManagerUser < ApplicationRecord
+end
