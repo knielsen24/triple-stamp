@@ -1,4 +1,5 @@
 import React from "react";
+import SignUpForm from "./SignUpForm";
 
 function StartNowModal() {
     return (
@@ -8,7 +9,7 @@ function StartNowModal() {
                 id="startNowModal"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
-                tabindex="-1"
+                tabIndex="-1"
                 aria-labelledby="startNowModalLabel"
                 aria-hidden="true"
             >
@@ -18,7 +19,10 @@ function StartNowModal() {
                             <h5 class="modal-title" id="startNowModalLabel">
                                 Welcome to tripleStamp
                                 <div>
-                                    <p id="modal-subtext" >Start now - it's free.  No credit card needed</p>
+                                    <p id="modal-subtext">
+                                        Start now - it's free. No credit card
+                                        needed
+                                    </p>
                                 </div>
                             </h5>
 
@@ -29,16 +33,10 @@ function StartNowModal() {
                                 aria-label="Close"
                             ></button>
                         </div>
-                        <div class="modal-body">...</div>
-                        <div class="modal-footer">
-                            <button
-                                type="button"
-                                class="btn btn-primary"
-                                id="modal-btn-start-now"
-                            >
-                                Finish Sign Up
-                            </button>
+                        <div class="modal-body">
+                            <SignUpForm />
                         </div>
+
                     </div>
                 </div>
             </div>

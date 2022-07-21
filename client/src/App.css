@@ -14,7 +14,7 @@
   text-align: center;
   background-color: #9AEEAC;
   text-transform: capitalize;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 150px;
   height: 40px;
   font-weight: bold;
@@ -25,7 +25,7 @@
 #nav-div-start-now {
   align-items: right;
 }
-/* 
+/*
 #main-nav-container{
   margin-left: 50px;
 } */
@@ -33,8 +33,8 @@
 #home-ban {
   background-color: #FFC179;
   max-width:none;
-  min-height: 70vh;
-  height: 80vh;
+  height: 600px;
+  /* height: 80vh; */
   padding: 0;
   padding-top: 50px;
   margin: 0;
@@ -63,7 +63,7 @@
   text-align: center;
   background-color: #9AEEAC;
   text-transform: capitalize;
-  border-radius: 8px;
+  border-radius: 10px;
   width: 150px;
   height: 40px;
   font-weight: bold;
@@ -74,4 +74,8 @@
 #modal-subtext {
   font-size: 15px;
   color: #AFACAC;
+}
+
+#modal-logo {
+  width: 50px;
 }
