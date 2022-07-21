@@ -3,7 +3,7 @@ import logoName from "../assets/logo-name.png";
 
 function Navbar() {
     return (
-        <nav class="navbar navbar-expand-sm navbar-light items-center">
+        <nav class="navbar navbar-expand-sm navbar-light items-center" id="nav-container">
             <div class="container-xl mx-sm-2" id="main-nav-container">
                 <a class="navbar-brand mx-sm-2" >
                     <img src={logoName} alt="logo" id="logo-name" />

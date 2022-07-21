@@ -1,7 +1,15 @@
+/* APP */
+
 .App {
   text-align: center;
 }
 
+#app-main-container {
+  max-width: 1200px;
+  justify-content: center;
+}
+
+/* navbar */
 #logo-name {
   max-width: 175px;
 }
@@ -9,6 +17,7 @@
 #nav-height {
   height: 70px;
 }
+
 
 #nav-btn-start-now {
   text-align: center;
@@ -25,14 +34,12 @@
 #nav-div-start-now {
   align-items: right;
 }
-/*
-#main-nav-container{
-  margin-left: 50px;
-} */
+
+/* HOME PAGE */
 
 #home-ban {
   background-color: #FFC179;
-  max-width:none;
+  max-width:1200px;
   height: 600px;
   /* height: 80vh; */
   padding: 0;
@@ -57,7 +64,7 @@
   min-width: 100px;
 }
 
-/* MODAL */
+/* SIGN UP MODAL */
 
 #modal-btn-start-now {
   text-align: center;
