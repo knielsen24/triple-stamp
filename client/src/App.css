@@ -22,6 +22,14 @@
   border: 0;
 }
 
+#nav-div-start-now {
+  align-items: right;
+}
+/* 
+#main-nav-container{
+  margin-left: 50px;
+} */
+
 #home-ban {
   background-color: #FFC179;
   max-width:none;

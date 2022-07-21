@@ -3,11 +3,12 @@ import logoName from "../assets/logo-name.png";
 
 function Navbar() {
     return (
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+        <nav class="navbar navbar-expand-sm navbar-light items-center">
+            <div class="container-xl mx-sm-2" id="main-nav-container">
+                <a class="navbar-brand mx-sm-2" href="#">
                     <img src={logoName} alt="logo" id="logo-name" />
                 </a>
+
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -19,8 +20,9 @@ function Navbar() {
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+
+                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                    <div class="navbar-nav mx-sm-2">
                         <a class="nav-link active" aria-current="page" href="#">
                             Home
                         </a>
@@ -30,6 +32,16 @@ function Navbar() {
                         <a class="nav-link" href="#">
                             Pricing
                         </a>
+                        <div class="ms-1" id="nav-div-start-now" >
+                            <button
+                                type="button"
+                                id="nav-btn-start-now"
+                                data-bs-toggle="modal"
+                                data-bs-target="#startNowModal"
+                            >
+                                start now
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,14 +71,7 @@ function Navbar() {
         //                     </a>
         //                 </li>
         //             </ul>
-        //             <button
-        //                 type="button"
-        //                 id="nav-btn-start-now"
-        //                 data-bs-toggle="modal"
-        //                 data-bs-target="#startNowModal"
-        //             >
-        //                 start now
-        //             </button>
+        //
         //         </div>
         //     </div>
         // </nav>
