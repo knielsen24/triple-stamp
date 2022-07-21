@@ -2,37 +2,68 @@
   text-align: center;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#logo-name {
+  max-width: 175px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#nav-height {
+  height: 70px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#nav-btn-start-now {
+  text-align: center;
+  background-color: #9AEEAC;
+  text-transform: capitalize;
+  border-radius: 20px;
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
+  color: black;
+  border: 0;
+}
+
+#home-ban {
+  background-color: #FFC179;
+  max-width:none;
+  min-height: 70vh;
+  height: 80vh;
+  padding: 0;
+  padding-top: 50px;
+  margin: 0;
+}
+
+#ban-statement {
   color: white;
+  font-size: 50px;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+#ban-cards-container{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  max-width: 600px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+#banner-cards {
+  min-width: 100px;
+}
+
+/* MODAL */
+
+#modal-btn-start-now {
+  text-align: center;
+  background-color: #9AEEAC;
+  text-transform: capitalize;
+  border-radius: 8px;
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
+  color: black;
+  border: 0;
+}
+
+#modal-subtext {
+  font-size: 15px;
+  color: #CCCCCC;
+}
