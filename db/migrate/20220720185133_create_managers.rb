@@ -4,7 +4,7 @@ class CreateManagers < ActiveRecord::Migration[6.1]
       t.string :full_name
       t.string :email
       t.string :phone
-      t.string :business
+      t.string :account_name
       t.string :profile_img
       t.string :password_digest
 

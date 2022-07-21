@@ -11,7 +11,6 @@ import { login } from "./features/userSlice";
 function App() {
     const user = useSelector(setUser);
     const dispatch = useDispatch();
-    console.log(user);
 
     useEffect(() => {
         fetch("/me").then((r) => {
@@ -25,7 +24,7 @@ function App() {
         <div class="container" id="app-main-container">
             <Navbar />
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={!user ? <Home /> : null} />
             </Routes>
             <Footer />
         </div>

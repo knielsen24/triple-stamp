@@ -50,8 +50,10 @@ function SignUpForm() {
                         body: JSON.stringify(values),
                     }).then((r) => {
                         if (r.ok) {
-                            r.json().then((user) => dispatch(login(user)));
-                            // .then(navigate(""));
+                            r.json().then((user) => dispatch(login(user)))
+                            .then(setTimeout(() => {
+                                setSubmitting(false);
+                            }, 400));
                         } else {
                             r.json().then((errorData) =>
                                 setErrors(errorData.errors)
@@ -59,9 +61,7 @@ function SignUpForm() {
                         }
                     });
 
-                    setTimeout(() => {
-                        setSubmitting(false);
-                    }, 400);
+
                 }}
             >
                 {({
