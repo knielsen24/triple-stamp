@@ -8,7 +8,7 @@
   /* min-width: 350px; */
   max-width: 1200px;
   justify-content: center;
-  padding: 1px;
+  padding: 10px;
   margin: auto;
 }
 
@@ -100,4 +100,8 @@
   width: auto;
   /* max-width: 1200px; */
   justify-content: center;
+}
+
+#footer-links {
+  font-size: 13px;
 }
