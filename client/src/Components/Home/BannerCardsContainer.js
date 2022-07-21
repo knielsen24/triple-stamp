@@ -1,7 +1,7 @@
-import "../App.css";
-import cardOne from "../assets/card1.png";
-import cardTwo from "../assets/card2.png";
-import cardThree from "../assets/card3.png";
+import "../../App";
+import cardOne from "../../assets/card1.png";
+import cardTwo from "../../assets/card2.png";
+import cardThree from "../../assets/card3.png";
 
 function BannerCardsContainer() {
     return (

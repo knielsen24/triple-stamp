@@ -1,11 +1,11 @@
 import "../App.css";
-import logoName from "../assets/logo-name.png"
+import logoName from "../assets/logo-name.png";
 
 function Navbar() {
     return (
         <nav class="navbar navbar-expand-sm" id="nav-height">
-            <div class="container-fluid" id="nav-height" >
-                <a class="navbar-brand" >
+            <div class="container-fluid" id="nav-height">
+                <a class="navbar-brand">
                     <img src={logoName} alt="logo" id="logo-name" />
                 </a>
                 <button
@@ -27,9 +27,13 @@ function Navbar() {
                             </a>
                         </li>
                     </ul>
-                    <button type="button" id="nav-btn-start-now">
+                    <button
+                        type="button"
+                        id="nav-btn-start-now"
+                        data-bs-toggle="modal"
+                        data-bs-target="#startNowModal"
+                    >
                         start now
-
                     </button>
                 </div>
             </div>

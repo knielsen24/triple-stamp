@@ -1,4 +1,4 @@
-import "../App.css";
+import "../../App.css";
 import BannerCardsContainer from "./BannerCardsContainer";
 import StartNowModal from "./StartNowModal";
 
