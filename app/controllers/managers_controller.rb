@@ -3,14 +3,14 @@ class ManagersController < ApplicationController
 
     def create
         manager = Manager.create!(manager_sign_up_params)
-        sessions[:user_id] = manager.id
+        session[:user_id] = manager.id
         render json: manager, status: :created
     end
 
     private
 
     def manager_sign_up_params
-        params.permit(:id, :full_name, :email, :password)
+        params.permit(:id, :full_name, :email, :password, :account_name)
     end
 
 end

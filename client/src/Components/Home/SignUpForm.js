@@ -17,7 +17,7 @@ function SignUpForm() {
     return (
         <div>
             <Formik
-                initialValues={{ full_name: "", email: "", password: "" }}
+                initialValues={{ full_name: "", email: "", password: "", account_name: "" }}
                 validationSchema={SignupSchema}
                 validate={(values) => {
                     const errors = {};
@@ -33,7 +33,7 @@ function SignUpForm() {
                     return errors;
                 }}
                 onSubmit={(values, { setSubmitting }) => {
-                    fetch("http://localhost:4000/singup", {
+                    fetch("http://localhost:4000/signup", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
