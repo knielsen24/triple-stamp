@@ -5,11 +5,19 @@
 }
 
 #app-main-container {
+  /* min-width: 350px; */
   max-width: 1200px;
   justify-content: center;
+  padding: 1px;
+  margin: auto;
 }
 
 /* navbar */
+
+#nav-container {
+  background-color: white;
+}
+
 #logo-name {
   max-width: 175px;
 }
@@ -17,7 +25,6 @@
 #nav-height {
   height: 70px;
 }
-
 
 #nav-btn-start-now {
   text-align: center;
@@ -39,9 +46,9 @@
 
 #home-ban {
   background-color: #FFC179;
+
   max-width:1200px;
   height: 600px;
-  /* height: 80vh; */
   padding: 0;
   padding-top: 50px;
   margin: 0;
@@ -85,4 +92,12 @@
 
 #modal-logo {
   width: 50px;
+}
+
+/* FOOTER */
+
+#footer-container {
+  width: auto;
+  /* max-width: 1200px; */
+  justify-content: center;
 }
