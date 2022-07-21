@@ -19,20 +19,20 @@ function Navbar() {
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                    <div class="navbar-nav mx-sm-2">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav mx-sm-2 float-end">
                         <a class="nav-link" href="#">
                             Features
                         </a>
                         <a class="nav-link" href="#">
-                            Pricing
+                            Sign in
                         </a>
-                        <div class="ms-1" id="nav-div-start-now">
+                        <div class="ms-1 " id="nav-div-start-now">
                             <button
                                 type="button"
                                 id="nav-btn-start-now"
                                 data-bs-toggle="modal"
-                                data-bs-target="#startNowModal"
+                                data-bs-target="#start-now-modal"
                             >
                                 start now
                             </button>

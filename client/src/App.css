@@ -5,7 +5,7 @@
 }
 
 #app-main-container {
-  /* min-width: 350px; */
+  min-width: 435px;
   max-width: 1200px;
   justify-content: center;
   padding: 10px;
@@ -62,16 +62,21 @@
 }
 
 #ban-cards-container{
-  padding-top: 50px;
-  padding-bottom: 50px;
   max-width: 600px;
+  display: flex;
+  justify-content: center;
 }
 
 #banner-cards {
   min-width: 100px;
+  flex-direction: column;
 }
 
 /* SIGN UP MODAL */
+
+#start-now-modal {
+  min-width: 375px;
+}
 
 #modal-btn-start-now {
   text-align: center;

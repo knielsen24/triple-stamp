@@ -6,17 +6,17 @@ function StartNowModal() {
         <div>
             <div
                 class="modal fade"
-                id="startNowModal"
+                id="start-now-modal"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabIndex="-1"
-                aria-labelledby="startNowModalLabel"
+                aria-labelledby="start-now-modal"
                 aria-hidden="true"
             >
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="startNowModalLabel">
+                            <h5 class="modal-title" id="start-now-modal">
                                 Welcome to tripleStamp
                                 <div>
                                     <p id="modal-subtext">

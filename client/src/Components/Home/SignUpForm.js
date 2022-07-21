@@ -2,9 +2,14 @@ import "../../App.css";
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { signIn } from "../../features/userSlice"
+
 
 function SignUpForm() {
     const [errors, setErrors] = useState([]);
+
+    const dispatch = useDispatch();
 
     const SignupSchema = Yup.object().shape({
         full_name: Yup.string()
@@ -42,7 +47,7 @@ function SignUpForm() {
                     }).then((r) => {
                         if (r.ok) {
                             r.json()
-                                .then((user) => console.log(user))
+                                .then((user) => dispatch(signIn(user)))
                                 // .then(navigate(""));
                         } else {
                             r.json().then((errorData) =>

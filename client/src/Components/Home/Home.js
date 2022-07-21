@@ -10,15 +10,18 @@ function Home() {
                     transforming real estate task management
                 </header>
                 <BannerCardsContainer />
-                <button
-                    type="button"
-                    id="nav-btn-start-now"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#startNowModal"
-                >
-                    start now
-                </button>
+                <div class="m-sm-auto">
+                    <button
+                        type="button"
+                        id="nav-btn-start-now"
+                        class="btn btn-primary m-sm-auto"
+                        data-bs-toggle="modal"
+                        data-bs-target="#start-now-modal"
+                    >
+                        start now
+                    </button>
+                </div>
+
                 <StartNowModal />
             </div>
         </div>

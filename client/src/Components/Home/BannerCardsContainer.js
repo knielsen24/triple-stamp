@@ -6,16 +6,16 @@ import cardThree from "../../assets/card3.png";
 function BannerCardsContainer() {
     return (
         <div>
-            <div class="container text-center " id="ban-cards-container">
+            <div class="container text-center py-5 px-auto" id="ban-cards-container">
                 <div className="row">
-                    <div className="col ps-3">
+                    <div className="col px-2 mx-sm-auto">
                         <img
                             src={cardOne}
                             alt="banner icons"
                             id="banner-cards"
                         />
                     </div>
-                    <div className="col px-1">
+                    <div className="col px-2 mx-sm-auto">
                         {" "}
                         <img
                             src={cardTwo}
@@ -23,7 +23,7 @@ function BannerCardsContainer() {
                             id="banner-cards"
                         />
                     </div>
-                    <div className="col ps-3">
+                    <div className="col px-2 mx-sm-auto">
                         {" "}
                         <img
                             src={cardThree}
