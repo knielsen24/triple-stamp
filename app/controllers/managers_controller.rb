@@ -7,6 +7,10 @@ class ManagersController < ApplicationController
         render json: manager, status: :created
     end
 
+    def show
+        render json: @current_user
+    end
+
     private
 
     def manager_sign_up_params

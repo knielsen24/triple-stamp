@@ -5,18 +5,18 @@ import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Footer } from "./Components/Footer";
 import { useSelector, useDispatch } from "react-redux";
-import { selectUser } from "./features/userSlice";
-import { signIn } from "./features/userSlice"
+import { setUser } from "./features/userSlice";
+import { login } from "./features/userSlice";
 
 function App() {
-    const user = useSelector(selectUser);
+    const user = useSelector(setUser);
     const dispatch = useDispatch();
     console.log(user);
 
     useEffect(() => {
         fetch("/me").then((r) => {
             if (r.ok) {
-                r.json().then((user) => dispatch(signIn(user)));
+                r.json().then((user) => dispatch(login(user)));
             }
         });
     }, []);

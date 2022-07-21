@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { signIn } from "../../features/userSlice"
-
+import { login } from "../../features/userSlice";
 
 function SignUpForm() {
     const [errors, setErrors] = useState([]);
@@ -22,7 +21,12 @@ function SignUpForm() {
     return (
         <div>
             <Formik
-                initialValues={{ full_name: "", email: "", password: "", account_name: "" }}
+                initialValues={{
+                    full_name: "",
+                    email: "",
+                    password: "",
+                    account_name: "",
+                }}
                 validationSchema={SignupSchema}
                 validate={(values) => {
                     const errors = {};
@@ -46,9 +50,8 @@ function SignUpForm() {
                         body: JSON.stringify(values),
                     }).then((r) => {
                         if (r.ok) {
-                            r.json()
-                                .then((user) => dispatch(signIn(user)))
-                                // .then(navigate(""));
+                            r.json().then((user) => dispatch(login(user)));
+                            // .then(navigate(""));
                         } else {
                             r.json().then((errorData) =>
                                 setErrors(errorData.errors)
