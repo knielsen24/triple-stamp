@@ -1,11 +1,11 @@
 import "../../App.css";
 import logoName from "../../assets/logo-name.png";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { setUser } from "../../features/userSlice";
 import UserDropDown from "./UserDropDown";
 
-function Navbar({ handleLogout }) {
-    const dispatch = useDispatch();
+function Navbar() {
+
     const user = useSelector(setUser);
 
     return (
@@ -47,7 +47,7 @@ function Navbar({ handleLogout }) {
                         )}
                         <div id="nav-div-start-now">
                             {user ? (
-                                <UserDropDown handleLogout={handleLogout} />
+                                <UserDropDown />
                             ) : (
                                 <button
                                     type="button"

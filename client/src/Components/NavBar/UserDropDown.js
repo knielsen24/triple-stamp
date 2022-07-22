@@ -1,9 +1,10 @@
 import "../../App.css";
 import { setUser, logout } from "../../features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
+import Logout from "./Logout";
 // import { useDeleteUserMutation } from "../../app/services/apiSlice";
 
-function UserDropDown({ handleLogout }) {
+function UserDropDown() {
     // const [deleteUser, { isLoading }] = useDeleteUserMutation();
     const user = useSelector(setUser);
 
@@ -33,16 +34,7 @@ function UserDropDown({ handleLogout }) {
                 </li>
                 <li>
                     {/* add log out icon */}
-                    <a
-                        class="dropdown-item"
-                        href="#"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handleLogout();
-                        }}
-                    >
-                        Sign out
-                    </a>
+                    <Logout />
                 </li>
             </ul>
         </div>
