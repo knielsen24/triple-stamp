@@ -1,5 +1,5 @@
 import "../../App.css";
-import { setUser, logout } from "../../features/userSlice";
+import { setUser, logout } from "../../app/features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Logout from "./Logout";
 // import { useDeleteUserMutation } from "../../app/services/apiSlice";

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { setUser, logout } from "../../features/userSlice";
+import { setUser, logout } from "../../app/features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../app/services/userApiSlice";
 

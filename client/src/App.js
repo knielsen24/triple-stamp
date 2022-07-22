@@ -1,10 +1,10 @@
 import "./App.css";
 import Navbar from "./Components/NavBar/Navbar";
 import Home from "./Components/Home/Home";
-import Footer from "./Components/Footer";
+import Footer from "./Components/Home/Footer";
 import React, { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { setUser, login } from "./features/userSlice";
+import { setUser, login } from "./app/features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Dashboard from "./Components/Dashboard/Dashboard";
 

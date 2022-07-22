@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { useLoginApiMutation } from "../../app/services/userApiSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { setUser, login } from "../../features/userSlice";
+import { setUser, login } from "../../app/features/userSlice";
 
 function LoginForm() {
     const [loginApi, { isLoading }] = useLoginApiMutation();

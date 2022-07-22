@@ -1,7 +1,7 @@
 import "../../App.css";
 import logoName from "../../assets/logo-name.png";
 import { useSelector } from "react-redux";
-import { setUser } from "../../features/userSlice";
+import { setUser } from "../../app/features/userSlice";
 import UserDropDown from "./UserDropDown";
 
 function Navbar() {
