@@ -21,8 +21,9 @@ function Home() {
                         start now
                     </button>
                 </div>
-
                 <StartNowModal />
+
+
             </div>
         </div>
     );
