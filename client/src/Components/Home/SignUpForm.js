@@ -121,11 +121,21 @@ function SignUpForm() {
                             {errors.email && touched.email && errors.email}
                         </div>
                         <div class="float-end">
+
+                            {/*
+                                this needs a conditon
+                                if form is validated then close modal
+                                otherwise
+                                render error message
+                            */}
+
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
                                 class="btn btn-primary"
                                 id="modal-btn-start-now"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
                             >
                                 Finish Sign Up
                             </button>
