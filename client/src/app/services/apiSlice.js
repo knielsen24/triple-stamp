@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { setLogin, logout } from "../../features/authSlice";
 
 export const dataApi = createApi({
     reducerPath: "dataApi",
@@ -17,6 +16,14 @@ export const dataApi = createApi({
                 }),
                 invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
             }),
+            destroyUser: builder.mutation({
+                query: ({id}) => ({
+                    url: "/signup",
+                    method: "POST",
+                    body: ""
+                }),
+                invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
+            })
         };
     },
 });

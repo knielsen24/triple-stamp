@@ -3,16 +3,16 @@ import Navbar from "./Components/NavBar/Navbar";
 import Home from "./Components/Home/Home";
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Footer } from "./Components/Footer";
-import { setUser } from "./features/userSlice";
-import { login } from "./features/userSlice";
+import Footer from "./Components/Footer";
+import { setUser, login } from "./features/userSlice";
 import UserModal from "./Components/NavBar/UserModal";
 import { useSelector, useDispatch } from "react-redux";
 import { useCreateUserMutation } from "./app/services/apiSlice"
 
 function App() {
 
-    // const {user=[]} = useCreateUserMutation()
+    const {data=[]} = useCreateUserMutation()
+    console.log(data)
 
     const user = useSelector(setUser);
     const dispatch = useDispatch();

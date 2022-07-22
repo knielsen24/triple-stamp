@@ -2,16 +2,11 @@ import "../../App.css";
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { login } from "../../features/userSlice";
 import { useCreateUserMutation } from "../../app/services/apiSlice";
 
 function SignUpForm() {
-    const [errors, setErrors] = useState([]);
 
     const [createUser, { isLoading }] = useCreateUserMutation();
-
-    // const dispatch = useDispatch();
 
     const SignupSchema = Yup.object().shape({
         full_name: Yup.string()
