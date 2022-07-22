@@ -31,10 +31,7 @@ function LoginForm() {
                 validationSchema={loginSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     loginApi(values)
-                        .then((r) => {
-                            console.log(r)
-                            dispatch(login(r.data));
-                        })
+                        .then((r) => dispatch(login(r.data)))
                         .then(navigate("dashboard"));
                     setTimeout(() => {
                         setSubmitting(false);
@@ -49,7 +46,6 @@ function LoginForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
-                    /* and other goodies */
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div class="mb-3">
