@@ -5,26 +5,36 @@ export const dataApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000",
     }),
-    tagTypes: ["User"],
+    tagTypes: ["User", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
             createUser: builder.mutation({
-                query: ({...signUpData}) => ({
+                query: ({ ...signUpData }) => ({
                     url: "/signup",
                     method: "POST",
-                    body: signUpData
+                    body: signUpData,
                 }),
-                invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
+                invalidatesTags: (result, error, arg) => [
+                    { type: "User", id: arg.id },
+                ],
+            }),
+            login: builder.mutation({
+                query: ({ ...credentials }) => ({
+                    url: "/login",
+                    method: "POST",
+                    body: credentials,
+                }),
+                invalidatesTags: (result) => (result ? ["UNAUTHORIZED"] : []),
             }),
             deleteUser: builder.mutation({
                 query: (id) => ({
                     url: `/managers/${id}`,
                     method: "DELETE",
                 }),
-                invalidatesTags: (result, error, id) => [{type: 'User', id}]
-            })
+                invalidatesTags: (result, error, id) => [{ type: "User", id }],
+            }),
         };
     },
 });
 
-export const { useCreateUserMutation, useDeleteUserMutation } = dataApi
+export const { useCreateUserMutation, useDeleteUserMutation } = dataApi;
