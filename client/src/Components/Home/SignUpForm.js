@@ -5,7 +5,6 @@ import * as Yup from "yup";
 import { useCreateUserMutation } from "../../app/services/apiSlice";
 
 function SignUpForm() {
-
     const [createUser, { isLoading }] = useCreateUserMutation();
 
     const SignupSchema = Yup.object().shape({
@@ -14,6 +13,10 @@ function SignUpForm() {
             .max(30, "Too Long!")
             .required("Required"),
         email: Yup.string().email("Invalid email").required("Required"),
+        password: Yup.string()
+            .min(4, "Too Short!")
+            .max(30, "Too Long!")
+            .required("Required"),
     });
 
     return (
@@ -121,7 +124,6 @@ function SignUpForm() {
                             {errors.email && touched.email && errors.email}
                         </div>
                         <div class="float-end">
-
                             {/*
                                 this needs a conditon
                                 if form is validated then close modal

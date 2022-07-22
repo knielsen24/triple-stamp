@@ -18,6 +18,14 @@ export const dataApi = createApi({
                     { type: "User", id: arg.id },
                 ],
             }),
+            login: builder.mutation({
+                query: ({ ...credentials }) => ({
+                    url: "/login",
+                    method: "POST",
+                    body: credentials,
+                }),
+                invalidatesTags: (result) => (result ? ["UNAUTHORIZED"] : []),
+            }),
 
             deleteUser: builder.mutation({
                 query: (id) => ({
@@ -30,15 +38,6 @@ export const dataApi = createApi({
     },
 });
 
-export const { useCreateUserMutation, useDeleteUserMutation } = dataApi;
-
+export const { useCreateUserMutation, useDeleteUserMutation, useLoginMutation } = dataApi;
 
 // RTK Refactor
-// login: builder.mutation({
-//     query: ({ ...credentials }) => ({
-//         url: "/login",
-//         method: "POST",
-//         body: credentials,
-//     }),
-//     invalidatesTags: (result) => (result ? ["UNAUTHORIZED"] : []),
-// }),

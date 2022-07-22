@@ -17,11 +17,10 @@ function LoginModal() {
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="login-form">
-                                Login into your tripleStamp account
+                                Welcome back to tripleStamp
                                 <div>
-                                    <p id="modal-subtext">
-                                        {/* Start now - it's free. No credit card
-                                        needed */}
+                                    <p class="float-start" id="modal-subtext">
+                                    Enter your login credentials
                                     </p>
                                 </div>
                             </h5>
