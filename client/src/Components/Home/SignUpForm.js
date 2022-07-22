@@ -2,7 +2,7 @@ import "../../App.css";
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useCreateUserMutation } from "../../app/services/apiSlice";
+import { useCreateUserMutation } from "../../app/services/userApiSlice";
 
 function SignUpForm() {
     const [createUser, { isLoading }] = useCreateUserMutation();

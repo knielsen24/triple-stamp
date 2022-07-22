@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useLoginMutation } from "../../app/services/apiSlice";
+import { useLoginApiMutation } from "../../app/services/userApiSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { setUser, login } from "../../features/userSlice";
 
 function LoginForm() {
+    const [loginApi, { isLoading }] = useLoginApiMutation();
+    // const user = useSelector(setUser);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const [login, { isLoading } ] = useLoginMutation()
     // look into error handling
 
     const loginSchema = Yup.object().shape({
@@ -25,7 +30,12 @@ function LoginForm() {
                 }}
                 validationSchema={loginSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    login(values);
+                    loginApi(values)
+                        .then((r) => {
+                            console.log(r)
+                            dispatch(login(r.data));
+                        })
+                        .then(navigate("dashboard"));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
