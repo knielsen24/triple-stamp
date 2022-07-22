@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import { setUser, login } from "./features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useCreateUserMutation } from "./app/services/apiSlice";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
     const { data = [] } = useCreateUserMutation();
@@ -32,6 +33,7 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={!user ? <Home /> : null} />
+                <Route path="/dashboard" element={user ? <Dashboard /> : null} />
             </Routes>
             <Footer />
         </div>
