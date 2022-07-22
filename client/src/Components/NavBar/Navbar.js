@@ -1,18 +1,13 @@
 import "../../App.css";
 import logoName from "../../assets/logo-name.png";
 import { useSelector, useDispatch } from "react-redux";
-import { setUser, logout } from "../../features/userSlice";
-import { useDeleteUserMutation } from "../../app/services/apiSlice";
+import { setUser } from "../../features/userSlice";
+
+import UserDropDown from "./UserDropDown";
 
 function Navbar() {
-    const [deleteUser, { isLoading }] = useDeleteUserMutation()
     const dispatch = useDispatch();
     const user = useSelector(setUser);
-
-    const handleSignOut = (id) => {
-        // deleteUser(id)
-        // dispatch(logout)
-    };
 
     return (
         <nav
@@ -48,41 +43,7 @@ function Navbar() {
                         )}
                         <div id="nav-div-start-now">
                             {user ? (
-                                <div class="dropdown">
-                                    <a
-                                        class="btn btn-secondary dropdown-toggle"
-                                        id="nav-btn-start-now"
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        {user.account_name}
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                Dashboard
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            {/* add log out icon */}
-                                            <a
-                                                class="dropdown-item"
-                                                href="#"
-                                                onClick={handleSignOut(user.id)}
-                                            >
-                                                Sign out
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <UserDropDown />
                             ) : (
                                 <button
                                     type="button"
