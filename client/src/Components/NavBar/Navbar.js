@@ -1,7 +1,7 @@
-import "../App.css";
-import logoName from "../assets/logo-name.png";
+import "../../App.css";
+import logoName from "../../assets/logo-name.png";
 import { useSelector, useDispatch } from "react-redux";
-import { setUser } from "../features/userSlice";
+import { setUser } from "../../features/userSlice";
 
 function Navbar() {
     const user = useSelector(setUser);
@@ -28,7 +28,7 @@ function Navbar() {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav mx-sm-2">
+                    <div class="navbar-nav mx-sm-2 float-end">
                         {user ? null : (
                             <>
                                 <a class="nav-link" href="#">
@@ -39,11 +39,39 @@ function Navbar() {
                                 </a>
                             </>
                         )}
-                        <div class="ms-1 " id="nav-div-start-now">
+                        <div id="nav-div-start-now">
                             {user ? (
-                                <a class="nav-link" href="#">
-                                    {user.full_name}
-                                </a>
+                                <div class="dropdown">
+                                    <a
+                                        class="btn btn-secondary dropdown-toggle"
+                                        id="nav-btn-start-now"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        {user.account_name}
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                Dashboard
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            {/* add log out icon */}
+                                            <a class="dropdown-item" href="#">
+                                                Sign out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             ) : (
                                 <button
                                     type="button"
@@ -55,11 +83,6 @@ function Navbar() {
                                 </button>
                             )}
                         </div>
-                        {user ? (
-                            <a class="nav-link" href="#">
-                                Sign out
-                            </a>
-                        ) : null}
                     </div>
                 </div>
             </div>

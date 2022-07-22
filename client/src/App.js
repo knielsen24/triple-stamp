@@ -1,16 +1,22 @@
 import "./App.css";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/NavBar/Navbar";
 import Home from "./Components/Home/Home";
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Footer } from "./Components/Footer";
-import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "./features/userSlice";
 import { login } from "./features/userSlice";
+import UserModal from "./Components/NavBar/UserModal";
+import { useSelector, useDispatch } from "react-redux";
+import { useCreateUserMutation } from "./app/services/apiSlice"
 
 function App() {
+
+    // const {user=[]} = useCreateUserMutation()
+
     const user = useSelector(setUser);
     const dispatch = useDispatch();
+
 
     useEffect(() => {
         fetch("/me").then((r) => {
@@ -23,6 +29,7 @@ function App() {
     return (
         <div class="container" id="app-main-container">
             <Navbar />
+            <UserModal />
             <Routes>
                 <Route path="/" element={!user ? <Home /> : null} />
             </Routes>

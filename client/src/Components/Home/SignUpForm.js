@@ -4,11 +4,14 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
+import { useCreateUserMutation } from "../../app/services/apiSlice";
 
 function SignUpForm() {
     const [errors, setErrors] = useState([]);
 
-    const dispatch = useDispatch();
+    const [createUser, { isLoading }] = useCreateUserMutation();
+
+    // const dispatch = useDispatch();
 
     const SignupSchema = Yup.object().shape({
         full_name: Yup.string()
@@ -28,40 +31,11 @@ function SignUpForm() {
                     account_name: "",
                 }}
                 validationSchema={SignupSchema}
-                validate={(values) => {
-                    const errors = {};
-                    if (!values.email) {
-                        errors.email = "Required";
-                    } else if (
-                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-                            values.email
-                        )
-                    ) {
-                        errors.email = "Invalid email address";
-                    }
-                    return errors;
-                }}
                 onSubmit={(values, { setSubmitting }) => {
-                    fetch("http://localhost:4000/signup", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(values),
-                    }).then((r) => {
-                        if (r.ok) {
-                            r.json().then((user) => dispatch(login(user)))
-                            .then(setTimeout(() => {
-                                setSubmitting(false);
-                            }, 400));
-                        } else {
-                            r.json().then((errorData) =>
-                                setErrors(errorData.errors)
-                            );
-                        }
-                    });
-
-
+                    createUser(values);
+                    setTimeout(() => {
+                        setSubmitting(false);
+                    }, 400);
                 }}
             >
                 {({
@@ -169,3 +143,35 @@ function SignUpForm() {
 }
 
 export default SignUpForm;
+
+// fetch("http://localhost:4000/signup", {
+//     method: "POST",
+//     headers: {
+//         "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(values),
+// }).then((r) => {
+//     if (r.ok) {
+//         r.json().then((user) => dispatch(login(user)))
+//         .then(setTimeout(() => {
+//             setSubmitting(false);
+//         }, 400));
+//     } else {
+//         r.json().then((errorData) =>
+//             setErrors(errorData.errors)
+//         );
+//     }
+// });
+// validate={(values) => {
+//     const errors = {};
+//     if (!values.email) {
+//         errors.email = "Required";
+//     } else if (
+//         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
+//             values.email
+//         )
+//     ) {
+//         errors.email = "Invalid email address";
+//     }
+//     return errors;
+// }}
