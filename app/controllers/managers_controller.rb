@@ -11,6 +11,12 @@ class ManagersController < ApplicationController
         render json: @current_user
     end
 
+    def destroy
+        user = Manager.find(params[:id])
+        user.destroy
+        head :no_content
+    end
+
     private
 
     def manager_sign_up_params

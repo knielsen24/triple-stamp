@@ -16,16 +16,15 @@ export const dataApi = createApi({
                 }),
                 invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
             }),
-            destroyUser: builder.mutation({
-                query: ({id}) => ({
-                    url: "/signup",
-                    method: "POST",
-                    body: ""
+            deleteUser: builder.mutation({
+                query: (id) => ({
+                    url: `/managers/${id}`,
+                    method: "DELETE",
                 }),
-                invalidatesTags: (result, error, arg) => [{type: 'User', id: arg.id}]
+                invalidatesTags: (result, error, id) => [{type: 'User', id}]
             })
         };
     },
 });
 
-export const { useCreateUserMutation } = dataApi
+export const { useCreateUserMutation, useDeleteUserMutation } = dataApi

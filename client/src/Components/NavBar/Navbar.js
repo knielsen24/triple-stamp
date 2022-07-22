@@ -1,11 +1,18 @@
 import "../../App.css";
 import logoName from "../../assets/logo-name.png";
 import { useSelector, useDispatch } from "react-redux";
-import { setUser } from "../../features/userSlice";
+import { setUser, logout } from "../../features/userSlice";
+import { useDeleteUserMutation } from "../../app/services/apiSlice";
 
 function Navbar() {
+    const [deleteUser, { isLoading }] = useDeleteUserMutation()
+    const dispatch = useDispatch();
     const user = useSelector(setUser);
-    console.log(user);
+
+    const handleSignOut = (id) => {
+        // deleteUser(id)
+        // dispatch(logout)
+    };
 
     return (
         <nav
@@ -66,7 +73,11 @@ function Navbar() {
                                         </li>
                                         <li>
                                             {/* add log out icon */}
-                                            <a class="dropdown-item" href="#">
+                                            <a
+                                                class="dropdown-item"
+                                                href="#"
+                                                onClick={handleSignOut(user.id)}
+                                            >
                                                 Sign out
                                             </a>
                                         </li>
