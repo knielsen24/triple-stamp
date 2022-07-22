@@ -1,9 +1,9 @@
 import "../App.css";
-import React from 'react'
+import React from "react";
 
 function Footer() {
-  return (
-    <div class="text-center" id="footer-container">
+    return (
+        <div class="text-center" id="footer-container">
             <hr class="border border-2" />
             <div class="row">
                 <div class="col">
@@ -44,8 +44,7 @@ function Footer() {
                 </div>
             </div>
         </div>
-  )
+    );
 }
 
-export default Footer
-
+export default Footer;

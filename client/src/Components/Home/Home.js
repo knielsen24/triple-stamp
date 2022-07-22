@@ -1,5 +1,6 @@
 import "../../App.css";
 import BannerCardsContainer from "./BannerCardsContainer";
+import LoginModal from "./LoginModal";
 import StartNowModal from "./StartNowModal";
 
 function Home() {
@@ -22,8 +23,7 @@ function Home() {
                     </button>
                 </div>
                 <StartNowModal />
-
-
+                <LoginModal />
             </div>
         </div>
     );

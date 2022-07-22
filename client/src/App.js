@@ -4,7 +4,7 @@ import Home from "./Components/Home/Home";
 import Footer from "./Components/Footer";
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { setUser, login } from "./features/userSlice";
+import { setUser, login, logout } from "./features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useCreateUserMutation } from "./app/services/apiSlice";
 import Dashboard from "./Components/Dashboard/Dashboard";
@@ -28,12 +28,24 @@ function App() {
         });
     }, []);
 
+    const handleLogout = () => {
+        console.log("I was clicked");
+        // fetch("/logout", { method: "DELETE" }).then((r) => {
+        //     if (r.ok) {
+        //         dispatch(logout(user));
+        //     }
+        // });
+    };
+
     return (
         <div class="container" id="app-main-container">
-            <Navbar />
+            <Navbar handleLogout={handleLogout} />
             <Routes>
                 <Route path="/" element={!user ? <Home /> : null} />
-                <Route path="/dashboard" element={user ? <Dashboard /> : null} />
+                <Route
+                    path="/dashboard"
+                    element={user ? <Dashboard /> : null}
+                />
             </Routes>
             <Footer />
         </div>
