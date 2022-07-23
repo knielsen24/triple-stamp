@@ -16,7 +16,7 @@ function UserDropDown() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-                {user.account_name}
+                {user.full_name}
             </a>
 
             <ul class="dropdown-menu">
