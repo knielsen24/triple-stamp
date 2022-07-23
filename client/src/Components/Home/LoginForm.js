@@ -1,18 +1,17 @@
+import "../../App.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useLoginApiMutation } from "../../app/services/userApiSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { setUser, login } from "../../app/features/userSlice";
+import { useDispatch } from "react-redux";
+import { login } from "../../app/features/userSlice";
 
 function LoginForm() {
     const [toggleModal, setToggleModal] = useState(false)
     const [loginApi, { isLoading }] = useLoginApiMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    // look into error handling
 
     const loginSchema = Yup.object().shape({
         email: Yup.string().email("Invalid email").required("Required"),

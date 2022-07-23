@@ -1,11 +1,16 @@
 import "../../App.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useCreateUserMutation } from "../../app/services/userApiSlice";
+import { useDispatch } from "react-redux";
+import { login } from "../../app/features/userSlice";
 
 function SignUpForm() {
     const [createUser, { isLoading }] = useCreateUserMutation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const SignupSchema = Yup.object().shape({
         full_name: Yup.string()
@@ -30,7 +35,9 @@ function SignUpForm() {
                 }}
                 validationSchema={SignupSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    createUser(values);
+                    createUser(values)
+                        .then((r) => dispatch(login(r.data)))
+                        .then(navigate("dashboard"));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

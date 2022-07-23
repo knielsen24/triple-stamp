@@ -9,7 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
-
     const user = useSelector(setUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -18,17 +17,15 @@ function App() {
         fetch("/me").then((r) => {
             if (r.ok) {
                 r.json().then((user) => dispatch(login(user)));
-            }
-            else {
-                navigate("/")
+            } else {
+                navigate("/");
             }
         });
     }, []);
 
-
     return (
         <div class="container p-0" id="app-main-container">
-            <Navbar  />
+            <Navbar />
             <hr class="border border-2" />
             <Routes>
                 <Route path="/" element={!user ? <Home /> : null} />
@@ -36,6 +33,7 @@ function App() {
                     path="/dashboard"
                     element={user ? <Dashboard /> : null}
                 />
+                <Route path="/profile" />
             </Routes>
             <hr class="border border-2" />
             <Footer />

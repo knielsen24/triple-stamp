@@ -6,7 +6,6 @@ import UserDropDown from "./UserDropDown";
 import DashboardLinks from "./DashboardLinks";
 
 function Navbar() {
-
     const user = useSelector(setUser);
 
     return (
@@ -15,7 +14,7 @@ function Navbar() {
             id="nav-container"
         >
             <div class="container-md d-flex" id="main-nav-container">
-                <a class="navbar-brand mx-sm-2 align-top">
+                <a class="navbar-brand mx-sm-2 align-top" href={user ? "dashboard" : "/"}>
                     <img src={logoName} alt="logo" id="logo-name" />
                 </a>
                 <button
@@ -31,7 +30,9 @@ function Navbar() {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        {user ? <DashboardLinks/> : (
+                        {user ? (
+                            <DashboardLinks />
+                        ) : (
                             <>
                                 <a class="nav-link" href="#">
                                     Features
@@ -46,21 +47,21 @@ function Navbar() {
                                 </a>
                             </>
                         )}
-                        <div id="nav-div-start-now">
-                            {user ? (
-                                <UserDropDown />
-                            ) : (
-                                <button
-                                    type="button"
-                                    class="px-2"
-                                    id="nav-btn-start-now"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#start-now-modal"
-                                >
-                                    start now
-                                </button>
-                            )}
-                        </div>
+                    </div>
+                    <div id="nav-div-start-now">
+                        {user ? (
+                            <UserDropDown />
+                        ) : (
+                            <button
+                                type="button"
+                                class="px-2"
+                                id="nav-btn-start-now"
+                                data-bs-toggle="modal"
+                                data-bs-target="#start-now-modal"
+                            >
+                                start now
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>

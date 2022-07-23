@@ -1,11 +1,9 @@
 import "../../App.css";
-import { setUser, logout } from "../../app/features/userSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { setUser } from "../../app/features/userSlice";
+import { useSelector } from "react-redux";
 import Logout from "./Logout";
-// import { useDeleteUserMutation } from "../../app/services/apiSlice";
 
 function UserDropDown() {
-    // const [deleteUser, { isLoading }] = useDeleteUserMutation();
     const user = useSelector(setUser);
 
     return (
@@ -24,14 +22,15 @@ function UserDropDown() {
             <ul class="dropdown-menu">
                 <li>
                     <a class="dropdown-item" href="#">
-                        Dashboard
+                        My profile
                     </a>
                 </li>
                 <li>
                     <a class="dropdown-item" href="#">
-                        Profile
+                        Dashboard
                     </a>
                 </li>
+                <hr class="border border-2 m-1"/>
                 <li>
                     {/* add log out icon */}
                     <Logout />
