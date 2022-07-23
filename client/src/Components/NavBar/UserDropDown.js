@@ -26,7 +26,7 @@ function UserDropDown() {
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="dashboard">
                         Dashboard
                     </a>
                 </li>

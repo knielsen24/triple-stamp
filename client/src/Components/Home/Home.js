@@ -1,4 +1,5 @@
 import "../../App.css";
+import ButtonStartNow from "../Buttons/ButtonStartNow";
 import BannerCardsContainer from "./BannerCardsContainer";
 import LoginModal from "./LoginModal";
 import StartNowModal from "./StartNowModal";
@@ -12,15 +13,7 @@ function Home() {
                 </header>
                 <BannerCardsContainer />
                 <div class="m-sm-auto">
-                    <button
-                        type="button"
-                        id="nav-btn-start-now"
-                        class="btn btn-primary m-sm-auto"
-                        data-bs-toggle="modal"
-                        data-bs-target="#start-now-modal"
-                    >
-                        start now
-                    </button>
+                    <ButtonStartNow />
                 </div>
                 <StartNowModal />
                 <LoginModal />

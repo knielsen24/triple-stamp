@@ -3,7 +3,9 @@ import logoName from "../../assets/logo-name.png";
 import { useSelector } from "react-redux";
 import { setUser } from "../../app/features/userSlice";
 import UserDropDown from "./UserDropDown";
-import DashboardLinks from "./DashboardLinks";
+import ButtonStartNow from "../Buttons/ButtonStartNow";
+import DashboardLinks from "./NavLinks/DashboardLinks";
+import HomeLinks from "./NavLinks/HomeLinks";
 
 function Navbar() {
     const user = useSelector(setUser);
@@ -33,34 +35,14 @@ function Navbar() {
                         {user ? (
                             <DashboardLinks />
                         ) : (
-                            <>
-                                <a class="nav-link" href="#">
-                                    Features
-                                </a>
-                                <a
-                                    class="nav-link"
-                                    href="#"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#login-form"
-                                >
-                                    Sign in
-                                </a>
-                            </>
+                            <HomeLinks />
                         )}
                     </div>
                     <div id="nav-div-start-now">
                         {user ? (
                             <UserDropDown />
                         ) : (
-                            <button
-                                type="button"
-                                class="px-2"
-                                id="nav-btn-start-now"
-                                data-bs-toggle="modal"
-                                data-bs-target="#start-now-modal"
-                            >
-                                start now
-                            </button>
+                            <ButtonStartNow />
                         )}
                     </div>
                 </div>
