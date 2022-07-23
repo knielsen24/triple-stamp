@@ -7,10 +7,10 @@ function UserDropDown() {
     const user = useSelector(setUser);
 
     return (
-        <div class="dropdown">
+        <div class="dropdown ">
             <a
-                class="btn btn-secondary dropdown-toggle"
-                id="nav-btn-start-now"
+                class="btn btn-secondary dropdown-toggle align-bottom"
+                id="nav-drop-down-btn"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -21,7 +21,7 @@ function UserDropDown() {
 
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="profile">
                         My profile
                     </a>
                 </li>

@@ -32,7 +32,19 @@
   text-transform: capitalize;
   border-radius: 10px;
   width: 150px;
-  height: 40px;
+  height: 35px;
+  font-weight: bold;
+  color: black;
+  border: 0;
+}
+
+#nav-drop-down-btn {
+  text-align: center;
+  background-color: #9AEEAC;
+  text-transform: capitalize;
+  border-radius: 10px;
+  width: 150px;
+  height: 35px;
   font-weight: bold;
   color: black;
   border: 0;
@@ -84,7 +96,7 @@
   text-transform: capitalize;
   border-radius: 10px;
   width: 150px;
-  height: 40px;
+  height: 35px;
   font-weight: bold;
   color: black;
   border: 0;

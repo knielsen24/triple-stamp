@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :managers
+  resources :users
 
-  post "/signup", to: "managers#create"
-  get "/me", to: "managers#show"
-  patch "/managers/:id", to: "managers#update"
-  delete "/managers/:id", to: "managers#destroy"
+  post "/signup", to: "users#create"
+  get "/me", to: "users#show"
+  patch "/users/:id", to: "users#update"
+  delete "/users/:id", to: "users#destroy"
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
