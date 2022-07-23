@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -6,8 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { setUser, login } from "../../app/features/userSlice";
 
 function LoginForm() {
+    const [toggleModal, setToggleModal] = useState(false)
     const [loginApi, { isLoading }] = useLoginApiMutation();
-    // const user = useSelector(setUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -32,6 +33,7 @@ function LoginForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     loginApi(values)
                         .then((r) => dispatch(login(r.data)))
+                        .then(setToggleModal(true))
                         .then(navigate("dashboard"));
                     setTimeout(() => {
                         setSubmitting(false);
@@ -101,7 +103,7 @@ function LoginForm() {
                                 class="btn btn-primary"
                                 id="modal-btn-start-now"
                                 data-bs-dismiss="modal"
-                                aria-label="Close"
+                                aria-label={ !toggleModal ? "Close" : null}
                             >
                                 Sign in
                             </button>

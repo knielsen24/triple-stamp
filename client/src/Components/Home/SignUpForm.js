@@ -121,7 +121,9 @@ function SignUpForm() {
                                 onBlur={handleBlur}
                                 value={values.account_name}
                             />
-                            {errors.email && touched.email && errors.email}
+                            {errors.account_name &&
+                                touched.account_name &&
+                                errors.account_name}
                         </div>
                         <div class="float-end">
                             {/*

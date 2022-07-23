@@ -28,13 +28,7 @@ export const userApi = createApi({
                 invalidatesTags: (result) => (result ? ["UNAUTHORIZED"] : []),
             }),
 
-            logout: builder.mutation({
-                query: () => ({
-                    url: "/logout",
-                    method: "DELETE",
-                }),
-                invalidatesTags: (result) => (result ? ["UNAUTHORIZED"] : []),
-            }),
+
 
             deleteUser: builder.mutation({
                 query: (id) => ({
@@ -51,6 +45,13 @@ export const {
     useCreateUserMutation,
     useDeleteUserMutation,
     useLoginApiMutation,
-    useLogoutMutation,
+    // useLogoutApiMutation,
 } = userApi;
 
+// logoutApi: builder.mutation({
+//     query: ({}) => ({
+//         url: "/logout",
+//         method: "DELETE",
+//     }),
+//     invalidatesTags: (result) => (result ? ["UNAUTHORIZED"] : []),
+// }),

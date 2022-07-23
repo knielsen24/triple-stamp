@@ -3,6 +3,7 @@ import logoName from "../../assets/logo-name.png";
 import { useSelector } from "react-redux";
 import { setUser } from "../../app/features/userSlice";
 import UserDropDown from "./UserDropDown";
+import DashboardLinks from "./DashboardLinks";
 
 function Navbar() {
 
@@ -10,11 +11,11 @@ function Navbar() {
 
     return (
         <nav
-            class="navbar navbar-expand-sm navbar-light items-center sticky-top"
+            class="navbar navbar-expand-sm navbar-light sticky-top"
             id="nav-container"
         >
-            <div class="container-xl mx-sm-2" id="main-nav-container">
-                <a class="navbar-brand mx-sm-2">
+            <div class="container-md d-flex" id="main-nav-container">
+                <a class="navbar-brand mx-sm-2 align-top">
                     <img src={logoName} alt="logo" id="logo-name" />
                 </a>
                 <button
@@ -29,8 +30,8 @@ function Navbar() {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav mx-sm-2 float-end">
-                        {user ? null : (
+                    <div class="navbar-nav">
+                        {user ? <DashboardLinks/> : (
                             <>
                                 <a class="nav-link" href="#">
                                     Features
@@ -51,6 +52,7 @@ function Navbar() {
                             ) : (
                                 <button
                                     type="button"
+                                    class="px-2"
                                     id="nav-btn-start-now"
                                     data-bs-toggle="modal"
                                     data-bs-target="#start-now-modal"

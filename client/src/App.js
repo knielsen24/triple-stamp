@@ -27,8 +27,9 @@ function App() {
 
 
     return (
-        <div class="container" id="app-main-container">
+        <div class="container p-0" id="app-main-container">
             <Navbar  />
+            <hr class="border border-2" />
             <Routes>
                 <Route path="/" element={!user ? <Home /> : null} />
                 <Route
@@ -36,6 +37,7 @@ function App() {
                     element={user ? <Dashboard /> : null}
                 />
             </Routes>
+            <hr class="border border-2" />
             <Footer />
         </div>
     );

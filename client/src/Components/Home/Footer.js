@@ -3,8 +3,8 @@ import React from "react";
 
 function Footer() {
     return (
-        <div class="text-center" id="footer-container">
-            <hr class="border border-2" />
+        <div class="container-fluid text-center" id="footer-container">
+            
             <div class="row">
                 <div class="col">
                     <a

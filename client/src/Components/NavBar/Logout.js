@@ -1,18 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import { setUser, logout } from "../../app/features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useLogoutMutation } from "../../app/services/userApiSlice";
+import { useLogoutApiMutation } from "../../app/services/userApiSlice";
 
 function Logout() {
+    // const [logoutApi, { isLoading }] = useLogoutApiMutation();
+    const user = useSelector(setUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector(setUser);
-    const [logout, { isLoading }] = useLogoutMutation()
 
     const handleLogout = () => {
-        logout();
-        dispatch(logout(user));
-        navigate("/");
+        fetch("/logout", { method: "DELETE" })
+            .then((r) => {
+                if (r.ok) {
+                    dispatch(logout());
+                }
+            })
+            .then(navigate("/"));
+        // logoutApi().then(() => {
+        //     dispatch(logout(user)).then(navigate("/"));
+        // });
     };
 
     return (
@@ -32,11 +39,3 @@ function Logout() {
 }
 
 export default Logout;
-
-// fetch("/logout", { method: "DELETE" })
-//     .then((r) => {
-//         if (r.ok) {
-//             dispatch(logout(user));
-//         }
-//     })
-//     .then(navigate("/"));
