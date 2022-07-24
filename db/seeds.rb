@@ -6,6 +6,7 @@ puts "🌱 double stamping..."
         name: Faker::Address.community,
         address: Faker::Address.street_address,
         city: Faker::Address.city,
+        state: Faker::Address.state,
         postal_code: Faker::Address.postcode,
         country: Faker::Address.country,
         units: rand(1..50),
@@ -15,4 +16,4 @@ puts "🌱 double stamping..."
 end
 
 puts "🌱 triple stamping..."
-puts "✅✅✅ You can't triple stamp a double stamp! Loyld!"
+puts "✅✅✅ You can't triple stamp a double stamp! Lloyd! Lloyd! Lloyd!"

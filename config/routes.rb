@@ -1,21 +1,26 @@
 Rails.application.routes.draw do
 
-  resources :properties
-  resources :users
+    resources :properties
+    resources :users
 
-  post "/signup", to: "users#create"
-  get "/me", to: "users#show"
-  patch "/users/:id", to: "users#update"
-  delete "/users/:id", to: "users#destroy"
+    # SESSION #
+    post "/login", to: "sessions#create"
+    delete "/logout", to: "sessions#destroy"
 
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
+    # USER #
+    post "/signup", to: "users#create"
+    get "/me", to: "users#show"
+    patch "/users/:id", to: "users#update"
+    delete "/users/:id", to: "users#destroy"
 
+    # PROPERTY #
+    get "user/:id/properties", to: "properties#index"
+    get "/properties/:id", to: "properties#show"
+    post "user/:id/properties", to: "properties#create"
+    patch "/properties/:id", to: "properties#update"
+    delete "/properties/:id", to: "properties#destroy"
 
-  # Leave this here to help deploy your app later!
-  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
-
-
-
+    # Leave this here to help deploy your app later!
+    get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
 end
