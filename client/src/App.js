@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./Components/NavBar/Navbar";
-import Home from "./Components/Home/Home";
-import Footer from "./Components/Home/Footer";
+import Home from "./Components/HomePage/Home";
+import Footer from "./Components/HomePage/Footer";
 import React, { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { setUser, login } from "./app/features/userSlice";
