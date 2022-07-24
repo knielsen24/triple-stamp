@@ -4,8 +4,7 @@ import { useSelector } from "react-redux";
 import { setUser } from "../../app/features/userSlice";
 import DeleteProfileModal from "./DeleteProfileModal";
 import EditProfileModal from "./updateForm/EditProfileModal";
-import ButtonOpenEditModal from "../Buttons/ButtonOpenEditModal";
-import ButtonOpenDeleteModal from "../Buttons/ButtonOpenDeleteModal";
+import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 
 function ProfileHome() {
     const user = useSelector(setUser);
@@ -43,11 +42,11 @@ function ProfileHome() {
                     </ul>
                 </div>
                 <div class="card-footer bg-white text-muted text-center">
-                    <ButtonOpenEditModal
+                    <ButtonManageAccountModals
                         target={"#update-profile-form"}
                         text={"Edit Account"}
                     />
-                    <ButtonOpenEditModal
+                    <ButtonManageAccountModals
                         target={"#delete-account"}
                         text={"Delete Account"}
                     />

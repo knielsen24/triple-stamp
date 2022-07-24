@@ -1,6 +1,6 @@
 import "../../App.css";
 
-function ButtonOpenEditModal({target, text}) {
+function ButtonManageAccountModals({ target, text }) {
     return (
         <>
             <a
@@ -16,4 +16,4 @@ function ButtonOpenEditModal({target, text}) {
     );
 }
 
-export default ButtonOpenEditModal;
+export default ButtonManageAccountModals;
