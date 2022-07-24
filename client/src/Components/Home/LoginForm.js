@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 import { login } from "../../app/features/userSlice";
 
 function LoginForm() {
-    const [toggleModal, setToggleModal] = useState(false)
     const [loginApi, { isLoading }] = useLoginApiMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -32,7 +31,6 @@ function LoginForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     loginApi(values)
                         .then((r) => dispatch(login(r.data)))
-                        .then(setToggleModal(true))
                         .then(navigate("dashboard"));
                     setTimeout(() => {
                         setSubmitting(false);
@@ -102,7 +100,7 @@ function LoginForm() {
                                 class="btn btn-primary"
                                 id="modal-btn-start-now"
                                 data-bs-dismiss="modal"
-                                aria-label={ !toggleModal ? "Close" : null}
+                                aria-label="Close"
                             >
                                 Sign in
                             </button>

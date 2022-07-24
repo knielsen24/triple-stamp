@@ -1,15 +1,16 @@
 import "../../App.css";
 
-function ButtonDeleteUser() {
+function ButtonDeleteUser({ handleDeleteUser, id }) {
     return (
         <>
             <button
                 type="button"
                 id="profile-btn-delete-account"
-                class="btn btn-primary m-sm-auto"
-                
+                class="btn btn-primary text-white opacity-75"
+                data-bs-dismiss="modal"
+                onClick={() => handleDeleteUser(id)}
             >
-                Delete Account
+                Delete my account
             </button>
         </>
     );

@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import SignUpForm from "./SignUpForm";
 
 function StartNowModal() {
@@ -26,12 +27,7 @@ function StartNowModal() {
                                 </div>
                             </h5>
 
-                            <button
-                                type="button"
-                                class="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            ></button>
+                            <ButtonCloseModalX />
                         </div>
                         <div class="modal-body">
                             <SignUpForm />

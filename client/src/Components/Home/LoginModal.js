@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import LoginForm from "./LoginForm";
 
 function LoginModal() {
@@ -20,17 +21,11 @@ function LoginModal() {
                                 Welcome back to tripleStamp
                                 <div>
                                     <p class="float-start" id="modal-subtext">
-                                    Enter your login credentials
+                                        Enter your login credentials
                                     </p>
                                 </div>
                             </h5>
-
-                            <button
-                                type="button"
-                                class="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            ></button>
+                            <ButtonCloseModalX />
                         </div>
                         <div class="modal-body">
                             <LoginForm />
