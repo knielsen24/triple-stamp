@@ -3,9 +3,9 @@ import React from "react";
 
 function Footer() {
     return (
-        <div class="container-fluid text-center" id="footer-container">
+        <div class="container-fluid text-center border-top border-1 " id="footer-container">
 
-            <div class="row">
+            <div class="row mt-2">
                 <div class="col">
                     <a
                         class="nav-link"

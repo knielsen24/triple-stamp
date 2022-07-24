@@ -12,11 +12,14 @@ function Navbar() {
 
     return (
         <nav
-            class="navbar navbar-expand-sm navbar-light sticky-top"
+            class="navbar navbar-expand-sm navbar-light border-bottom border-1 sticky-top"
             id="nav-container"
         >
             <div class="container-md d-flex" id="main-nav-container">
-                <a class="navbar-brand mx-sm-2 align-top" href={user ? "dashboard" : "/"}>
+                <a
+                    class="navbar-brand mx-sm-2 align-top"
+                    href={user ? "dashboard" : "/"}
+                >
                     <img src={logoName} alt="logo" id="logo-name" />
                 </a>
                 <button
@@ -33,18 +36,20 @@ function Navbar() {
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         {user ? (
-                            <DashboardLinks />
+                            <>
+                                <DashboardLinks />
+                                <UserDropDown />
+                            </>
                         ) : (
-                            <HomeLinks />
+                            <>
+                                <HomeLinks />
+                                <ButtonStartNow />
+                            </>
                         )}
                     </div>
-                    <div id="nav-div-start-now">
-                        {user ? (
-                            <UserDropDown />
-                        ) : (
-                            <ButtonStartNow />
-                        )}
-                    </div>
+                    {/* <div class="navbar-nav p-1 ms-2" id="nav-div-start-now">
+                        {user ? <UserDropDown /> : <ButtonStartNow />}
+                    </div> */}
                 </div>
             </div>
         </nav>

@@ -9,8 +9,8 @@ import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 function ProfileHome() {
     const user = useSelector(setUser);
     return (
-        <div class=" container align-content-items-center">
-            <div id="profile-main-card-container" class="card mb-3">
+        <div class="container align-content-items-center">
+            <div id="profile-main-card-container" class="card m-3">
                 <div class="text-center" id="profile-card-bg">
                     <div class="m-2 p-1">
                         <img

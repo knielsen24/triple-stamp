@@ -6,7 +6,7 @@ function ButtonStartNow() {
             <button
                 type="button"
                 id="nav-btn-start-now"
-                class="btn btn-primary m-sm-auto"
+                class="btn btn-primary"
                 data-bs-toggle="modal"
                 data-bs-target="#start-now-modal"
             >

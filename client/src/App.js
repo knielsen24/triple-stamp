@@ -27,7 +27,6 @@ function App() {
     return (
         <div class="container-fluid p-0" id="app-main-container">
             <Navbar />
-            <hr class="border border-2" />
             <Routes>
                 <Route path="/" element={!user ? <Home /> : null} />
                 <Route
@@ -36,7 +35,6 @@ function App() {
                 />
                 <Route path="/profile" element={user ? <ProfileHome /> : null } />
             </Routes>
-            <hr class="border border-2" />
             <Footer />
         </div>
     );
