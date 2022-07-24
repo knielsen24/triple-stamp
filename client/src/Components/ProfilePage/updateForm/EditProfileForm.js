@@ -1,12 +1,14 @@
+import ButtonSaveChanges from "../../Buttons/ButtonSaveChanges";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useCreateUserMutation } from "../../../app/services/userApiSlice";
+import "yup-phone"
+import { useUpdateUserMutation } from "../../../app/services/userApiSlice";
 import { useDispatch } from "react-redux";
-import ButtonSaveChanges from "../../Buttons/ButtonSaveChanges";
+import { login } from "../../../app/features/userSlice"
 
 function EditProfileForm() {
-    const [createUser, { isLoading }] = useCreateUserMutation();
+    const [updateUser, { isLoading }] = useUpdateUserMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -16,7 +18,9 @@ function EditProfileForm() {
             .max(30, "Too Long!")
             .required("Required"),
         phone: Yup.string()
-            .length(10, "Must be 10 digits")
+            .phone(),
+        business: Yup.string()
+            .max(30, "Too Long!")
 
     });
 
@@ -25,15 +29,15 @@ function EditProfileForm() {
             <Formik
                 initialValues={{
                     full_name: "",
-                    email: "",
-                    password: "",
+                    phone: "",
+                    business: "",
                     account_name: "",
                 }}
                 validationSchema={SignupSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    createUser(values)
-                        .then((r) => {})
-                        .then(navigate("dashboard"));
+                    updateUser(values)
+                        .then((r) => dispatch(login(r.data)))
+                        .then(navigate("profile"));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -75,7 +79,7 @@ function EditProfileForm() {
                                 htmlFor="phone"
                                 class="form-label float-start"
                             >
-                                Full Name
+                                Phone
                             </label>
                             <input
                                 id="phone"
@@ -89,6 +93,26 @@ function EditProfileForm() {
                             {errors.phone &&
                                 touched.phone &&
                                 errors.phone}
+                        </div>
+                        <div class="mb-3">
+                            <label
+                                htmlFor="business"
+                                class="form-label float-start"
+                            >
+                                Business
+                            </label>
+                            <input
+                                id="business"
+                                class="form-control"
+                                type="string"
+                                name="business"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.business}
+                            />
+                            {errors.business &&
+                                touched.business &&
+                                errors.business}
                         </div>
 
                         <div class="mb-3">

@@ -21,7 +21,7 @@ function EditProfileModal() {
                                 Edit your profile information
                                 <div>
                                     <p id="modal-subtext">
-                                        Click update to save changes
+                                        Click save changes to update
                                     </p>
                                 </div>
                             </h5>
