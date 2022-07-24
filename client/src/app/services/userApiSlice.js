@@ -28,14 +28,23 @@ export const userApi = createApi({
                 invalidatesTags: (result) => (result ? ["UNAUTHORIZED"] : []),
             }),
 
-
-
             deleteUser: builder.mutation({
                 query: (id) => ({
                     url: `/users/${id}`,
                     method: "DELETE",
                 }),
                 invalidatesTags: (result, error, id) => [{ type: "User", id }],
+            }),
+
+            updateUser: builder.mutation({
+                query: ({ ...updatedData }) => ({
+                    url: "/signup",
+                    method: "UPDATE",
+                    body: updatedData,
+                }),
+                invalidatesTags: (result, error, arg) => [
+                    { type: "User", id: arg.id },
+                ],
             }),
         };
     },
@@ -45,6 +54,7 @@ export const {
     useCreateUserMutation,
     useDeleteUserMutation,
     useLoginApiMutation,
+    useUpdateUserMutation,
     // useLogoutApiMutation,
 } = userApi;
 

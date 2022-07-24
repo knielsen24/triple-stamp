@@ -1,6 +1,6 @@
 import "../../App.css";
 
-function ButtonOpenModalDelete() {
+function ButtonOpenEditModal() {
     return (
         <>
             <a
@@ -8,12 +8,12 @@ function ButtonOpenModalDelete() {
                 href="#"
                 role="button"
                 data-bs-toggle="modal"
-                data-bs-target="#delete-account"
+                data-bs-target="#update-profile-form"
             >
-                Delete Account
+                Edit Account
             </a>
         </>
     );
 }
 
-export default ButtonOpenModalDelete;
+export default ButtonOpenEditModal;

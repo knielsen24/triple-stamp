@@ -3,7 +3,9 @@ import profileIcon from "../../assets/person-icon.svg";
 import { useSelector } from "react-redux";
 import { setUser } from "../../app/features/userSlice";
 import DeleteProfileModal from "./DeleteProfileModal";
-import ButtonOpenModalDelete from "../Buttons/ButtonOpenModalDelete";
+import EditProfileModal from "./updateForm/EditProfileModal";
+import ButtonOpenEditModal from "../Buttons/ButtonOpenEditModal";
+import ButtonOpenDeleteModal from "../Buttons/ButtonOpenDeleteModal";
 
 function ProfileHome() {
     const user = useSelector(setUser);
@@ -33,13 +35,18 @@ function ProfileHome() {
                         <li class="list-group-item">
                             Account name: {user.account_name}
                         </li>
+                        <li class="list-group-item">
+                            Business: {user.business}{" "}
+                        </li>
                         <li class="list-group-item">Email: {user.email}</li>
                         <li class="list-group-item">Phone: {user.phone} </li>
                     </ul>
                 </div>
                 <div class="card-footer bg-white text-muted text-center">
-                    <ButtonOpenModalDelete />
+                    <ButtonOpenEditModal />
+                    <ButtonOpenDeleteModal />
                 </div>
+                <EditProfileModal />
                 <DeleteProfileModal />
             </div>
         </div>
