@@ -32,7 +32,6 @@ function ProfileHome() {
 
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-
                         <li class="list-group-item">Email: {user.email}</li>
                         <li class="list-group-item">Phone: {user.phone} </li>
                         <li class="list-group-item">
@@ -44,8 +43,14 @@ function ProfileHome() {
                     </ul>
                 </div>
                 <div class="card-footer bg-white text-muted text-center">
-                    <ButtonOpenEditModal />
-                    <ButtonOpenDeleteModal />
+                    <ButtonOpenEditModal
+                        target={"#update-profile-form"}
+                        text={"Edit Account"}
+                    />
+                    <ButtonOpenEditModal
+                        target={"#delete-account"}
+                        text={"Delete Account"}
+                    />
                 </div>
                 <EditProfileModal />
                 <DeleteProfileModal />

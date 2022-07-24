@@ -1,6 +1,6 @@
 import React from "react";
 
-function ButtonOpenDeleteModal() {
+function ButtonOpenDeleteModal({target, text}) {
     return (
         <>
             <a

@@ -1,6 +1,6 @@
 import "../../App.css";
 
-function ButtonOpenEditModal() {
+function ButtonOpenEditModal({target, text}) {
     return (
         <>
             <a
@@ -8,9 +8,9 @@ function ButtonOpenEditModal() {
                 href="#"
                 role="button"
                 data-bs-toggle="modal"
-                data-bs-target="#update-profile-form"
+                data-bs-target={target}
             >
-                Edit Account
+                {text}
             </a>
         </>
     );

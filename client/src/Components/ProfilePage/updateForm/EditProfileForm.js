@@ -10,7 +10,6 @@ function EditProfileForm() {
     const [updateUser, { isLoading }] = useUpdateUserMutation();
     const dispatch = useDispatch();
     const user = useSelector(setUser);
-    console.log(user.business);
 
     const SignupSchema = Yup.object().shape({
         full_name: Yup.string()
