@@ -1,43 +1,38 @@
 import ButtonSaveChanges from "../../Buttons/ButtonSaveChanges";
-import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import "yup-phone"
+import "yup-phone";
 import { useUpdateUserMutation } from "../../../app/services/userApiSlice";
-import { useDispatch } from "react-redux";
-import { login } from "../../../app/features/userSlice"
+import { useDispatch, useSelector } from "react-redux";
+import { login, setUser } from "../../../app/features/userSlice";
 
 function EditProfileForm() {
     const [updateUser, { isLoading }] = useUpdateUserMutation();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const user = useSelector(setUser);
+    console.log(user.business);
 
     const SignupSchema = Yup.object().shape({
         full_name: Yup.string()
             .min(2, "Too Short!")
             .max(30, "Too Long!")
             .required("Required"),
-        phone: Yup.string()
-            .phone(),
-        business: Yup.string()
-            .max(30, "Too Long!")
-
+        phone: Yup.string().phone(),
+        business: Yup.string().max(30, "Too Long!"),
     });
 
     return (
         <div>
             <Formik
                 initialValues={{
-                    full_name: "",
-                    phone: "",
-                    business: "",
-                    account_name: "",
+                    full_name: user.full_name,
+                    phone: user.phone,
+                    business: user.business,
+                    account_name: user.account_name,
                 }}
                 validationSchema={SignupSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    updateUser(values)
-                        .then((r) => dispatch(login(r.data)))
-                        .then(navigate("profile"));
+                    updateUser(values).then((r) => dispatch(login(r.data)));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -90,9 +85,7 @@ function EditProfileForm() {
                                 onBlur={handleBlur}
                                 value={values.phone}
                             />
-                            {errors.phone &&
-                                touched.phone &&
-                                errors.phone}
+                            {errors.phone && touched.phone && errors.phone}
                         </div>
                         <div class="mb-3">
                             <label

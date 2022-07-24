@@ -37,9 +37,9 @@ export const userApi = createApi({
             }),
 
             updateUser: builder.mutation({
-                query: ({ ...updatedData }) => ({
-                    url: "/signup",
-                    method: "UPDATE",
+                query: ({id, ...updatedData }) => ({
+                    url: `/users/${id}`,
+                    method: "PATCH",
                     body: updatedData,
                 }),
                 invalidatesTags: (result, error, arg) => [
