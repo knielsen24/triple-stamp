@@ -16,11 +16,8 @@ class UsersController < ApplicationController
         user.destroy
         head :no_content
     end
-    # postman PATCH test successful with commented code
+
     def update
-        # user = User.find(params[:id])
-        # user.update!(user_update_params)
-        # render json: user, status: :accepted
         @current_user.update!(user_update_params)
         render json: @current_user, status: :accepted
     end
@@ -35,3 +32,8 @@ class UsersController < ApplicationController
         params.permit(:id, :full_name, :phone, :business, :account_name)
     end
 end
+
+# postman PATCH test successful with commented code
+# user = User.find(params[:id])
+        # user.update!(user_update_params)
+        # render json: user, status: :accepted

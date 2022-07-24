@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :properties
+    has_many :units, through: :properties
     has_secure_password
 
     validates :full_name, :email, :full_name, :account_name, presence: true

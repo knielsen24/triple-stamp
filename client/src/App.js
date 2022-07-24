@@ -25,7 +25,7 @@ function App() {
     }, []);
 
     return (
-        <div class="container p-0" id="app-main-container">
+        <div class="container-fluid p-0" id="app-main-container">
             <Navbar />
             <hr class="border border-2" />
             <Routes>
