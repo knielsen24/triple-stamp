@@ -1,13 +1,11 @@
-import "../../App.css";
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useCreateUserMutation } from "../../app/services/userApiSlice";
+import { useCreateUserMutation } from "../../../app/services/userApiSlice";
 import { useDispatch } from "react-redux";
-import { login } from "../../app/features/userSlice";
+import ButtonSaveChanges from "../../Buttons/ButtonSaveChanges";
 
-function SignUpForm() {
+function EditProfileForm() {
     const [createUser, { isLoading }] = useCreateUserMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -17,11 +15,9 @@ function SignUpForm() {
             .min(2, "Too Short!")
             .max(30, "Too Long!")
             .required("Required"),
-        email: Yup.string().email("Invalid email").required("Required"),
-        password: Yup.string()
-            .min(4, "Too Short!")
-            .max(30, "Too Long!")
-            .required("Required"),
+        phone: Yup.string()
+            .length(10, "Must be 10 digits")
+
     });
 
     return (
@@ -36,7 +32,7 @@ function SignUpForm() {
                 validationSchema={SignupSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     createUser(values)
-                        .then((r) => dispatch(login(r.data)))
+                        .then((r) => {})
                         .then(navigate("dashboard"));
                     setTimeout(() => {
                         setSubmitting(false);
@@ -76,42 +72,25 @@ function SignUpForm() {
                         </div>
                         <div class="mb-3">
                             <label
-                                htmlFor="email"
+                                htmlFor="phone"
                                 class="form-label float-start"
                             >
-                                Email address
+                                Full Name
                             </label>
                             <input
-                                id="email"
+                                id="phone"
                                 class="form-control"
-                                type="email"
-                                name="email"
+                                type="string"
+                                name="phone"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.email}
+                                value={values.phone}
                             />
-                            {errors.email && touched.email && errors.email}
+                            {errors.phone &&
+                                touched.phone &&
+                                errors.phone}
                         </div>
-                        <div class="mb-3">
-                            <label
-                                htmlFor="password"
-                                class="form-label float-start"
-                            >
-                                Create a password
-                            </label>
-                            <input
-                                id="password"
-                                class="form-control"
-                                type="password"
-                                name="password"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.password}
-                            />
-                            {errors.password &&
-                                touched.password &&
-                                errors.password}
-                        </div>
+
                         <div class="mb-3">
                             <label
                                 htmlFor="account_name"
@@ -132,28 +111,13 @@ function SignUpForm() {
                                 touched.account_name &&
                                 errors.account_name}
                         </div>
-
                         <div class="float-end">
                             {/*
                                 this needs a conditon
-                                if form is validated then close modal
-                                otherwise
-                                render error message
-                                ONE option is to create two seperate buttons
-                                would need to create state for errors,
-                                so button rerenders with correct attributes
+                                if form is changed then Save changes
+                                if form is not changed then cancel
                             */}
-
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                class="btn btn-primary"
-                                id="modal-btn-start-now"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            >
-                                Finish Sign Up
-                            </button>
+                            <ButtonSaveChanges isSubmitting={isSubmitting} />
                         </div>
                     </form>
                 )}
@@ -162,36 +126,4 @@ function SignUpForm() {
     );
 }
 
-export default SignUpForm;
-
-// fetch("http://localhost:4000/signup", {
-//     method: "POST",
-//     headers: {
-//         "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(values),
-// }).then((r) => {
-//     if (r.ok) {
-//         r.json().then((user) => dispatch(login(user)))
-//         .then(setTimeout(() => {
-//             setSubmitting(false);
-//         }, 400));
-//     } else {
-//         r.json().then((errorData) =>
-//             setErrors(errorData.errors)
-//         );
-//     }
-// });
-// validate={(values) => {
-//     const errors = {};
-//     if (!values.email) {
-//         errors.email = "Required";
-//     } else if (
-//         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-//             values.email
-//         )
-//     ) {
-//         errors.email = "Invalid email address";
-//     }
-//     return errors;
-// }}
+export default EditProfileForm;

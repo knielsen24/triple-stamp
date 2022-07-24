@@ -25,12 +25,22 @@ function UserDropDown() {
                         My profile
                     </a>
                 </li>
+                {/* <li>
+                    <a
+                        class="dropdown-item"
+                        href="profile"
+                        data-bs-toggle="modal"
+                        data-bs-target="#update-profile-form"
+                    >
+                        Edit profile
+                    </a>
+                </li> */}
                 <li>
                     <a class="dropdown-item" href="dashboard">
                         Dashboard
                     </a>
                 </li>
-                <hr class="border border-2 m-1"/>
+                <hr class="border border-2 m-1" />
                 <li>
                     {/* add log out icon */}
                     <Logout />

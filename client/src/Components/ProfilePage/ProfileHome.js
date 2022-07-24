@@ -32,14 +32,15 @@ function ProfileHome() {
 
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            Account name: {user.account_name}
-                        </li>
+
+                        <li class="list-group-item">Email: {user.email}</li>
+                        <li class="list-group-item">Phone: {user.phone} </li>
                         <li class="list-group-item">
                             Business: {user.business}{" "}
                         </li>
-                        <li class="list-group-item">Email: {user.email}</li>
-                        <li class="list-group-item">Phone: {user.phone} </li>
+                        <li class="list-group-item">
+                            Account name: {user.account_name}
+                        </li>
                     </ul>
                 </div>
                 <div class="card-footer bg-white text-muted text-center">

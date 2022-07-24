@@ -1,4 +1,5 @@
 import ButtonCloseModalX from "../../Buttons/ButtonCloseModalX";
+import EditProfileForm from "./EditProfileForm";
 
 
 function EditProfileModal() {
@@ -17,11 +18,10 @@ function EditProfileModal() {
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="update-profile-form">
-                                Welcome to tripleStamp
+                                Edit your profile information
                                 <div>
                                     <p id="modal-subtext">
-                                        Start now - it's free. No credit card
-                                        needed
+                                        Click update to save changes
                                     </p>
                                 </div>
                             </h5>
@@ -29,7 +29,7 @@ function EditProfileModal() {
                             <ButtonCloseModalX />
                         </div>
                         <div class="modal-body">
-                            {/* <SignUpForm /> */}
+                           <EditProfileForm />
                         </div>
 
                     </div>
