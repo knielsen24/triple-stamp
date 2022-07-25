@@ -1,7 +1,12 @@
-import React from "react";
+import { useUserPropertiesQuery } from "../../../app/services/propertyApiSlice";
+import { setUser } from "../../../app/features/userSlice";
+import { useSelector } from "react-redux";
 
 function PropertyDropDown() {
+    const user = useSelector(setUser);
 
+    const { data=[], isFetching } = useUserPropertiesQuery(user.id);
+    console.log(data)
     // need to fetch property data
     // map through property data to retrieve name for drop down menu
     // each a tag will render property details and units list

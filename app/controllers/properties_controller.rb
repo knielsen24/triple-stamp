@@ -2,7 +2,9 @@ class PropertiesController < ApplicationController
     skip_before_action :authorize, except: :index
 
     def index
-        render json:@current_user.properties
+        # user = User.find(params[:user_id])
+        # render json: user.properties.all
+        render json: @current_user.properties
     end
 
     def create
@@ -23,7 +25,8 @@ class PropertiesController < ApplicationController
             :country,
             :image,
             :units,
-            :user_id ,)
+            :user_id
+        )
     end
 
 end
