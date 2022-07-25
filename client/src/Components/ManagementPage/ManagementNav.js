@@ -3,7 +3,7 @@ import PropertyCard from "./Featured/PropertyCard";
 import AddPropertyModal from "./Sidebar/AddPropertyModal";
 import PropertyDropDown from "./Sidebar/PropertyDropDown";
 
-function PropertiesContainer() {
+function ManagementNav() {
     return (
         <div class="container border-endtext-center min-vh-100">
             <div class="row">
@@ -23,4 +23,4 @@ function PropertiesContainer() {
     );
 }
 
-export default PropertiesContainer;
+export default ManagementNav;

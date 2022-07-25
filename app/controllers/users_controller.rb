@@ -17,9 +17,15 @@ class UsersController < ApplicationController
         head :no_content
     end
 
+    # def update
+    #     @current_user.update!(user_update_params)
+    #     render json: @current_user, status: :accepted
+    # end
+
     def update
-        @current_user.update!(user_update_params)
-        render json: @current_user, status: :accepted
+        user = User.find(params[:id])
+        user.update!(user_update_params)
+        render json: user, status: :accepted
     end
 
     private
@@ -34,6 +40,9 @@ class UsersController < ApplicationController
 end
 
 # postman PATCH test successful with commented code
-# user = User.find(params[:id])
-        # user.update!(user_update_params)
-        # render json: user, status: :accepted
+#
+# def update
+#     user = User.find(params[:id])
+#     user.update!(user_update_params)
+#     render json: user, status: :accepted
+# end

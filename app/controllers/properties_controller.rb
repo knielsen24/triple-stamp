@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
     def index
         # user = User.find_by(id: session[:user_id])
         # render json: user.properties
-        render json: @current_user.properties
+        render json: @current_user.properties.all
     end
 
     def create

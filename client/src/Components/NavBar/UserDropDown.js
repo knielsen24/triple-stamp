@@ -21,14 +21,14 @@ function UserDropDown() {
 
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" href="profile">
+                    <a class="dropdown-item" href="/profile">
                         My profile
                     </a>
                 </li>
 
                 <li>
-                    <a class="dropdown-item" href="dashboard">
-                        Dashboard
+                    <a class="dropdown-item" href="/management">
+                        Management
                     </a>
                 </li>
                 <li><hr class="dropdown-divider"/></li>

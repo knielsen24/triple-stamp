@@ -17,7 +17,7 @@ function PropertyCard() {
                 <div class="text-center" id="profile-card-bg">
                     <div class="m-2 p-1">
                         <img
-                            src={homeIcon}
+                            src={!property.image ? homeIcon : property.image}
                             class="img-thumbnail"
                             alt="profileIcon"
                             width="150px"
@@ -34,10 +34,18 @@ function PropertyCard() {
                             Address: {property.address}
                         </li>
                         <li class="list-group-item">City: {property.city} </li>
-                        <li class="list-group-item">State: {property.state} </li>
-                        <li class="list-group-item">Zip code: {property.postal_code} </li>
-                        <li class="list-group-item">Country: {property.country} </li>
-                        <li class="list-group-item"># Units: {property.units} </li>
+                        <li class="list-group-item">
+                            State: {property.state}{" "}
+                        </li>
+                        <li class="list-group-item">
+                            Zip code: {property.postal_code}{" "}
+                        </li>
+                        <li class="list-group-item">
+                            Country: {property.country}{" "}
+                        </li>
+                        <li class="list-group-item">
+                            # Units: {property.units}{" "}
+                        </li>
                     </ul>
                 </div>
                 <div class="card-footer bg-white text-muted text-center">

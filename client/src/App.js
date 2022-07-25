@@ -8,7 +8,7 @@ import { setUser, login } from "./app/features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProfileHome from "./Components/ProfilePage/ProfileHome";
-import PropertiesContainer from "./Components/ManagementPage/ManagementContainer";
+import ManagementNav from "./Components/ManagementPage/ManagementNav";
 
 function App() {
     const user = useSelector(setUser);
@@ -38,20 +38,16 @@ function App() {
     return (
         <div class="container-fluid p-0" id="app-main-container">
             <Navbar />
+
             <Routes>
                 <Route path="/" element={!user ? <Home /> : null} />
-                <Route
-                    path="/dashboard"
-                    element={user ? <Dashboard /> : null}
-                />
-                <Route
-                    path="/profile"
-                    element={user ? <ProfileHome /> : null}
-                />
+                <Route path="/dashboard" element={user ? <Dashboard /> : null} />
+
                 <Route
                     path="/management"
-                    element={user ? <PropertiesContainer /> : null}
-                />
+                    element={user ? <ManagementNav /> : null}
+                ></Route>
+                <Route path="/profile" element={user ? <ProfileHome /> : null} />
             </Routes>
             <Footer />
         </div>

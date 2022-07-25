@@ -10,9 +10,8 @@ function EditProfileForm() {
     const [updateUser, { isLoading }] = useUpdateUserMutation();
     const dispatch = useDispatch();
     const user = useSelector(setUser);
-    console.log(user.id)
 
-    const SignupSchema = Yup.object().shape({
+    const profileSchema = Yup.object().shape({
         full_name: Yup.string()
             .min(2, "Too Short!")
             .max(30, "Too Long!")
@@ -31,8 +30,9 @@ function EditProfileForm() {
                     business: user.business,
                     account_name: user.account_name,
                 }}
-                validationSchema={SignupSchema}
+                validationSchema={profileSchema}
                 onSubmit={({values}, { setSubmitting }) => {
+                    console.log(values)
                     updateUser(values).then((r) => dispatch(login(r.data)));
                     setTimeout(() => {
                         setSubmitting(false);

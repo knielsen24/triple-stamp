@@ -1,6 +1,6 @@
 import React from "react";
 
-function PropertyNav() {
+function PropertyTabs() {
     return (
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -22,4 +22,4 @@ function PropertyNav() {
     );
 }
 
-export default PropertyNav;
+export default PropertyTabs;
