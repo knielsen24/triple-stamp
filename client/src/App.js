@@ -8,6 +8,7 @@ import { setUser, login } from "./app/features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProfileHome from "./Components/ProfilePage/ProfileHome";
+import PropertiesContainer from "./Components/ManagementPage/ManagementContainer";
 
 function App() {
     const user = useSelector(setUser);
@@ -33,7 +34,14 @@ function App() {
                     path="/dashboard"
                     element={user ? <Dashboard /> : null}
                 />
-                <Route path="/profile" element={user ? <ProfileHome /> : null } />
+                <Route
+                    path="/profile"
+                    element={user ? <ProfileHome /> : null}
+                />
+                <Route
+                    path="/management"
+                    element={user ? <PropertiesContainer /> : null}
+                />
             </Routes>
             <Footer />
         </div>

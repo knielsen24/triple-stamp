@@ -6,8 +6,8 @@ function DashboardLinks() {
             <a class="nav-link" href="/dashboard">
                 Dashboard
             </a>
-            <a class="nav-link" href="#">
-                Properties
+            <a class="nav-link" href="/management">
+                Management
             </a>
             <a class="nav-link" href="#">
                 Inspections
