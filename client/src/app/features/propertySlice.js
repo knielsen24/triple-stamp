@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    property: "Select Property",
+    property: {
+        name: "Select Property"
+    },
 };
 
 export const propertySlice = createSlice({

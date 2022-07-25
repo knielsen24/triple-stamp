@@ -1,11 +1,10 @@
-import { useState } from "react";
 import { setUser } from "../../../app/features/userSlice";
 import {
     selectProperty,
     setSelectProperty,
 } from "../../../app/features/propertySlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useUserPropertiesQuery } from "../../../app/services/propertyApiSlice";
+import { usePropertyListQuery } from "../../../app/services/propertyApiSlice";
 import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
 
 function PropertyDropDown() {
@@ -14,9 +13,8 @@ function PropertyDropDown() {
     const dispatch = useDispatch();
     // const navigate = useNavigate();
 
-    const { data = [], isFetching } = useUserPropertiesQuery("");
+    const { data = [], isFetching } = usePropertyListQuery("");
     const propertiesArray = data.properties;
-    console.log(data)
 
     const handleSelectProperty = (property) =>
         dispatch(selectProperty(property));
@@ -43,10 +41,10 @@ function PropertyDropDown() {
     }
 
     return (
-        <div class="mw-100 my-3">
-            <div class="dropdown mw-100">
+        <div class="w-100 ">
+            <div class="dropdown ">
                 <a
-                    class="btn btn-secondary dropdown-toggle"
+                    class="btn btn-secondary dropdown-toggle w-100"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"

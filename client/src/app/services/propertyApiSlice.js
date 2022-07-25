@@ -8,7 +8,7 @@ export const propertyApi = createApi({
     tagTypes: ["Property", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
-            userProperties: builder.query({
+            propertyList: builder.query({
                 query(id){
                     return `/users/${id}/properties`
                 }
@@ -29,4 +29,4 @@ export const propertyApi = createApi({
     },
 });
 
-export const { useUserPropertiesQuery, useCreatePropertyMutation } = propertyApi;
+export const { usePropertyListQuery, useCreatePropertyMutation } = propertyApi;
