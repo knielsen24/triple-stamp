@@ -1,6 +1,6 @@
 import "../../App.css";
 
-function ButtonCancelModalDelete({text}) {
+function ButtonCancelModal({text}) {
     return (
         <>
             <button
@@ -15,4 +15,4 @@ function ButtonCancelModalDelete({text}) {
     );
 }
 
-export default ButtonCancelModalDelete;
+export default ButtonCancelModal;

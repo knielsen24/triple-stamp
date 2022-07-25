@@ -1,5 +1,5 @@
 import "../../App.css";
-import ButtonCancelModalDelete from "../Buttons/ButtonCancelModalDelete";
+import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import ButtonDeleteUser from "../Buttons/ButtonDeleteUser";
 import { useNavigate } from "react-router-dom";
@@ -60,7 +60,7 @@ function DeleteProfileModal() {
                             </p>
                         </div>
                         <div class="modal-footer">
-                            <ButtonCancelModalDelete text={"cancel"} />
+                            <ButtonCancelModal text={"cancel"} />
                             <ButtonDeleteUser
                                 id={user.id}
                                 handleDeleteUser={handleDeleteUser}

@@ -47,7 +47,6 @@ function EditProfileForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
-                    /* and other goodies */
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div class="mb-3">
@@ -108,7 +107,6 @@ function EditProfileForm() {
                                 touched.business &&
                                 errors.business}
                         </div>
-
                         <div class="mb-3">
                             <label
                                 htmlFor="account_name"
@@ -135,7 +133,7 @@ function EditProfileForm() {
                                 if form is changed then Save changes
                                 if form is not changed then cancel
                             */}
-                            <ButtonSaveChanges isSubmitting={isSubmitting} />
+                            <ButtonSaveChanges text={"Save Changes"} isSubmitting={isSubmitting} />
                         </div>
                     </form>
                 )}

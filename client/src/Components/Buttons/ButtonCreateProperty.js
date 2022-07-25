@@ -1,6 +1,6 @@
 import React from "react";
 
-function ButtonSaveChanges({ isSubmitting, text }) {
+function ButtonCreateProperty({text, isSubmitting}) {
     return (
         <button
             type="submit"
@@ -15,4 +15,4 @@ function ButtonSaveChanges({ isSubmitting, text }) {
     );
 }
 
-export default ButtonSaveChanges;
+export default ButtonCreateProperty;

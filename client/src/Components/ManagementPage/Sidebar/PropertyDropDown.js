@@ -5,6 +5,7 @@ import { useUserPropertiesQuery } from "../../../app/services/propertyApiSlice";
 function PropertyDropDown() {
     const user = useSelector(setUser);
     const { data = [], isFetching } = useUserPropertiesQuery("");
+    // create state for drop down menu value
 
     const propertiesArray = data.properties;
     // need to fetch property data
@@ -38,9 +39,25 @@ function PropertyDropDown() {
                     Select Property
                 </a>
 
-                <ul class="dropdown-menu">{propertyList}</ul>
+                <ul class="dropdown-menu">
+                    {propertyList}
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                        <a
+                            a
+                            class="dropdown-item"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#add-property-form"
+                        >
+                            {/* add plus icon */}+ Add property
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <hr/>
+            <hr />
         </div>
     );
 }

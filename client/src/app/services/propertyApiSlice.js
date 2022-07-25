@@ -13,8 +13,20 @@ export const propertyApi = createApi({
                     return `/users/${id}/properties`
                 }
             }),
+
+            createProperty: builder.mutation({
+                query: ({ ...data }) => ({
+                    url: `/users/${data.user_id}/properties`,
+                    method: "POST",
+                    body: data,
+                }),
+                invalidatesTags: (result, error, arg) => [
+                    { type: "Property", id: arg.id },
+                ],
+            }),
+
         };
     },
 });
 
-export const { useUserPropertiesQuery } = propertyApi;
+export const { useUserPropertiesQuery, useCreatePropertyMutation } = propertyApi;
