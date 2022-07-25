@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
     # PROPERTY #
     get "/users/:id/properties", to: "properties#index"
-    get "/properties/:id", to: "properties#show"
+    # get "/properties/:id", to: "properties#show"
     post "/users/:id/properties", to: "properties#create"
     patch "/properties/:id", to: "properties#update"
     delete "/properties/:id", to: "properties#destroy"

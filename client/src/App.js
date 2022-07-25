@@ -25,6 +25,16 @@ function App() {
         });
     }, []);
 
+    // useEffect(() => {
+    //     fetch(`/users/${user.id}/properties`).then((r) => {
+    //         if (r.ok) {
+    //             r.json().then((r) => console.log(r));
+    //         } else {
+    //             navigate("/");
+    //         }
+    //     });
+    // }, []);
+
     return (
         <div class="container-fluid p-0" id="app-main-container">
             <Navbar />

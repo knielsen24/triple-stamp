@@ -1,23 +1,40 @@
+import { useState } from "react";
 import { setUser } from "../../../app/features/userSlice";
-import { useSelector } from "react-redux";
+import {
+    selectProperty,
+    setSelectProperty,
+} from "../../../app/features/propertySlice";
+import { useSelector, useDispatch } from "react-redux";
 import { useUserPropertiesQuery } from "../../../app/services/propertyApiSlice";
+import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
 
 function PropertyDropDown() {
     const user = useSelector(setUser);
+    const property = useSelector(setSelectProperty);
+    const dispatch = useDispatch();
+    // const navigate = useNavigate();
+
     const { data = [], isFetching } = useUserPropertiesQuery("");
-    // create state for drop down menu value
-
     const propertiesArray = data.properties;
-    // need to fetch property data
-    // map through property data to retrieve name for drop down menu
-    // each a tag will render property details and units list
-    let propertyList;
+    console.log(data)
 
+    const handleSelectProperty = (property) =>
+        dispatch(selectProperty(property));
+
+    let propertyList;
+    // need useParams to render property link
     if (propertiesArray) {
         propertyList = propertiesArray.map((property) => {
             return (
                 <li key={property.id}>
-                    <a class="dropdown-item" href="#">
+                    <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleSelectProperty(property);
+                        }}
+                    >
                         {property.name}
                     </a>
                 </li>
@@ -26,9 +43,8 @@ function PropertyDropDown() {
     }
 
     return (
-        <div>
-            <p class="text-start">Property</p>
-            <div class="dropdown">
+        <div class="mw-100 my-3">
+            <div class="dropdown mw-100">
                 <a
                     class="btn btn-secondary dropdown-toggle"
                     href="#"
@@ -36,28 +52,18 @@ function PropertyDropDown() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                 >
-                    Select Property
+                    {property.name}
                 </a>
-
                 <ul class="dropdown-menu">
                     {propertyList}
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
                     <li>
-                        <a
-                            a
-                            class="dropdown-item"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#add-property-form"
-                        >
-                            {/* add plus icon */}+ Add property
-                        </a>
+                        <ButtonOpenAddPropertyModal />
                     </li>
                 </ul>
             </div>
-            <hr />
         </div>
     );
 }
