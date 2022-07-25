@@ -1,15 +1,28 @@
-import { useUserPropertiesQuery } from "../../../app/services/propertyApiSlice";
 import { setUser } from "../../../app/features/userSlice";
 import { useSelector } from "react-redux";
+import { useUserPropertiesQuery } from "../../../app/services/propertyApiSlice";
 
 function PropertyDropDown() {
     const user = useSelector(setUser);
+    const { data = [], isFetching } = useUserPropertiesQuery("");
 
-    const { data=[], isFetching } = useUserPropertiesQuery(user.id);
-    console.log(data)
+    const propertiesArray = data.properties;
     // need to fetch property data
     // map through property data to retrieve name for drop down menu
     // each a tag will render property details and units list
+    let propertyList;
+
+    if (propertiesArray) {
+        propertyList = propertiesArray.map((property) => {
+            return (
+                <li key={property.id}>
+                    <a class="dropdown-item" href="#">
+                        {property.name}
+                    </a>
+                </li>
+            );
+        });
+    }
 
     return (
         <div>
@@ -25,24 +38,9 @@ function PropertyDropDown() {
                     Select Property
                 </a>
 
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            Action
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            Another action
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            Something else here
-                        </a>
-                    </li>
-                </ul>
+                <ul class="dropdown-menu">{propertyList}</ul>
             </div>
+            <hr/>
         </div>
     );
 }

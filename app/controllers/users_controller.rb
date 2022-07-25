@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: @current_user
+        render json: @current_user, serializer: UserWithPropertiesSerializer
     end
 
     def destroy
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     end
 
     def user_update_params
-        params.permit(:id, :full_name, :phone, :business, :account_name)
+        params.permit(:full_name, :phone, :business, :account_name)
     end
 end
 

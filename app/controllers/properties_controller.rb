@@ -2,8 +2,8 @@ class PropertiesController < ApplicationController
     skip_before_action :authorize, except: :index
 
     def index
-        # user = User.find(params[:user_id])
-        # render json: user.properties.all
+        # user = User.find_by(id: session[:user_id])
+        # render json: user.properties
         render json: @current_user.properties
     end
 

@@ -10,6 +10,7 @@ function EditProfileForm() {
     const [updateUser, { isLoading }] = useUpdateUserMutation();
     const dispatch = useDispatch();
     const user = useSelector(setUser);
+    console.log(user.id)
 
     const SignupSchema = Yup.object().shape({
         full_name: Yup.string()
@@ -24,13 +25,14 @@ function EditProfileForm() {
         <div>
             <Formik
                 initialValues={{
+                    id: user.id,
                     full_name: user.full_name,
                     phone: user.phone,
                     business: user.business,
                     account_name: user.account_name,
                 }}
                 validationSchema={SignupSchema}
-                onSubmit={(values, { setSubmitting }) => {
+                onSubmit={({values}, { setSubmitting }) => {
                     updateUser(values).then((r) => dispatch(login(r.data)));
                     setTimeout(() => {
                         setSubmitting(false);

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :properties
+    has_many :properties, dependent: :destroy
     has_many :units, through: :properties
     has_secure_password
 
