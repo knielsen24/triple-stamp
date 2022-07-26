@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { setUser } from "../../app/features/userSlice";
 import UserDropDown from "./UserDropDown";
 import ButtonStartNow from "../Buttons/ButtonStartNow";
-import DashboardLinks from "./NavLinks/DashboardLinks";
-import HomeLinks from "./NavLinks/HomeLinks";
+import DashboardLinks from "./DashboardLinks";
+import HomeLinks from "./HomeLinks";
 
 function Navbar() {
     const user = useSelector(setUser);

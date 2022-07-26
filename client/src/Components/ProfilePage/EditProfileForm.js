@@ -1,10 +1,10 @@
-import ButtonSaveChanges from "../../Buttons/ButtonSaveChanges";
+import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "yup-phone";
-import { useUpdateUserMutation } from "../../../app/services/userApiSlice";
+import { useUpdateUserMutation } from "../../app/services/userApiSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { login, setUser } from "../../../app/features/userSlice";
+import { login, setUser } from "../../app/features/userSlice";
 
 function EditProfileForm() {
     const [updateUser, { isLoading }] = useUpdateUserMutation();

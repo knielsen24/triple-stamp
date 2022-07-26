@@ -1,4 +1,4 @@
-import ButtonCloseModalX from "../../Buttons/ButtonCloseModalX";
+import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import EditProfileForm from "./EditProfileForm";
 
 
