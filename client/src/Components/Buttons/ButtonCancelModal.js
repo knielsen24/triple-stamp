@@ -6,7 +6,7 @@ function ButtonCancelModal({text}) {
             <button
                 type="button"
                 id="nav-btn-start-now"
-                class="btn btn-primary m-sm-auto"
+                className="btn btn-primary m-sm-auto"
                 data-bs-dismiss="modal"
             >
                 {text}

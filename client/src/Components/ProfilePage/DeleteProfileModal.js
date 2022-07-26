@@ -36,7 +36,7 @@ function DeleteProfileModal() {
     return (
         <div>
             <div
-                class="modal fade"
+                className="modal fade"
                 id="delete-account"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
@@ -44,22 +44,22 @@ function DeleteProfileModal() {
                 aria-labelledby="delete-account"
                 aria-hidden="true"
             >
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="delete-account">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="delete-account">
                                 Are you sure you want to delete your account?
                             </h5>
                             <ButtonCloseModalX />
                         </div>
-                        <div class="modal-body">
-                            <p class="float-start m-0" id="modal-subtext">
+                        <div className="modal-body">
+                            <p className="float-start m-0" id="modal-subtext">
                                 By clicking "Delete My Account" will permantly
                                 remove your account with tripleStamp and your
                                 information will not be recoverable.
                             </p>
                         </div>
-                        <div class="modal-footer">
+                        <div className="modal-footer">
                             <ButtonCancelModal text={"cancel"} />
                             <ButtonDeleteUser
                                 id={user.id}

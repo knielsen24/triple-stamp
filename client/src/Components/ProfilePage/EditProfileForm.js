@@ -11,7 +11,6 @@ function EditProfileForm() {
     const user = useSelector(setUser);
     const [updateUser, { isLoading }] = useUpdateUserMutation();
 
-
     const updateSchema = Yup.object().shape({
         full_name: Yup.string()
             .min(2, "Too Short!")
@@ -32,7 +31,6 @@ function EditProfileForm() {
                     business: user.business || "",
                     account_name: user.account_name,
                 }}
-
                 validationSchema={updateSchema}
                 onSubmit={({ values }, { setSubmitting }) => {
                     if (values) {
@@ -54,16 +52,16 @@ function EditProfileForm() {
                     isSubmitting,
                 }) => (
                     <form onSubmit={handleSubmit}>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="full_name"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Full Name
                             </label>
                             <input
                                 id="full_name"
-                                class="form-control"
+                                className="form-control"
                                 type="string"
                                 name="full_name"
                                 onChange={handleChange}
@@ -74,16 +72,16 @@ function EditProfileForm() {
                                 touched.full_name &&
                                 errors.full_name}
                         </div>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="phone"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Phone
                             </label>
                             <input
                                 id="phone"
-                                class="form-control"
+                                className="form-control"
                                 type="string"
                                 name="phone"
                                 onChange={handleChange}
@@ -92,16 +90,16 @@ function EditProfileForm() {
                             />
                             {errors.phone && touched.phone && errors.phone}
                         </div>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="business"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Business
                             </label>
                             <input
                                 id="business"
-                                class="form-control"
+                                className="form-control"
                                 type="string"
                                 name="business"
                                 onChange={handleChange}
@@ -112,16 +110,16 @@ function EditProfileForm() {
                                 touched.business &&
                                 errors.business}
                         </div>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="account_name"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Account Name
                             </label>
                             <input
                                 id="account_name"
-                                class="form-control"
+                                className="form-control"
                                 type="string"
                                 name="account_name"
                                 onChange={handleChange}
@@ -132,11 +130,11 @@ function EditProfileForm() {
                                 touched.account_name &&
                                 errors.account_name}
                         </div>
-                        <div class="float-end">
+                        <div className="float-end">
                             {/* <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 id="modal-btn-start-now"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"

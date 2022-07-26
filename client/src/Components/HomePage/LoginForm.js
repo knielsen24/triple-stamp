@@ -47,16 +47,16 @@ function LoginForm() {
                     isSubmitting,
                 }) => (
                     <form onSubmit={handleSubmit}>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="email"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Email address
                             </label>
                             <input
                                 id="email"
-                                class="form-control"
+                                className="form-control"
                                 type="email"
                                 name="email"
                                 onChange={handleChange}
@@ -65,16 +65,16 @@ function LoginForm() {
                             />
                             {errors.email && touched.email && errors.email}
                         </div>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="password"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Enter password
                             </label>
                             <input
                                 id="password"
-                                class="form-control"
+                                className="form-control"
                                 type="password"
                                 name="password"
                                 onChange={handleChange}
@@ -86,7 +86,7 @@ function LoginForm() {
                                 errors.password}
                         </div>
 
-                        <div class="float-end">
+                        <div className="float-end">
                             {/*
                                 this needs a conditon
                                 if form is validated then close modal
@@ -97,7 +97,7 @@ function LoginForm() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 id="modal-btn-start-now"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"

@@ -5,7 +5,7 @@ function ButtonCloseModalX() {
         <>
             <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
             ></button>

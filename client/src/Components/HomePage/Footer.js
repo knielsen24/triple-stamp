@@ -9,40 +9,40 @@ function Footer() {
 
     return (
         <div
-            class="container-fluid text-center border-top border-1 my-4"
+            className="container-fluid text-center border-top border-1 my-4"
             id="footer-container"
         >
-            <div class="row mt-2">
-                <div class="col">
+            <div className="row mt-2">
+                <div className="col">
                     <a
-                        class="nav-link"
+                        className="nav-link"
                         id="footer-links"
                         href={presentationUrl}
                     >
                         Proposal
                     </a>
                 </div>
-                <div class="col">
+                <div className="col">
                     <a
-                        class="nav-link"
+                        className="nav-link"
                         id="footer-links"
                         href={githubUrl}
                     >
                         Github
                     </a>
                 </div>
-                <div class="col">
+                <div className="col">
                     <a
-                        class="nav-link"
+                        className="nav-link"
                         id="footer-links"
                         href={linkedinUrl}
                     >
                         LinkedIn
                     </a>
                 </div>
-                <div class="col">
+                <div className="col">
                     <a
-                        class="nav-link"
+                        className="nav-link"
                         id="footer-links"
                         href={figmaUrl}
                     >

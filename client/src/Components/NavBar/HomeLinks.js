@@ -3,11 +3,11 @@ import "../../App.css";
 function HomeLinks() {
     return (
         <>
-            <a class="nav-link" href="#">
+            <a className="nav-link" href="#">
                 Features
             </a>
             <a
-                class="nav-link"
+                className="nav-link"
                 href="#"
                 data-bs-toggle="modal"
                 data-bs-target="#login-form"

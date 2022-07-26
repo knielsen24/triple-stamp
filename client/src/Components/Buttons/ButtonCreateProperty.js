@@ -5,7 +5,7 @@ function ButtonCreateProperty({text, isSubmitting}) {
         <button
             type="submit"
             disabled={isSubmitting}
-            class="btn btn-primary"
+            className="btn btn-primary"
             id="modal-btn-start-now"
             data-bs-dismiss="modal"
             aria-label="Close"

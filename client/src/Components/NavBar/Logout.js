@@ -25,7 +25,7 @@ function Logout() {
     return (
         <>
             <a
-                class="dropdown-item"
+                className="dropdown-item"
                 href="#"
                 onClick={(e) => {
                     e.preventDefault();

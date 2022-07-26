@@ -6,7 +6,7 @@ function EditProfileModal() {
     return (
         <div>
             <div
-                class="modal fade"
+                className="modal fade"
                 id="update-profile-form"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
@@ -14,10 +14,10 @@ function EditProfileModal() {
                 aria-labelledby="update-profile-form"
                 aria-hidden="true"
             >
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="update-profile-form">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="update-profile-form">
                                 Edit your profile information
                                 <div>
                                     <p id="modal-subtext">
@@ -28,7 +28,7 @@ function EditProfileModal() {
 
                             <ButtonCloseModalX />
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                            <EditProfileForm />
                         </div>
 

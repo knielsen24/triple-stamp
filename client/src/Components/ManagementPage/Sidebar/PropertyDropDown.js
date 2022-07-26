@@ -26,7 +26,7 @@ function PropertyDropDown() {
             return (
                 <li key={property.id}>
                     <a
-                        class="dropdown-item"
+                        className="dropdown-item"
                         href="#"
                         onClick={(e) => {
                             e.preventDefault();
@@ -41,10 +41,10 @@ function PropertyDropDown() {
     }
 
     return (
-        <div class="w-100 ">
-            <div class="dropdown ">
+        <div className="w-100 ">
+            <div className="dropdown ">
                 <a
-                    class="btn btn-secondary dropdown-toggle w-100"
+                    className="btn btn-secondary dropdown-toggle w-100"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -52,10 +52,10 @@ function PropertyDropDown() {
                 >
                     {property.name}
                 </a>
-                <ul class="dropdown-menu">
+                <ul className="dropdown-menu">
                     {propertyList}
                     <li>
-                        <hr class="dropdown-divider" />
+                        <hr className="dropdown-divider" />
                     </li>
                     <li>
                         <ButtonOpenAddPropertyModal />

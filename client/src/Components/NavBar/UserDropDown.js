@@ -7,9 +7,9 @@ function UserDropDown() {
     const user = useSelector(setUser);
 
     return (
-        <div class="dropdown center">
+        <div className="dropdown center">
             <a
-                class="btn btn-secondary dropdown-toggle align-bottom"
+                className="btn btn-secondary dropdown-toggle align-bottom"
                 id="nav-drop-down-btn"
                 href="#"
                 role="button"
@@ -19,19 +19,19 @@ function UserDropDown() {
                 {user.full_name}
             </a>
 
-            <ul class="dropdown-menu">
+            <ul className="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" href="profile">
+                    <a className="dropdown-item" href="profile">
                         My profile
                     </a>
                 </li>
 
                 <li>
-                    <a class="dropdown-item" href="dashboard">
+                    <a className="dropdown-item" href="dashboard">
                         Dashboard
                     </a>
                 </li>
-                <li><hr class="dropdown-divider"/></li>
+                <li><hr className="dropdown-divider"/></li>
                 <li>
                     {/* add log out icon */}
                     <Logout />

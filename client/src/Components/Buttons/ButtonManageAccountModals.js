@@ -4,7 +4,7 @@ function ButtonManageAccountModals({ target, text }) {
     return (
         <>
             <a
-                class="nav-link "
+                className="nav-link "
                 href="#"
                 role="button"
                 data-bs-toggle="modal"

@@ -5,7 +5,7 @@ function ButtonCancelAddProperty() {
         <>
             <button
                 type="button"
-                class="btn border m-sm-auto"
+                className="btn border m-sm-auto"
                 data-bs-dismiss="modal"
             >
                 Cancel

@@ -2,7 +2,7 @@ import React from "react";
 
 function Dashboard() {
     return (
-        <div class="container-fluid text-center">
+        <div className="container-fluid text-center">
             Dashboard
         </div>
     );

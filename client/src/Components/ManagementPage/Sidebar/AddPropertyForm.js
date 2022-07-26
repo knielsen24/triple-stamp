@@ -44,16 +44,16 @@ function AddPropertyForm() {
                     isSubmitting,
                 }) => (
                     <form onSubmit={handleSubmit}>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="name"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Property name
                             </label>
                             <input
                                 id="name"
-                                class="form-control"
+                                className="form-control"
                                 type="name"
                                 name="name"
                                 onChange={handleChange}
@@ -63,7 +63,7 @@ function AddPropertyForm() {
                             {errors.name && touched.name && errors.name}
                         </div>
 
-                        <div class="float-end">
+                        <div className="float-end">
                             {/*
                                 this needs a conditon
                                 if form is validated then close modal
@@ -74,7 +74,7 @@ function AddPropertyForm() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 id="modal-btn-start-now"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"

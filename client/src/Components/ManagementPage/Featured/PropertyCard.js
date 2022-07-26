@@ -12,35 +12,35 @@ function PropertyCard() {
     const property = useSelector(setSelectProperty);
 
     return (
-        <div class="container align-content-items-center">
-            <div id="profile-main-card-container" class="card m-3">
-                <div class="text-center" id="profile-card-bg">
-                    <div class="m-2 p-1">
+        <div className="container align-content-items-center">
+            <div id="profile-main-card-container" className="card m-3">
+                <div className="text-center" id="profile-card-bg">
+                    <div className="m-2 p-1">
                         <img
                             src={homeIcon}
-                            class="img-thumbnail"
+                            className="img-thumbnail"
                             alt="profileIcon"
                             width="150px"
                         />
                     </div>
-                    <div class="header text-center text-white">
-                        <h5 class="card-title">{property.name}</h5>
+                    <div className="header text-center text-white">
+                        <h5 className="card-title">{property.name}</h5>
                     </div>
                 </div>
 
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
+                <div className="card-body">
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">
                             Address: {property.address}
                         </li>
-                        <li class="list-group-item">City: {property.city} </li>
-                        <li class="list-group-item">State: {property.state} </li>
-                        <li class="list-group-item">Zip code: {property.postal_code} </li>
-                        <li class="list-group-item">Country: {property.country} </li>
-                        <li class="list-group-item"># Units: {property.units} </li>
+                        <li className="list-group-item">City: {property.city} </li>
+                        <li className="list-group-item">State: {property.state} </li>
+                        <li className="list-group-item">Zip code: {property.postal_code} </li>
+                        <li className="list-group-item">Country: {property.country} </li>
+                        <li className="list-group-item"># Units: {property.units} </li>
                     </ul>
                 </div>
-                <div class="card-footer bg-white text-muted text-center">
+                <div className="card-footer bg-white text-muted text-center">
                     <ButtonManageAccountModals
                         target={""}
                         text={"Edit Details"}

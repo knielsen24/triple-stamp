@@ -58,16 +58,16 @@ function SignUpForm() {
                     /* and other goodies */
                 }) => (
                     <form onSubmit={handleSubmit}>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="full_name"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Full Name
                             </label>
                             <input
                                 id="full_name"
-                                class="form-control"
+                                className="form-control"
                                 type="string"
                                 name="full_name"
                                 onChange={handleChange}
@@ -78,16 +78,16 @@ function SignUpForm() {
                                 touched.full_name &&
                                 errors.full_name}
                         </div>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="email-signup"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Email address
                             </label>
                             <input
                                 id="email-signup"
-                                class="form-control"
+                                className="form-control"
                                 type="email"
                                 name="email"
                                 onChange={handleChange}
@@ -96,16 +96,16 @@ function SignUpForm() {
                             />
                             {errors.email && touched.email && errors.email}
                         </div>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="password-signup"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Create a password
                             </label>
                             <input
                                 id="password-signup"
-                                class="form-control"
+                                className="form-control"
                                 type="password"
                                 name="password"
                                 onChange={handleChange}
@@ -116,16 +116,16 @@ function SignUpForm() {
                                 touched.password &&
                                 errors.password}
                         </div>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label
                                 htmlFor="account_name"
-                                class="form-label float-start"
+                                className="form-label float-start"
                             >
                                 Account Name
                             </label>
                             <input
                                 id="account_name"
-                                class="form-control"
+                                className="form-control"
                                 type="string"
                                 name="account_name"
                                 onChange={handleChange}
@@ -137,7 +137,7 @@ function SignUpForm() {
                                 errors.account_name}
                         </div>
 
-                        <div class="float-end">
+                        <div className="float-end">
                             {/*
                                 this needs a conditon
                                 if form is validated then close modal
@@ -151,7 +151,7 @@ function SignUpForm() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 id="modal-btn-start-now"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"

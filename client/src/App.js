@@ -15,7 +15,7 @@ function App() {
     const user = useSelector(setUser);
     const navigate = useNavigate();
 
-    const baseUrl = "http://localhost:4000"
+    const baseUrl = "http://localhost:4000";
 
     useEffect(() => {
         fetch(`${baseUrl}/me`).then((r) => {
@@ -26,7 +26,6 @@ function App() {
             }
         });
     }, []);
-
 
     // useEffect(() => {
     //     fetch(`/users/${user.id}/properties`).then((r) => {
@@ -39,7 +38,7 @@ function App() {
     // }, []);
 
     return (
-        <div class="container-fluid p-0" id="app-main-container">
+        <div className="container-fluid p-0" id="app-main-container">
             <Navbar />
             <Routes>
                 <Route path="/" element={!user ? <Home /> : null} />

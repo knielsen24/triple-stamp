@@ -6,7 +6,7 @@ function AddPropertyModal() {
     return (
         <div>
             <div
-                class="modal fade"
+                className="modal fade"
                 id="add-property-form"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
@@ -14,15 +14,15 @@ function AddPropertyModal() {
                 aria-labelledby="add-property-form"
                 aria-hidden="true"
             >
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="add-property-form">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="add-property-form">
                                 Create property
                             </h5>
                             <ButtonCloseModalX />
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <AddPropertyForm />
                         </div>
                     </div>

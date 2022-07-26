@@ -6,13 +6,13 @@ import StartNowModal from "./StartNowModal";
 
 function Home() {
     return (
-        <div class="container-fluid">
-            <div class="container text-center" id="home-ban">
+        <div className="container-fluid">
+            <div className="container text-center" id="home-ban">
                 <header id="ban-statement">
                     transforming real estate task management
                 </header>
                 <BannerCardsContainer />
-                <div class="m-sm-auto">
+                <div className="m-sm-auto">
                     <ButtonStartNow />
                 </div>
                 <StartNowModal />
