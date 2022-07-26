@@ -1,7 +1,5 @@
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX"
 import EditProfileForm from "./EditProfileForm";
-import EditProfileForm2 from "./EditProfileForm2";
-
 
 function EditProfileModal() {
     return (
@@ -31,7 +29,7 @@ function EditProfileModal() {
                         </div>
                         <div className="modal-body">
                            {/* <EditProfileForm /> */}
-                           <EditProfileForm2 />
+                           <EditProfileForm />
                         </div>
 
                     </div>
