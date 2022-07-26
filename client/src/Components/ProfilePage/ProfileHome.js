@@ -3,7 +3,7 @@ import profileIcon from "../../assets/person-icon.svg";
 import { useSelector } from "react-redux";
 import { setUser } from "../../app/features/userSlice";
 import DeleteProfileModal from "./DeleteProfileModal";
-import EditProfileModal from "./updateForm/EditProfileModal";
+import EditProfileModal from "./EditProfileModal";
 import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 
 function ProfileHome() {
