@@ -15,6 +15,7 @@ export const userApi = createApi({
                     body: signUpData,
                 }),
                 invalidatesTags: (result, error, arg) => [
+                    console.log(result),
                     { type: "User", id: arg.id },
                 ],
             }),

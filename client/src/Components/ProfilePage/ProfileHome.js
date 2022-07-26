@@ -16,7 +16,7 @@ function ProfileHome() {
                         <img
                             src={
                                 user.img_profile
-                                    ? user.img_profile
+                                    ? user.image
                                     : profileIcon
                             }
                             class="img-thumbnail"

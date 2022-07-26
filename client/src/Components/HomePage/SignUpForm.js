@@ -22,6 +22,10 @@ function SignUpForm() {
             .min(4, "Too Short!")
             .max(30, "Too Long!")
             .required("Required"),
+        account_name: Yup.string()
+            .min(2, "Too Short!")
+            .max(30, "Too Long!")
+            .required("Required"),
     });
 
     return (
@@ -76,13 +80,13 @@ function SignUpForm() {
                         </div>
                         <div class="mb-3">
                             <label
-                                htmlFor="email"
+                                htmlFor="email-signup"
                                 class="form-label float-start"
                             >
                                 Email address
                             </label>
                             <input
-                                id="email"
+                                id="email-signup"
                                 class="form-control"
                                 type="email"
                                 name="email"
@@ -94,13 +98,13 @@ function SignUpForm() {
                         </div>
                         <div class="mb-3">
                             <label
-                                htmlFor="password"
+                                htmlFor="password-signup"
                                 class="form-label float-start"
                             >
                                 Create a password
                             </label>
                             <input
-                                id="password"
+                                id="password-signup"
                                 class="form-control"
                                 type="password"
                                 name="password"

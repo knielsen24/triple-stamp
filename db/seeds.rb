@@ -21,7 +21,7 @@ puts "🌱 double stamping..."
         account_name: account_name,
         email: email,
         password_digest: password,
-        profile_img: image,
+        image: image,
     )
 end
 

@@ -11,12 +11,14 @@ import ProfileHome from "./Components/ProfilePage/ProfileHome";
 import PropertiesContainer from "./Components/ManagementPage/ManagementContainer";
 
 function App() {
-    const user = useSelector(setUser);
     const dispatch = useDispatch();
+    const user = useSelector(setUser);
     const navigate = useNavigate();
 
+    const baseUrl = "http://localhost:4000"
+
     useEffect(() => {
-        fetch("/me").then((r) => {
+        fetch(`${baseUrl}/me`).then((r) => {
             if (r.ok) {
                 r.json().then((user) => dispatch(login(user)));
             } else {
@@ -24,6 +26,7 @@ function App() {
             }
         });
     }, []);
+
 
     // useEffect(() => {
     //     fetch(`/users/${user.id}/properties`).then((r) => {

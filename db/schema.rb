@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 2022_07_24_171123) do
   enable_extension "plpgsql"
 
   create_table "properties", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.string "postal_code"
-    t.string "country"
-    t.string "image"
-    t.integer "units"
+    t.string "name", null: false
+    t.string "address", default: ""
+    t.string "city", default: ""
+    t.string "state", default: ""
+    t.string "postal_code", default: ""
+    t.string "country", default: ""
+    t.string "image", default: ""
+    t.integer "units", default: 1, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -31,15 +31,15 @@ ActiveRecord::Schema.define(version: 2022_07_24_171123) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "full_name"
-    t.string "email"
-    t.string "phone"
-    t.string "account_name"
-    t.string "profile_img"
-    t.string "password_digest"
+    t.string "full_name", null: false
+    t.string "email", null: false
+    t.string "phone", default: ""
+    t.string "account_name", null: false
+    t.string "image", default: ""
+    t.string "business", default: ""
+    t.string "password_digest", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "business"
   end
 
   add_foreign_key "properties", "users"

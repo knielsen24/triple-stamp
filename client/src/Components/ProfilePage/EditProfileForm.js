@@ -1,24 +1,25 @@
-import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "yup-phone";
 import { useUpdateUserMutation } from "../../app/services/userApiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { login, setUser } from "../../app/features/userSlice";
+import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 
 function EditProfileForm() {
-    const [updateUser, { isLoading }] = useUpdateUserMutation();
     const dispatch = useDispatch();
     const user = useSelector(setUser);
-    console.log(user.id)
+    const [updateUser, { isLoading }] = useUpdateUserMutation();
 
-    const SignupSchema = Yup.object().shape({
+
+    const updateSchema = Yup.object().shape({
         full_name: Yup.string()
             .min(2, "Too Short!")
             .max(30, "Too Long!")
             .required("Required"),
-        phone: Yup.string().phone(),
-        business: Yup.string().max(30, "Too Long!"),
+        phone: Yup.string().phone().nullable(),
+        business: Yup.string().max(30, "Too Long!").nullable(),
+        account_name: Yup.string().max(30, "Too Long!").nullable(),
     });
 
     return (
@@ -27,16 +28,20 @@ function EditProfileForm() {
                 initialValues={{
                     id: user.id,
                     full_name: user.full_name,
-                    phone: user.phone,
-                    business: user.business,
+                    phone: user.phone || "",
+                    business: user.business || "",
                     account_name: user.account_name,
                 }}
-                validationSchema={SignupSchema}
-                onSubmit={({values}, { setSubmitting }) => {
-                    updateUser(values).then((r) => dispatch(login(r.data)));
-                    setTimeout(() => {
-                        setSubmitting(false);
-                    }, 400);
+
+                validationSchema={updateSchema}
+                onSubmit={({ values }, { setSubmitting }) => {
+                    if (values) {
+                        console.log(values);
+                        updateUser(values).then((r) => dispatch(login(r.data)));
+                        setTimeout(() => {
+                            setSubmitting(false);
+                        }, 400);
+                    }
                 }}
             >
                 {({
@@ -121,19 +126,32 @@ function EditProfileForm() {
                                 name="account_name"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.account_name}
+                                value={values.account_name || ""}
                             />
                             {errors.account_name &&
                                 touched.account_name &&
                                 errors.account_name}
                         </div>
                         <div class="float-end">
+                            {/* <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                class="btn btn-primary"
+                                id="modal-btn-start-now"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                Save Changes
+                            </button> */}
                             {/*
                                 this needs a conditon
                                 if form is changed then Save changes
                                 if form is not changed then cancel
                             */}
-                            <ButtonSaveChanges text={"Save Changes"} isSubmitting={isSubmitting} />
+                            <ButtonSaveChanges
+                                text={"Save Changes"}
+                                isSubmitting={isSubmitting}
+                            />
                         </div>
                     </form>
                 )}

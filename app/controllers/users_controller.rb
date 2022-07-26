@@ -25,11 +25,11 @@ class UsersController < ApplicationController
     private
 
     def user_sign_up_params
-        params.permit(:id, :full_name, :email, :password, :account_name)
+        params.permit(:full_name, :email, :password, :account_name)
     end
 
     def user_update_params
-        params.permit(:full_name, :phone, :business, :account_name)
+        params.permit(:full_name, :phone, :business, :account_name, :image)
     end
 end
 
