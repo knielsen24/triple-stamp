@@ -17,7 +17,7 @@ function App() {
     const navigate = useNavigate();
     // const [user, setUser] = useState(null)
 
-    const { data, isLoading } = useFetchUserQuery();
+    const { data = [], isLoading } = useFetchUserQuery();
     console.log(data)
 
     // const user = ({user, skip}:)

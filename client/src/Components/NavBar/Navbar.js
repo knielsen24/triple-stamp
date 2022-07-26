@@ -9,7 +9,7 @@ import HomeLinks from "./HomeLinks";
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function Navbar() {
-    const { data, isLoading } = useFetchUserQuery();
+    const { data = [] , isLoading } = useFetchUserQuery();
 
     return (
         <nav

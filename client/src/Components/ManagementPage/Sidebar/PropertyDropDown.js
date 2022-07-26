@@ -8,7 +8,7 @@ import { useFetchPropertiesQuery } from "../../../app/services/userApiSlice";
 import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
 
 function PropertyDropDown() {
-    const user = useSelector(setUser);
+    // const user = useSelector(setUser);
     const property = useSelector(setSelectProperty);
     const dispatch = useDispatch();
 
