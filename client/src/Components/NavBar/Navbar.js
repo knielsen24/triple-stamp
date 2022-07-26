@@ -6,10 +6,9 @@ import UserDropDown from "./UserDropDown";
 import ButtonStartNow from "../Buttons/ButtonStartNow";
 import DashboardLinks from "./DashboardLinks";
 import HomeLinks from "./HomeLinks";
-import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function Navbar() {
-    const { data = [] , isLoading } = useFetchUserQuery();
+    const user = useSelector(setUser);
 
     return (
         <nav
@@ -19,7 +18,7 @@ function Navbar() {
             <div className="container-md d-flex" id="main-nav-container">
                 <a
                     className="navbar-brand mx-sm-2 align-top"
-                    href={data ? "dashboard" : "/"}
+                    href={user ? "dashboard" : "/"}
                 >
                     <img src={logoName} alt="logo" id="logo-name" />
                 </a>
@@ -36,7 +35,7 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        {data ? (
+                        {user ? (
                             <>
                                 <DashboardLinks />
                                 <UserDropDown />

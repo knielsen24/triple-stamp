@@ -5,12 +5,11 @@ import { useCreatePropertyMutation } from "../../../app/services/propertyApiSlic
 import { useDispatch, useSelector } from "react-redux";
 import { setUser, login } from "../../../app/features/userSlice";
 import ButtonCancelAddProperty from "../../Buttons/ButtonCancelAddProperty";
-import { useFetchUserQuery } from "../../../app/services/userApiSlice";
 
 function AddPropertyForm() {
     const [createProperty, { isLoading }] = useCreatePropertyMutation();
     const dispatch = useDispatch();
-    const { data = [] } = useFetchUserQuery();
+    const user = useSelector(setUser);
 
     const createSchema = Yup.object().shape({
         name: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),
@@ -21,12 +20,12 @@ function AddPropertyForm() {
             <Formik
                 initialValues={{
                     name: "New property",
-                    user_id: data.id
+                    user_id: user.id
                 }}
                 validationSchema={createSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     createProperty(values)
-                    .then((r)=> console.log(r))
+                    .then((r)=> dispatch(login(user)))
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

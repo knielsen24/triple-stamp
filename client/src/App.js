@@ -2,42 +2,59 @@ import "./App.css";
 import Navbar from "./Components/NavBar/Navbar";
 import Home from "./Components/HomePage/Home";
 import Footer from "./Components/HomePage/Footer";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { setUser, login } from "./app/features/userSlice";
+import { propertyList, setPropertyList } from "./app/features/propertyListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProfileHome from "./Components/ProfilePage/ProfileHome";
 import ManagementContainer from "./Components/ManagementPage/ManagementContainer";
-import { useFetchUserQuery } from "./app/services/userApiSlice";
 
 function App() {
-    // const dispatch = useDispatch();
-    // const user = useSelector(setUser);
+    const dispatch = useDispatch();
+    const user = useSelector(setUser);
+    const properties = useSelector(propertyList)
     const navigate = useNavigate();
-    // const [user, setUser] = useState(null)
+    console.log(properties)
 
-    const { data = [], isLoading } = useFetchUserQuery();
-    console.log(data)
+    // const baseUrl = "http://localhost:4000";
 
-    // const user = ({user, skip}:)
+    useEffect(() => {
+        fetch("/me").then((r) => {
+            if (r.ok) {
+                r.json().then((data) => dispatch(login(data)));
+            } else {
+                navigate("/management");
+            }
+        });
+        fetch("/me/properties").then((r) => {
+            if (r.ok) {
+                r.json().then((data) => {
+                    // console.log(data)
+                    dispatch(setPropertyList(data))});
+            } else {
+                navigate("/management");
+            }
+        });
+    }, []);
 
     return (
         <div className="container-fluid p-0" id="app-main-container">
             <Navbar />
             <Routes>
-                <Route path="/" element={!data ? <Home /> : null} />
+                <Route path="/" element={!user ? <Home /> : null} />
                 <Route
                     path="/dashboard"
-                    element={data ? <Dashboard /> : null}
+                    element={user ? <Dashboard /> : null}
                 />
                 <Route
                     path="/profile"
-                    element={data ? <ProfileHome /> : null}
+                    element={user ? <ProfileHome /> : null}
                 />
                 <Route
                     path="/management"
-                    element={data ? <ManagementContainer /> : null}
+                    element={user ? <ManagementContainer /> : null}
                 />
             </Routes>
             <Footer />

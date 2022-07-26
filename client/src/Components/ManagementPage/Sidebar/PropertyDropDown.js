@@ -3,42 +3,43 @@ import {
     selectProperty,
     setSelectProperty,
 } from "../../../app/features/propertySlice";
+import { propertyList } from "../../../app/features/propertyListSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useFetchPropertiesQuery } from "../../../app/services/userApiSlice";
+// import { useFetchPropertiesQuery } from "../../../app/services/"
 import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
 
 function PropertyDropDown() {
-    // const user = useSelector(setUser);
+    const user = useSelector(setUser);
     const property = useSelector(setSelectProperty);
+    const properties = useSelector(propertyList)
     const dispatch = useDispatch();
-
-    const {
-        data = [],
-        isLoading,
-        isSuccess,
-        isError,
-        error,
-    } = useFetchPropertiesQuery();
+    // const navigate = useNavigate();
 
     const handleSelectProperty = (property) =>
         dispatch(selectProperty(property));
 
-    const renderPropertyList = data.map((property) => {
-        return (
-            <li key={property.id}>
-                <a
-                    className="dropdown-item"
-                    href="#"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        handleSelectProperty(property);
-                    }}
-                >
-                    {property.name}
-                </a>
-            </li>
-        );
-    });
+    const userProperties = user.properties
+    // need useParams to render property link
+
+    let renderPropertyList;
+    if (user) {
+        renderPropertyList = userProperties.map((property) => {
+            return (
+                <li key={property.id}>
+                    <a
+                        className="dropdown-item"
+                        href="#"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleSelectProperty(property);
+                        }}
+                    >
+                        {property.name}
+                    </a>
+                </li>
+            );
+        });
+    }
 
     return (
         <div className="w-100 ">

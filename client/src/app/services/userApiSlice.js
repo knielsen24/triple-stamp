@@ -17,15 +17,15 @@ export const userApi = createApi({
                 }),
             }),
 
-            fetchUser: builder.query({
-                query: () => "/me",
-                providesTags: ["user"]
-            }),
+            // fetchUser: builder.query({
+            //     query: () => "/me",
+            //     providesTags: ["user"]
+            // }),
 
-            fetchProperties: builder.query({
-                query: () => "/me/properties",
-                providesTags: ["properties"]
-            }),
+            // fetchProperties: builder.query({
+            //     query: () => "/me/properties",
+            //     providesTags: ["properties"]
+            // }),
 
             createUser: builder.mutation({
                 query: ({ ...data }) => ({
