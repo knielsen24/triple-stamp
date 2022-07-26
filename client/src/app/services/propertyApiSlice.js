@@ -5,7 +5,7 @@ export const propertyApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000",
     }),
-    tagTypes: ["Property", "User", "UNAUTHORIZED"],
+    tagTypes: ["property", "user", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
 
@@ -14,14 +14,18 @@ export const propertyApi = createApi({
                     url: `/users/${data.user_id}/properties`,
                     method: "POST",
                     body: data,
-                }),
-                invalidatesTags: (result, error, arg) => [
-                    { type: "Property", id: arg.id },
-                ],
+                }), invalidatesTag: ['user'],
+            }),
+
+            deleteProperty: builder.mutation({
+                query: ({ id }) => ({
+                    url: `/properties/${id}`,
+                    method: "DELETE",
+                }), invalidatesTag: ['user'],
             }),
 
         };
     },
 });
 
-export const { useCreatePropertyMutation } = propertyApi;
+export const { useCreatePropertyMutation, useDeletePropertyMutation } = propertyApi;

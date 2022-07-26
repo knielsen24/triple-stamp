@@ -2,9 +2,10 @@ import "../../App.css";
 import { setUser } from "../../app/features/userSlice";
 import { useSelector } from "react-redux";
 import Logout from "./Logout";
+import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function UserDropDown() {
-    const user = useSelector(setUser);
+    const { data , isLoading } = useFetchUserQuery();
 
     return (
         <div className="dropdown center">
@@ -16,7 +17,7 @@ function UserDropDown() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-                {user.full_name}
+                {data.full_name}
             </a>
 
             <ul className="dropdown-menu">

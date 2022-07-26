@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create, :index, :destroy, :propertyList]
+    skip_before_action :authorize, only: [:create, :destroy, :propertyList]
 
     def create
         user = User.create!(user_sign_up_params)
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         render json: @current_user, status: :accepted
     end
 
-    def propertyList
+    def properties_index
         render json: @current_user.properties
     end
 

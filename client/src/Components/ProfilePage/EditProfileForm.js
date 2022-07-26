@@ -1,15 +1,15 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "yup-phone";
-import { useUpdateUserMutation } from "../../app/services/userApiSlice";
+import { useFetchUserQuery, useUpdateUserMutation } from "../../app/services/userApiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { login, setUser } from "../../app/features/userSlice";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 
 function EditProfileForm() {
     const dispatch = useDispatch();
-    const user = useSelector(setUser);
     const [updateUser, { isLoading }] = useUpdateUserMutation();
+    const { data = [] } = useFetchUserQuery;
 
     const updateSchema = Yup.object().shape({
         full_name: Yup.string()
@@ -25,11 +25,11 @@ function EditProfileForm() {
         <div>
             <Formik
                 initialValues={{
-                    id: user.id,
-                    full_name: user.full_name,
-                    phone: user.phone || "",
-                    business: user.business || "",
-                    account_name: user.account_name,
+                    id: data.id,
+                    full_name: data.full_name,
+                    phone: data.phone || "",
+                    business: data.business || "",
+                    account_name: data.account_name,
                 }}
                 validationSchema={updateSchema}
                 onSubmit={({ values }, { setSubmitting }) => {

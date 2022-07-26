@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { setUser, logout } from "../../app/features/userSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../app/features/userSlice";
+import { useDispatch } from "react-redux";
 import { useLogoutApiMutation } from "../../app/services/userApiSlice";
 
 function Logout() {
     // const [logoutApi, { isLoading }] = useLogoutApiMutation();
-    const user = useSelector(setUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

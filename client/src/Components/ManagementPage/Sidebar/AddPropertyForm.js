@@ -3,13 +3,14 @@ import * as Yup from "yup";
 import "yup-phone";
 import { useCreatePropertyMutation } from "../../../app/services/propertyApiSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../../../app/features/userSlice";
+import { setUser, login } from "../../../app/features/userSlice";
 import ButtonCancelAddProperty from "../../Buttons/ButtonCancelAddProperty";
+import { useFetchUserQuery } from "../../../app/services/userApiSlice";
 
 function AddPropertyForm() {
     const [createProperty, { isLoading }] = useCreatePropertyMutation();
-    // const dispatch = useDispatch();
-    const user = useSelector(setUser);
+    const dispatch = useDispatch();
+    const { data = [] } = useFetchUserQuery();
 
     const createSchema = Yup.object().shape({
         name: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),
@@ -20,15 +21,12 @@ function AddPropertyForm() {
             <Formik
                 initialValues={{
                     name: "New property",
-                    user_id: user.id
+                    user_id: data.id
                 }}
                 validationSchema={createSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     createProperty(values)
                     .then((r)=> console.log(r))
-                    // loginApi(values)
-                    //     .then((r) => dispatch(login(r.data)))
-                    //     .then(navigate("dashboard"));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

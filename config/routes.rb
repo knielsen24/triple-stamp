@@ -12,10 +12,9 @@ Rails.application.routes.draw do
     get "/me", to: "users#show"
     patch "/users/:id", to: "users#update"
     delete "/users/:id", to: "users#destroy"
-    # get "/users/:user_id/properties", to: "users#properties_index"
+    get "/me/properties", to: "users#properties_index"
 
     # PROPERTY #
-
     # get "/properties/:id", to: "properties#show"
     post "/users/:id/properties", to: "properties#create"
     patch "/properties/:id", to: "properties#update"

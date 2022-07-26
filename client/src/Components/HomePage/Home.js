@@ -2,7 +2,7 @@ import "../../App.css";
 import ButtonStartNow from "../Buttons/ButtonStartNow";
 import BannerCardsContainer from "./BannerCardsContainer";
 import LoginModal from "./LoginModal";
-import StartNowModal from "./StartNowModal";
+import SignUpModal from "./SignUpModal";
 
 function Home() {
     return (
@@ -15,7 +15,7 @@ function Home() {
                 <div className="m-sm-auto">
                     <ButtonStartNow />
                 </div>
-                <StartNowModal />
+                <SignUpModal />
                 <LoginModal />
             </div>
         </div>
