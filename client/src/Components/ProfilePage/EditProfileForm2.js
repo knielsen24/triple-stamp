@@ -6,40 +6,40 @@ import { useUpdateUserMutation } from "../../app/services/userApiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { login, setUser } from "../../app/features/userSlice";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
+import { useDeferredValue } from "react";
 
-function EditProfileForm() {
+function EditProfileForm2() {
     const dispatch = useDispatch();
     const user = useSelector(setUser);
     const [updateUser, { isLoading }] = useUpdateUserMutation();
     const navigate = useNavigate();
     console.log(user);
 
-    const updateSchema = Yup.object().shape({
+    const SignupSchema = Yup.object().shape({
         full_name: Yup.string()
             .min(2, "Too Short!")
             .max(30, "Too Long!")
             .required("Required"),
-        phone: Yup.string().phone().nullable(),
-        business: Yup.string().max(30, "Too Long!").nullable(),
-        account_name: Yup.string().max(30, "Too Long!").nullable(),
+        phone: Yup.string().phone(),
+        account_name: Yup.string()
+            .min(2, "Too Short!")
+            .max(30, "Too Long!")
+            .required("Required"),
     });
 
     return (
         <div>
             <Formik
                 initialValues={{
-                    id: user.id,
                     full_name: user.full_name,
-                    phone: user.phone || "",
-                    business: user.business || "",
+                    phone: user.phone,
+                    business: user.business,
                     account_name: user.account_name,
                 }}
-                validationSchema={updateSchema}
-                onSubmit={({ values }, { setSubmitting }) => {
-                    console.log(values);
+                validationSchema={SignupSchema}
+                onSubmit={(values, { setSubmitting }) => {
                     updateUser(values)
                         .then((r) => dispatch(login(r.data)))
-                        .then(navigate("/profile"));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -53,6 +53,7 @@ function EditProfileForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    /* and other goodies */
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -113,6 +114,7 @@ function EditProfileForm() {
                                 touched.business &&
                                 errors.business}
                         </div>
+
                         <div className="mb-3">
                             <label
                                 htmlFor="account_name"
@@ -127,32 +129,34 @@ function EditProfileForm() {
                                 name="account_name"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.account_name || ""}
+                                value={values.account_name}
                             />
                             {errors.account_name &&
                                 touched.account_name &&
                                 errors.account_name}
                         </div>
+
                         <div className="float-end">
-                            {/* <button
+                            {/*
+                                this needs a conditon
+                                if form is validated then close modal
+                                otherwise
+                                render error message
+                                ONE option is to create two seperate buttons
+                                would need to create state for errors,
+                                so button rerenders with correct attributes
+                            */}
+
+                            <button
                                 type="submit"
                                 disabled={isSubmitting}
                                 className="btn btn-primary"
-                                id="modal-btn-start-now"
+                                // id="modal-btn-start-now"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"
                             >
                                 Save Changes
-                            </button> */}
-                            {/*
-                                this needs a conditon
-                                if form is changed then Save changes
-                                if form is not changed then cancel
-                            */}
-                            <ButtonSaveChanges
-                                text={"Save Changes"}
-                                isSubmitting={isSubmitting}
-                            />
+                            </button>
                         </div>
                     </form>
                 )}
@@ -161,4 +165,4 @@ function EditProfileForm() {
     );
 }
 
-export default EditProfileForm;
+export default EditProfileForm2;

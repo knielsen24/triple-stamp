@@ -14,9 +14,8 @@ import ManagementContainer from "./Components/ManagementPage/ManagementContainer
 function App() {
     const dispatch = useDispatch();
     const user = useSelector(setUser);
-    const properties = useSelector(propertyList)
+    // const properties = useSelector(propertyList)
     const navigate = useNavigate();
-    console.log(properties)
 
     // const baseUrl = "http://localhost:4000";
 

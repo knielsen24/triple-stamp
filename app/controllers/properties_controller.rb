@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
 
     def create
         property = Property.create!(property_params)
-        render json: property, status: :created
+        render json: @current_user.properties, status: :created
     end
 
     private

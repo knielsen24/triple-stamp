@@ -5,10 +5,9 @@ import { setUser } from "../../app/features/userSlice";
 import DeleteProfileModal from "./DeleteProfileModal";
 import EditProfileModal from "./EditProfileModal";
 import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
-import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function ProfileHome() {
-    const { data = [], isLoading } = useFetchUserQuery();
+    const user = useSelector(setUser);
     return (
         <div className="container align-content-items-center">
             <div id="profile-main-card-container" className="card m-3">
@@ -16,8 +15,8 @@ function ProfileHome() {
                     <div className="m-2 p-1">
                         <img
                             src={
-                                data.img_profile
-                                    ? data.image
+                                user.img_profile
+                                    ? user.image
                                     : profileIcon
                             }
                             className="img-thumbnail"
@@ -26,19 +25,19 @@ function ProfileHome() {
                         />
                     </div>
                     <div className="header text-center text-white">
-                        <h5 className="card-title">{data.full_name}</h5>
+                        <h5 className="card-title">{user.full_name}</h5>
                     </div>
                 </div>
 
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item">Email: {data.email}</li>
-                        <li className="list-group-item">Phone: {data.phone} </li>
+                        <li className="list-group-item">Email: {user.email}</li>
+                        <li className="list-group-item">Phone: {user.phone} </li>
                         <li className="list-group-item">
-                            Business: {data.business}{" "}
+                            Business: {user.business}{" "}
                         </li>
                         <li className="list-group-item">
-                            Account name: {data.account_name}
+                            Account name: {user.account_name}
                         </li>
                     </ul>
                 </div>
