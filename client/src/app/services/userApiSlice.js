@@ -5,35 +5,28 @@ export const userApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000",
     }),
-    tagTypes: ["User", "UNAUTHORIZED"],
+    tagTypes: ["user", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
-            createUser: builder.mutation({
-                query: ({ ...signUpData }) => ({
-                    url: "/signup",
-                    method: "POST",
-                    body: signUpData,
-                }),
-                invalidatesTags: (result, error, arg) => [
-                    { type: "User", id: arg.id },
-                ],
-            }),
-
             loginApi: builder.mutation({
                 query: ({ ...credentials }) => ({
                     url: "/login",
                     method: "POST",
                     body: credentials,
                 }),
-                invalidatesTags: (result) => (result ? ["UNAUTHORIZED"] : []),
+                providesTags: ["user"],
             }),
 
-            deleteUser: builder.mutation({
-                query: (id) => ({
-                    url: `/users/${id}`,
-                    method: "DELETE",
+            // fetchUser: builder.query({
+            //     query: () => "/me",
+            //                 }),
+
+            createUser: builder.mutation({
+                query: ({ ...data }) => ({
+                    url: "/signup",
+                    method: "POST",
+                    body: data,
                 }),
-                invalidatesTags: (result, error, id) => [{ type: "User", id }],
             }),
 
             updateUser: builder.mutation({
@@ -42,15 +35,24 @@ export const userApi = createApi({
                     method: "PATCH",
                     body: updatedData,
                 }),
-                invalidatesTags: (result, error, arg) => [
-                    { type: "User", id: arg.id },
-                ],
+                invalidatesTags: ["user"],
             }),
+
+            deleteUser: builder.mutation({
+                query: (id) => ({
+                    url: `/users/${id}`,
+                    method: "DELETE",
+                }),
+                invalidatesTags: ["user"],
+            }),
+
+
         };
     },
 });
 
 export const {
+    useFetchUserQuery,
     useCreateUserMutation,
     useDeleteUserMutation,
     useLoginApiMutation,
