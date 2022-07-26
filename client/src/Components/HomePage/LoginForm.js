@@ -31,7 +31,7 @@ function LoginForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     loginApi(values)
                         .then((r) => dispatch(login(r.data)))
-                        .then(navigate("dashboard"));
+                        .then(navigate("management"));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

@@ -3,7 +3,6 @@ import React from "react";
 function ButtonOpenAddPropertyModal() {
     return (
         <a
-            a
             className="dropdown-item"
             href="#"
             data-bs-toggle="modal"

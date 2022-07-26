@@ -15,7 +15,6 @@ export const userApi = createApi({
                     body: signUpData,
                 }),
                 invalidatesTags: (result, error, arg) => [
-                    console.log(result),
                     { type: "User", id: arg.id },
                 ],
             }),
@@ -38,7 +37,7 @@ export const userApi = createApi({
             }),
 
             updateUser: builder.mutation({
-                query: ({...updatedData }) => ({
+                query: ({ ...updatedData }) => ({
                     url: `/users/${updatedData.id}`,
                     method: "PATCH",
                     body: updatedData,

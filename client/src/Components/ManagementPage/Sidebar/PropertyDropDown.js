@@ -4,7 +4,6 @@ import {
     setSelectProperty,
 } from "../../../app/features/propertySlice";
 import { useSelector, useDispatch } from "react-redux";
-import { usePropertyListQuery } from "../../../app/services/propertyApiSlice";
 import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
 
 function PropertyDropDown() {
@@ -13,9 +12,9 @@ function PropertyDropDown() {
     const dispatch = useDispatch();
     // const navigate = useNavigate();
 
-    const { data = [], isFetching } = usePropertyListQuery("");
-    const propertiesArray = data.properties;
 
+    const propertiesArray = user.properties;
+   
     const handleSelectProperty = (property) =>
         dispatch(selectProperty(property));
 

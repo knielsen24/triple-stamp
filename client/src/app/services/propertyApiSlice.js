@@ -5,14 +5,9 @@ export const propertyApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000",
     }),
-    tagTypes: ["Property", "UNAUTHORIZED"],
+    tagTypes: ["Property", "User", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
-            propertyList: builder.query({
-                query(id){
-                    return `/users/${id}/properties`
-                }
-            }),
 
             createProperty: builder.mutation({
                 query: ({ ...data }) => ({
@@ -29,4 +24,4 @@ export const propertyApi = createApi({
     },
 });
 
-export const { usePropertyListQuery, useCreatePropertyMutation } = propertyApi;
+export const { useCreatePropertyMutation } = propertyApi;

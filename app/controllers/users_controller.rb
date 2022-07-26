@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create, :index, :destroy]
+    skip_before_action :authorize, only: [:create, :index, :destroy, :propertyList]
 
     def create
         user = User.create!(user_sign_up_params)
@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: @current_user, serializer: UserWithPropertiesSerializer
+        render json: @current_user
+        # , serializer: UserPropertiesSerializer
     end
 
     def destroy
@@ -20,6 +21,10 @@ class UsersController < ApplicationController
     def update
         @current_user.update!(user_update_params)
         render json: @current_user, status: :accepted
+    end
+
+    def propertyList
+        render json: @current_user.properties
     end
 
     private

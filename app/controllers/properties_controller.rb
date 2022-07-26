@@ -1,11 +1,11 @@
 class PropertiesController < ApplicationController
     skip_before_action :authorize, except: :index
 
-    def index
-        # user = User.find_by(id: session[:user_id])
-        # render json: user.properties
-        render json: @current_user.properties
-    end
+    # def index
+    #     # user = User.find_by(id: session[:user_id])
+    #     # render json: user.properties
+    #     render json: @current_user.properties
+    # end
 
     def create
         property = Property.create!(property_params)

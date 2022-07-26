@@ -15,27 +15,19 @@ function App() {
     const user = useSelector(setUser);
     const navigate = useNavigate();
 
-    const baseUrl = "http://localhost:4000";
+    // const baseUrl = "http://localhost:4000";
 
     useEffect(() => {
-        fetch(`${baseUrl}/me`).then((r) => {
+        fetch("/me").then((r) => {
             if (r.ok) {
-                r.json().then((user) => dispatch(login(user)));
+                r.json().then((data) => dispatch(login(data)));
             } else {
                 navigate("/");
             }
         });
     }, []);
 
-    // useEffect(() => {
-    //     fetch(`/users/${user.id}/properties`).then((r) => {
-    //         if (r.ok) {
-    //             r.json().then((r) => console.log(r));
-    //         } else {
-    //             navigate("/");
-    //         }
-    //     });
-    // }, []);
+    console.log(user)
 
     return (
         <div className="container-fluid p-0" id="app-main-container">
