@@ -56,7 +56,7 @@ function PropertyDropDown() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                 >
-                    {property.name}
+                    {property.name || ""}
                 </a>
                 <ul className="dropdown-menu">
                     {renderPropertyList}

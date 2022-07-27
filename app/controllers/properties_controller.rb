@@ -3,13 +3,13 @@ class PropertiesController < ApplicationController
 
 
     def create
-        property = Property.create!(property_params)
+        property = Property.create!(create_property_params)
         render json: property, status: :created
     end
 
     def update
         property = Property.find(params[:id])
-        property.update!(property_params)
+        property.update!(update_property_params)
         render json: property, status: :accepted
     end
 
@@ -21,7 +21,20 @@ class PropertiesController < ApplicationController
 
     private
 
-    def property_params
+    def create_property_params
+        params.permit(
+            :name,
+            :address,
+            :city,
+            :state,
+            :postal_code,
+            :country,
+            :image,
+            :user_id
+        )
+    end
+
+    def update_property_params
         params.permit(
             :id,
             :name,

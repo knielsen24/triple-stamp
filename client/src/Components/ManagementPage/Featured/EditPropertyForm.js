@@ -38,7 +38,6 @@ function EditPropertyForm() {
         state: Yup.string(),
         postal_code: Yup.string(),
         country: Yup.string(),
-        // units: Yup.number(),
         user_id: Yup.number().required(),
     });
 
@@ -50,7 +49,6 @@ function EditPropertyForm() {
                 initialValues={initialData}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values)
                     updateProperty(values).then((r) => {
                         dispatch(selectProperty(r.data));
                     });

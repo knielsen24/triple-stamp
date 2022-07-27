@@ -54,13 +54,13 @@ function PropertyCard() {
                     </ul>
                 </div>
                 <div className="card-footer bg-white text-muted text-center">
-                    {property.name === "Select Property" ? null : (
+                    {property.name === "" ? null : (
                         <ButtonManageAccountModals
                             target={"#edit-property-form"}
                             text={"Edit Details"}
                         />
                     )}
-                    {property.name === "Select Property" ? null : (
+                    {property.name === "" ? null : (
                         <ButtonManageAccountModals
                             target={"#delete-property"}
                             text={"Delete Property"}

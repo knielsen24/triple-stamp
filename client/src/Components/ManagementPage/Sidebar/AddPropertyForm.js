@@ -19,8 +19,15 @@ function AddPropertyForm() {
     return (
         <div>
             <Formik
+                enableReinitialize
                 initialValues={{
                     name: "New property",
+                    address: "",
+                    city: "",
+                    state: "",
+                    postal_code: "",
+                    country: "",
+                    units: [],
                     user_id: user.id,
                 }}
                 validationSchema={createSchema}
