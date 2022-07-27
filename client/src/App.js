@@ -54,7 +54,7 @@ function App() {
                     element={user ? <ProfileHome /> : null}
                 />
                 <Route
-                    path="/management"
+                    path="/management/*"
                     element={user ? <ManagementContainer /> : null}
                 />
             </Routes>

@@ -26,7 +26,8 @@ function UnitsContainer() {
     }
 
     return (
-        <div>{property.name + " " + "units"}
+        <div>
+            {/* {property.name + " " + "units"} */}
             <div className=" list-group">
                 <ul className="list-group list-group-flush">
                     {property.name !== "" ? renderUnitList : null}

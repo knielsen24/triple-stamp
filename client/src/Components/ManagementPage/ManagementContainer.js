@@ -1,10 +1,10 @@
 import React from "react";
-import PropertyCard from "./Featured/PropertyCard";
+import PropertyCard from "./Dashboard/PropertyCard";
 import ManagementNav from "./ManagementNav";
 import AddPropertyModal from "./Sidebar/AddPropertyModal";
 import PropertyDropDown from "./Sidebar/PropertyDropDown";
 import UnitsContainer from "./UnitsContainer";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function PropertiesContainer() {
     return (
@@ -23,13 +23,19 @@ function PropertiesContainer() {
                 </div>
                 <div className="col-8 p-0">
                     <div className="row mx-3">
-                    <p className="text-center user-select-none">
-                        Dashboard
-                    </p>
-                        {/* <Route path="/management" element={<ManagementNav />} /> */}
+                        <p className="text-center user-select-none">
+                            Dashboard
+                        </p>
                         <ManagementNav />
                     </div>
-                    <PropertyCard />
+                    <Routes>
+                        <Route path="inspections" />
+                        <Route path="tasks" />
+                        <Route
+                            path="property-details"
+                            element={<PropertyCard />}
+                        />
+                    </Routes>
                 </div>
             </div>
         </div>

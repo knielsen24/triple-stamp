@@ -6,10 +6,12 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { useFetchPropertiesQuery } from "../../../app/services/propertyApiSlice";
 import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
+import { useNavigate } from "react-router-dom";
 
 function PropertyDropDown() {
     const property = useSelector(setSelectProperty);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     // use a filter to select property
 
@@ -37,6 +39,7 @@ function PropertyDropDown() {
                         onClick={(e) => {
                             e.preventDefault();
                             handleSelectProperty(property);
+                            navigate("property-details")
                         }}
                     >
                         {property.name}

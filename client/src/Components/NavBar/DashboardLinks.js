@@ -9,9 +9,9 @@ function DashboardLinks() {
             <a className="nav-link" href="/management">
                 Management
             </a>
-            <a className="nav-link" href="#">
+            {/* <a className="nav-link" href="#">
                 Inspections
-            </a>
+            </a> */}
         </>
     );
 }

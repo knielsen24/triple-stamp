@@ -1,6 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { setSelectProperty } from "../../app/features/propertySlice";
 
 function ManagementNav() {
+    const property = useSelector(setSelectProperty);
+
+    let detailsLinkhref;
+    property.name !== ""
+        ? (detailsLinkhref = "property-details")
+        : (detailsLinkhref = "management/property-details");
+
     return (
         <div className="text-center mb-3">
             <ul className="nav nav-pills nav-fill">
@@ -15,7 +24,7 @@ function ManagementNav() {
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link " href="#">
+                    <a className="nav-link " href={detailsLinkhref}>
                         Details
                     </a>
                 </li>
