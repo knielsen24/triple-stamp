@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { selectProperty, setSelectProperty } from "../../../app/features/propertySlice";
 import { Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";

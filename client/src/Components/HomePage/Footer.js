@@ -1,5 +1,4 @@
 import "../../App.css";
-import React from "react";
 
 function Footer() {
     const presentationUrl = "https://docs.google.com/presentation/d/1RXkb_iMTt5zE5fqRE0455yYT9UuW28gb0X53KkuulQg/edit#slide=id.p"

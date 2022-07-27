@@ -1,4 +1,3 @@
-import React from "react";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import SignUpForm from "./SignUpForm";
 

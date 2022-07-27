@@ -1,4 +1,3 @@
-import { setUser } from "../../../app/features/userSlice";
 import {
     selectProperty,
     setSelectProperty,

@@ -1,4 +1,3 @@
-import ButtonCancelModal from "../../Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../../Buttons/ButtonCloseModalX";
 import AddPropertyForm from "./AddPropertyForm";
 

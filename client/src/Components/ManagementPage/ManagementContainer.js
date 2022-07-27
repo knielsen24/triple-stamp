@@ -1,4 +1,3 @@
-import React from "react";
 import PropertyCard from "./Dashboard/PropertyCard";
 import ManagementNav from "./ManagementNav";
 import AddPropertyModal from "./Sidebar/AddPropertyModal";
