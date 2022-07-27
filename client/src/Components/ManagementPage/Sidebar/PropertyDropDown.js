@@ -5,25 +5,33 @@ import {
 } from "../../../app/features/propertySlice";
 import { propertyList } from "../../../app/features/propertyListSlice";
 import { useSelector, useDispatch } from "react-redux";
-// import { useFetchPropertiesQuery } from "../../../app/services/"
+import { useFetchPropertiesQuery } from "../../../app/services/propertyApiSlice";
 import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
 
 function PropertyDropDown() {
     const user = useSelector(setUser);
     const property = useSelector(setSelectProperty);
-    const properties = useSelector(propertyList)
+    // const properties = useSelector(propertyList)
     const dispatch = useDispatch();
-    // const navigate = useNavigate();
+
+    const {
+        data: properties,
+        isLoading,
+        isSuccess,
+        isError,
+        error,
+    } = useFetchPropertiesQuery({ refetchOnMountOrArgChange: true });
 
     const handleSelectProperty = (property) =>
         dispatch(selectProperty(property));
 
-    const userProperties = user.properties
+    console.log(properties);
+    const userProperties = user.properties;
     // need useParams to render property link
 
     let renderPropertyList;
-    if (user) {
-        renderPropertyList = userProperties.map((property) => {
+    if (properties) {
+        renderPropertyList = properties.map((property) => {
             return (
                 <li key={property.id}>
                     <a

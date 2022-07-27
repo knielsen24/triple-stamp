@@ -4,7 +4,13 @@ class PropertiesController < ApplicationController
 
     def create
         property = Property.create!(property_params)
-        render json: @current_user.properties, status: :created
+        render json: property, status: :created
+    end
+
+    def destroy
+        property = Property.find(params[:id])
+        property.delete
+        head  :no_content
     end
 
     private

@@ -7,6 +7,7 @@ import homeIcon from "../../../assets/home-icon.svg";
 import DeleteProfileModal from "../../ProfilePage/DeleteProfileModal";
 import ButtonManageAccountModals from "../../Buttons/ButtonManageAccountModals";
 import { useSelector } from "react-redux";
+import DeletePropertyModal from "./DeletePropertyModal";
 
 function PropertyCard() {
     const property = useSelector(setSelectProperty);
@@ -46,12 +47,12 @@ function PropertyCard() {
                         text={"Edit Details"}
                     />
                     <ButtonManageAccountModals
-                        target={""}
+                        target={"#delete-property"}
                         text={"Delete Property"}
                     />
                 </div>
                 {/* <EditProfileModal /> */}
-                <DeleteProfileModal />
+                <DeletePropertyModal />
             </div>
         </div>
     );

@@ -22,10 +22,7 @@ export const userApi = createApi({
             //     providesTags: ["user"]
             // }),
 
-            // fetchProperties: builder.query({
-            //     query: () => "/me/properties",
-            //     providesTags: ["properties"]
-            // }),
+
 
             createUser: builder.mutation({
                 query: ({ ...data }) => ({
@@ -58,7 +55,6 @@ export const {
     useDeleteUserMutation,
     useLoginApiMutation,
     useUpdateUserMutation,
-    useFetchPropertiesQuery,
     useFetchUserQuery,
 } = userApi;
 
