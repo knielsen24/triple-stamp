@@ -5,11 +5,25 @@ import * as Yup from "yup";
 import { useLoginApiMutation } from "../../app/services/userApiSlice";
 import { useDispatch } from "react-redux";
 import { login } from "../../app/features/userSlice";
+import { selectProperty } from "../../app/features/propertySlice";
 
 function LoginForm() {
     const [loginApi, { isLoading }] = useLoginApiMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const inititialState = {
+        name: "",
+        id: "",
+        name: "",
+        address: "",
+        city: "",
+        state: "",
+        postal_code: "",
+        country: "",
+        units: [{ name: "name" }],
+        user_id: "",
+    };
 
     const loginSchema = Yup.object().shape({
         email: Yup.string().email("Invalid email").required("Required"),
@@ -30,6 +44,7 @@ function LoginForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     loginApi(values)
                         .then((r) => dispatch(login(r.data)))
+                        .then(dispatch(selectProperty(inititialState)))
                         .then(navigate("management"));
                     setTimeout(() => {
                         setSubmitting(false);
