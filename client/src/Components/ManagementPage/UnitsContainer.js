@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
+import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
 
 function UnitsContainer() {
 
@@ -29,6 +30,7 @@ function UnitsContainer() {
             {/* {property.name + " " + "units"} */}
             <div className=" list-group">
                 <ul className="list-group list-group-flush">
+                    <ButtonOpenAddUnitModal />
                     {property.name !== "" ? renderUnitList : null}
                 </ul>
             </div>

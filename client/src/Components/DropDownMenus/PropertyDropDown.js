@@ -4,7 +4,7 @@ import {
 } from "../../app/features/propertySlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useFetchPropertiesQuery } from "../../app/services/propertyApiSlice";
-import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
+import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddUnitModal";
 import { useNavigate } from "react-router-dom";
 
 function PropertyDropDown() {
@@ -61,7 +61,7 @@ function PropertyDropDown() {
                 </a>
                 <ul className="dropdown-menu">
                     <li>
-                        <ButtonOpenAddPropertyModal />
+                        <ButtonOpenAddPropertyModal/>
                     </li>
                     <li>
                         <hr className="dropdown-divider" />

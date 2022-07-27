@@ -4,6 +4,7 @@ import AddPropertyModal from "../Modals/AddPropertyModal";
 import PropertyDropDown from "../DropDownMenus/PropertyDropDown";
 import UnitsContainer from "./UnitsContainer";
 import { Route, Routes } from "react-router-dom";
+import AddUnitsModal from "../Modals/AddUnitModal";
 
 function PropertiesContainer() {
     return (
@@ -16,6 +17,7 @@ function PropertiesContainer() {
                     <div className="row mw-100 mb-3 align-content-items-center">
                         <PropertyDropDown />
                         <AddPropertyModal />
+                        <AddUnitsModal />
                     </div>
                     <hr className="w-auto" />
                     <UnitsContainer />
