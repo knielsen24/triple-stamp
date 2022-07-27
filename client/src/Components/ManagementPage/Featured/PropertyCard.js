@@ -8,6 +8,7 @@ import DeleteProfileModal from "../../ProfilePage/DeleteProfileModal";
 import ButtonManageAccountModals from "../../Buttons/ButtonManageAccountModals";
 import { useSelector } from "react-redux";
 import DeletePropertyModal from "./DeletePropertyModal";
+import EditPropertyModal from "./EditPropertyModal";
 
 function PropertyCard() {
     const property = useSelector(setSelectProperty);
@@ -43,7 +44,7 @@ function PropertyCard() {
                 </div>
                 <div className="card-footer bg-white text-muted text-center">
                     <ButtonManageAccountModals
-                        target={""}
+                        target={"#edit-property-form"}
                         text={"Edit Details"}
                     />
                     <ButtonManageAccountModals
@@ -51,7 +52,7 @@ function PropertyCard() {
                         text={"Delete Property"}
                     />
                 </div>
-                {/* <EditProfileModal /> */}
+                <EditPropertyModal />
                 <DeletePropertyModal />
             </div>
         </div>

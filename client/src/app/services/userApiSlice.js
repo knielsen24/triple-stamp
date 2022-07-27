@@ -14,15 +14,13 @@ export const userApi = createApi({
                     url: "/login",
                     method: "POST",
                     body: data,
-                }),
+                }), invalidatesTags: ['user'],
             }),
 
             fetchUser: builder.query({
                 query: () => "/me",
                 providesTags: ["user"]
             }),
-
-
 
             createUser: builder.mutation({
                 query: ({ ...data }) => ({

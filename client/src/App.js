@@ -18,13 +18,17 @@ function App() {
 
     // const baseUrl = "http://localhost:4000";
 
-    const {
-        data: currentUser,
-        isLoading,
-        isSuccess,
-        isError,
-        error,
-    } = useFetchUserQuery({ refetchOnMountOrArgChange: true });
+    // const {
+    //     data: currentUser,
+    //     isLoading,
+    //     isSuccess,
+    //     isError,
+    //     error,
+    // } = useFetchUserQuery({ refetchOnMountOrArgChange: true });
+
+    // if (currentUser) {
+    //     dispatch(login(currentUser))
+    // }
 
     useEffect(() => {
         fetch("/me").then((r) => {

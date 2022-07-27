@@ -1,16 +1,12 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "yup-phone";
-import { useCreatePropertyMutation } from "../../../app/services/propertyApiSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { setUser, login } from "../../../app/features/userSlice";
-import { selectProperty } from "../../../app/features/propertySlice";
 import ButtonCancelAddProperty from "../../Buttons/ButtonCancelAddProperty";
 
-function AddPropertyForm() {
-    const [createProperty, { isLoading }] = useCreatePropertyMutation();
-    const dispatch = useDispatch();
-    const user = useSelector(setUser);
+function EditPropertyForm() {
+    const formValues = ["name", "address", "city", "state", "postal_code", "country", "units"]
+
+    const formInputsArray = formValues.map((value) => {console.log(value)})
 
     const createSchema = Yup.object().shape({
         name: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),
@@ -21,13 +17,12 @@ function AddPropertyForm() {
             <Formik
                 initialValues={{
                     name: "New property",
-                    user_id: user.id,
+
                 }}
                 validationSchema={createSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    createProperty(values).then((r) => {
-                        dispatch(selectProperty(r.data));
-                    });
+                    (values)
+                    .then((r)=> {})
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -88,4 +83,4 @@ function AddPropertyForm() {
     );
 }
 
-export default AddPropertyForm;
+export default EditPropertyForm;

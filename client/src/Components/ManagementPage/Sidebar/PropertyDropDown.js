@@ -8,7 +8,6 @@ import { useFetchPropertiesQuery } from "../../../app/services/propertyApiSlice"
 import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
 
 function PropertyDropDown() {
-    const user = useSelector(setUser);
     const property = useSelector(setSelectProperty);
     const dispatch = useDispatch();
 
@@ -23,7 +22,6 @@ function PropertyDropDown() {
     const handleSelectProperty = (property) =>
         dispatch(selectProperty(property));
 
-    console.log(properties);
     // need useParams to render property link
 
     let renderPropertyList;

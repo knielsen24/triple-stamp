@@ -1,21 +1,17 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "yup-phone";
-import { useNavigate } from "react-router-dom";
 import { useUpdateUserMutation } from "../../app/services/userApiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { login, setUser } from "../../app/features/userSlice";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
-import { useDeferredValue } from "react";
 
 function EditProfileForm() {
     const dispatch = useDispatch();
     const user = useSelector(setUser);
     const [updateUser, { isLoading }] = useUpdateUserMutation();
-    const navigate = useNavigate();
-    console.log(user);
 
-    const SignupSchema = Yup.object().shape({
+    const updateSchema = Yup.object().shape({
         full_name: Yup.string()
             .min(2, "Too Short!")
             .max(30, "Too Long!")
@@ -36,7 +32,7 @@ function EditProfileForm() {
                     business: user.business,
                     account_name: user.account_name,
                 }}
-                validationSchema={SignupSchema}
+                validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     updateUser(values).then((r) => dispatch(login(r.data)));
                     setTimeout(() => {
