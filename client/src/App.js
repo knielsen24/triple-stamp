@@ -5,11 +5,11 @@ import Footer from "./Components/HomePage/Footer";
 import React, { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { setUser, login } from "./app/features/userSlice";
-import { propertyList, setPropertyList } from "./app/features/propertyListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProfileHome from "./Components/ProfilePage/ProfileHome";
 import ManagementContainer from "./Components/ManagementPage/ManagementContainer";
+import { useFetchUserQuery } from "./app/services/userApiSlice";
 
 function App() {
     const dispatch = useDispatch();
@@ -18,19 +18,18 @@ function App() {
 
     // const baseUrl = "http://localhost:4000";
 
+    const {
+        data: currentUser,
+        isLoading,
+        isSuccess,
+        isError,
+        error,
+    } = useFetchUserQuery({ refetchOnMountOrArgChange: true });
+
     useEffect(() => {
         fetch("/me").then((r) => {
             if (r.ok) {
                 r.json().then((data) => dispatch(login(data)));
-            } else {
-                navigate("/management");
-            }
-        });
-        fetch("/me/properties").then((r) => {
-            if (r.ok) {
-                r.json().then((data) => {
-                    // console.log(data)
-                    dispatch(setPropertyList(data))});
             } else {
                 navigate("/management");
             }

@@ -17,10 +17,10 @@ export const userApi = createApi({
                 }),
             }),
 
-            // fetchUser: builder.query({
-            //     query: () => "/me",
-            //     providesTags: ["user"]
-            // }),
+            fetchUser: builder.query({
+                query: () => "/me",
+                providesTags: ["user"]
+            }),
 
 
 
@@ -44,7 +44,7 @@ export const userApi = createApi({
                     url: `/users/${data.id}`,
                     method: "PATCH",
                     body: data,
-                }),
+                }), invalidatesTags: ['user'],
             }),
         };
     },

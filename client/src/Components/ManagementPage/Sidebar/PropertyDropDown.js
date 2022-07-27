@@ -3,7 +3,6 @@ import {
     selectProperty,
     setSelectProperty,
 } from "../../../app/features/propertySlice";
-import { propertyList } from "../../../app/features/propertyListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useFetchPropertiesQuery } from "../../../app/services/propertyApiSlice";
 import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
@@ -11,7 +10,6 @@ import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal
 function PropertyDropDown() {
     const user = useSelector(setUser);
     const property = useSelector(setSelectProperty);
-    // const properties = useSelector(propertyList)
     const dispatch = useDispatch();
 
     const {
@@ -26,7 +24,6 @@ function PropertyDropDown() {
         dispatch(selectProperty(property));
 
     console.log(properties);
-    const userProperties = user.properties;
     // need useParams to render property link
 
     let renderPropertyList;

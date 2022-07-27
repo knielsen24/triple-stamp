@@ -19,14 +19,14 @@ export const propertyApi = createApi({
                     url: `/users/${data.user_id}/properties`,
                     method: "POST",
                     body: data,
-                }), invalidatesTag: ['properties'],
+                }), invalidatesTags: ['properties'],
             }),
 
             deleteProperty: builder.mutation({
                 query: (id) => ({
                     url: `/properties/${id}`,
                     method: "DELETE",
-                }), invalidatesTag: ['properties'],
+                }), invalidatesTags: ['properties'],
             }),
 
 

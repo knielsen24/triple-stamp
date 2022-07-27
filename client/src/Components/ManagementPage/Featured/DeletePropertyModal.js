@@ -16,11 +16,9 @@ function DeletePropertyModal() {
     const navigate = useNavigate();
 
     const handleDeleteProperty = (id) => {
-
-        deleteProperty(id)
-            .then(() => {
-                dispatch(selectProperty(""));
-            })
+        deleteProperty(id).then(() => {
+            dispatch(selectProperty("Select property"));
+        });
     };
 
     return (
