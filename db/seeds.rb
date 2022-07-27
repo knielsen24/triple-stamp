@@ -43,11 +43,25 @@ end
         state: state,
         postal_code: postal_code,
         country: country,
-        units: units,
         image: image,
         user_id: user_id,
     )
 end
+
+Property.all.each do |property|
+    10.times do
+        id = property.id
+        number = rand(1..100)
+        square_feet = rand(200..5000)
+
+        Unit.create(
+            property_id: id,
+            number: number,
+            square_feet: square_feet
+        )
+    end
+end
+
 
 puts "🌱 triple stamping..."
 puts "✅✅✅ You can't triple stamp a double stamp! Lloyd! Lloyd! Lloyd!"

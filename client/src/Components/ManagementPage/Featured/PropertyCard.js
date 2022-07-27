@@ -8,6 +8,7 @@ import EditPropertyModal from "./EditPropertyModal";
 
 function PropertyCard() {
     const property = useSelector(setSelectProperty);
+    const numberofUnits = property.units.length
 
     return (
         <div className="container align-content-items-center">
@@ -44,7 +45,7 @@ function PropertyCard() {
                             Country: {property.country}{" "}
                         </li>
                         <li className="list-group-item">
-                            # Units: {property.units}{" "}
+                            # Units: {numberofUnits}{" "}
                         </li>
                     </ul>
                 </div>

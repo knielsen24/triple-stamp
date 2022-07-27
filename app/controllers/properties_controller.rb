@@ -30,7 +30,6 @@ class PropertiesController < ApplicationController
             :postal_code,
             :country,
             :image,
-            :units,
             :user_id
         )
     end

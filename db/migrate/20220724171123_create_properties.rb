@@ -8,7 +8,6 @@ class CreateProperties < ActiveRecord::Migration[6.1]
       t.string :postal_code, default: ""
       t.string :country, default: ""
       t.string :image, default: ""
-      t.integer :units, default: 1, null: false
       t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps

@@ -35,7 +35,7 @@ function App() {
             if (r.ok) {
                 r.json().then((data) => dispatch(login(data)));
             } else {
-                navigate("/management");
+                navigate("/");
             }
         });
     }, []);
