@@ -35,22 +35,36 @@ function PropertyCard() {
                         <li className="list-group-item">
                             Address: {property.address}
                         </li>
-                        <li className="list-group-item">City: {property.city} </li>
-                        <li className="list-group-item">State: {property.state} </li>
-                        <li className="list-group-item">Zip code: {property.postal_code} </li>
-                        <li className="list-group-item">Country: {property.country} </li>
-                        <li className="list-group-item"># Units: {property.units} </li>
+                        <li className="list-group-item">
+                            City: {property.city}{" "}
+                        </li>
+                        <li className="list-group-item">
+                            State: {property.state}{" "}
+                        </li>
+                        <li className="list-group-item">
+                            Zip code: {property.postal_code}{" "}
+                        </li>
+                        <li className="list-group-item">
+                            Country: {property.country}{" "}
+                        </li>
+                        <li className="list-group-item">
+                            # Units: {property.units}{" "}
+                        </li>
                     </ul>
                 </div>
                 <div className="card-footer bg-white text-muted text-center">
-                    <ButtonManageAccountModals
-                        target={"#edit-property-form"}
-                        text={"Edit Details"}
-                    />
-                    <ButtonManageAccountModals
-                        target={"#delete-property"}
-                        text={"Delete Property"}
-                    />
+                    {property.name === "Select Property" ? null : (
+                        <ButtonManageAccountModals
+                            target={"#edit-property-form"}
+                            text={"Edit Details"}
+                        />
+                    )}
+                    {property.name === "Select Property" ? null : (
+                        <ButtonManageAccountModals
+                            target={"#delete-property"}
+                            text={"Delete Property"}
+                        />
+                    )}
                 </div>
                 <EditPropertyModal />
                 <DeletePropertyModal />

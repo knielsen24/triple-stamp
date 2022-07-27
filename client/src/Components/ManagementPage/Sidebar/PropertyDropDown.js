@@ -19,8 +19,8 @@ function PropertyDropDown() {
         error,
     } = useFetchPropertiesQuery({ refetchOnMountOrArgChange: true });
 
-    const handleSelectProperty = (property) =>
-        dispatch(selectProperty(property));
+    const handleSelectProperty = (featured) =>
+        dispatch(selectProperty(featured));
 
     // need useParams to render property link
 

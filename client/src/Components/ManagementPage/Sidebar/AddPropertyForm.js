@@ -5,7 +5,7 @@ import { useCreatePropertyMutation } from "../../../app/services/propertyApiSlic
 import { useDispatch, useSelector } from "react-redux";
 import { setUser, login } from "../../../app/features/userSlice";
 import { selectProperty } from "../../../app/features/propertySlice";
-import ButtonCancelAddProperty from "../../Buttons/ButtonCancelAddProperty";
+import ButtonCancelModal from "../../Buttons/ButtonCancelModal";
 
 function AddPropertyForm() {
     const [createProperty, { isLoading }] = useCreatePropertyMutation();
@@ -69,7 +69,7 @@ function AddPropertyForm() {
                                 otherwise
                                 render error message
                             */}
-                            <ButtonCancelAddProperty />
+                            <ButtonCancelModal />
                             <button
                                 type="submit"
                                 disabled={isSubmitting}

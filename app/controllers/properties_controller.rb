@@ -7,6 +7,12 @@ class PropertiesController < ApplicationController
         render json: property, status: :created
     end
 
+    def update
+        property = Property.find(params[:id])
+        property.update!(property_params)
+        render json: property, status: :accepted
+    end
+
     def destroy
         property = Property.find(params[:id])
         property.delete

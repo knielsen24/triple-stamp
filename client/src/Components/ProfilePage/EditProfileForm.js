@@ -5,6 +5,7 @@ import { useUpdateUserMutation } from "../../app/services/userApiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { login, setUser } from "../../app/features/userSlice";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
+import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 
 function EditProfileForm() {
     const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function EditProfileForm() {
     return (
         <div>
             <Formik
+                enableReinitialize
                 initialValues={{
                     full_name: user.full_name,
                     phone: user.phone,
@@ -141,6 +143,7 @@ function EditProfileForm() {
                                 would need to create state for errors,
                                 so button rerenders with correct attributes
                             */}
+                            <ButtonCancelModal />
                             <ButtonSaveChanges
                                 isSubmitting={isSubmitting}
                                 text={"Save Changes"}

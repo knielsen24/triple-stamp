@@ -8,10 +8,9 @@ export const propertyApi = createApi({
     tagTypes: ["properties", "user", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
-
             fetchProperties: builder.query({
                 query: () => "/me/properties",
-                providesTags: ["properties"]
+                providesTags: ["properties"],
             }),
 
             createProperty: builder.mutation({
@@ -19,20 +18,32 @@ export const propertyApi = createApi({
                     url: `/users/${data.user_id}/properties`,
                     method: "POST",
                     body: data,
-                }), invalidatesTags: ['properties'],
+                }),
+                invalidatesTags: ["properties"],
+            }),
+
+            updateProperty: builder.mutation({
+                query: (id) => ({
+                    url: `/properties/${id}`,
+                    method: "PATCH",
+                }),
+                invalidatesTags: ["properties"],
             }),
 
             deleteProperty: builder.mutation({
                 query: (id) => ({
                     url: `/properties/${id}`,
                     method: "DELETE",
-                }), invalidatesTags: ['properties'],
+                }),
+                invalidatesTags: ["properties"],
             }),
-
-
         };
     },
 });
 
-export const { useCreatePropertyMutation, useDeletePropertyMutation, useFetchPropertiesQuery,
- } = propertyApi;
+export const {
+    useCreatePropertyMutation,
+    useDeletePropertyMutation,
+    useFetchPropertiesQuery,
+    useUpdatePropertyMutation,
+} = propertyApi;

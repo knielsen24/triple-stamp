@@ -1,14 +1,13 @@
 import "../../App.css";
 
-function ButtonCancelModal({ text }) {
+function ButtonCancelModal() {
     return (
         <button
             type="button"
-            id="nav-btn-start-now"
-            className="btn btn-primary m-sm-auto"
+            className="btn btn border m-sm-auto"
             data-bs-dismiss="modal"
         >
-            {text}
+            Cancel
         </button>
     );
 }

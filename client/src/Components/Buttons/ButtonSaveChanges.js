@@ -1,6 +1,6 @@
 import React from "react";
 
-function ButtonSaveChanges({ isSubmitting, text }) {
+function ButtonSaveChanges({ isSubmitting }) {
     return (
         <button
             type="submit"
@@ -10,7 +10,7 @@ function ButtonSaveChanges({ isSubmitting, text }) {
             data-bs-dismiss="modal"
             aria-label="Close"
         >
-            {text}
+            Save Changes
         </button>
     );
 }
