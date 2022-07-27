@@ -27,28 +27,28 @@ function PropertyCard() {
                         />
                     </div>
                     <div className="header text-center text-white">
-                        <h5 className="card-title">{property.name}</h5>
+                        <h5 className="card-title user-select-none">{property.name}</h5>
                     </div>
                 </div>
 
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item">
+                        <li className="list-group-item user-select-none">
                             Address: {property.address}
                         </li>
-                        <li className="list-group-item">
+                        <li className="list-group-item user-select-none">
                             City: {property.city}{" "}
                         </li>
-                        <li className="list-group-item">
+                        <li className="list-group-item user-select-none">
                             State: {property.state}{" "}
                         </li>
-                        <li className="list-group-item">
+                        <li className="list-group-item user-select-none">
                             Zip code: {property.postal_code}{" "}
                         </li>
-                        <li className="list-group-item">
+                        <li className="list-group-item user-select-none">
                             Country: {property.country}{" "}
                         </li>
-                        <li className="list-group-item">
+                        <li className="list-group-item user-select-none">
                             No. of Units: {numberofUnits}{" "}
                         </li>
                     </ul>

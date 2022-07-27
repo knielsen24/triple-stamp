@@ -4,24 +4,34 @@ import { setSelectProperty } from "../../app/features/propertySlice";
 
 function UnitsContainer() {
 
-    // need rtk for select property. property slice is not asnyc.
-
     const property = useSelector(setSelectProperty);
-    console.log(property)
 
-    // let renderUnitList;
+    let renderUnitList;
 
-    // if (property) {
-    //     const getUnitsList = property.units;
-    //     renderUnitList = getUnitsList.map((unit) => {
-    //         console.log(unit);
-    //     });
-    // }
+    if (property) {
+        const getUnitsList = property.units;
+        renderUnitList = getUnitsList.map((unit) => {
+            console.log(unit);
+            return (
+                <button
+                    type="button"
+                    class="list-group-item list-group-item-action"
+                    aria-current="true"
+                    key={unit.id}
+                >
+                    {unit.number + " " + (unit.name || "name")}
+                </button>
+            );
+        });
+    }
 
     return (
         <div>
-            Units
-            {/* <div>{renderUnitList}</div> */}
+            <div className=" list-group">
+                <ul className="list-group list-group-flush">
+                    {renderUnitList}
+                </ul>
+            </div>
         </div>
     );
 }
