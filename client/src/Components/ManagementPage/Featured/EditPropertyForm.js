@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { setSelectProperty } from "../../../app/features/propertySlice";
+import { selectProperty, setSelectProperty } from "../../../app/features/propertySlice";
 import { Formik } from "formik";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
 import "yup-phone";
 import { useUpdatePropertyMutation } from "../../../app/services/propertyApiSlice";
@@ -11,6 +11,7 @@ import ButtonSaveChanges from "../../Buttons/ButtonSaveChanges";
 function EditPropertyForm() {
     // {property}
     const property = useSelector(setSelectProperty);
+    const dispatch = useDispatch();
     const [updateProperty, isLoading] = useUpdatePropertyMutation();
 
     // setInitialData(property)
@@ -51,7 +52,7 @@ function EditPropertyForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     console.log(values)
                     updateProperty(values).then((r) => {
-                        console.log(r.data);
+                        dispatch(selectProperty(r.data));
                     });
                     setTimeout(() => {
                         setSubmitting(false);
