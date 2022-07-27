@@ -11,6 +11,8 @@ function PropertyDropDown() {
     const property = useSelector(setSelectProperty);
     const dispatch = useDispatch();
 
+    // use a filter to select property
+
     const {
         data: properties,
         isLoading,

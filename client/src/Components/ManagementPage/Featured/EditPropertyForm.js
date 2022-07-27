@@ -25,7 +25,7 @@ function EditPropertyForm() {
             state: property.state,
             postal_code: property.postal_code,
             country: property.country,
-            units: property.units,
+            // units: property.units,
             user_id: property.user_id,
         };
     }
@@ -38,7 +38,7 @@ function EditPropertyForm() {
         state: Yup.string(),
         postal_code: Yup.string(),
         country: Yup.string(),
-        units: Yup.number(),
+        // units: Yup.number(),
         user_id: Yup.number().required(),
     });
 
@@ -188,7 +188,7 @@ function EditPropertyForm() {
                                 errors.country}
                         </div>
 
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                             <label
                                 htmlFor="units"
                                 className="form-label float-start"
@@ -205,7 +205,7 @@ function EditPropertyForm() {
                                 value={values.units}
                             />
                             {errors.units && touched.units && errors.units}
-                        </div>
+                        </div> */}
 
                         <div className="float-end">
                             {/*

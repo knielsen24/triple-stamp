@@ -3,21 +3,24 @@ import { useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
 
 function UnitsContainer() {
+
+    // need rtk for select property. property slice is not asnyc.
+
     const property = useSelector(setSelectProperty);
 
-    let renderUnitList;
+    // let renderUnitList;
 
-    if (property) {
-        const getUnitsList = property.units;
-        renderUnitList = getUnitsList.map((unit) => {
-            console.log(unit);
-        });
-    }
+    // if (property) {
+    //     const getUnitsList = property.units;
+    //     renderUnitList = getUnitsList.map((unit) => {
+    //         console.log(unit);
+    //     });
+    // }
 
     return (
         <div>
             Units
-            <div>{renderUnitList}</div>
+            {/* <div>{renderUnitList}</div> */}
         </div>
     );
 }
