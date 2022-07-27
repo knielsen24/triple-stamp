@@ -1,8 +1,8 @@
 import "../../App.css";
 import ButtonStartNow from "../Buttons/ButtonStartNow";
 import BannerCardsContainer from "./BannerCardsContainer";
-import LoginModal from "./LoginModal";
-import SignUpModal from "./SignUpModal";
+import LoginModal from "../Modals/LoginModal";
+import SignUpModal from "../Modals/SignUpModal";
 
 function Home() {
     return (

@@ -1,37 +1,29 @@
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
-import SignUpForm from "./SignUpForm";
+import AddPropertyForm from "../Forms/AddPropertyForm";
 
-function SignUpModal() {
+function AddPropertyModal() {
     return (
         <div>
             <div
                 className="modal fade"
-                id="start-now-modal"
+                id="add-property-form"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabIndex="-1"
-                aria-labelledby="start-now-modal"
+                aria-labelledby="add-property-form"
                 aria-hidden="true"
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="start-now-modal">
-                                Welcome to tripleStamp
-                                <div>
-                                    <p id="modal-subtext">
-                                        Start now - it's free. No credit card
-                                        needed
-                                    </p>
-                                </div>
+                            <h5 className="modal-title" id="add-property-form">
+                                Create property
                             </h5>
-
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
-                            <SignUpForm />
+                            <AddPropertyForm />
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -39,4 +31,4 @@ function SignUpModal() {
     );
 }
 
-export default SignUpModal;
+export default AddPropertyModal;

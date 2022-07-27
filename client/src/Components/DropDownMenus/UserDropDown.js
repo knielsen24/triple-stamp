@@ -1,7 +1,7 @@
 import "../../App.css";
 import { setUser } from "../../app/features/userSlice";
 import { useSelector } from "react-redux";
-import Logout from "./Logout";
+import Logout from "../Login-Logout/Logout";
 
 function UserDropDown() {
     const user = useSelector(setUser);
@@ -21,7 +21,7 @@ function UserDropDown() {
 
             <ul className="dropdown-menu">
                 <li>
-                    <a className="dropdown-item" href="profile">
+                    <a className="dropdown-item" href="/profile">
                         My profile
                     </a>
                 </li>

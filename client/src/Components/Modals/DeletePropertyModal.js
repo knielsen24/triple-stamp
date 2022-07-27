@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import {
     selectProperty,
     setSelectProperty,
-} from "../../../app/features/propertySlice";
-import { useDeletePropertyMutation } from "../../../app/services/propertyApiSlice";
-import ButtonCancelModal from "../../Buttons/ButtonCancelModal";
-import ButtonCloseModalX from "../../Buttons/ButtonCloseModalX";
-import ButtonDeleteProperty from "../../Buttons/ButtonDeleteProperty";
+} from "../../app/features/propertySlice";
+import { useDeletePropertyMutation } from "../../app/services/propertyApiSlice";
+import ButtonCancelModal from "../Buttons/ButtonCancelModal";
+import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
+import ButtonDeleteProperty from "../Buttons/ButtonDeleteProperty";
 
 function DeletePropertyModal() {
     const property = useSelector(setSelectProperty);

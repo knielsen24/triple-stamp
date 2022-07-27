@@ -1,23 +1,26 @@
-import ButtonCloseModalX from "../Buttons/ButtonCloseModalX"
-import EditProfileForm from "./EditProfileForm";
+import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
+import EditPropertyForm from "../Forms/EditPropertyForm";
 
-function EditProfileModal() {
+function EditPropertyModal() {
     return (
         <div>
             <div
                 className="modal fade"
-                id="update-profile-form"
+                id="edit-property-form"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabIndex="-1"
-                aria-labelledby="update-profile-form"
+                aria-labelledby="edit-property-form"
                 aria-hidden="true"
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="update-profile-form">
-                                Edit your profile information
+                            <h5
+                                className="modal-title"
+                                id="edit-property-form"
+                            >
+                                Edit your property information
                                 <div>
                                     <p id="modal-subtext">
                                         Click save changes to update
@@ -28,10 +31,8 @@ function EditProfileModal() {
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
-                           {/* <EditProfileForm /> */}
-                           <EditProfileForm />
+                            <EditPropertyForm />
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -39,4 +40,4 @@ function EditProfileModal() {
     );
 }
 
-export default EditProfileModal;
+export default EditPropertyModal;

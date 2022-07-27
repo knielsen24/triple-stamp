@@ -1,10 +1,10 @@
 import {
     selectProperty,
     setSelectProperty,
-} from "../../../app/features/propertySlice";
+} from "../../app/features/propertySlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useFetchPropertiesQuery } from "../../../app/services/propertyApiSlice";
-import ButtonOpenAddPropertyModal from "../../Buttons/ButtonOpenAddPropertyModal";
+import { useFetchPropertiesQuery } from "../../app/services/propertyApiSlice";
+import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
 import { useNavigate } from "react-router-dom";
 
 function PropertyDropDown() {

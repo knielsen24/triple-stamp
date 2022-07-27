@@ -1,7 +1,7 @@
-import PropertyCard from "./Dashboard/PropertyCard";
+import PropertyCard from "../Dashboard/PropertyCard"
 import ManagementNav from "./ManagementNav";
-import AddPropertyModal from "./Sidebar/AddPropertyModal";
-import PropertyDropDown from "./Sidebar/PropertyDropDown";
+import AddPropertyModal from "../Modals/AddPropertyModal";
+import PropertyDropDown from "../DropDownMenus/PropertyDropDown";
 import UnitsContainer from "./UnitsContainer";
 import { Route, Routes } from "react-router-dom";
 
