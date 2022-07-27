@@ -13,8 +13,6 @@ function PropertyDropDown() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // use a filter to select property
-
     const {
         data: properties,
         isLoading,
@@ -62,13 +60,13 @@ function PropertyDropDown() {
                     {property.name || ""}
                 </a>
                 <ul className="dropdown-menu">
-                    {renderPropertyList}
-                    <li>
-                        <hr className="dropdown-divider" />
-                    </li>
                     <li>
                         <ButtonOpenAddPropertyModal />
                     </li>
+                    <li>
+                        <hr className="dropdown-divider" />
+                    </li>
+                    {renderPropertyList}
                 </ul>
             </div>
         </div>

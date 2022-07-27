@@ -41,7 +41,6 @@ function EditPropertyForm() {
         user_id: Yup.number().required(),
     });
 
-    // need to check if the id is going through
     return (
         <div>
             <Formik

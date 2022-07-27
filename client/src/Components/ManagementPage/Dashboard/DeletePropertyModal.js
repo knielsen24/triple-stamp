@@ -12,10 +12,22 @@ function DeletePropertyModal() {
     const property = useSelector(setSelectProperty);
     const [deleteProperty, isLoading] = useDeletePropertyMutation();
     const dispatch = useDispatch();
+    const inititialState = {
+        name: "",
+        id: "",
+        name: "",
+        address: "",
+        city: "",
+        state: "",
+        postal_code: "",
+        country: "",
+        units: [{ name: "name" }],
+        user_id: "",
+    };
 
     const handleDeleteProperty = (id) => {
         deleteProperty(id).then(() => {
-            dispatch(selectProperty("Select property"));
+            dispatch(selectProperty(inititialState));
         });
     };
 
