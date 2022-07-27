@@ -3,7 +3,7 @@ class User < ApplicationRecord
     has_many :units, through: :properties
     has_secure_password
 
-    validates :full_name, :email, :full_name, :account_name, presence: true
+    validates :full_name, :email, :account_name, presence: true
     validates :email, uniqueness: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 

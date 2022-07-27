@@ -18,7 +18,8 @@ function PropertyDropDown() {
         isSuccess,
         isError,
         error,
-    } = useFetchPropertiesQuery({ refetchOnMountOrArgChange: true });
+    } = useFetchPropertiesQuery();
+    // { refetchOnMountOrArgChange: true }
 
     const handleSelectProperty = (featured) =>
         dispatch(selectProperty(featured));
