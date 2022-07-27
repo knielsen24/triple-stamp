@@ -6,8 +6,8 @@ function ManagementNav() {
 
     let detailsLinkhref;
     property.name !== ""
-        ? (detailsLinkhref = "property-details")
-        : (detailsLinkhref = "management/property-details");
+        ? (detailsLinkhref = "#")
+        : (detailsLinkhref = "/management/property-details");
 
     return (
         <div className="text-center mb-3">

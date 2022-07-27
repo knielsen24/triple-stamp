@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser, login } from "../../../app/features/userSlice";
 import { selectProperty } from "../../../app/features/propertySlice";
 import ButtonCancelModal from "../../Buttons/ButtonCancelModal";
+import { useNavigate } from "react-router-dom";
 
 function AddPropertyForm() {
     const [createProperty, { isLoading }] = useCreatePropertyMutation();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const user = useSelector(setUser);
 
     const createSchema = Yup.object().shape({
@@ -34,6 +36,7 @@ function AddPropertyForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     createProperty(values).then((r) => {
                         dispatch(selectProperty(r.data));
+                        navigate("/management/property-details")
                     });
                     setTimeout(() => {
                         setSubmitting(false);

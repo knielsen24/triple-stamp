@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
     selectProperty,
     setSelectProperty,
@@ -12,6 +13,8 @@ function DeletePropertyModal() {
     const property = useSelector(setSelectProperty);
     const [deleteProperty, isLoading] = useDeletePropertyMutation();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const inititialState = {
         name: "",
         id: "",
@@ -28,6 +31,7 @@ function DeletePropertyModal() {
     const handleDeleteProperty = (id) => {
         deleteProperty(id).then(() => {
             dispatch(selectProperty(inititialState));
+            navigate("/management");
         });
     };
 
