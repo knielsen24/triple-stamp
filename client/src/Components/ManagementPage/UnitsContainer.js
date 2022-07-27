@@ -11,13 +11,13 @@ function UnitsContainer() {
     if (property) {
         const getUnitsList = property.units;
         renderUnitList = getUnitsList.map((unit) => {
-            console.log(unit);
             return (
                 <button
                     type="button"
                     class="list-group-item list-group-item-action"
                     aria-current="true"
                     key={unit.id}
+                    onClick={()=>{}}
                 >
                     {unit.number + " " + (unit.name || "name")}
                 </button>
@@ -26,10 +26,10 @@ function UnitsContainer() {
     }
 
     return (
-        <div>
+        <div>{property.name + " " + "units"}
             <div className=" list-group">
                 <ul className="list-group list-group-flush">
-                    {renderUnitList}
+                    {property.name !== "" ? renderUnitList : null}
                 </ul>
             </div>
         </div>
