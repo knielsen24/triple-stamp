@@ -2,7 +2,7 @@ import React from "react";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import AddUnitForm from "../Forms/AddUnitForm";
 
-function AddUnitsModal() {
+function AddUnitModal() {
     return (
         <div>
             <div
@@ -32,4 +32,4 @@ function AddUnitsModal() {
     );
 }
 
-export default AddUnitsModal;
+export default AddUnitModal;
