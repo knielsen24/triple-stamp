@@ -23,6 +23,7 @@ class PropertiesController < ApplicationController
 
     def property_params
         params.permit(
+            :id,
             :name,
             :address,
             :city,

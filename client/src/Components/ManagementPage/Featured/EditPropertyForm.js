@@ -25,7 +25,6 @@ function EditPropertyForm() {
             state: property.state,
             postal_code: property.postal_code,
             country: property.country,
-            // units: property.units,
             user_id: property.user_id,
         };
     }
@@ -50,6 +49,7 @@ function EditPropertyForm() {
                 initialValues={initialData}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
+                    console.log(values)
                     updateProperty(values).then((r) => {
                         console.log(r.data);
                     });
@@ -151,7 +151,7 @@ function EditPropertyForm() {
                                 htmlFor="postal_code"
                                 className="form-label float-start"
                             >
-                                postal_code
+                                Zip code
                             </label>
                             <input
                                 id="postal_code"
@@ -172,7 +172,7 @@ function EditPropertyForm() {
                                 htmlFor="country"
                                 className="form-label float-start"
                             >
-                                country
+                                Country
                             </label>
                             <input
                                 id="country"

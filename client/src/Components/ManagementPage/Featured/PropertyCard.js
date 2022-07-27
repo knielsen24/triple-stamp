@@ -9,10 +9,10 @@ import EditPropertyModal from "./EditPropertyModal";
 function PropertyCard() {
     const property = useSelector(setSelectProperty);
 
-    // let numberofUnits;
-    // if(property){
-    //     numberofUnits = property.units.length
-    // }
+    let numberofUnits;
+    if(property){
+        numberofUnits = property.units.length
+    }
 
     return (
         <div className="container align-content-items-center">
@@ -48,9 +48,9 @@ function PropertyCard() {
                         <li className="list-group-item">
                             Country: {property.country}{" "}
                         </li>
-                        {/* <li className="list-group-item">
-                            # Units: {numberofUnits}{" "}
-                        </li> */}
+                        <li className="list-group-item">
+                            No. of Units: {numberofUnits}{" "}
+                        </li>
                     </ul>
                 </div>
                 <div className="card-footer bg-white text-muted text-center">

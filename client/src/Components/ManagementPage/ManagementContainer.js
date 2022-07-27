@@ -9,7 +9,7 @@ function PropertiesContainer() {
         <div className="container border-endtext-center min-vh-100">
             <div className="row">
                 <div className="col-4 vstack p-0 border-end min-vh-100">
-                    <p className="text-start">Property</p>
+                    <p className="text-start">Select Property</p>
                     <div className="row mw-100 mb-3 align-content-items-center">
                         <PropertyDropDown />
                         <AddPropertyModal />

@@ -2,7 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     property: {
-        name: "Select Property"
+        name: "",
+        id: "",
+        name: "",
+        address: "",
+        city: "",
+        state: "",
+        postal_code: "",
+        country: "",
+        units: [],
+        user_id: "",
     },
 };
 

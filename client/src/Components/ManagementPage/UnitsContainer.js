@@ -7,6 +7,7 @@ function UnitsContainer() {
     // need rtk for select property. property slice is not asnyc.
 
     const property = useSelector(setSelectProperty);
+    console.log(property)
 
     // let renderUnitList;
 

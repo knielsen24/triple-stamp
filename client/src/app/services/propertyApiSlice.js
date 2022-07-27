@@ -23,9 +23,10 @@ export const propertyApi = createApi({
             }),
 
             updateProperty: builder.mutation({
-                query: (id) => ({
-                    url: `/properties/${id}`,
+                query: ({...data}) => ({
+                    url: `/properties/${data.id}`,
                     method: "PATCH",
+                    body: data,
                 }),
                 invalidatesTags: ["properties"],
             }),
