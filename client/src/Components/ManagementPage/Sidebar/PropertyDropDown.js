@@ -21,7 +21,7 @@ function PropertyDropDown() {
 
     const handleSelectProperty = (featured) =>
         dispatch(selectProperty(featured));
-
+    console.log(properties)
     // need useParams to render property link
 
     let renderPropertyList;

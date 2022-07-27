@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { setSelectProperty } from "../../../app/features/propertySlice";
 import { Formik } from "formik";
 import { useSelector } from "react-redux";
@@ -7,11 +8,27 @@ import { useUpdatePropertyMutation } from "../../../app/services/propertyApiSlic
 import ButtonCancelModal from "../../Buttons/ButtonCancelModal";
 import ButtonSaveChanges from "../../Buttons/ButtonSaveChanges";
 
-
 function EditPropertyForm() {
+    // {property}
     const property = useSelector(setSelectProperty);
     const [updateProperty, isLoading] = useUpdatePropertyMutation();
-    console.log(property)
+
+    // setInitialData(property)
+    let initialData = {};
+
+    if (property) {
+        initialData = {
+            id: property.id,
+            name: property.name,
+            address: property.address,
+            city: property.city,
+            state: property.state,
+            postal_code: property.postal_code,
+            country: property.country,
+            units: property.units,
+            user_id: property.user_id,
+        };
+    }
 
     const updateSchema = Yup.object().shape({
         id: Yup.number().required(),
@@ -30,20 +47,9 @@ function EditPropertyForm() {
         <div>
             <Formik
                 enableReinitialize
-                initialValues={{
-                    id: property.id,
-                    name: property.name,
-                    address: property.address,
-                    city: property.city,
-                    state: property.state,
-                    postal_code: property.postal_code,
-                    country: property.country,
-                    units: property.units,
-                    user_id: property.user_id,
-                }}
+                initialValues={initialData}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values);
                     updateProperty(values).then((r) => {
                         console.log(r.data);
                     });
@@ -60,7 +66,6 @@ function EditPropertyForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
-
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -98,7 +103,9 @@ function EditPropertyForm() {
                                 onBlur={handleBlur}
                                 value={values.address}
                             />
-                            {errors.address && touched.address && errors.address}
+                            {errors.address &&
+                                touched.address &&
+                                errors.address}
                         </div>
 
                         <div className="mb-3">
@@ -155,7 +162,9 @@ function EditPropertyForm() {
                                 onBlur={handleBlur}
                                 value={values.postal_code}
                             />
-                            {errors.postal_code && touched.postal_code && errors.postal_code}
+                            {errors.postal_code &&
+                                touched.postal_code &&
+                                errors.postal_code}
                         </div>
 
                         <div className="mb-3">
@@ -174,7 +183,9 @@ function EditPropertyForm() {
                                 onBlur={handleBlur}
                                 value={values.country}
                             />
-                            {errors.country && touched.country && errors.country}
+                            {errors.country &&
+                                touched.country &&
+                                errors.country}
                         </div>
 
                         <div className="mb-3">

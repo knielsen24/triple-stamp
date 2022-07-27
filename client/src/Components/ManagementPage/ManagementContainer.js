@@ -2,6 +2,7 @@ import React from "react";
 import PropertyCard from "./Featured/PropertyCard";
 import AddPropertyModal from "./Sidebar/AddPropertyModal";
 import PropertyDropDown from "./Sidebar/PropertyDropDown";
+import UnitsContainer from "./UnitsContainer";
 
 function PropertiesContainer() {
     return (
@@ -12,8 +13,10 @@ function PropertiesContainer() {
                     <div className="row mw-100 mb-3 align-content-items-center">
                         <PropertyDropDown />
                         <AddPropertyModal />
+
                     </div>
                     <hr className="w-auto"/>
+                    <UnitsContainer />
                 </div>
                 <div className="col-8 p-0">
                     <PropertyCard />

@@ -1,10 +1,6 @@
 import "../../../App.css";
-import {
-    selectProperty,
-    setSelectProperty,
-} from "../../../app/features/propertySlice";
+import { setSelectProperty } from "../../../app/features/propertySlice";
 import homeIcon from "../../../assets/home-icon.svg";
-import DeleteProfileModal from "../../ProfilePage/DeleteProfileModal";
 import ButtonManageAccountModals from "../../Buttons/ButtonManageAccountModals";
 import { useSelector } from "react-redux";
 import DeletePropertyModal from "./DeletePropertyModal";
@@ -66,7 +62,7 @@ function PropertyCard() {
                         />
                     )}
                 </div>
-                <EditPropertyModal />
+                <EditPropertyModal property={property} />
                 <DeletePropertyModal />
             </div>
         </div>
