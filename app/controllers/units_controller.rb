@@ -9,6 +9,6 @@ class UnitsController < ApplicationController
     private
 
     def unit_params
-        permit.params(:number, :label, :square_feet, :property_id)
+        params.permit(:number, :label, :square_feet, :property_id)
     end
 end

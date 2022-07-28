@@ -5,20 +5,19 @@ import { useDispatch, useSelector } from "react-redux";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useNavigate } from "react-router-dom";
 import { setSelectProperty } from "../../app/features/propertySlice";
+import { useCreateUnitMutation } from "../../app/services/unitApiSlice";
 
 function AddUnitForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [createUnit, { isLoading }] = useCreateUnitMutation();
 
     const property = useSelector(setSelectProperty);
-    console.log(property)
+    console.log(property);
 
-    const initialData = {
-        number: "",
-        label: "",
-        square_feet: "",
-        property_id: property.id || "",
-    };
+    // const initialData = {
+    //     ,
+    // };
 
     const createSchema = Yup.object().shape({
         number: Yup.string().min(1, "Too Short!").max(20, "Too Long!"),
@@ -29,10 +28,15 @@ function AddUnitForm() {
         <div>
             <Formik
                 enableReinitialize
-                initialValues={{ initialData }}
+                initialValues={{
+                    number: "",
+                    label: "",
+                    square_feet: "",
+                    property_id: property.id || "",
+                }}
                 validationSchema={createSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values)
+                    createUnit(values);
                     // createProperty(values).then((r) => {
                     //     dispatch(selectProperty(r.data));
                     //     navigate("/management/property-details");
@@ -57,7 +61,7 @@ function AddUnitForm() {
                                 htmlFor="number"
                                 className="form-label float-start"
                             >
-                                Unit number.  Letters are acceptable!
+                                Unit number. Letters are acceptable!
                             </label>
                             <input
                                 id="number"

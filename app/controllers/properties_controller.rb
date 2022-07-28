@@ -19,6 +19,11 @@ class PropertiesController < ApplicationController
         head  :no_content
     end
 
+    def units_index
+        property = Property.find(params[:id])
+        render json: property.units
+    end
+
     private
 
     def create_property_params

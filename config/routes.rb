@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     post "/users/:id/properties", to: "properties#create"
     patch "/properties/:id", to: "properties#update"
     delete "/properties/:id", to: "properties#destroy"
+    get "/properties/:id/units", to: "properties#units_index"
 
 # UNIT #
     post "/properties/:id/units", to: "units#create"
