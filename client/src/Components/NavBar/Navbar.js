@@ -9,7 +9,6 @@ import HomeLinks from "./HomeLinks";
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function Navbar() {
-    // const user = useSelector(setUser);
     const { data: user } = useFetchUserQuery({
         refetchOnMountOrArgChange: true,
     });
@@ -22,7 +21,7 @@ function Navbar() {
             <div className="container-md d-flex" id="main-nav-container">
                 <a
                     className="navbar-brand mx-sm-2 align-top"
-                    href={user ? "dashboard" : "/"}
+                    href={user ? "management" : "/"}
                 >
                     <img src={logoName} alt="logo" id="logo-name" />
                 </a>

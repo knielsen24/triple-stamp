@@ -6,11 +6,11 @@ import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 
 function EditProfileForm() {
+    const [updateUser, { isLoading }] = useUpdateUserMutation();
+
     const { data: user } = useFetchUserQuery({
         refetchOnMountOrArgChange: true,
     });
-
-    const [updateUser, { isLoading }] = useUpdateUserMutation();
 
     const updateSchema = Yup.object().shape({
         full_name: Yup.string()

@@ -8,9 +8,9 @@ import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 
 function EditPropertyForm() {
-    const property = useSelector(setSelectProperty);
     const dispatch = useDispatch();
     const [updateProperty, isLoading] = useUpdatePropertyMutation();
+    const property = useSelector(setSelectProperty);
 
     let initialData = {};
 

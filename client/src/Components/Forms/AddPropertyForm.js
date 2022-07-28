@@ -10,13 +10,13 @@ import { useNavigate } from "react-router-dom";
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function AddPropertyForm() {
-    const [createProperty, { isLoading }] = useCreatePropertyMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { data: user } = useFetchUserQuery({
-        refetchOnMountOrArgChange: true,
-    });
-    // const user = useSelector(setUser);
+
+    const [createProperty, { isLoading }] = useCreatePropertyMutation();
+    const { data: user } = useFetchUserQuery();
+    const userId = user ? user.id : ""
+
 
     const createSchema = Yup.object().shape({
         name: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),
@@ -34,13 +34,13 @@ function AddPropertyForm() {
                     postal_code: "",
                     country: "",
                     units: [],
-                    user_id: user.id,
+                    user_id: userId,
                 }}
                 validationSchema={createSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     createProperty(values).then((r) => {
                         dispatch(selectProperty(r.data));
-                        navigate("/management/property-details")
+                        navigate("/management/property-details");
                     });
                     setTimeout(() => {
                         setSubmitting(false);

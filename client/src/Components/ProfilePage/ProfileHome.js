@@ -1,14 +1,11 @@
 import "../../App.css";
 import profileIcon from "../../assets/person-icon.svg";
-import { useSelector } from "react-redux";
-import { setUser } from "../../app/features/userSlice";
 import DeleteProfileModal from "../Modals/DeleteProfileModal";
 import EditProfileModal from "../Modals/EditProfileModal";
 import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function ProfileHome() {
-    // const user = useSelector(setUser);
     const { data: user } = useFetchUserQuery({
         refetchOnMountOrArgChange: true,
     });
