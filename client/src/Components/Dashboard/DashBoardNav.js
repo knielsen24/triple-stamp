@@ -13,13 +13,14 @@ function DashBoardNav() {
         <div className="text-center mb-3">
             <ul className="nav nav-tabs nav-fill">
                 <li className="nav-item">
-                    <a className="nav-link active " aria-current="page" href="#">
+                    <a className="nav-link active "
+                    aria-current="page" href="#">
                         {/* bg-secondary bg-opacity-75 */}
                         Inspections
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link active" href="#">
                         Tasks
                     </a>
                 </li>

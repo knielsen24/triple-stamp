@@ -20,9 +20,6 @@ function PropertyDropDown() {
         error,
     } = useFetchPropertiesQuery();
 
-    const handleSelectProperty = (featured) =>
-        dispatch(selectProperty(featured));
-
     // need useParams to render property link
 
     let renderPropertyList;
@@ -36,7 +33,7 @@ function PropertyDropDown() {
                         href="#"
                         onClick={(e) => {
                             e.preventDefault();
-                            handleSelectProperty(property);
+                            dispatch(selectProperty(property));
                             navigate("property-details");
                         }}
                     >

@@ -5,8 +5,8 @@ const initialState = {
         id: "",
         number: "",
         label: "",
-        square_feet: "",
         property_id: "",
+        square_feet: "",
     },
 };
 

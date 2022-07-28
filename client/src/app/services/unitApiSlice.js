@@ -38,7 +38,7 @@ export const unitApi = createApi({
                     url: `/units/${id}`,
                     method: "DELETE",
                 }),
-                invalidatesTags: (result, error, arg) => [
+                invalidatesTags: (result, error, arg) => ["properties",
                     { type: "units", id: arg.id },
                 ],
             }),
