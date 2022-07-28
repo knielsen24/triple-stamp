@@ -1,18 +1,18 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
-import { selectUnit, setSelectUnit } from '../../app/features/unitSlice';
-import ButtonCancelModal from '../Buttons/ButtonCancelModal';
-import ButtonCloseModalX from '../Buttons/ButtonCloseModalX';
-import ButtonDeleteUnit from '../Buttons/ButtonDeleteUnit';
+import React from "react";
+import { useSelector } from "react-redux";
+import { setSelectUnit } from "../../app/features/unitSlice";
+import ButtonCancelModal from "../Buttons/ButtonCancelModal";
+import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
+import ButtonDeleteUnit from "../Buttons/ButtonDeleteUnit";
+import { useDeleteUnitMutation } from "../../app/services/propertyApiSlice";
 
 function DeleteUnitModal() {
-
-    const unit = useSelector(setSelectUnit)
-    console.log(unit)
+    const unit = useSelector(setSelectUnit);
+    const [deleteUnit] = useDeleteUnitMutation();
 
     const handleDeleteUnit = (id) => {
-        console.log(id)
-    }
+        deleteUnit(id);
+    };
 
     return (
         <div>
@@ -35,14 +35,17 @@ function DeleteUnitModal() {
                         </div>
                         <div className="modal-body">
                             <p className="float-start m-0" id="modal-subtext">
-                                By clicking "Delete Unit" will permantly
-                                remove this item and your
-                                information will not be recoverable.
+                                By clicking "Delete Unit" will permantly remove
+                                this item and your information will not be
+                                recoverable.
                             </p>
                         </div>
                         <div className="modal-footer">
                             <ButtonCancelModal text={"cancel"} />
-                            <ButtonDeleteUnit handleDelete={handleDeleteUnit} text/>
+                            <ButtonDeleteUnit
+                                handleDelete={handleDeleteUnit}
+                                id={unit.id}
+                            />
                             {/* <ButtonDeleteUser
                                 // id={user.id}
                                 handleDeleteUser={handleDeleteUser}
@@ -55,4 +58,4 @@ function DeleteUnitModal() {
     );
 }
 
-export default DeleteUnitModal
+export default DeleteUnitModal;

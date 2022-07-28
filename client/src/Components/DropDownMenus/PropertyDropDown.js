@@ -18,7 +18,7 @@ function PropertyDropDown() {
         isSuccess,
         isError,
         error,
-    } = useFetchPropertiesQuery();
+    } = useFetchPropertiesQuery({refetchOnMountOrArgChange: true,});
 
     // need useParams to render property link
 

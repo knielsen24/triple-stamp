@@ -8,6 +8,7 @@ export const userApi = createApi({
     tagTypes: ["user", "properties", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
+
             logoutApi: builder.mutation({
                 query: () => ({
                     url: "/logout",
@@ -29,8 +30,6 @@ export const userApi = createApi({
                 }),
                 invalidatesTags: ["user"],
             }),
-
-
 
             createUser: builder.mutation({
                 query: ({ ...data }) => ({

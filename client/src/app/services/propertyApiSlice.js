@@ -5,12 +5,12 @@ export const propertyApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000",
     }),
-    tagTypes: ["properties", "user", "UNAUTHORIZED"],
+    tagTypes: ["properties", "units", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
             fetchProperties: builder.query({
                 query: () => "/currentuser/properties",
-                providesTags: ["properties"],
+                providesTags: ["properties", "units"],
             }),
 
             createProperty: builder.mutation({
@@ -42,6 +42,38 @@ export const propertyApi = createApi({
                     { type: "properties", id: arg.id },
                 ],
             }),
+
+            createUnit: builder.mutation({
+                query: ({ ...data }) => ({
+                    url: `/properties/${data.property_id}/units`,
+                    method: "POST",
+                    body: data,
+                }),
+                invalidatesTags: ["properties"],
+            }),
+
+            updateUnit: builder.mutation({
+                query: ({ ...data }) => ({
+                    url: `/units/${data.id}`,
+                    method: "PATCH",
+                    body: data,
+                }),
+                invalidatesTags: (result, error, arg) => [
+                    "properties",
+                    { type: "units", id: arg.id },
+                ],
+            }),
+
+            deleteUnit: builder.mutation({
+                query: (id) => ({
+                    url: `/units/${id}`,
+                    method: "DELETE",
+                }),
+                invalidatesTags: (result, error, arg) => [
+                    "properties",
+                    { type: "units", id: arg.id },
+                ],
+            }),
         };
     },
 });
@@ -51,4 +83,7 @@ export const {
     useDeletePropertyMutation,
     useFetchPropertiesQuery,
     useUpdatePropertyMutation,
+    useCreateUnitMutation,
+    useUpdateUnitMutation,
+    useDeleteUnitMutation,
 } = propertyApi;

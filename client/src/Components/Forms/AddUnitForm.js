@@ -8,30 +8,25 @@ import {
     selectProperty,
     setSelectProperty,
 } from "../../app/features/propertySlice";
-import { useCreateUnitMutation } from "../../app/services/unitApiSlice";
+import { useCreateUnitMutation } from "../../app/services/propertyApiSlice";
 import { useFetchPropertiesQuery } from "../../app/services/propertyApiSlice";
 
 function AddUnitForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [createUnit, { isLoading }] = useCreateUnitMutation();
-
-    const {
-        data: properties,
-        isSuccess,
-        isError,
-        error,
-    } = useFetchPropertiesQuery();
-
     const property = useSelector(setSelectProperty);
 
-    // const handleFindProperty = (id) => {
-    //     const findProperty = properties.filter((property) => {
-    //         return property.id === id;
-    //     });
-    //     // console.log(findProperty);
-    //     dispatch(selectProperty(findProperty))
-    // };
+    const [createUnit, { isLoading }] = useCreateUnitMutation();
+    const { data: properties } = useFetchPropertiesQuery();
+
+
+    const handlePropertyState = (id) => {
+        let findProperty;
+        if (properties) {
+            findProperty = properties.filter((prop) => prop.id === id)
+            dispatch(selectProperty(findProperty))
+        }
+    }
 
     const createSchema = Yup.object().shape({
         number: Yup.string().min(1, "Too Short!").max(20, "Too Long!"),
@@ -51,7 +46,7 @@ function AddUnitForm() {
                 validationSchema={createSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     createUnit(values).then((r) => {
-                        console.log(r.data.property_id);
+                        handlePropertyState(r.data.property_id);
                     });
                     setTimeout(() => {
                         setSubmitting(false);
