@@ -1,10 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { setSelectProperty } from "../../app/features/propertySlice";
+import ButtonOpenDeleteUnitModal from "../Buttons/ButtonOpenDeleteUnitModal";
 
 function UnitDropDown() {
-
-        const renderDropDownItems = []
+    const renderDropDownItems = [];
 
     return (
         <ul class="dropdown-menu">
@@ -27,9 +25,7 @@ function UnitDropDown() {
                 <hr className="dropdown-divider" />
             </li>
             <li>
-                <a className="dropdown-item" href="#">
-                    Delete Unit
-                </a>
+                <ButtonOpenDeleteUnitModal />
             </li>
         </ul>
     );

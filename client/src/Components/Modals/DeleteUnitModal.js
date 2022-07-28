@@ -1,6 +1,14 @@
 import React from 'react'
+import ButtonCancelModal from '../Buttons/ButtonCancelModal';
+import ButtonCloseModalX from '../Buttons/ButtonCloseModalX';
+import ButtonDeleteUnit from '../Buttons/ButtonDeleteUnit';
 
 function DeleteUnitModal() {
+
+    const handleDeleteUnit = () => {
+
+    }
+
     return (
         <div>
             <div
@@ -16,23 +24,24 @@ function DeleteUnitModal() {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="delete-unit-form">
-                                Are you sure you want to delete your account?
+                                Are you sure you want to delete this unit?
                             </h5>
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
                             <p className="float-start m-0" id="modal-subtext">
-                                By clicking "Delete My Account" will permantly
-                                remove your account with tripleStamp and your
+                                By clicking "Delete Unit" will permantly
+                                remove this item and your
                                 information will not be recoverable.
                             </p>
                         </div>
                         <div className="modal-footer">
                             <ButtonCancelModal text={"cancel"} />
-                            <ButtonDeleteUser
-                                id={user.id}
+                            <ButtonDeleteUnit handleDelete={handleDeleteUnit} />
+                            {/* <ButtonDeleteUser
+                                // id={user.id}
                                 handleDeleteUser={handleDeleteUser}
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>

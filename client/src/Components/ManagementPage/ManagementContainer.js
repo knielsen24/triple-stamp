@@ -5,6 +5,7 @@ import PropertyDropDown from "../DropDownMenus/PropertyDropDown";
 import UnitsContainer from "./UnitsContainer";
 import { Route, Routes } from "react-router-dom";
 import AddUnitsModal from "../Modals/AddUnitModal";
+import DeleteUnitModal from "../Modals/DeleteUnitModal";
 
 function PropertiesContainer() {
     return (
@@ -18,6 +19,7 @@ function PropertiesContainer() {
                         <PropertyDropDown />
                         <AddPropertyModal />
                         <AddUnitsModal />
+                        <DeleteUnitModal />
                     </div>
                     <hr className="w-auto" />
                     <UnitsContainer />
