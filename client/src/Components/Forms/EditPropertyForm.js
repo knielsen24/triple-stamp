@@ -8,12 +8,10 @@ import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 
 function EditPropertyForm() {
-    // {property}
     const property = useSelector(setSelectProperty);
     const dispatch = useDispatch();
     const [updateProperty, isLoading] = useUpdatePropertyMutation();
 
-    // setInitialData(property)
     let initialData = {};
 
     if (property) {

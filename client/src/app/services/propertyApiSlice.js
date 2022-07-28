@@ -9,7 +9,7 @@ export const propertyApi = createApi({
     endpoints(builder) {
         return {
             fetchProperties: builder.query({
-                query: () => "/me/properties",
+                query: () => "/currentuser/properties",
                 providesTags: ["properties"],
             }),
 
@@ -23,12 +23,14 @@ export const propertyApi = createApi({
             }),
 
             updateProperty: builder.mutation({
-                query: ({...data}) => ({
+                query: ({ ...data }) => ({
                     url: `/properties/${data.id}`,
                     method: "PATCH",
                     body: data,
                 }),
-                invalidatesTags: ["properties"],
+                invalidatesTags: (result, error, arg) => [
+                    { type: "properties", id: arg.id },
+                ],
             }),
 
             deleteProperty: builder.mutation({
@@ -36,7 +38,9 @@ export const propertyApi = createApi({
                     url: `/properties/${id}`,
                     method: "DELETE",
                 }),
-                invalidatesTags: ["properties"],
+                invalidatesTags: (result, error, arg) => [
+                    { type: "properties", id: arg.id },
+                ],
             }),
         };
     },

@@ -4,7 +4,6 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { useLoginApiMutation } from "../../app/services/userApiSlice";
 import { useDispatch } from "react-redux";
-import { login } from "../../app/features/userSlice";
 import { selectProperty } from "../../app/features/propertySlice";
 
 function LoginForm() {
@@ -43,7 +42,7 @@ function LoginForm() {
                 validationSchema={loginSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     loginApi(values)
-                        .then((r) => dispatch(login(r.data)))
+                        .then((r) => {})
                         .then(dispatch(selectProperty(inititialState)))
                         .then(navigate("management"));
                     setTimeout(() => {

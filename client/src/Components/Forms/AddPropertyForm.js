@@ -7,12 +7,16 @@ import { setUser, login } from "../../app/features/userSlice";
 import { selectProperty } from "../../app/features/propertySlice";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useNavigate } from "react-router-dom";
+import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function AddPropertyForm() {
     const [createProperty, { isLoading }] = useCreatePropertyMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector(setUser);
+    const { data: user } = useFetchUserQuery({
+        refetchOnMountOrArgChange: true,
+    });
+    // const user = useSelector(setUser);
 
     const createSchema = Yup.object().shape({
         name: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),

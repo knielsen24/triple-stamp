@@ -6,9 +6,13 @@ import UserDropDown from "../DropDownMenus/UserDropDown";
 import ButtonStartNow from "../Buttons/ButtonStartNow";
 import DashboardLinks from "./DashboardLinks";
 import HomeLinks from "./HomeLinks";
+import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function Navbar() {
-    const user = useSelector(setUser);
+    // const user = useSelector(setUser);
+    const { data: user } = useFetchUserQuery({
+        refetchOnMountOrArgChange: true,
+    });
 
     return (
         <nav

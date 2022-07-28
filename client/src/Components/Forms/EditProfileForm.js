@@ -1,15 +1,15 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "yup-phone";
-import { useUpdateUserMutation } from "../../app/services/userApiSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { login, setUser } from "../../app/features/userSlice";
+import { useFetchUserQuery, useUpdateUserMutation } from "../../app/services/userApiSlice";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 
 function EditProfileForm() {
-    const dispatch = useDispatch();
-    const user = useSelector(setUser);
+    const { data: user } = useFetchUserQuery({
+        refetchOnMountOrArgChange: true,
+    });
+
     const [updateUser, { isLoading }] = useUpdateUserMutation();
 
     const updateSchema = Yup.object().shape({
@@ -36,7 +36,7 @@ function EditProfileForm() {
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    updateUser(values).then((r) => dispatch(login(r.data)));
+                    updateUser(values).then((r) => {});
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

@@ -39,7 +39,7 @@ function SignUpForm() {
                 validationSchema={SignupSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     createUser(values)
-                        .then((r) => dispatch(login(r.data)))
+                        .then((r) => {})
                         .then(navigate("dashboard"));
                     setTimeout(() => {
                         setSubmitting(false);

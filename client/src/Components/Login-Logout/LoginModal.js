@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
-import LoginForm from "../Login-Logout/LoginForm";
+import LoginForm from "./LoginForm";
 
 function LoginModal() {
     return (
@@ -17,7 +17,7 @@ function LoginModal() {
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="login-form">
+                            <h5 className="modal-title user-select-none" id="login-form">
                                 Welcome back to tripleStamp
                                 <div>
                                     <p className="float-start" id="modal-subtext">

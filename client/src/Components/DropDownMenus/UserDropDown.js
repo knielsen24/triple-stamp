@@ -2,9 +2,12 @@ import "../../App.css";
 import { setUser } from "../../app/features/userSlice";
 import { useSelector } from "react-redux";
 import Logout from "../Login-Logout/Logout";
+import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function UserDropDown() {
-    const user = useSelector(setUser);
+    const { data: user } = useFetchUserQuery({
+        refetchOnMountOrArgChange: true,
+    });
 
     return (
         <div className="dropdown center">

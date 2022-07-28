@@ -3,7 +3,6 @@ import { setSelectProperty } from "../../app/features/propertySlice";
 import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
 
 function UnitsContainer() {
-
     const property = useSelector(setSelectProperty);
 
     let renderUnitList;
@@ -14,7 +13,7 @@ function UnitsContainer() {
             return (
                 <button
                     type="button"
-                    class="list-group-item list-group-item-action"
+                    className="list-group-item list-group-item-action"
                     aria-current="true"
                     key={unit.id}
                     onClick={()=>{}}

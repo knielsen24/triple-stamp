@@ -10,10 +10,10 @@ Rails.application.routes.draw do
 
     # USER #
     post "/signup", to: "users#create"
-    get "/me", to: "users#show"
-    patch "/users/:id", to: "users#update"
+    get "/currentuser", to: "users#show"
+    patch "/currentuser", to: "users#update"
     delete "/users/:id", to: "users#destroy"
-    get "/me/properties", to: "users#properties_index"
+    get "/currentuser/properties", to: "users#properties_index"
 
     # PROPERTY #
     # get "/properties/:id", to: "properties#show"

@@ -5,9 +5,14 @@ import { setUser } from "../../app/features/userSlice";
 import DeleteProfileModal from "../Modals/DeleteProfileModal";
 import EditProfileModal from "../Modals/EditProfileModal";
 import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
+import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function ProfileHome() {
-    const user = useSelector(setUser);
+    // const user = useSelector(setUser);
+    const { data: user } = useFetchUserQuery({
+        refetchOnMountOrArgChange: true,
+    });
+
     return (
         <div className="container align-content-items-center">
             <div id="profile-main-card-container" className="card m-3">
@@ -25,18 +30,18 @@ function ProfileHome() {
                         />
                     </div>
                     <div className="header text-center text-white">
-                        <h5 className="card-title">{user.full_name}</h5>
+                        <h5 className="card-title user-select-none">{user.full_name}</h5>
                     </div>
                 </div>
 
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item">Email: {user.email}</li>
-                        <li className="list-group-item">Phone: {user.phone} </li>
-                        <li className="list-group-item">
+                        <li className="list-group-item user-select-none">Email: {user.email}</li>
+                        <li className="list-group-item user-select-none">Phone: {user.phone} </li>
+                        <li className="list-group-item user-select-none">
                             Business: {user.business}{" "}
                         </li>
-                        <li className="list-group-item">
+                        <li className="list-group-item user-select-none">
                             Account name: {user.account_name}
                         </li>
                     </ul>

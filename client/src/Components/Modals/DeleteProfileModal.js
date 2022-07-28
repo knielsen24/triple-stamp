@@ -5,11 +5,14 @@ import ButtonDeleteUser from "../Buttons/ButtonDeleteUser";
 import { useNavigate } from "react-router-dom";
 import { setUser, logout } from "../../app/features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useDeleteUserMutation } from "../../app/services/userApiSlice";
+import { useDeleteUserMutation, useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function DeleteProfileModal() {
     const [deleteUser, { isLoading }] = useDeleteUserMutation();
-    const user = useSelector(setUser);
+    // const user = useSelector(setUser);
+    const { data: user } = useFetchUserQuery({
+        refetchOnMountOrArgChange: true,
+    });
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
