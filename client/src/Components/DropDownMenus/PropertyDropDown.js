@@ -8,9 +8,9 @@ import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
 import { useNavigate } from "react-router-dom";
 
 function PropertyDropDown() {
-    const property = useSelector(setSelectProperty);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const property = useSelector(setSelectProperty);
 
     const {
         data: properties,
@@ -19,7 +19,6 @@ function PropertyDropDown() {
         isError,
         error,
     } = useFetchPropertiesQuery();
-    // { refetchOnMountOrArgChange: true }
 
     const handleSelectProperty = (featured) =>
         dispatch(selectProperty(featured));

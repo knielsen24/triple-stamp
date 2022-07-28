@@ -4,10 +4,11 @@ import { logout } from "../../app/features/userSlice";
 import { useFetchUserQuery, useLogoutApiMutation } from "../../app/services/userApiSlice";
 
 function Logout() {
-    const [logoutApi, { isLoading }] = useLogoutApiMutation();
-    const { data: user } = useFetchUserQuery();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [logoutApi, { isLoading }] = useLogoutApiMutation();
+
+    const { data: user } = useFetchUserQuery();
 
     return (
         <>

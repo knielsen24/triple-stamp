@@ -6,6 +6,7 @@ import { useCreateUserMutation } from "../../app/services/userApiSlice";
 
 function SignUpForm() {
     const navigate = useNavigate();
+    
     const [createUser, { isLoading }] = useCreateUserMutation();
 
     const SignupSchema = Yup.object().shape({

@@ -7,9 +7,10 @@ import { useDispatch } from "react-redux";
 import { selectProperty } from "../../app/features/propertySlice";
 
 function LoginForm() {
-    const [loginApi, { isLoading }] = useLoginApiMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const [loginApi, { isLoading }] = useLoginApiMutation();
 
     const inititialState = {
         name: "",

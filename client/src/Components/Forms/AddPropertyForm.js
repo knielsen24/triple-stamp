@@ -14,6 +14,7 @@ function AddPropertyForm() {
     const navigate = useNavigate();
 
     const [createProperty, { isLoading }] = useCreatePropertyMutation();
+
     const { data: user } = useFetchUserQuery();
     const userId = user ? user.id : ""
 
