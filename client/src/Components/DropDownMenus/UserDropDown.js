@@ -1,6 +1,4 @@
 import "../../App.css";
-import { setUser } from "../../app/features/userSlice";
-import { useSelector } from "react-redux";
 import Logout from "../Login-Logout/Logout";
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
 

@@ -48,9 +48,9 @@ function PropertyDropDown() {
 
     return (
         <div className="w-100 ">
-            <div className="dropdown ">
+            <div className="dropdown-center ">
                 <a
-                    className="btn btn-secondary dropdown-toggle w-100"
+                    className="btn bg-secondary bg-opacity-75 text-light dropdown-toggle w-100"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -58,7 +58,7 @@ function PropertyDropDown() {
                 >
                     {property.name || ""}
                 </a>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-start ">
                     <li>
                         <ButtonOpenAddPropertyModal />
                     </li>

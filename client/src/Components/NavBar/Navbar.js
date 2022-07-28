@@ -1,7 +1,5 @@
 import "../../App.css";
 import logoName from "../../assets/logo-name.png";
-import { useSelector } from "react-redux";
-import { setUser } from "../../app/features/userSlice";
 import UserDropDown from "../DropDownMenus/UserDropDown";
 import ButtonStartNow from "../Buttons/ButtonStartNow";
 import DashboardLinks from "./DashboardLinks";

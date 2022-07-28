@@ -13,7 +13,7 @@ function ManagementNav() {
         <div className="text-center mb-3">
             <ul className="nav nav-pills nav-fill">
                 <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">
+                    <a className="nav-link active bg-secondary bg-opacity-75" aria-current="page" href="#">
                         Inspections
                     </a>
                 </li>

@@ -13,7 +13,7 @@ function UnitsContainer() {
             return (
                 <button
                     type="button"
-                    className="list-group-item list-group-item-action"
+                    className="list-group-item list-group-item-action "
                     aria-current="true"
                     key={unit.id}
                     onClick={()=>{}}
@@ -25,10 +25,10 @@ function UnitsContainer() {
     }
 
     return (
-        <div>
+        <div className="bg-secondary bg-opacity-25">
             {/* {property.name + " " + "units"} */}
-            <div className=" list-group">
-                <ul className="list-group list-group-flush">
+            <div className=" list-group bg-secondary">
+                <ul className="list-group list-group-flush ">
                     <ButtonOpenAddUnitModal />
                     {property.name !== "" ? renderUnitList : null}
                 </ul>

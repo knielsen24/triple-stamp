@@ -3,13 +3,12 @@ import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import ButtonDeleteUser from "../Buttons/ButtonDeleteUser";
 import { useNavigate } from "react-router-dom";
-import { setUser, logout } from "../../app/features/userSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../app/features/userSlice";
+import { useDispatch } from "react-redux";
 import { useDeleteUserMutation, useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function DeleteProfileModal() {
     const [deleteUser, { isLoading }] = useDeleteUserMutation();
-    // const user = useSelector(setUser);
     const { data: user } = useFetchUserQuery({
         refetchOnMountOrArgChange: true,
     });

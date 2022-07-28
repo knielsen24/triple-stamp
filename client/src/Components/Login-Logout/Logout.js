@@ -18,7 +18,7 @@ function Logout() {
                 onClick={(e) => {
                     e.preventDefault();
                     logoutApi()
-                        .then(() => dispatch(logout()))
+                        .then(() => dispatch(logout(null)))
                         .then(navigate("/"));
                 }}
             >
