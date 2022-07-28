@@ -4,19 +4,33 @@ import "yup-phone";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useNavigate } from "react-router-dom";
-import { setSelectProperty } from "../../app/features/propertySlice";
+import {
+    selectProperty,
+    setSelectProperty,
+} from "../../app/features/propertySlice";
 import { useCreateUnitMutation } from "../../app/services/unitApiSlice";
+import { useFetchPropertiesQuery } from "../../app/services/propertyApiSlice";
 
 function AddUnitForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [createUnit, { isLoading }] = useCreateUnitMutation();
 
-    const property = useSelector(setSelectProperty);
-    console.log(property);
+    const {
+        data: properties,
+        isSuccess,
+        isError,
+        error,
+    } = useFetchPropertiesQuery();
 
-    // const initialData = {
-    //     ,
+    const property = useSelector(setSelectProperty);
+
+    // const handleFindProperty = (id) => {
+    //     const findProperty = properties.filter((property) => {
+    //         return property.id === id;
+    //     });
+    //     // console.log(findProperty);
+    //     dispatch(selectProperty(findProperty))
     // };
 
     const createSchema = Yup.object().shape({
@@ -36,11 +50,9 @@ function AddUnitForm() {
                 }}
                 validationSchema={createSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    createUnit(values);
-                    // createProperty(values).then((r) => {
-                    //     dispatch(selectProperty(r.data));
-                    //     navigate("/management/property-details");
-                    // });
+                    createUnit(values).then((r) => {
+                        console.log(r.data.property_id);
+                    });
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -66,7 +78,7 @@ function AddUnitForm() {
                             <input
                                 id="number"
                                 className="form-control"
-                                type="number"
+                                type="string"
                                 name="number"
                                 placeholder="Number"
                                 onChange={handleChange}
@@ -85,7 +97,7 @@ function AddUnitForm() {
                             <input
                                 id="label"
                                 className="form-control"
-                                type="label"
+                                type="string"
                                 name="label"
                                 placeholder="Label"
                                 onChange={handleChange}

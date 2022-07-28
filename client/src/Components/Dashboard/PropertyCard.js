@@ -10,8 +10,8 @@ function PropertyCard() {
     const property = useSelector(setSelectProperty);
 
     let numberofUnits;
-    if(property){
-        numberofUnits = property.units.length
+    if (property) {
+        numberofUnits = property.units.length;
     }
 
     return (
@@ -27,7 +27,9 @@ function PropertyCard() {
                         />
                     </div>
                     <div className="header text-center text-white">
-                        <h5 className="card-title user-select-none">{property.name}</h5>
+                        <h5 className="card-title user-select-none">
+                            {property.name}
+                        </h5>
                     </div>
                 </div>
 
@@ -62,7 +64,7 @@ function PropertyCard() {
                     )}
                     {property.name === "" ? null : (
                         <ButtonManageAccountModals
-                            target={"#delete-property"}
+                            target={"#delete-property-form"}
                             text={"Delete Property"}
                         />
                     )}

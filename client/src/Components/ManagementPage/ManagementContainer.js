@@ -1,5 +1,5 @@
 import PropertyCard from "../Dashboard/PropertyCard"
-import ManagementNav from "./ManagementNav";
+import DashBoardNav from "../Dashboard/DashBoardNav";
 import AddPropertyModal from "../Modals/AddPropertyModal";
 import PropertyDropDown from "../DropDownMenus/PropertyDropDown";
 import UnitsContainer from "./UnitsContainer";
@@ -27,7 +27,7 @@ function PropertiesContainer() {
                         <p className="text-center user-select-none">
                             Dashboard
                         </p>
-                        <ManagementNav />
+                        <DashBoardNav />
                     </div>
                     <Routes>
                         <Route path="inspections" />

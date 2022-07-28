@@ -5,7 +5,10 @@ import ButtonDeleteUser from "../Buttons/ButtonDeleteUser";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../app/features/userSlice";
 import { useDispatch } from "react-redux";
-import { useDeleteUserMutation, useFetchUserQuery } from "../../app/services/userApiSlice";
+import {
+    useDeleteUserMutation,
+    useFetchUserQuery,
+} from "../../app/services/userApiSlice";
 
 function DeleteProfileModal() {
     const [deleteUser, { isLoading }] = useDeleteUserMutation();
@@ -39,17 +42,20 @@ function DeleteProfileModal() {
         <div>
             <div
                 className="modal fade"
-                id="delete-account"
+                id="delete-account-form"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabIndex="-1"
-                aria-labelledby="delete-account"
+                aria-labelledby="delete-account-form"
                 aria-hidden="true"
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="delete-account">
+                            <h5
+                                className="modal-title"
+                                id="delete-account-form"
+                            >
                                 Are you sure you want to delete your account?
                             </h5>
                             <ButtonCloseModalX />

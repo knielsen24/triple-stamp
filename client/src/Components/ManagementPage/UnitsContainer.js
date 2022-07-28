@@ -1,9 +1,14 @@
 import { useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
 import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
+import UnitDropDown from "../DropDownMenus/UnitDropDown";
+import UnitsListDropDown from "../DropDownMenus/UnitDropDown";
 
 function UnitsContainer() {
     const property = useSelector(setSelectProperty);
+
+    const buttonClassName =
+        "list-group-item list-group-item-action border border-0 btn btn-secondary dropdown-toggle dropdown-toggle ";
 
     let renderUnitList;
 
@@ -11,24 +16,28 @@ function UnitsContainer() {
         const getUnitsList = property.units;
         renderUnitList = getUnitsList.map((unit) => {
             return (
-                <button
-                    type="button"
-                    className="list-group-item list-group-item-action "
-                    aria-current="true"
-                    key={unit.id}
-                    onClick={()=>{}}
-                >
-                    {unit.number + " " + (unit.label || "")}
-                </button>
+                <div className="btn-group dropend">
+                    <button
+                        key={unit.id}
+                        type="button"
+                        className={buttonClassName}
+                        aria-current="true"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        onClick={() => {}}
+                    >
+                        {unit.number + " " + (unit.label || "Label")}
+                    </button>
+                    <UnitDropDown />
+                </div>
             );
         });
     }
 
     return (
-        <div className="bg-secondary bg-opacity-25">
-            {/* {property.name + " " + "units"} */}
-            <div className=" list-group bg-secondary">
-                <ul className="list-group list-group-flush ">
+        <div>
+            <div className=" list-group">
+                <ul className="list-group border border-0">
                     {property.name !== "" ? <ButtonOpenAddUnitModal /> : null}
                     {property.name !== "" ? renderUnitList : null}
                 </ul>

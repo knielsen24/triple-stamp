@@ -5,7 +5,7 @@ export const unitApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000",
     }),
-    tagTypes: ["units, properties", "UNAUTHORIZED"],
+    tagTypes: ["units", "properties", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
             // fetchUnits: builder.query({
@@ -19,7 +19,7 @@ export const unitApi = createApi({
                     method: "POST",
                     body: data,
                 }),
-                invalidatesTags: ["units, properties"],
+                invalidatesTags: ["units", "properties"],
             }),
 
             updateUnit: builder.mutation({

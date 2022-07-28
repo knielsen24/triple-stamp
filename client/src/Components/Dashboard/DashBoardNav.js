@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
 
-function ManagementNav() {
+function DashBoardNav() {
     const property = useSelector(setSelectProperty);
 
     let detailsLinkhref;
@@ -11,9 +11,10 @@ function ManagementNav() {
 
     return (
         <div className="text-center mb-3">
-            <ul className="nav nav-pills nav-fill">
+            <ul className="nav nav-tabs nav-fill">
                 <li className="nav-item">
-                    <a className="nav-link active bg-secondary bg-opacity-75" aria-current="page" href="#">
+                    <a className="nav-link active " aria-current="page" href="#">
+                        {/* bg-secondary bg-opacity-75 */}
                         Inspections
                     </a>
                 </li>
@@ -32,4 +33,4 @@ function ManagementNav() {
     );
 }
 
-export default ManagementNav;
+export default DashBoardNav;

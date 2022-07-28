@@ -16,25 +16,27 @@ function ProfileHome() {
                 <div className="text-center" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img
-                            src={
-                                user.img_profile
-                                    ? user.image
-                                    : profileIcon
-                            }
+                            src={user.img_profile ? user.image : profileIcon}
                             className="img-thumbnail"
                             alt="profileIcon"
                             width="150px"
                         />
                     </div>
                     <div className="header text-center text-white">
-                        <h5 className="card-title user-select-none">{user.full_name}</h5>
+                        <h5 className="card-title user-select-none">
+                            {user.full_name}
+                        </h5>
                     </div>
                 </div>
 
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item user-select-none">Email: {user.email}</li>
-                        <li className="list-group-item user-select-none">Phone: {user.phone} </li>
+                        <li className="list-group-item user-select-none">
+                            Email: {user.email}
+                        </li>
+                        <li className="list-group-item user-select-none">
+                            Phone: {user.phone}{" "}
+                        </li>
                         <li className="list-group-item user-select-none">
                             Business: {user.business}{" "}
                         </li>
@@ -49,7 +51,7 @@ function ProfileHome() {
                         text={"Edit Account"}
                     />
                     <ButtonManageAccountModals
-                        target={"#delete-account"}
+                        target={"#delete-account-form"}
                         text={"Delete Account"}
                     />
                 </div>

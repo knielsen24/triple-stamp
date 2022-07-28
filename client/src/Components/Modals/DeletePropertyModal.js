@@ -24,7 +24,7 @@ function DeletePropertyModal() {
         state: "",
         postal_code: "",
         country: "",
-        units: [{ name: "name" }],
+        units: [{ label: "name" }],
         user_id: "",
     };
 
@@ -39,17 +39,20 @@ function DeletePropertyModal() {
         <div>
             <div
                 className="modal fade"
-                id="delete-property"
+                id="delete-property-form"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabIndex="-1"
-                aria-labelledby="delete-property"
+                aria-labelledby="delete-property-form"
                 aria-hidden="true"
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="delete-property">
+                            <h5
+                                className="modal-title"
+                                id="delete-property-form"
+                            >
                                 Are you sure you want to delete this property?
                                 <div>
                                     <p
