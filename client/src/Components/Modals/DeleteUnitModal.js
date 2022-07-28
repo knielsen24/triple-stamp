@@ -1,12 +1,17 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+import { selectUnit, setSelectUnit } from '../../app/features/unitSlice';
 import ButtonCancelModal from '../Buttons/ButtonCancelModal';
 import ButtonCloseModalX from '../Buttons/ButtonCloseModalX';
 import ButtonDeleteUnit from '../Buttons/ButtonDeleteUnit';
 
 function DeleteUnitModal() {
 
-    const handleDeleteUnit = () => {
+    const unit = useSelector(setSelectUnit)
+    console.log(unit)
 
+    const handleDeleteUnit = (id) => {
+        console.log(id)
     }
 
     return (
@@ -37,7 +42,7 @@ function DeleteUnitModal() {
                         </div>
                         <div className="modal-footer">
                             <ButtonCancelModal text={"cancel"} />
-                            <ButtonDeleteUnit handleDelete={handleDeleteUnit} />
+                            <ButtonDeleteUnit handleDelete={handleDeleteUnit} text/>
                             {/* <ButtonDeleteUser
                                 // id={user.id}
                                 handleDeleteUser={handleDeleteUser}

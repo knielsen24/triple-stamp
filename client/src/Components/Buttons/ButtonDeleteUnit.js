@@ -9,7 +9,7 @@ function ButtonDeleteUnit({ handleDelete, id }) {
             data-bs-dismiss="modal"
             onClick={() => handleDelete(id)}
         >
-            Delete this property
+            Delete this unit
         </button>
     );
 }

@@ -5,7 +5,7 @@ function UnitDropDown() {
     const renderDropDownItems = [];
 
     return (
-        <ul class="dropdown-menu">
+        <ul className="dropdown-menu">
             <li>
                 <a className="dropdown-item" href="#">
                     View Inspections

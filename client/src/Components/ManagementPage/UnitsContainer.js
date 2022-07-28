@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
+import { selectUnit, setSelectUnit } from "../../app/features/unitSlice";
 import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
 import UnitDropDown from "../DropDownMenus/UnitDropDown";
-import UnitsListDropDown from "../DropDownMenus/UnitDropDown";
 
 function UnitsContainer() {
     const property = useSelector(setSelectProperty);
@@ -16,7 +16,7 @@ function UnitsContainer() {
         const getUnitsList = property.units;
         renderUnitList = getUnitsList.map((unit) => {
             return (
-                <div className="btn-group dropend">
+                <div className="btn-group dropend" key={unit.id}>
                     <button
                         key={unit.id}
                         type="button"
@@ -24,7 +24,9 @@ function UnitsContainer() {
                         aria-current="true"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
-                        onClick={() => {}}
+                        onClick={() => {
+                            // console.log(unit)
+                            selectUnit(unit)}}
                     >
                         {unit.number + " " + (unit.label || "Label")}
                     </button>

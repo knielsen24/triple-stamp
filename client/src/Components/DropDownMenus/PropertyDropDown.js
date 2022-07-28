@@ -31,12 +31,13 @@ function PropertyDropDown() {
             return (
                 <li key={property.id}>
                     <a
+                        key={property.id}
                         className="dropdown-item"
                         href="#"
                         onClick={(e) => {
                             e.preventDefault();
                             handleSelectProperty(property);
-                            navigate("property-details")
+                            navigate("property-details");
                         }}
                     >
                         {property.name}
