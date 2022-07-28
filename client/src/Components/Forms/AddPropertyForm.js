@@ -3,7 +3,6 @@ import * as Yup from "yup";
 import "yup-phone";
 import { useCreatePropertyMutation } from "../../app/services/propertyApiSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser, login } from "../../app/features/userSlice";
 import { selectProperty } from "../../app/features/propertySlice";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useNavigate } from "react-router-dom";

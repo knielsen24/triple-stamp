@@ -12,7 +12,7 @@ function LoginForm() {
 
     const [loginApi, { isLoading }] = useLoginApiMutation();
 
-    const inititialState = {
+    const initialData = {
         name: "",
         id: "",
         name: "",
@@ -21,7 +21,7 @@ function LoginForm() {
         state: "",
         postal_code: "",
         country: "",
-        units: [{ name: "name" }],
+        units: [{ label: "label" }],
         user_id: "",
     };
 
@@ -44,7 +44,7 @@ function LoginForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     loginApi(values)
                         .then((r) => {})
-                        .then(dispatch(selectProperty(inititialState)))
+                        .then(dispatch(selectProperty(initialData)))
                         .then(navigate("management"));
                     setTimeout(() => {
                         setSubmitting(false);

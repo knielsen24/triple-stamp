@@ -18,7 +18,7 @@ function UnitsContainer() {
                     key={unit.id}
                     onClick={()=>{}}
                 >
-                    {unit.number + " " + (unit.name || "name")}
+                    {unit.number + " " + (unit.label || "")}
                 </button>
             );
         });
@@ -29,7 +29,7 @@ function UnitsContainer() {
             {/* {property.name + " " + "units"} */}
             <div className=" list-group bg-secondary">
                 <ul className="list-group list-group-flush ">
-                    <ButtonOpenAddUnitModal />
+                    {property.name !== "" ? <ButtonOpenAddUnitModal /> : null}
                     {property.name !== "" ? renderUnitList : null}
                 </ul>
             </div>

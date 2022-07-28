@@ -11,7 +11,7 @@ function App() {
     const { data: user } = useFetchUserQuery({
         refetchOnMountOrArgChange: true,
     });
-    console.log(user);
+    // console.log(user);
 
     return (
         <div className="container-fluid p-0" id="app-main-container">

@@ -10,7 +10,7 @@ const initialState = {
         state: "",
         postal_code: "",
         country: "",
-        units: [{name: "name"}],
+        units: [{label: "label"}],
         user_id: "",
     },
 };

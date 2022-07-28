@@ -1,6 +1,6 @@
 class Property < ApplicationRecord
   belongs_to :user
-  has_many :units
+  has_many :units, dependent: :destroy
 
   validates :name, presence: true
 end
