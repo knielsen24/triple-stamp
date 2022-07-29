@@ -6,12 +6,13 @@ import { useFetchPropertiesQuery } from "../../app/services/propertyApiSlice";
 import { unitsList } from "../../app/features/unitsListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
-
 
 function PropertyDropDown() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [search, setSearch] = useState("");
     const property = useSelector(setSelectProperty);
 
     const {
@@ -20,13 +21,23 @@ function PropertyDropDown() {
         isSuccess,
         isError,
         error,
-    } = useFetchPropertiesQuery({refetchOnMountOrArgChange: true,});
+    } = useFetchPropertiesQuery({ refetchOnMountOrArgChange: true });
 
     // need useParams to render property link
 
+    const handleSearch = (e) => setSearch(e.target.value);
+
     let renderPropertyList;
+    let filteredProperties;
     if (properties) {
-        renderPropertyList = properties.map((property) => {
+        filteredProperties = properties.filter((property) => {
+            if (search === "") return property;
+            if (
+                property.name.toLowerCase().includes(search.toLocaleLowerCase())
+            )
+                return property;
+        });
+        renderPropertyList = filteredProperties.map((property) => {
             return (
                 <li key={property.id}>
                     <a
@@ -36,7 +47,7 @@ function PropertyDropDown() {
                         onClick={(e) => {
                             e.preventDefault();
                             dispatch(selectProperty(property));
-                            dispatch(unitsList(property.units))
+                            dispatch(unitsList(property.units));
                             navigate("property-details");
                         }}
                     >
@@ -59,7 +70,16 @@ function PropertyDropDown() {
                 >
                     {property.name || ""}
                 </a>
-                <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-start ">
+                <ul className="dropdown-menu dropdown-menu p-3 ">
+                    <form class="d-flex" role="search">
+                        <input
+                            class="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                            onChange={handleSearch}
+                        />
+                    </form>
                     <li>
                         <ButtonOpenAddPropertyModal />
                     </li>
