@@ -1,7 +1,6 @@
 import ButtonOpenDeleteUnitModal from "../Buttons/ButtonOpenDeleteUnitModal";
 
 function UnitDropDown() {
-    const renderDropDownItems = [];
 
     return (
         <ul className="dropdown-menu">

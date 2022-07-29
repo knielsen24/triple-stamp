@@ -52,7 +52,6 @@ function SignUpForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
-                    /* and other goodies */
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">

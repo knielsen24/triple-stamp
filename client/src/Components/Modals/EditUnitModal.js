@@ -1,4 +1,5 @@
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
+import EditUnitForm from "../Forms/EditUnitForm";
 
 
 function EditUnitModal() {
@@ -27,7 +28,7 @@ function EditUnitModal() {
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
-                            {/* <EditProfileForm /> */}
+                            <EditUnitForm />
                         </div>
                     </div>
                 </div>

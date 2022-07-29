@@ -1,4 +1,7 @@
-import { useFetchUserQuery, useUpdateUserMutation } from "../../app/services/userApiSlice";
+import {
+    useFetchUserQuery,
+    useUpdateUserMutation,
+} from "../../app/services/userApiSlice";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { Formik } from "formik";
@@ -50,7 +53,6 @@ function EditProfileForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
-                    /* and other goodies */
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
