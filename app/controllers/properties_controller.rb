@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-    skip_before_action :authorize, except: :index
+    skip_before_action :authorize, except: :units_index
 
 
     def create

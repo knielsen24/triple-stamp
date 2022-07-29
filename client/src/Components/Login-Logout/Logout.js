@@ -8,7 +8,7 @@ function Logout() {
     const navigate = useNavigate();
     const [logoutApi, { isLoading }] = useLogoutApiMutation();
 
-    const { data: user } = useFetchUserQuery();
+    // const { data: user } = useFetchUserQuery();
 
     return (
         <>

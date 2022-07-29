@@ -1,18 +1,16 @@
-import "../../App.css";
-import { useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
+import { setUnitsList } from "../../app/features/unitsListSlice";
+import { useSelector } from "react-redux";
 import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 import DeletePropertyModal from "../Modals/DeletePropertyModal";
 import EditPropertyModal from "../Modals/EditPropertyModal";
 import homeIcon from "../../assets/home-icon.svg";
+import "../../App.css";
 
 function PropertyCard() {
     const property = useSelector(setSelectProperty);
-
-    let numberofUnits;
-    if (property) {
-        numberofUnits = property.units.length;
-    }
+    const unitsListState = useSelector(setUnitsList)
+    const numberofUnits = unitsListState.length
 
     return (
         <div className="container align-content-items-center">

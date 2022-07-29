@@ -43,8 +43,7 @@ function DeleteUnitModal() {
                         <div className="modal-body">
                             <p className="float-start m-0" id="modal-subtext">
                                 By clicking "Delete Unit" will permantly remove
-                                this item and your information will not be
-                                recoverable.
+                                this item from your selected property.
                             </p>
                         </div>
                         <div className="modal-footer">

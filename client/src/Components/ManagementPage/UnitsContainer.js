@@ -4,11 +4,14 @@ import { setUnitsList } from "../../app/features/unitsListSlice";
 import { selectUnit } from "../../app/features/unitSlice";
 import { useDispatch, useSelector } from "react-redux";
 import UnitDropDown from "../DropDownMenus/UnitDropDown";
+import DeleteUnitModal from "../Modals/DeleteUnitModal";
+import EditUnitModal from "../Modals/EditUnitModal";
+import AddUnitModal from "../Modals/AddUnitModal";
 
 function UnitsContainer() {
     const dispatch = useDispatch();
     const property = useSelector(setSelectProperty);
-    const unitsListState = useSelector(setUnitsList)
+    const unitsListState = useSelector(setUnitsList);
 
     const buttonClassName =
         "list-group-item list-group-item-action border border-0 btn btn-secondary dropdown-toggle dropdown-toggle ";
@@ -39,6 +42,9 @@ function UnitsContainer() {
 
     return (
         <div>
+            <AddUnitModal />
+            <DeleteUnitModal />
+            <EditUnitModal />
             <div className=" list-group">
                 <ul className="list-group border border-0">
                     {property.name !== "" ? <ButtonOpenAddUnitModal /> : null}

@@ -6,10 +6,16 @@ class UnitsController < ApplicationController
         render json: unit, status: :created
     end
 
+    def update
+        unit = Unit.find(params[:id])
+        unit.update!(unit_params)
+        render json: unit, status: :accepted
+    end
+
     def destroy
         unit = Unit.find(params[:id])
         unit.destroy
-        head  :no_content
+        head :no_content
     end
 
     private

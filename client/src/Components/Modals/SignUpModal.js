@@ -25,13 +25,11 @@ function SignUpModal() {
                                     </p>
                                 </div>
                             </h5>
-
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
                             <SignUpForm />
                         </div>
-
                     </div>
                 </div>
             </div>

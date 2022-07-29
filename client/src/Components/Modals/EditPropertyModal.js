@@ -16,10 +16,7 @@ function EditPropertyModal() {
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5
-                                className="modal-title"
-                                id="edit-property-form"
-                            >
+                            <h5 className="modal-title" id="edit-property-form">
                                 Edit your property information
                                 <div>
                                     <p id="modal-subtext">
@@ -27,7 +24,6 @@ function EditPropertyModal() {
                                     </p>
                                 </div>
                             </h5>
-
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">

@@ -16,7 +16,12 @@ function UnitDropDown() {
                 </a>
             </li>
             <li>
-                <a className="dropdown-item" href="#">
+                <a
+                    className="dropdown-item"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#update-unit-form"
+                >
                     Edit Information
                 </a>
             </li>

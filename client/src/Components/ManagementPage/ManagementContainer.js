@@ -1,9 +1,7 @@
 import PropertyDropDown from "../DropDownMenus/PropertyDropDown";
 import AddPropertyModal from "../Modals/AddPropertyModal";
-import DeleteUnitModal from "../Modals/DeleteUnitModal";
 import DashBoardNav from "../Dashboard/DashBoardNav";
 import PropertyCard from "../Dashboard/PropertyCard";
-import AddUnitsModal from "../Modals/AddUnitModal";
 import { Route, Routes } from "react-router-dom";
 import UnitsContainer from "./UnitsContainer";
 
@@ -18,8 +16,6 @@ function PropertiesContainer() {
                     <div className="row mw-100 mb-3 align-content-items-center">
                         <PropertyDropDown />
                         <AddPropertyModal />
-                        <AddUnitsModal />
-                        <DeleteUnitModal />
                     </div>
                     <hr className="w-auto" />
                     <UnitsContainer />

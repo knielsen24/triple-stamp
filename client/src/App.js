@@ -1,17 +1,25 @@
-import "./App.css";
-import Navbar from "./Components/NavBar/Navbar";
-import Home from "./Components/HomePage/Home";
-import Footer from "./Components/HomePage/Footer";
-import { Routes, Route } from "react-router-dom";
-import ProfileHome from "./Components/ProfilePage/ProfileHome";
 import ManagementContainer from "./Components/ManagementPage/ManagementContainer";
 import { useFetchUserQuery } from "./app/services/userApiSlice";
+import ProfileHome from "./Components/ProfilePage/ProfileHome";
+import Footer from "./Components/HomePage/Footer";
+import { login } from "./app/features/userSlice";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Components/NavBar/Navbar";
+import Home from "./Components/HomePage/Home";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import "./App.css";
+
 
 function App() {
+    const dispatch = useDispatch()
     const { data: user } = useFetchUserQuery({
         refetchOnMountOrArgChange: true,
     });
-    // console.log(user);
+    // useEffect(() => {
+    //     dispatch(login(user))
+    // }, [])
+
 
     return (
         <div className="container-fluid p-0" id="app-main-container">
