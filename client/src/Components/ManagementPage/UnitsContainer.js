@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
 import { selectUnit } from "../../app/features/unitSlice";
-import { setUnitsList, unitsList } from "../../app/features/unitsListSlice";
+import { setUnitsList } from "../../app/features/unitsListSlice";
 import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
 import UnitDropDown from "../DropDownMenus/UnitDropDown";
 
