@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import { setSelectProperty } from "../../app/features/propertySlice";
-import { selectUnit } from "../../app/features/unitSlice";
-import { setUnitsList } from "../../app/features/unitsListSlice";
 import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
+import { setSelectProperty } from "../../app/features/propertySlice";
+import { setUnitsList } from "../../app/features/unitsListSlice";
+import { selectUnit } from "../../app/features/unitSlice";
+import { useDispatch, useSelector } from "react-redux";
 import UnitDropDown from "../DropDownMenus/UnitDropDown";
 
 function UnitsContainer() {

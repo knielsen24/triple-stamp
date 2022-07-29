@@ -1,9 +1,9 @@
-import "../../App.css";
-import profileIcon from "../../assets/person-icon.svg";
-import DeleteProfileModal from "../Modals/DeleteProfileModal";
-import EditProfileModal from "../Modals/EditProfileModal";
 import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
+import DeleteProfileModal from "../Modals/DeleteProfileModal";
+import EditProfileModal from "../Modals/EditProfileModal";
+import profileIcon from "../../assets/person-icon.svg";
+import "../../App.css";
 
 function ProfileHome() {
     const { data: user } = useFetchUserQuery({

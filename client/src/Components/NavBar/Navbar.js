@@ -1,10 +1,10 @@
-import "../../App.css";
-import logoName from "../../assets/logo-name.png";
+import { useFetchUserQuery } from "../../app/services/userApiSlice";
 import UserDropDown from "../DropDownMenus/UserDropDown";
 import ButtonStartNow from "../Buttons/ButtonStartNow";
+import logoName from "../../assets/logo-name.png";
 import DashboardLinks from "./DashboardLinks";
 import HomeLinks from "./HomeLinks";
-import { useFetchUserQuery } from "../../app/services/userApiSlice";
+import "../../App.css";
 
 function Navbar() {
     const { data: user } = useFetchUserQuery({

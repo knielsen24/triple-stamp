@@ -1,7 +1,7 @@
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { logout } from "../../app/features/userSlice";
 import { useFetchUserQuery, useLogoutApiMutation } from "../../app/services/userApiSlice";
+import { logout } from "../../app/features/userSlice";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 function Logout() {
     const dispatch = useDispatch();

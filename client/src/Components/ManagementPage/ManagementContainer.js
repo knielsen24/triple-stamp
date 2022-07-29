@@ -1,11 +1,11 @@
-import PropertyCard from "../Dashboard/PropertyCard"
-import DashBoardNav from "../Dashboard/DashBoardNav";
-import AddPropertyModal from "../Modals/AddPropertyModal";
 import PropertyDropDown from "../DropDownMenus/PropertyDropDown";
-import UnitsContainer from "./UnitsContainer";
-import { Route, Routes } from "react-router-dom";
-import AddUnitsModal from "../Modals/AddUnitModal";
+import AddPropertyModal from "../Modals/AddPropertyModal";
 import DeleteUnitModal from "../Modals/DeleteUnitModal";
+import DashBoardNav from "../Dashboard/DashBoardNav";
+import PropertyCard from "../Dashboard/PropertyCard";
+import AddUnitsModal from "../Modals/AddUnitModal";
+import { Route, Routes } from "react-router-dom";
+import UnitsContainer from "./UnitsContainer";
 
 function PropertiesContainer() {
     return (
@@ -15,7 +15,7 @@ function PropertiesContainer() {
                     <p className="text-start user-select-none">
                         Select Property
                     </p>
-                    <div className="row mw-100 mb-3 align-content-items-center" >
+                    <div className="row mw-100 mb-3 align-content-items-center">
                         <PropertyDropDown />
                         <AddPropertyModal />
                         <AddUnitsModal />

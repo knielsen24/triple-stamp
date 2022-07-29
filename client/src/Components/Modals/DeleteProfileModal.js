@@ -1,4 +1,3 @@
-import "../../App.css";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import ButtonDeleteUser from "../Buttons/ButtonDeleteUser";
@@ -9,6 +8,7 @@ import {
     useDeleteUserMutation,
     useFetchUserQuery,
 } from "../../app/services/userApiSlice";
+import "../../App.css";
 
 function DeleteProfileModal() {
     const [deleteUser, { isLoading }] = useDeleteUserMutation();
