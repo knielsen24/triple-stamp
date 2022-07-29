@@ -1,10 +1,10 @@
 import "../../App.css";
-import { setSelectProperty } from "../../app/features/propertySlice";
-import homeIcon from "../../assets/home-icon.svg";
-import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 import { useSelector } from "react-redux";
+import { setSelectProperty } from "../../app/features/propertySlice";
+import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 import DeletePropertyModal from "../Modals/DeletePropertyModal";
 import EditPropertyModal from "../Modals/EditPropertyModal";
+import homeIcon from "../../assets/home-icon.svg";
 
 function PropertyCard() {
     const property = useSelector(setSelectProperty);

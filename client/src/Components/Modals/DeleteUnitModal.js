@@ -1,24 +1,23 @@
-import React from "react";
+import { useDeleteUnitMutation } from "../../app/services/propertyApiSlice";
+import { setUnitsList, unitsList } from "../../app/features/unitsListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectUnit } from "../../app/features/unitSlice";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import ButtonDeleteUnit from "../Buttons/ButtonDeleteUnit";
-import { useDeleteUnitMutation } from "../../app/services/propertyApiSlice";
-import { setUnitsList, unitsList } from "../../app/features/unitsListSlice";
 
 function DeleteUnitModal() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const unitState = useSelector(setSelectUnit);
     const unitsListState = useSelector(setUnitsList);
     const [deleteUnit] = useDeleteUnitMutation();
 
     const handleDeleteUnit = (id) => {
         deleteUnit(id).then(() => {
-            const filteredUnitsList = unitsListState.filter(
+            const filteredList = unitsListState.filter(
                 (unit) => unit.id !== id
-            )
-            dispatch(unitsList(filteredUnitsList))
+            );
+            dispatch(unitsList(filteredList));
         });
     };
 

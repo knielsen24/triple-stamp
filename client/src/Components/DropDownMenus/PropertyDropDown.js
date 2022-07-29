@@ -2,11 +2,12 @@ import {
     selectProperty,
     setSelectProperty,
 } from "../../app/features/propertySlice";
-import { useSelector, useDispatch } from "react-redux";
 import { useFetchPropertiesQuery } from "../../app/services/propertyApiSlice";
-import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
-import { useNavigate } from "react-router-dom";
 import { unitsList } from "../../app/features/unitsListSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
+
 
 function PropertyDropDown() {
     const dispatch = useDispatch();

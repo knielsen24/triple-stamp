@@ -1,12 +1,12 @@
-import "../../App.css";
+import { useCreateUserMutation } from "../../app/services/userApiSlice";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useCreateUserMutation } from "../../app/services/userApiSlice";
+import "../../App.css";
 
 function SignUpForm() {
     const navigate = useNavigate();
-    
+
     const [createUser, { isLoading }] = useCreateUserMutation();
 
     const SignupSchema = Yup.object().shape({

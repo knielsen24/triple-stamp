@@ -1,12 +1,12 @@
-import { Formik } from "formik";
-import * as Yup from "yup";
-import "yup-phone";
 import { useCreatePropertyMutation } from "../../app/services/propertyApiSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useFetchUserQuery } from "../../app/services/userApiSlice";
 import { selectProperty } from "../../app/features/propertySlice";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useNavigate } from "react-router-dom";
-import { useFetchUserQuery } from "../../app/services/userApiSlice";
+import { useDispatch } from "react-redux";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import "yup-phone";
 
 function AddPropertyForm() {
     const dispatch = useDispatch();
@@ -15,8 +15,7 @@ function AddPropertyForm() {
     const [createProperty, { isLoading }] = useCreatePropertyMutation();
 
     const { data: user } = useFetchUserQuery();
-    const userId = user ? user.id : ""
-
+    const userId = user ? user.id : "";
 
     const createSchema = Yup.object().shape({
         name: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),

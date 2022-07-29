@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
+import { useSelector } from "react-redux";
 
 function DashBoardNav() {
     const property = useSelector(setSelectProperty);

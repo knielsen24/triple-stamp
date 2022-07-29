@@ -1,6 +1,6 @@
-import "../../App.css";
-import Logout from "../Login-Logout/Logout";
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
+import Logout from "../Login-Logout/Logout";
+import "../../App.css";
 
 function UserDropDown() {
     const { data: user } = useFetchUserQuery({

@@ -2,13 +2,13 @@ import {
     selectProperty,
     setSelectProperty,
 } from "../../app/features/propertySlice";
-import { Formik } from "formik";
-import { useDispatch, useSelector } from "react-redux";
-import * as Yup from "yup";
-import "yup-phone";
 import { useUpdatePropertyMutation } from "../../app/services/propertyApiSlice";
+import { useDispatch, useSelector } from "react-redux";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import "yup-phone";
 
 function EditPropertyForm() {
     const dispatch = useDispatch();

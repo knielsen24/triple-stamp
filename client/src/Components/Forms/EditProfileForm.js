@@ -1,9 +1,9 @@
-import { Formik } from "formik";
-import * as Yup from "yup";
-import "yup-phone";
 import { useFetchUserQuery, useUpdateUserMutation } from "../../app/services/userApiSlice";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import "yup-phone";
 
 function EditProfileForm() {
     const [updateUser, { isLoading }] = useUpdateUserMutation();

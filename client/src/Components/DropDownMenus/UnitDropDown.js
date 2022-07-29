@@ -1,4 +1,3 @@
-import React from "react";
 import ButtonOpenDeleteUnitModal from "../Buttons/ButtonOpenDeleteUnitModal";
 
 function UnitDropDown() {
