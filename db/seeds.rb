@@ -1,29 +1,19 @@
 puts "🌱 double stamping..."
-# :name, :address, :city, :state, :postal_code, :country, :image, :units
+# 10.times do
+#     full_name = Faker::Name.first_name
+#     account_name = Faker::Name.last_name
+#     email = Faker::Internet.email
+#     password = Faker::Internet.password
+#     image = Faker::Avatar.image
 
-# User.create(
-#     full_name: "Kevin",
-#     account_name: "mrmai2000",
-#     email: "knielsen24@gmail.com",
-#     password_digest: "1234",
-#     profile_img: "",
-# )
-
-10.times do
-    full_name = Faker::Name.first_name
-    account_name = Faker::Name.last_name
-    email = Faker::Internet.email
-    password = Faker::Internet.password
-    image = Faker::Avatar.image
-
-    User.create(
-        full_name: full_name,
-        account_name: account_name,
-        email: email,
-        password_digest: password,
-        image: image,
-    )
-end
+#     User.create(
+#         full_name: full_name,
+#         account_name: account_name,
+#         email: email,
+#         password_digest: password,
+#         image: image,
+#     )
+# end
 
 10.times do
     name = Faker::Address.community
@@ -58,6 +48,27 @@ Property.all.each do |property|
             property_id: id,
             number: number,
             square_feet: square_feet
+        )
+    end
+end
+
+typeArrays = ["move-in", "move-out", "annual", "semiannual", "quarterly", "monthly"]
+statusArray = ["upcoming", "completed", "in progress"]
+
+Unit.all.each do |unit|
+    5.times do
+            title = unit.number + " " + unit.label,
+            type_name = typeArrays.sample,
+            scheduled_date = Date.today,
+            status = statusArray.sample,
+            unit_id = unit.id
+
+        Inspection.create(
+            title: title,
+            type_name: type_name,
+            scheduled_date: scheduled_date,
+            status: status,
+            unit_id: unit_id
         )
     end
 end

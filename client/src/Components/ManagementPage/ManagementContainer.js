@@ -28,7 +28,7 @@ function PropertiesContainer() {
                         <DashBoardNav />
                     </div>
                     <Routes>
-                        <Route path="home" />
+                        <Route path="main" />
                         <Route path="inspections" />
                         <Route path="tasks" />
                         <Route path="details" element={<PropertyCard />} />

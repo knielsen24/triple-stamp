@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_27_170731) do
+ActiveRecord::Schema.define(version: 2022_07_29_192215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "inspections", force: :cascade do |t|
+    t.string "title", default: ""
+    t.string "type_name", default: ""
+    t.date "scheduled_date"
+    t.string "status", default: ""
+    t.bigint "unit_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["unit_id"], name: "index_inspections_on_unit_id"
+  end
 
   create_table "properties", force: :cascade do |t|
     t.string "name", null: false
@@ -51,6 +62,7 @@ ActiveRecord::Schema.define(version: 2022_07_27_170731) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "inspections", "units"
   add_foreign_key "properties", "users"
   add_foreign_key "units", "properties"
 end

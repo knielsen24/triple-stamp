@@ -20,12 +20,12 @@ function DashBoardNav() {
             <ul className="nav nav-pills nav-justified">
                 <li className="nav-item">
                     <NavLink
-                        to="home"
+                        to="main"
                         className={({ isActive }) =>
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        Home
+                        Main
                     </NavLink>
                 </li>
                 <li className="nav-item">

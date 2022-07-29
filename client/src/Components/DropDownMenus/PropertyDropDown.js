@@ -10,6 +10,7 @@ import { useState } from "react";
 import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
 
 function PropertyDropDown() {
+    // useParams to render property link
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [search, setSearch] = useState("");
@@ -23,19 +24,17 @@ function PropertyDropDown() {
         error,
     } = useFetchPropertiesQuery({ refetchOnMountOrArgChange: true });
 
-    // need useParams to render property link
-
     const handleSearch = (e) => setSearch(e.target.value);
 
     let renderPropertyList;
     let filteredProperties;
+
     if (properties) {
         filteredProperties = properties.filter((property) => {
+            let propName = property.name.toLowerCase();
+            let searchLC = search.toLowerCase();
             if (search === "") return property;
-            if (
-                property.name.toLowerCase().includes(search.toLocaleLowerCase())
-            )
-                return property;
+            if (propName.includes(searchLC)) return property;
         });
         renderPropertyList = filteredProperties.map((property) => {
             return (
