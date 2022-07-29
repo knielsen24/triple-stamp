@@ -1,21 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
 import { selectUnit } from "../../app/features/unitSlice";
+import { setUnitsList, unitsList } from "../../app/features/unitsListSlice";
 import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
 import UnitDropDown from "../DropDownMenus/UnitDropDown";
 
 function UnitsContainer() {
     const dispatch = useDispatch();
     const property = useSelector(setSelectProperty);
+    const unitsListState = useSelector(setUnitsList)
 
     const buttonClassName =
         "list-group-item list-group-item-action border border-0 btn btn-secondary dropdown-toggle dropdown-toggle ";
 
     let renderUnitList;
-
-    if (property) {
-        const getUnitsList = property.units;
-        renderUnitList = getUnitsList.map((unit) => {
+    if (unitsListState) {
+        renderUnitList = unitsListState.map((unit) => {
             return (
                 <div className="btn-group dropend" key={unit.id}>
                     <button

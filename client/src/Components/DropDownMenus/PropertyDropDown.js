@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useFetchPropertiesQuery } from "../../app/services/propertyApiSlice";
 import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
 import { useNavigate } from "react-router-dom";
+import { unitsList } from "../../app/features/unitsListSlice";
 
 function PropertyDropDown() {
     const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function PropertyDropDown() {
                         onClick={(e) => {
                             e.preventDefault();
                             dispatch(selectProperty(property));
+                            dispatch(unitsList(property.units))
                             navigate("property-details");
                         }}
                     >

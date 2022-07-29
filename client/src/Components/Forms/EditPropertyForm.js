@@ -1,4 +1,7 @@
-import { selectProperty, setSelectProperty } from "../../app/features/propertySlice";
+import {
+    selectProperty,
+    setSelectProperty,
+} from "../../app/features/propertySlice";
 import { Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
@@ -11,20 +14,20 @@ function EditPropertyForm() {
     const dispatch = useDispatch();
     const [updateProperty, isLoading] = useUpdatePropertyMutation();
 
-    const property = useSelector(setSelectProperty);
+    const propertyState = useSelector(setSelectProperty);
 
     let initialData = {};
 
-    if (property) {
+    if (propertyState) {
         initialData = {
-            id: property.id,
-            name: property.name,
-            address: property.address,
-            city: property.city,
-            state: property.state,
-            postal_code: property.postal_code,
-            country: property.country,
-            user_id: property.user_id,
+            id: propertyState.id,
+            name: propertyState.name,
+            address: propertyState.address,
+            city: propertyState.city,
+            state: propertyState.state,
+            postal_code: propertyState.postal_code,
+            country: propertyState.country,
+            user_id: propertyState.user_id,
         };
     }
 
@@ -183,26 +186,6 @@ function EditPropertyForm() {
                                 touched.country &&
                                 errors.country}
                         </div>
-
-                        {/* <div className="mb-3">
-                            <label
-                                htmlFor="units"
-                                className="form-label float-start"
-                            >
-                                Number of units
-                            </label>
-                            <input
-                                id="units"
-                                className="form-control"
-                                type="string"
-                                name="units"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.units}
-                            />
-                            {errors.units && touched.units && errors.units}
-                        </div> */}
-
                         <div className="float-end">
                             {/*
                                 this needs a conditon

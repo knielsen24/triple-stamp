@@ -4,29 +4,22 @@ import "yup-phone";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useNavigate } from "react-router-dom";
-import {
-    selectProperty,
-    setSelectProperty,
-} from "../../app/features/propertySlice";
+import { setSelectProperty } from "../../app/features/propertySlice";
 import { useCreateUnitMutation } from "../../app/services/propertyApiSlice";
-import { useFetchPropertiesQuery } from "../../app/services/propertyApiSlice";
+import { setUnitsList, unitsList } from "../../app/features/unitsListSlice";
 
 function AddUnitForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const property = useSelector(setSelectProperty);
+    const propertyState = useSelector(setSelectProperty);
+    const unitsListState = useSelector(setUnitsList);
 
     const [createUnit, { isLoading }] = useCreateUnitMutation();
-    const { data: properties } = useFetchPropertiesQuery();
 
-
-    const handlePropertyState = (id) => {
-        let findProperty;
-        if (properties) {
-            findProperty = properties.filter((prop) => prop.id === id)
-            dispatch(selectProperty(findProperty))
-        }
-    }
+    const handleUnitsListState = (newUnit) => {
+        const newUnitsList = [...unitsListState, newUnit];
+        dispatch(unitsList(newUnitsList));
+    };
 
     const createSchema = Yup.object().shape({
         number: Yup.string().min(1, "Too Short!").max(20, "Too Long!"),
@@ -41,12 +34,12 @@ function AddUnitForm() {
                     number: "",
                     label: "",
                     square_feet: "",
-                    property_id: property.id || "",
+                    property_id: propertyState.id || "",
                 }}
                 validationSchema={createSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     createUnit(values).then((r) => {
-                        handlePropertyState(r.data.property_id);
+                        handleUnitsListState(r.data);
                     });
                     setTimeout(() => {
                         setSubmitting(false);
