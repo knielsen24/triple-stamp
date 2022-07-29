@@ -71,9 +71,9 @@ function PropertyDropDown() {
                     {property.name || ""}
                 </a>
                 <ul className="dropdown-menu dropdown-menu p-3 ">
-                    <form class="d-flex" role="search">
+                    <form className="d-flex" role="search">
                         <input
-                            class="form-control me-2"
+                            className="form-control me-2 mb-1"
                             type="search"
                             placeholder="Search"
                             aria-label="Search"
@@ -84,7 +84,7 @@ function PropertyDropDown() {
                         <ButtonOpenAddPropertyModal />
                     </li>
                     <li>
-                        <hr className="dropdown-divider" />
+                        <hr className="dropdown-divider m-1" />
                     </li>
                     {renderPropertyList}
                 </ul>
