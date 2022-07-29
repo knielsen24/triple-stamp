@@ -14,7 +14,7 @@ function PropertyCard() {
 
     return (
         <div className="container align-content-items-center">
-            <div id="profile-main-card-container" className="card m-3">
+            <div id="profile-main-card-container" className="card mx-3">
                 <div className="text-center" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img

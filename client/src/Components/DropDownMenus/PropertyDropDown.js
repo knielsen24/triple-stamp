@@ -48,7 +48,7 @@ function PropertyDropDown() {
                             e.preventDefault();
                             dispatch(selectProperty(property));
                             dispatch(unitsList(property.units));
-                            navigate("property-details");
+                            // navigate("details");
                         }}
                     >
                         {property.name}

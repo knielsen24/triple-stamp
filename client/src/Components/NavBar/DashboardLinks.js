@@ -4,8 +4,8 @@ function DashboardLinks() {
     return (
         <>
 
-            <a className="nav-link" href="/management">
-                Management
+            <a className="nav-link" href="/dashboard/home">
+                Dashboard
             </a>
             {/* <a className="nav-link" href="#">
                 Inspections

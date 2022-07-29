@@ -1,21 +1,14 @@
 import { setSelectProperty } from "../../app/features/propertySlice";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function DashBoardNav() {
     const property = useSelector(setSelectProperty);
     // const [activePill, setActivePill] = useState(null);
 
-    // const activeClass = "nav-link active";
-    // const inactiveClass = "nav-link";
-
-    // const handleClick = (e) => {
-    //     console.log(e.target.id)
-    // };
-
-    // onclick takes in the id
-    // if the id matches click, set to true,
-    // if the id doesn't match set to false
+    let activeClass = "nav-link active bg-secondary bg-opacity-75 fw-bold" ;
+    let inactiveClass = "nav-link text-dark ";
 
     let detailsLinkhref;
     property.name !== ""
@@ -26,34 +19,44 @@ function DashBoardNav() {
         <div className="text-center mb-3">
             <ul className="nav nav-pills nav-justified">
                 <li className="nav-item">
-                    <a id="home" className="nav-link active" href="#">
-                        Home
-                    </a>
-                </li>
-                <li className="nav-item">
-                    <a
-                        id="inspections"
-                        className="nav-link "
-                        aria-current="page"
-                        href="#"
+                    <NavLink
+                        to="home"
+                        className={({ isActive }) =>
+                            isActive ? activeClass : inactiveClass
+                        }
                     >
-                        {/* bg-secondary bg-opacity-75 */}
+                        Home
+                    </NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink
+                        to="inspections"
+                        className={({ isActive }) =>
+                            isActive ? activeClass : inactiveClass
+                        }
+                    >
                         Inspections
-                    </a>
+                    </NavLink>
                 </li>
                 <li className="nav-item">
-                    <a id="tasks" className="nav-link " href="#">
+                    <NavLink
+                        to="tasks"
+                        className={({ isActive }) =>
+                            isActive ? activeClass : inactiveClass
+                        }
+                    >
                         Tasks
-                    </a>
+                    </NavLink>
                 </li>
                 <li className="nav-item">
-                    <a
-                        id="details"
-                        className="nav-link "
-                        href={detailsLinkhref}
+                    <NavLink
+                        to="details"
+                        className={({ isActive }) =>
+                            isActive ? activeClass : inactiveClass
+                        }
                     >
                         Details
-                    </a>
+                    </NavLink>
                 </li>
             </ul>
         </div>
