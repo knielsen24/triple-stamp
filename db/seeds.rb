@@ -38,16 +38,20 @@ puts "🌱 double stamping..."
     )
 end
 
+labelsArray = ["office 1", "office 2", "office 3", "restaurante 1", "restaurante 2", "restaurante 3", "apartment 1", "apartment 2", "apartment 3"]
+
 Property.all.each do |property|
     10.times do
         id = property.id
         number = rand(1..100)
+        label = labelsArray.sample
         square_feet = rand(200..5000)
 
         Unit.create(
             property_id: id,
             number: number,
-            square_feet: square_feet
+            label: label,
+            square_feet: square_feet,
         )
     end
 end
@@ -57,11 +61,12 @@ statusArray = ["upcoming", "completed", "in progress"]
 
 Unit.all.each do |unit|
     5.times do
-            title = unit.number + " " + unit.label,
-            type_name = typeArrays.sample,
-            scheduled_date = Date.today,
-            status = statusArray.sample,
-            unit_id = unit.id
+        # title = unit.number + " " + unit.label,
+        title = "#{unit.number} #{unit.label}"
+        type_name = typeArrays.sample
+        scheduled_date = Date.today
+        status = statusArray.sample
+        unit_id = unit.id
 
         Inspection.create(
             title: title,

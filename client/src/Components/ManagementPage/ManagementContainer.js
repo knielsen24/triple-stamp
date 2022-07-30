@@ -4,6 +4,7 @@ import DashBoardNav from "../Dashboard/DashBoardNav";
 import PropertyCard from "../Dashboard/PropertyCard";
 import { Route, Routes } from "react-router-dom";
 import UnitsContainer from "./UnitsContainer";
+import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
 
 function PropertiesContainer() {
     return (
@@ -29,7 +30,7 @@ function PropertiesContainer() {
                     </div>
                     <Routes>
                         <Route path="main" />
-                        <Route path="inspections" />
+                        <Route path="inspections" element={<InspectionsContainer />} />
                         <Route path="tasks" />
                         <Route path="details" element={<PropertyCard />} />
                     </Routes>

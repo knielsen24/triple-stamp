@@ -12,7 +12,7 @@ export const propertyApi = createApi({
                 query: (id) => `/users/${id}/properties`,
                 providesTags: ["properties", "units"],
             }),
-
+        // Not using fetchPropUnits. Performance not as good
             fetchPropUnits: builder.query({
                 query: (id) => `/properties/${id}/units`,
                 providesTags: ["units"],
@@ -98,6 +98,6 @@ export const {
     useCreateUnitMutation,
     useUpdateUnitMutation,
     useDeleteUnitMutation,
-    
+
     useFetchPropInspectionsQuery,
 } = propertyApi;
