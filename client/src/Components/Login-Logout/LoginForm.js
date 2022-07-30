@@ -1,5 +1,6 @@
 import { useLoginApiMutation } from "../../app/services/userApiSlice";
 import { selectProperty } from "../../app/features/propertySlice";
+import { login } from "../../app/features/userSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";
@@ -43,9 +44,9 @@ function LoginForm() {
                 validationSchema={loginSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     loginApi(values)
-                        .then((r) => {})
+                        .then((r) => {dispatch(login(r.data))})
                         .then(dispatch(selectProperty(initialData)))
-                        .then(navigate("management"));
+                        .then(navigate("dashboard"));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

@@ -8,8 +8,6 @@ function Logout() {
     const navigate = useNavigate();
     const [logoutApi, { isLoading }] = useLogoutApiMutation();
 
-    // const { data: user } = useFetchUserQuery();
-
     return (
         <>
             <a
@@ -18,7 +16,8 @@ function Logout() {
                 onClick={(e) => {
                     e.preventDefault();
                     logoutApi()
-                        .then(() => dispatch(logout(null)))
+                        .then(dispatch(logout(null)))
+                        .then((r) => {})
                         .then(navigate("/"));
                 }}
             >
