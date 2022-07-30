@@ -55,18 +55,18 @@ function PropertyAllInspectionsList() {
                 className="accordion-collapse collapse"
                 aria-labelledby="panelsStayOpen-headingTwo"
             >
-                <div className="accordion-body">
+                <div className="accordion-body bg-light bg-opacity-75">
                     <ul className="list-group list-group-horizontal flex-fill text-center">
-                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-25 flex-fill ">
+                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-50 flex-fill ">
                             Title
                         </li>
-                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-25 flex-fill">
+                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-50 flex-fill">
                             Type
                         </li>
-                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-25 flex-fill">
+                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-50 flex-fill">
                             Status
                         </li>
-                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-25 flex-fill">
+                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-50 flex-fill">
                             Date
                         </li>{" "}
                     </ul>
