@@ -9,8 +9,11 @@ class PropertiesController < ApplicationController
     end
 
     def create
-        property = Property.create!(create_property_params)
-        render json: property, status: :created
+        if params[:user_id]
+            user = User.find(params[:user_id])
+            property = user.properties.create!(create_property_params)
+            render json: property, status: :created
+        end
     end
 
     def update

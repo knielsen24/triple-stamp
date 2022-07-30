@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+    resources :users do
+        resources :properties
+    end
     resources :inspections
     resources :units
     resources :properties
-    resources :users
+
 
 # SESSION #
     post "/login", to: "sessions#create"
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
 
 # PROPERTY #
     get "/users/:user_id/properties", to: "properties#index"
-    post "/users/:id/properties", to: "properties#create"
+    post "/users/:user_id/properties", to: "properties#create"
     patch "/properties/:id", to: "properties#update"
     delete "/properties/:id", to: "properties#destroy"
 

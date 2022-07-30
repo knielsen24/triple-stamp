@@ -39,7 +39,7 @@ function AddPropertyForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     createProperty(values).then((r) => {
                         dispatch(selectProperty(r.data));
-                        navigate("/management/property-details");
+                        navigate("/dashboard/details");
                     });
                     setTimeout(() => {
                         setSubmitting(false);
