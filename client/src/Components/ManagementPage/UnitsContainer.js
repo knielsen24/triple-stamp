@@ -7,11 +7,13 @@ import UnitDropDown from "../DropDownMenus/UnitDropDown";
 import DeleteUnitModal from "../Modals/DeleteUnitModal";
 import EditUnitModal from "../Modals/EditUnitModal";
 import AddUnitModal from "../Modals/AddUnitModal";
+import { useFetchPropUnitsQuery } from "../../app/services/propertyApiSlice";
 
 function UnitsContainer() {
     const dispatch = useDispatch();
     const property = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
+    // const { data: unitsListv2 } = useFetchPropUnitsQuery(property.id || "");
 
     const buttonClassName =
         "list-group-item list-group-item-action border border-0 btn btn-secondary dropdown-toggle dropdown-toggle toggle-align-end";

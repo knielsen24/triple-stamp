@@ -3,7 +3,7 @@ class UnitsController < ApplicationController
 
     def index
         if params[:property_id]
-            property = Property.find(:property_id)
+            property = Property.find(params[:property_id])
             units = property.units
             render json: units
         end
@@ -11,7 +11,7 @@ class UnitsController < ApplicationController
 
     def create
         if params[:property_id]
-            property = Property.find(:property_id)
+            property = Property.find(params[:property_id])
             unit = property.units.create!(unit_params)
             render json: unit, status: :created
         end
