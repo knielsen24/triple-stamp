@@ -10,7 +10,11 @@ function DashboardHome() {
     //  upcoming inspections
     //  past inspections
 
-    return <div>DashboardHome</div>;
+    return <div>DashboardHome
+        <div>
+            
+        </div>
+    </div>;
 }
 
 export default DashboardHome;

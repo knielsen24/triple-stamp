@@ -22,15 +22,16 @@ Rails.application.routes.draw do
     patch "/properties/:id", to: "properties#update"
     delete "/properties/:id", to: "properties#destroy"
     get "/properties/:id/units", to: "properties#units_index"
-    get "/properties/:id/units/inspections", to: "properties#inspections_index"
 
 # UNIT #
     post "/properties/:id/units", to: "units#create"
     patch "/units/:id", to: "units#update"
     delete "/units/:id", to: "units#destroy"
-    get "/units/:id/inspections", to: "units#inspections_index"
+    # get "/units/:id/inspections", to: "units#inspections_index"
 
 # INSPECTION #
+    get "/units/:id/inspections", to: "inspections#index"
+    get "/properties/:property_id/inspections", to: "inspections#index"
     post "/units/:id/inspections", to: "inspections#create"
     patch "/inspections/:id", to: "inspections#update"
     delete "/inspections/:id", to: "inspections#destroy"

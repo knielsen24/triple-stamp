@@ -2,7 +2,7 @@ import {
     selectProperty,
     setSelectProperty,
 } from "../../app/features/propertySlice";
-import { useFetchPropertiesQuery } from "../../app/services/propertyApiSlice";
+import { useFetchPropertiesQuery, useFetchPropInspectionsQuery } from "../../app/services/propertyApiSlice";
 import { unitsList } from "../../app/features/unitsListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,9 @@ function PropertyDropDown() {
     const navigate = useNavigate();
     const [search, setSearch] = useState("");
     const property = useSelector(setSelectProperty);
+
+    const {data: propInspections } = useFetchPropInspectionsQuery(property.id)
+    console.log(propInspections)
 
     const {
         data: properties,

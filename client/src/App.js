@@ -8,6 +8,7 @@ import Home from "./Components/HomePage/Home";
 import { useSelector } from "react-redux";
 import "./App.css";
 import { setUser } from "./app/features/userSlice";
+import { setSelectProperty } from "./app/features/propertySlice";
 
 
 function App() {
@@ -15,7 +16,6 @@ function App() {
     // currentUser ? currentUser.id : ""
 
     const { data: user } = useFetchUserQuery();
-    
 
 
     return (
