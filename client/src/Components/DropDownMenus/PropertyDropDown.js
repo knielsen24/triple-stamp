@@ -2,12 +2,17 @@ import {
     selectProperty,
     setSelectProperty,
 } from "../../app/features/propertySlice";
-import { useFetchPropertiesQuery, useFetchPropInspectionsQuery } from "../../app/services/propertyApiSlice";
+import {
+    useFetchPropertiesQuery,
+    useFetchPropInspectionsQuery,
+} from "../../app/services/propertyApiSlice";
 import { unitsList } from "../../app/features/unitsListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
+import { setUser } from "../../app/features/userSlice";
+import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function PropertyDropDown() {
     // useParams to render property link
@@ -16,16 +21,9 @@ function PropertyDropDown() {
     const [search, setSearch] = useState("");
     const property = useSelector(setSelectProperty);
 
-    const {data: propInspections } = useFetchPropInspectionsQuery(property.id)
-    console.log(propInspections)
-
-    const {
-        data: properties,
-        isLoading,
-        isSuccess,
-        isError,
-        error,
-    } = useFetchPropertiesQuery({ refetchOnMountOrArgChange: true });
+    const { data: user } = useFetchUserQuery();
+    const { data: properties } = useFetchPropertiesQuery(user.id);
+    const { data: propInspections } = useFetchPropInspectionsQuery(property.id);
 
     const handleSearch = (e) => setSearch(e.target.value);
 

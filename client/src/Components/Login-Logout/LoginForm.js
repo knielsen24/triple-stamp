@@ -1,8 +1,8 @@
-import { useLoginApiMutation } from "../../app/services/userApiSlice";
+import { useFetchUserQuery, useLoginApiMutation } from "../../app/services/userApiSlice";
 import { selectProperty } from "../../app/features/propertySlice";
-import { login } from "../../app/features/userSlice";
+import { login, setUser } from "../../app/features/userSlice";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../../App.css";
@@ -10,6 +10,9 @@ import "../../App.css";
 function LoginForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const user = useSelector(setUser)
+    console.log(user)
+    // const {} = useFetchUserQuery(user.id);
 
     const [loginApi, { isLoading }] = useLoginApiMutation();
 

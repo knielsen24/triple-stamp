@@ -10,24 +10,24 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
 
 # USER #
-    post "/signup", to: "users#create"
+    post "/users", to: "users#create"
+    # get "/users/:id", to: "users#show"
     get "/currentuser", to: "users#show"
-    patch "/currentuser", to: "users#update"
+    patch "/users/:id", to: "users#update"
     delete "/users/:id", to: "users#destroy"
-    get "/currentuser/properties", to: "users#properties_index"
 
 # PROPERTY #
-    # get "/properties/:id", to: "properties#show"
+    get "/users/:user_id/properties", to: "properties#index"
     post "/users/:id/properties", to: "properties#create"
     patch "/properties/:id", to: "properties#update"
     delete "/properties/:id", to: "properties#destroy"
-    get "/properties/:id/units", to: "properties#units_index"
+
 
 # UNIT #
+    get "/properties/:id/units", to: "properties#units_index"
     post "/properties/:id/units", to: "units#create"
     patch "/units/:id", to: "units#update"
     delete "/units/:id", to: "units#destroy"
-    # get "/units/:id/inspections", to: "units#inspections_index"
 
 # INSPECTION #
     get "/units/:id/inspections", to: "inspections#index"

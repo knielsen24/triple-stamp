@@ -9,7 +9,7 @@ export const propertyApi = createApi({
     endpoints(builder) {
         return {
             fetchProperties: builder.query({
-                query: () => "/currentuser/properties",
+                query: (id) => `/users/${id}/properties`,
                 providesTags: ["properties", "units"],
             }),
 

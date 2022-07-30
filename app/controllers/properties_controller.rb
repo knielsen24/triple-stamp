@@ -1,6 +1,12 @@
 class PropertiesController < ApplicationController
     skip_before_action :authorize, except: :units_index
 
+    def index
+        if params[:user_id]
+            user = User.find(params[:user_id])
+            render json: user.properties
+        end
+    end
 
     def create
         property = Property.create!(create_property_params)

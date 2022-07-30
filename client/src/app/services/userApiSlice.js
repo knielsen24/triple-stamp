@@ -17,11 +17,6 @@ export const userApi = createApi({
                 invalidatesTags: ["user"],
             }),
 
-            fetchUser: builder.query({
-                query: () => "/currentuser",
-                providesTags: ["user"],
-            }),
-
             loginApi: builder.mutation({
                 query: ({ ...data }) => ({
                     url: "/login",
@@ -31,9 +26,21 @@ export const userApi = createApi({
                 invalidatesTags: ["user"],
             }),
 
+            fetchUser: builder.query({
+                query: (id) => `/users/${id}`,
+                providesTags: ["user"],
+            }),
+
+            // need to add user_id params...
+            // on login response take user id to make query
+            // fetchUser: builder.query({
+            //     query: () => "/currentuser",
+            //     providesTags: ["user"],
+            // }),
+
             createUser: builder.mutation({
                 query: ({ ...data }) => ({
-                    url: "/signup",
+                    url: "/users",
                     method: "POST",
                     body: data,
                 }),
@@ -50,7 +57,7 @@ export const userApi = createApi({
 
             updateUser: builder.mutation({
                 query: ({ ...data }) => ({
-                    url: `/currentuser`,
+                    url: `/users/${data.id}`,
                     method: "PATCH",
                     body: data,
                 }),
