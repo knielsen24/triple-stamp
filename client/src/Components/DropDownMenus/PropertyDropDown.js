@@ -43,7 +43,7 @@ function PropertyDropDown() {
                 <li key={property.id}>
                     <a
                         key={property.id}
-                        className="dropdown-item "
+                        className="dropdown-item bg-light"
                         href="#"
                         onClick={(e) => {
                             e.preventDefault();
@@ -60,10 +60,10 @@ function PropertyDropDown() {
     }
 
     return (
-        <div className="w-100 ">
+        <div className="w-100 align-content-items-center">
             <div className="dropdown-center ">
                 <a
-                    className="btn bg-secondary bg-opacity-75 text-light dropdown-toggle w-100 "
+                    className="btn text-white bg-secondary bg-opacity-75 dropdown-toggle w-100 "
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -71,7 +71,7 @@ function PropertyDropDown() {
                 >
                     {property.name || ""}
                 </a>
-                <ul className="dropdown-menu dropdown-menu p-3 ">
+                <ul className="dropdown-menu dropdown-menu p-3 bg-light ">
                     <form className="d-flex" role="search">
                         <input
                             className="form-control me-2 mb-1"

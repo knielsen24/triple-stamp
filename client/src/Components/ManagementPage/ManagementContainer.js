@@ -10,8 +10,8 @@ function PropertiesContainer() {
     return (
         <div className="container border-endtext-center min-vh-100">
             <div className="row my-2">
-                <div className="col-4 vstack p-0 border-end min-vh-100 ">
-                    <p className="text-start user-select-none mb-1">
+                <div className="col px-2 border-end min-vh-100 vw-25">
+                    <p className="text-center user-select-none mb-1">
                         Select Property
                     </p>
                     <div className="row mw-100 mb-3 align-content-items-center">
@@ -21,7 +21,7 @@ function PropertiesContainer() {
                     <hr className="w-auto m-0" />
                     <UnitsContainer />
                 </div>
-                <div className="col-8 p-0">
+                <div className="col-9 p-0 mx-3 vw-75">
                     <div className="row mx-3">
                         <p className="text-center user-select-none mb-1">
                             Dashboard

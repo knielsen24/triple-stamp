@@ -5,7 +5,9 @@ import { useFetchPropInspectionsQuery } from "../../app/services/propertyApiSlic
 
 function PropertyAllInspectionsList() {
     const property = useSelector(setSelectProperty);
-    const { data: propInspections } = useFetchPropInspectionsQuery(property.id || "");
+    const { data: propInspections } = useFetchPropInspectionsQuery(
+        property.id || ""
+    );
 
     let allPropInspect;
 
@@ -13,11 +15,22 @@ function PropertyAllInspectionsList() {
         console.log(propInspections);
         allPropInspect = propInspections.map((inspect) => {
             return (
-                <ul className="list-group list-group-horizontal" key={inspect.id}>
-                    <li className="list-group-item">{inspect.title}</li>
-                    <li className="list-group-item ">A second item</li>
-                    <li className="list-group-item ">A third item</li>
-                    <li className="list-group-item ">A third item</li>
+                <ul
+                    className="list-group list-group-horizontal"
+                    key={inspect.id}
+                >
+                    <li className="list-group-item flex-fill rounded-0">
+                        {inspect.title}
+                    </li>
+                    <li className="list-group-item flex-fill rounded-0">
+                        {inspect.type_name}
+                    </li>
+                    <li className="list-group-item flex-fill rounded-0">
+                        {inspect.status}
+                    </li>
+                    <li className="list-group-item flex-fill rounded-0">
+                        {inspect.scheduled_date}
+                    </li>
                 </ul>
             );
         });
@@ -42,18 +55,23 @@ function PropertyAllInspectionsList() {
                 className="accordion-collapse collapse"
                 aria-labelledby="panelsStayOpen-headingTwo"
             >
-                {allPropInspect}
-                {/* <div className="accordion-body">
-                    <strong>This is the second item's accordion body.</strong>{" "}
-                    It is hidden by default, until the collapse plugin adds the
-                    appropriate classNamees that we use to style each element.
-                    These classNamees control the overall appearance, as well as
-                    the showing and hiding via CSS transitions. You can modify
-                    any of this with custom CSS or overriding our default
-                    variables. It's also worth noting that just about any HTML
-                    can go within the <code>.accordion-body</code>, though the
-                    transition does limit overflow.
-                </div> */}
+                <div className="accordion-body">
+                    <ul className="list-group list-group-horizontal flex-fill text-center">
+                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-25 flex-fill ">
+                            Title
+                        </li>
+                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-25 flex-fill">
+                            Type
+                        </li>
+                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-25 flex-fill">
+                            Status
+                        </li>
+                        <li className="list-group-item bg-secondary rounded-0 bg-opacity-25 flex-fill">
+                            Date
+                        </li>{" "}
+                    </ul>
+                    {allPropInspect}
+                </div>
             </div>
         </div>
     );
