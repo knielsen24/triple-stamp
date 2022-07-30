@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :users do
         resources :properties
     end
+
     resources :inspections
     resources :units
     resources :properties

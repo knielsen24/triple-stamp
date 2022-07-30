@@ -25,7 +25,7 @@ class PropertiesController < ApplicationController
     def destroy
         property = Property.find(params[:id])
         property.destroy
-        head  :no_content
+        head :no_content
     end
 
     def units_index
