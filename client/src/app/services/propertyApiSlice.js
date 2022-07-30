@@ -13,6 +13,11 @@ export const propertyApi = createApi({
                 providesTags: ["properties", "units"],
             }),
 
+            fetchPropUnits: builder.query({
+                query: (id) => `/properties/${id}/units`,
+                providesTags: ["units"],
+            }),
+
             fetchPropInspections: builder.query({
                 query: (id) => `/properties/${id}/inspections`,
                 providesTags: ["inspections"],
@@ -54,7 +59,7 @@ export const propertyApi = createApi({
                     method: "POST",
                     body: data,
                 }),
-                invalidatesTags: ["properties"],
+                invalidatesTags: ["units"],
             }),
 
             updateUnit: builder.mutation({
@@ -84,12 +89,15 @@ export const propertyApi = createApi({
 });
 
 export const {
-    useCreatePropertyMutation,
-    useDeletePropertyMutation,
     useFetchPropertiesQuery,
+    useCreatePropertyMutation,
     useUpdatePropertyMutation,
+    useDeletePropertyMutation,
+
+    useFetchPropUnitsQuery,
     useCreateUnitMutation,
     useUpdateUnitMutation,
     useDeleteUnitMutation,
+    
     useFetchPropInspectionsQuery,
 } = propertyApi;

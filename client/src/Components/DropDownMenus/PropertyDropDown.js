@@ -5,6 +5,7 @@ import {
 import {
     useFetchPropertiesQuery,
     useFetchPropInspectionsQuery,
+    useFetchPropUnitsQuery,
 } from "../../app/services/propertyApiSlice";
 import { unitsList } from "../../app/features/unitsListSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -22,7 +23,9 @@ function PropertyDropDown() {
     const property = useSelector(setSelectProperty);
 
     const { data: user } = useFetchUserQuery();
-    const { data: properties } = useFetchPropertiesQuery(user.id);
+    const { data: properties } = useFetchPropertiesQuery(user.id || "");
+    const { data: unitsListv2 } = useFetchPropUnitsQuery(property.id || "");
+    console.log(property.id);
     // const { data: propInspections } = useFetchPropInspectionsQuery(property.id);
 
     const handleSearch = (e) => setSearch(e.target.value);

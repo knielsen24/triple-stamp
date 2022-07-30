@@ -1,9 +1,20 @@
 class UnitsController < ApplicationController
     skip_before_action :authorize
 
+    def index
+        if params[:property_id]
+            property = Property.find(:property_id)
+            units = property.units
+            render json: units
+        end
+    end
+
     def create
-        unit = Unit.create!(unit_params)
-        render json: unit, status: :created
+        if params[:property_id]
+            property = Property.find(:property_id)
+            unit = property.units.create!(unit_params)
+            render json: unit, status: :created
+        end
     end
 
     def update

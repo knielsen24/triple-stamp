@@ -38,6 +38,7 @@ function AddUnitForm() {
                 }}
                 validationSchema={createSchema}
                 onSubmit={(values, { setSubmitting }) => {
+                    console.log(values)
                     createUnit(values).then((r) => {
                         handleUnitsListState(r.data);
                     });

@@ -4,9 +4,17 @@ Rails.application.routes.draw do
         resources :properties
     end
 
+    resources :properties do
+        resources :units
+    end
+
+    resources :units do
+        resources :inspections
+    end
+
     resources :inspections
-    resources :units
-    resources :properties
+
+
 
 
 # SESSION #
@@ -28,17 +36,17 @@ Rails.application.routes.draw do
 
 
 # UNIT #
-    get "/properties/:id/units", to: "properties#units_index"
-    post "/properties/:id/units", to: "units#create"
+    get "/properties/:property_id/units", to: "units#index"
+    post "/properties/:property_id/units", to: "units#create"
     patch "/units/:id", to: "units#update"
     delete "/units/:id", to: "units#destroy"
 
 # INSPECTION #
     get "/units/:id/inspections", to: "inspections#index"
     get "/properties/:property_id/inspections", to: "inspections#index"
-    post "/units/:id/inspections", to: "inspections#create"
-    patch "/inspections/:id", to: "inspections#update"
-    delete "/inspections/:id", to: "inspections#destroy"
+    # post "/units/:id/inspections", to: "inspections#create"
+    # patch "/inspections/:id", to: "inspections#update"
+    # delete "/inspections/:id", to: "inspections#destroy"
 
 # Leave this here to help deploy your app later!
     get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }

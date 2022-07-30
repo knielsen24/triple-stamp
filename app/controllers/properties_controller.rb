@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-    skip_before_action :authorize, except: :units_index
+    skip_before_action :authorize
 
     def index
         if params[:user_id]
@@ -26,11 +26,6 @@ class PropertiesController < ApplicationController
         property = Property.find(params[:id])
         property.destroy
         head :no_content
-    end
-
-    def units_index
-        property = Property.find(params[:id])
-        render json: property.units
     end
 
     private
