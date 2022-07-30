@@ -14,13 +14,13 @@ function UnitsContainer() {
     const unitsListState = useSelector(setUnitsList);
 
     const buttonClassName =
-        "list-group-item list-group-item-action border border-0 btn btn-secondary dropdown-toggle dropdown-toggle ";
+        "list-group-item list-group-item-action border border-0 btn btn-secondary dropdown-toggle dropdown-toggle toggle-align-end";
 
     let renderUnitList;
     if (unitsListState) {
         renderUnitList = unitsListState.map((unit) => {
             return (
-                <div className="btn-group dropend" key={unit.id}>
+                <div className="btn-group dropend " key={unit.id}>
                     <button
                         key={unit.id}
                         type="button"
