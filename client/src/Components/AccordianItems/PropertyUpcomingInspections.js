@@ -1,24 +1,24 @@
 import PropertyAllInspecitonsTable from "../Tables/PropertyAllInspecitonsTable";
 
-function PropertyAllInspectionsList() {
+function PropertyUpcomingInspections() {
     return (
         <div className="accordion-item">
-            <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+            <h2 className="accordion-header" id="panelsStayOpen-prop-upcoming">
                 <button
                     className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseTwo"
-                    aria-expanded="true"
-                    aria-controls="panelsStayOpen-collapseTwo"
+                    data-bs-target="#panelsStayOpen-prop-collapseUpcoming"
+                    aria-expanded="false"
+                    aria-controls="panelsStayOpen-prop-collapseUpcoming"
                 >
-                    All
+                    Upcoming
                 </button>
             </h2>
             <div
-                id="panelsStayOpen-collapseTwo"
+                id="panelsStayOpen-prop-collapseUpcoming"
                 className="accordion-collapse collapse"
-                aria-labelledby="panelsStayOpen-headingTwo"
+                aria-labelledby="panelsStayOpen-prop-upcoming"
             >
                 <div className="accordion-body bg-light bg-opacity-50">
                     <PropertyAllInspecitonsTable />
@@ -28,4 +28,4 @@ function PropertyAllInspectionsList() {
     );
 }
 
-export default PropertyAllInspectionsList;
+export default PropertyUpcomingInspections;
