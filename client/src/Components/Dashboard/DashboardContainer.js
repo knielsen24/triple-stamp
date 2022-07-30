@@ -1,9 +1,9 @@
 import PropertyDropDown from "../DropDownMenus/PropertyDropDown";
 import AddPropertyModal from "../Modals/AddPropertyModal";
-import DashBoardNav from "../Dashboard/DashBoardNav";
-import PropertyCard from "../Dashboard/PropertyCard";
+import DashBoardNav from "./DashboardNav";
+import PropertyCard from "./PropertyCard";
 import { Route, Routes } from "react-router-dom";
-import UnitsContainer from "./UnitsContainer";
+import UnitsContainer from "../ManagementPage/UnitsContainer";
 import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
 
 function PropertiesContainer() {

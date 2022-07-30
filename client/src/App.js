@@ -1,4 +1,4 @@
-import ManagementContainer from "./Components/ManagementPage/ManagementContainer";
+import DashboardContainer from "./Components/Dashboard/DashboardContainer";
 import { useFetchUserQuery } from "./app/services/userApiSlice";
 import ProfileHome from "./Components/ProfilePage/ProfileHome";
 import Footer from "./Components/HomePage/Footer";
@@ -14,9 +14,7 @@ import { setSelectProperty } from "./app/features/propertySlice";
 function App() {
     // const user = useSelector(setUser)
     // currentUser ? currentUser.id : ""
-
     const { data: user } = useFetchUserQuery();
-
 
     return (
         <div className="container-fluid p-0" id="app-main-container">
@@ -29,7 +27,7 @@ function App() {
                 />
                 <Route
                     path="/dashboard/*"
-                    element={user ? <ManagementContainer /> : null}
+                    element={user ? <DashboardContainer /> : null}
                 />
             </Routes>
             <Footer />

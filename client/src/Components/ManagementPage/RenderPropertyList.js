@@ -1,5 +1,3 @@
-import React from "react";
-
 function RenderPropertyList() {
     if (properties) {
         filteredProperties = properties.filter((property) => {
@@ -28,7 +26,6 @@ function RenderPropertyList() {
             );
         });
     }
-
 
     return <div>RenderPropertyList</div>;
 }

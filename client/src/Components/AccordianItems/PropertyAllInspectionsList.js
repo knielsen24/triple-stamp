@@ -1,10 +1,6 @@
-import { useSelector } from "react-redux";
-import { setSelectProperty } from "../../app/features/propertySlice";
-import { useFetchPropInspectionsQuery } from "../../app/services/propertyApiSlice";
 import PropertyAllInspecitonsTable from "../Tables/PropertyAllInspecitonsTable";
 
 function PropertyAllInspectionsList() {
-
     return (
         <div className="accordion-item">
             <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
@@ -13,7 +9,7 @@ function PropertyAllInspectionsList() {
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-collapseTwo"
-                    aria-expanded="false"
+                    aria-expanded="true"
                     aria-controls="panelsStayOpen-collapseTwo"
                 >
                     All
@@ -26,7 +22,6 @@ function PropertyAllInspectionsList() {
             >
                 <div className="accordion-body bg-light bg-opacity-50">
                     <PropertyAllInspecitonsTable />
-
                 </div>
             </div>
         </div>

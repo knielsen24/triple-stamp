@@ -1,11 +1,9 @@
 import { setSelectProperty } from "../../app/features/propertySlice";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function DashBoardNav() {
+function DashboardNav() {
     const property = useSelector(setSelectProperty);
-    // const [activePill, setActivePill] = useState(null);
 
     let activeClass = "nav-link active bg-secondary bg-opacity-75 fw-bold" ;
     let inactiveClass = "nav-link text-dark ";
@@ -63,4 +61,4 @@ function DashBoardNav() {
     );
 }
 
-export default DashBoardNav;
+export default DashboardNav;

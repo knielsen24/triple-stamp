@@ -1,7 +1,4 @@
-import React from "react";
-
 function DashboardHome() {
-
     // ***** buttons or links to the following *****
     //  add property button
     //  add unit
@@ -10,11 +7,12 @@ function DashboardHome() {
     //  upcoming inspections
     //  past inspections
 
-    return <div>DashboardHome
+    return (
         <div>
-            
+            DashboardHome
+            <div></div>
         </div>
-    </div>;
+    );
 }
 
 export default DashboardHome;

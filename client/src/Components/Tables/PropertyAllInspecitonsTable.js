@@ -15,7 +15,7 @@ function PropertyAllInspecitonsTable() {
         allPropInspect = propInspections.map((inspect) => {
             return (
                 <tr key={inspect.id}>
-                    <th scope="row">{inspect.unit_id}</th>
+                    <th scope="row">{inspect.unit.number}</th>
                     <td>{inspect.title}</td>
                     <td>{inspect.type_name}</td>
                     <td>{inspect.status}</td>
@@ -27,7 +27,7 @@ function PropertyAllInspecitonsTable() {
 
     return (
         <div>
-            <table class="table table-hover">
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Unit #</th>

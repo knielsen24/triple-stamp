@@ -4,7 +4,6 @@ import {
 } from "../../app/features/propertySlice";
 import {
     useFetchPropertiesQuery,
-    useFetchPropInspectionsQuery,
     useFetchPropUnitsQuery,
 } from "../../app/services/propertyApiSlice";
 import { unitsList } from "../../app/features/unitsListSlice";

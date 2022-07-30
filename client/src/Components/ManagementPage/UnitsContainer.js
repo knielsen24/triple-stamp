@@ -14,6 +14,7 @@ function UnitsContainer() {
     const property = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
 
+
     const buttonClassName =
         "list-group-item list-group-item-action border border-0 btn btn-secondary dropdown-toggle dropdown-toggle toggle-align-end";
 
