@@ -4,7 +4,7 @@ class UnitsController < ApplicationController
     def index
         if params[:property_id]
             property = Property.find(params[:property_id])
-            units = property.units
+            units = property.units.order(:number)
             render json: units
         end
     end

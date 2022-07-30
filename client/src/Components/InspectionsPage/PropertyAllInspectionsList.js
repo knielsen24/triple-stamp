@@ -1,22 +1,26 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { setSelectProperty } from "../../app/features/propertySlice";
 import { useFetchPropInspectionsQuery } from "../../app/services/propertyApiSlice";
 
 function PropertyAllInspectionsList() {
-
-    const { data: propInspections } = useFetchPropInspectionsQuery();
-    console.log(propInspections)
+    const property = useSelector(setSelectProperty);
+    const { data: propInspections } = useFetchPropInspectionsQuery(property.id || "");
 
     let allPropInspect;
 
     if (propInspections) {
+        console.log(propInspections);
         allPropInspect = propInspections.map((inspect) => {
-            <ul class="list-group list-group-horizontal" key={inspect.id} >
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item ">A second item</li>
-                    <li class="list-group-item ">A third item</li>
-                    <li class="list-group-item ">A third item</li>
-            </ul>
-        })
+            return (
+                <ul className="list-group list-group-horizontal" key={inspect.id}>
+                    <li className="list-group-item">{inspect.title}</li>
+                    <li className="list-group-item ">A second item</li>
+                    <li className="list-group-item ">A third item</li>
+                    <li className="list-group-item ">A third item</li>
+                </ul>
+            );
+        });
     }
 
     return (
@@ -38,12 +42,7 @@ function PropertyAllInspectionsList() {
                 className="accordion-collapse collapse"
                 aria-labelledby="panelsStayOpen-headingTwo"
             >
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item ">A second item</li>
-                    <li class="list-group-item ">A third item</li>
-                    <li class="list-group-item ">A third item</li>
-                </ul>
+                {allPropInspect}
                 {/* <div className="accordion-body">
                     <strong>This is the second item's accordion body.</strong>{" "}
                     It is hidden by default, until the collapse plugin adds the
