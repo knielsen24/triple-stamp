@@ -4,7 +4,6 @@ import { setSelectUnit } from "../../app/features/unitSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import "yup-phone";
 import { useUpdateUnitMutation } from "../../app/services/propertyApiSlice";
 import { setUnitsList, unitsList } from "../../app/features/unitsListSlice";
 

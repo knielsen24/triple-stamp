@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import trashCanIcon from "../../assets/trashcan-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
 import { selectInspection } from "../../app/features/inspectionSlice";
+import EditModalTemp from "../Modals/EditModalTemp";
 
 function PropInspectsTable({ propInspections }) {
     const dispatch = useDispatch();
@@ -22,6 +23,8 @@ function PropInspectsTable({ propInspections }) {
                             src={editIcon}
                             alt="edit-icon"
                             role="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-inspections-form"
                             onClick={(e) => {
                                 e.preventDefault();
                                 dispatch(selectInspection(inspect));
@@ -48,6 +51,8 @@ function PropInspectsTable({ propInspections }) {
 
     return (
         <div>
+            <EditModalTemp modalId={"edit-inspections-form"}
+                    header={"Edit inspection information"}/>
             <table className="table table-hover user-select-none">
                 <thead>
                     <tr>

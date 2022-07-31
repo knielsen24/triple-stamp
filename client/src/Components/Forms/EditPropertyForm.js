@@ -8,7 +8,6 @@ import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import "yup-phone";
 
 function EditPropertyForm() {
     const dispatch = useDispatch();

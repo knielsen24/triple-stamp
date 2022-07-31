@@ -12,6 +12,7 @@ function InspectionsContainer() {
                 <>
                     <PropInspectAccordians />
                     <DeleteInspectionModal />
+
                 </>
             )}
         </div>

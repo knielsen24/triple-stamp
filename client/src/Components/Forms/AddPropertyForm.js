@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import "yup-phone";
 import { unitsList } from "../../app/features/unitsListSlice";
 
 function AddPropertyForm() {

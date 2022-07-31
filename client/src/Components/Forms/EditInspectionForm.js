@@ -1,28 +1,22 @@
-import { setSelectProperty } from "../../app/features/propertySlice";
-import { useCreateUnitMutation } from "../../app/services/propertyApiSlice";
-import { setUnitsList, unitsList } from "../../app/features/unitsListSlice";
+import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
+
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import "yup-phone";
 
-function AddUnitForm() {
+function EditInspectionForm() {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const propertyState = useSelector(setSelectProperty);
-    const unitsListState = useSelector(setUnitsList);
 
-    const [createUnit, { isLoading }] = useCreateUnitMutation();
 
-    const handleUnitsListState = (newUnit) => {
-        const newUnitsList = [...unitsListState, newUnit];
-        dispatch(unitsList(newUnitsList));
-    };
-
-    const createSchema = Yup.object().shape({
-        number: Yup.string().min(1, "Too Short!").max(20, "Too Long!"),
-        label: Yup.string().min(1, "Too Short!").max(30, "Too Long!"),
+    const updateSchema = Yup.object().shape({
+        number: Yup.string()
+            .min(1, "Too Short!")
+            .max(20, "Too Long!")
+            .required("Required"),
+        Label: Yup.string().min(1, "Too Short!").max(30, "Too Long!"),
+        square_feet: Yup.number(),
     });
 
     return (
@@ -30,16 +24,16 @@ function AddUnitForm() {
             <Formik
                 enableReinitialize
                 initialValues={{
-                    number: "",
-                    label: "",
-                    square_feet: "",
-                    property_id: propertyState.id || "",
+                    id: "" || unitState.id,
+                    number: "" || unitState.number,
+                    square_feet: "" || unitState.square_feet,
+                    label: "" || unitState.label,
+                    property_id: "" || unitState.property_id,
                 }}
-                validationSchema={createSchema}
+                validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values)
-                    createUnit(values).then((r) => {
-                        handleUnitsListState(r.data);
+                    updateUnit(values).then((r) => {
+                        handleUpdateUnit(r.data);
                     });
                     setTimeout(() => {
                         setSubmitting(false);
@@ -61,14 +55,13 @@ function AddUnitForm() {
                                 htmlFor="number"
                                 className="form-label float-start"
                             >
-                                Unit number. Letters are acceptable!
+                                Number or Identifier
                             </label>
                             <input
                                 id="number"
                                 className="form-control"
                                 type="string"
                                 name="number"
-                                placeholder="Number"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.number}
@@ -80,39 +73,45 @@ function AddUnitForm() {
                                 htmlFor="label"
                                 className="form-label float-start"
                             >
-                                Add a label (optional)
+                                Label
                             </label>
                             <input
                                 id="label"
                                 className="form-control"
                                 type="string"
                                 name="label"
-                                placeholder="Label"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.label}
                             />
                             {errors.label && touched.label && errors.label}
                         </div>
-
-                        <div className="float-end">
-                            {/*
-                                this needs a conditon
-                                if form is validated then close modal
-                                otherwise
-                                render error message
-                            */}
-                            <ButtonCancelModal />
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="btn btn-primary"
-                                id="modal-btn-start-now"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
+                        <div className="mb-3">
+                            <label
+                                htmlFor="square_feet"
+                                className="form-label float-start"
                             >
-                                Add unit
-                            </button>
+                                Square Feet
+                            </label>
+                            <input
+                                id="square_feet"
+                                className="form-control"
+                                type="string"
+                                name="square_feet"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.square_feet}
+                            />
+                            {errors.square_feet &&
+                                touched.square_feet &&
+                                errors.square_feet}
+                        </div>
+                        <div className="float-end">
+                            <ButtonCancelModal />
+                            <ButtonSaveChanges
+                                isSubmitting={isSubmitting}
+                                text={"Save Changes"}
+                            />
                         </div>
                     </form>
                 )}
@@ -121,4 +120,4 @@ function AddUnitForm() {
     );
 }
 
-export default AddUnitForm;
+export default EditInspectionForm;

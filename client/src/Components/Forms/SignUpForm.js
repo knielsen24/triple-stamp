@@ -2,7 +2,6 @@ import { useCreateUserMutation } from "../../app/services/userApiSlice";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import "../../App.css";
 
 function SignUpForm() {
     const navigate = useNavigate();

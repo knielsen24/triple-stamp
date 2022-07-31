@@ -3,21 +3,20 @@ import EditProfileForm from "../Forms/EditProfileForm";
 import EditPropertyForm from "../Forms/EditPropertyForm";
 import EditUnitForm from "../Forms/EditUnitForm";
 
-function EditModalTemp({ modalId, header,}) {
-
+function EditModalTemp({ modalId, header }) {
     let renderForm;
     if (modalId === "edit-property-form") {
-        renderForm = <EditPropertyForm />
+        renderForm = <EditPropertyForm />;
     }
     if (modalId === "update-profile-form") {
-        renderForm = <EditProfileForm />
+        renderForm = <EditProfileForm />;
     }
     if (modalId === "update-unit-form") {
-        renderForm = <EditUnitForm />
+        renderForm = <EditUnitForm />;
     }
-
-
-    // renderForm(modalId)
+    if (modalId === "edit-inspections-form") {
+        renderForm = <EditUnitForm />;
+    }
 
     return (
         <div>
@@ -43,9 +42,7 @@ function EditModalTemp({ modalId, header,}) {
                             </h5>
                             <ButtonCloseModalX />
                         </div>
-                        <div className="modal-body">
-                            {renderForm}
-                        </div>
+                        <div className="modal-body">{renderForm}</div>
                     </div>
                 </div>
             </div>
