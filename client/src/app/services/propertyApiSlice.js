@@ -12,7 +12,7 @@ export const propertyApi = createApi({
                 query: (id) => `/users/${id}/properties`,
                 providesTags: ["properties", "units"],
             }),
-        // Not using fetchPropUnits. Performance not as good
+            // Not using fetchPropUnits. Performance not as good
             fetchPropUnits: builder.query({
                 query: (id) => `/properties/${id}/units`,
                 providesTags: ["units"],
@@ -80,8 +80,18 @@ export const propertyApi = createApi({
                     method: "DELETE",
                 }),
                 invalidatesTags: (result, error, arg) => [
-                    "properties",
+                    // "properties",
                     { type: "units", id: arg.id },
+                ],
+            }),
+
+            deleteInspect: builder.mutation({
+                query: (id) => ({
+                    url: `/inspections/${id}`,
+                    method: "DELETE",
+                }),
+                invalidatesTags: (result, error, arg) => [
+                    { type: "inspections", id: arg.id },
                 ],
             }),
         };
@@ -100,4 +110,5 @@ export const {
     useDeleteUnitMutation,
 
     useFetchPropInspectionsQuery,
+    useDeleteInspectMutation,
 } = propertyApi;

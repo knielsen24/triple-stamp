@@ -3,6 +3,7 @@ import userReducer from "./features/userSlice";
 import propertyReducer from "./features/propertySlice"
 import unitReducer from "./features/unitSlice"
 import unitsListReducer from "./features/unitsListSlice"
+import inspectionReducer from "./features/inspectionSlice"
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { userApi } from "./services/userApiSlice";
 import { propertyApi } from "./services/propertyApiSlice";
@@ -14,6 +15,7 @@ export const store = configureStore({
         property: propertyReducer,
         unit: unitReducer,
         unitsList: unitsListReducer,
+        inspection: inspectionReducer,
         [userApi.reducerPath]: userApi.reducer,
         [propertyApi.reducerPath]: propertyApi.reducer,
     },

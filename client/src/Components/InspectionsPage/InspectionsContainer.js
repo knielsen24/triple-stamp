@@ -1,12 +1,11 @@
 import DeleteInspectionModal from "../Modals/DeleteInspectionModal";
-import PropertyInspections from "./PropertyInspections";
+import PropInspectAccordians from "./PropInspectAccordians";
 
 function InspectionsContainer() {
     return (
         <div className="container border-endtext-center min-vh-100">
-            <PropertyInspections />
+            <PropInspectAccordians />
             <DeleteInspectionModal />
-
         </div>
     );
 }

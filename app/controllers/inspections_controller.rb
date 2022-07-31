@@ -11,4 +11,10 @@ class InspectionsController < ApplicationController
         end
     end
 
+    def destroy
+        inspection = Inspection.find(params[:id])
+        inspection.destroy
+        head :no_content
+    end
+
 end

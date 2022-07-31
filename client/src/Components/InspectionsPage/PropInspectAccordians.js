@@ -1,9 +1,11 @@
 import PropertyAllInspectionsList from "../AccordianItems/PropertyAllInspectionsList";
 import PropertyUpcomingInspections from "../AccordianItems/PropertyUpcomingInspections";
 
-function PropertyInspections() {
+function PropInspectAccordians() {
     return (
         <div className="accordion" id="accordionPanelsStayOpenExample">
+            <PropertyUpcomingInspections />
+            <PropertyAllInspectionsList />
             <div className="accordion-item">
                 <h2 className="accordion-header" id="panelsStayOpen-headingOne">
                     <button
@@ -39,10 +41,9 @@ function PropertyInspections() {
                 </div>
             </div>
 
-            <PropertyUpcomingInspections />
-            <PropertyAllInspectionsList />
+
         </div>
     );
 }
 
-export default PropertyInspections;
+export default PropInspectAccordians;

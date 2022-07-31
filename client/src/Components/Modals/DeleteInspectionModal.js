@@ -1,25 +1,24 @@
-import { useDeleteUnitMutation } from "../../app/services/propertyApiSlice";
+import { useDeleteInspectMutation, useDeleteUnitMutation } from "../../app/services/propertyApiSlice";
 import { setUnitsList, unitsList } from "../../app/features/unitsListSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectUnit } from "../../app/features/unitSlice";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import ButtonDeleteItem from "../Buttons/ButtonDeleteItem";
+import { setSelectInspection } from "../../app/features/inspectionSlice";
 
 function DeleteInspectionModal() {
     const dispatch = useDispatch();
-    const unitState = useSelector(setSelectUnit);
-    const unitsListState = useSelector(setUnitsList);
-    const [deleteUnit] = useDeleteUnitMutation();
+    const inspection = useSelector(setSelectInspection)
+    const [deleteInspect] = useDeleteInspectMutation()
 
     const handleDeleteInspection = (id) => {
         console.log(id);
-        // deleteUnit(id).then(() => {
-        //     const filteredList = unitsListState.filter(
-        //         (unit) => unit.id !== id
-        //     );
-        //     dispatch(unitsList(filteredList));
-        // });
+        deleteInspect(id).then(() => {
+            // const filteredList = unitsListState.filter(
+            //     (unit) => unit.id !== id
+            // );
+            // dispatch(unitsList(filteredList));
+        });
     };
 
     return (
@@ -54,7 +53,7 @@ function DeleteInspectionModal() {
                             <ButtonCancelModal />
                             <ButtonDeleteItem
                                 handleDelete={handleDeleteInspection}
-                                id={""}
+                                id={inspection.id}
                                 text={"Delete Inspection"}
                             />
                         </div>

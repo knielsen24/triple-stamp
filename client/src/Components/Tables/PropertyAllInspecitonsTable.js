@@ -1,22 +1,16 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
 import { useFetchPropInspectionsQuery } from "../../app/services/propertyApiSlice";
 import trashCanIcon from "../../assets/trashcan-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
+import { selectInspection } from "../../app/features/inspectionSlice";
 
 function PropertyAllInspecitonsTable() {
+    const dispatch = useDispatch();
     const property = useSelector(setSelectProperty);
     const { data: propInspections } = useFetchPropInspectionsQuery(
         property.id || ""
     );
-
-    const handleDeleteClick = (id) => {
-        console.log(id);
-    };
-
-    const handleEditClick = (id) => {
-        console.log(id);
-    };
 
     let allPropInspect;
 
@@ -33,7 +27,11 @@ function PropertyAllInspecitonsTable() {
                         <img
                             src={editIcon}
                             alt="edit-icon"
-                            onClick={() => handleEditClick(inspect.id)}
+                            role="button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                dispatch(selectInspection(inspect));
+                            }}
                         />
                     </td>
                     <td>
@@ -43,7 +41,10 @@ function PropertyAllInspecitonsTable() {
                             role="button"
                             data-bs-toggle="modal"
                             data-bs-target="#delete-inspections-modal"
-                            onClick={() => handleDeleteClick(inspect.id)}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                dispatch(selectInspection(inspect));
+                            }}
                         />
                     </td>
                 </tr>
