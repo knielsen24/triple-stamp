@@ -1,26 +1,40 @@
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import EditProfileForm from "../Forms/EditProfileForm";
+import EditPropertyForm from "../Forms/EditPropertyForm";
+import EditUnitForm from "../Forms/EditUnitForm";
 
-function EditProfileModal() {
+function EditModalTemp({ modalId, header,}) {
+
+    let renderForm;
+    if (modalId === "edit-property-form") {
+        renderForm = <EditPropertyForm />
+    }
+    if (modalId === "update-profile-form") {
+        renderForm = <EditProfileForm />
+    }
+    if (modalId === "update-unit-form") {
+        renderForm = <EditUnitForm />
+    }
+
+
+    // renderForm(modalId)
+
     return (
         <div>
             <div
                 className="modal fade"
-                id="update-profile-form"
+                id={modalId}
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabIndex="-1"
-                aria-labelledby="update-profile-form"
+                aria-labelledby={modalId}
                 aria-hidden="true"
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5
-                                className="modal-title"
-                                id="update-profile-form"
-                            >
-                                Edit your profile information
+                            <h5 className="modal-title" id={modalId}>
+                                {header}
                                 <div>
                                     <p id="modal-subtext">
                                         Click save changes to update
@@ -30,7 +44,7 @@ function EditProfileModal() {
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
-                            <EditProfileForm />
+                            {renderForm}
                         </div>
                     </div>
                 </div>
@@ -39,4 +53,4 @@ function EditProfileModal() {
     );
 }
 
-export default EditProfileModal;
+export default EditModalTemp;

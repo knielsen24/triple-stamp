@@ -1,6 +1,14 @@
-import PropertyAllInspecitonsTable from "../Tables/PropertyAllInspecitonsTable";
+import { useSelector } from "react-redux";
+import { setSelectProperty } from "../../app/features/propertySlice";
+import { useFetchPropInspectionsQuery } from "../../app/services/propertyApiSlice";
+import PropInspectsTable from "../Tables/PropInspectsTable";
 
-function PropertyAllInspectionsList() {
+function PropAllInspectsList() {
+    const property = useSelector(setSelectProperty);
+    const { data: propInspections } = useFetchPropInspectionsQuery(
+        property.id || ""
+    );
+
     return (
         <div className="accordion-item">
             <h2 className="accordion-header" id="open-prop-all-inspections">
@@ -21,11 +29,11 @@ function PropertyAllInspectionsList() {
                 aria-labelledby="open-prop-all-inspections"
             >
                 <div className="accordion-body bg-light bg-opacity-50">
-                    <PropertyAllInspecitonsTable />
+                    <PropInspectsTable propInspections={propInspections} />
                 </div>
             </div>
         </div>
     );
 }
 
-export default PropertyAllInspectionsList;
+export default PropAllInspectsList;

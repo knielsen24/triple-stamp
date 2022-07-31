@@ -1,21 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectProperty } from "../../app/features/propertySlice";
-import { useFetchPropInspectionsQuery } from "../../app/services/propertyApiSlice";
 import trashCanIcon from "../../assets/trashcan-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
 import { selectInspection } from "../../app/features/inspectionSlice";
 
-function PropertyAllInspecitonsTable() {
+function PropInspectsTable({ propInspections }) {
     const dispatch = useDispatch();
-    const property = useSelector(setSelectProperty);
-    const { data: propInspections } = useFetchPropInspectionsQuery(
-        property.id || ""
-    );
 
-    let allPropInspect;
+    let renderInspections;
 
     if (propInspections) {
-        allPropInspect = propInspections.map((inspect) => {
+        renderInspections = propInspections.map((inspect) => {
             return (
                 <tr key={inspect.id}>
                     <th scope="row">{inspect.unit.number}</th>
@@ -64,10 +58,12 @@ function PropertyAllInspecitonsTable() {
                         <th scope="col">Scheduled Date</th>
                     </tr>
                 </thead>
-                <tbody className="table-group-divider">{allPropInspect}</tbody>
+                <tbody className="table-group-divider">
+                    {renderInspections}
+                </tbody>
             </table>
         </div>
     );
 }
 
-export default PropertyAllInspecitonsTable;
+export default PropInspectsTable;

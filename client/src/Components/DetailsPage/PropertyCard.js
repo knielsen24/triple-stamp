@@ -3,17 +3,21 @@ import { setUnitsList } from "../../app/features/unitsListSlice";
 import { useSelector } from "react-redux";
 import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 import DeletePropertyModal from "../Modals/DeletePropertyModal";
-import EditPropertyModal from "../Modals/EditPropertyModal";
 import homeIcon from "../../assets/home-icon.svg";
-import "../../App.css";
+import EditModalTemp from "../Modals/EditModalTemp";
 
 function PropertyCard() {
     const property = useSelector(setSelectProperty);
-    const unitsListState = useSelector(setUnitsList)
-    const numberofUnits = unitsListState.length
+    const unitsListState = useSelector(setUnitsList);
+    const numberofUnits = unitsListState.length;
 
     return (
         <div className="container align-content-items-center">
+            <EditModalTemp
+                modalId={"edit-property-form"}
+                header={"Edit your property information"}
+            />
+            <DeletePropertyModal />
             <div id="profile-main-card-container" className="card mx-3">
                 <div className="text-center" id="profile-card-bg">
                     <div className="m-2 p-1">
@@ -67,8 +71,6 @@ function PropertyCard() {
                         />
                     )}
                 </div>
-                <EditPropertyModal property={property} />
-                <DeletePropertyModal />
             </div>
         </div>
     );

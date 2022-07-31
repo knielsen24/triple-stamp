@@ -1,16 +1,15 @@
 import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
 import DeleteProfileModal from "../Modals/DeleteProfileModal";
-import EditProfileModal from "../Modals/EditProfileModal";
 import profileIcon from "../../assets/person-icon.svg";
-import "../../App.css";
+import EditModalTemp from "../Modals/EditModalTemp";
 
 function ProfileHome() {
     const { data: user } = useFetchUserQuery();
 
     let userImage;
     if (user) {
-        userImage= user.image
+        userImage = user.image;
     }
 
     return (
@@ -31,7 +30,12 @@ function ProfileHome() {
                         </h5>
                     </div>
                 </div>
-
+                <EditModalTemp
+                    modalId={"update-profile-form"}
+                    header={"Edit your profile information"}
+                />
+                {/* <EditProfileModal /> */}
+                <DeleteProfileModal />
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item user-select-none">
@@ -58,8 +62,6 @@ function ProfileHome() {
                         text={"Delete Account"}
                     />
                 </div>
-                <EditProfileModal />
-                <DeleteProfileModal />
             </div>
         </div>
     );

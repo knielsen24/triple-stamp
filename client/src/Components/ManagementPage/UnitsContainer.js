@@ -5,15 +5,13 @@ import { selectUnit } from "../../app/features/unitSlice";
 import { useDispatch, useSelector } from "react-redux";
 import UnitDropDown from "../DropDownMenus/UnitDropDown";
 import DeleteUnitModal from "../Modals/DeleteUnitModal";
-import EditUnitModal from "../Modals/EditUnitModal";
+import EditModalTemp from "../Modals/EditModalTemp";
 import AddUnitModal from "../Modals/AddUnitModal";
-import { useFetchPropUnitsQuery } from "../../app/services/propertyApiSlice";
 
 function UnitsContainer() {
     const dispatch = useDispatch();
     const property = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
-
 
     const buttonClassName =
         "list-group-item list-group-item-action border border-0 btn btn-secondary dropdown-toggle dropdown-toggle toggle-align-end";
@@ -46,7 +44,10 @@ function UnitsContainer() {
         <div>
             <AddUnitModal />
             <DeleteUnitModal />
-            <EditUnitModal />
+            <EditModalTemp
+                modalId={"update-unit-form"}
+                header={"Edit unit information"}
+            />
             <div className=" list-group">
                 <ul className="list-group border border-0">
                     {property.name !== "" ? <ButtonOpenAddUnitModal /> : null}
