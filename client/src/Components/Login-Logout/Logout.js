@@ -7,6 +7,7 @@ function Logout() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [logoutApi, { isLoading }] = useLogoutApiMutation();
+    const { data: user } = useFetchUserQuery();
 
     return (
         <>
@@ -17,8 +18,7 @@ function Logout() {
                     e.preventDefault();
                     logoutApi()
                         .then(dispatch(logout(null)))
-                        .then((r) => {})
-                        .then(navigate("/"));
+                        .then(navigate(""));
                 }}
             >
                 Sign out

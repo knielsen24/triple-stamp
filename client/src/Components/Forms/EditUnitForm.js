@@ -15,8 +15,10 @@ function EditUnitForm() {
     const [updateUnit] = useUpdateUnitMutation();
 
     const handleUpdateUnit = (data) => {
-        const filteredList = unitsListState.filter((unit) => unit.id !== data.id);
-        const newUnitsList = [...filteredList, data]
+        const filteredList = unitsListState.filter(
+            (unit) => unit.id !== data.id
+        );
+        const newUnitsList = [...filteredList, data];
         dispatch(unitsList(newUnitsList));
     };
 
@@ -34,16 +36,16 @@ function EditUnitForm() {
             <Formik
                 enableReinitialize
                 initialValues={{
-                    id: unitState.id,
-                    number: unitState.number,
-                    square_feet: unitState.square_feet,
-                    label: unitState.label,
-                    property_id: unitState.property_id,
+                    id: "" || unitState.id,
+                    number: "" || unitState.number,
+                    square_feet: "" || unitState.square_feet,
+                    label: "" || unitState.label,
+                    property_id: "" || unitState.property_id,
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     updateUnit(values).then((r) => {
-                        handleUpdateUnit(r.data)
+                        handleUpdateUnit(r.data);
                     });
                     setTimeout(() => {
                         setSubmitting(false);

@@ -5,11 +5,12 @@ import logoName from "../../assets/logo-name.png";
 import DashboardLinks from "./DashboardLinks";
 import HomeLinks from "./HomeLinks";
 import "../../App.css";
+import { useSelector } from "react-redux";
+import { setUser } from "../../app/features/userSlice";
 
 function Navbar() {
-    const { data: user } = useFetchUserQuery({
-        refetchOnMountOrArgChange: true,
-    });
+    // const user = useSelector(setUser)
+    const { data: user } = useFetchUserQuery();
 
     return (
         <nav
@@ -19,7 +20,7 @@ function Navbar() {
             <div className="container-md d-flex" id="main-nav-container">
                 <a
                     className="navbar-brand mx-sm-2 align-top"
-                    href={user ? "management" : "/"}
+                    href={!user ? "/" : "#"}
                 >
                     <img src={logoName} alt="logo" id="logo-name" />
                 </a>
@@ -39,15 +40,15 @@ function Navbar() {
                     id="navbarNavAltMarkup"
                 >
                     <div className="navbar-nav">
-                        {user ? (
-                            <>
-                                <DashboardLinks />
-                                <UserDropDown />
-                            </>
-                        ) : (
+                        {!user ? (
                             <>
                                 <HomeLinks />
                                 <ButtonStartNow />
+                            </>
+                        ) : (
+                            <>
+                                <DashboardLinks />
+                                <UserDropDown />
                             </>
                         )}
                     </div>

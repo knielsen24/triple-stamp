@@ -1,16 +1,15 @@
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
 import Logout from "../Login-Logout/Logout";
 import "../../App.css";
+import { useSelector } from "react-redux";
+import { setUser } from "../../app/features/userSlice";
 
 function UserDropDown() {
-    const { data: user } = useFetchUserQuery({
-        refetchOnMountOrArgChange: true,
-    });
+    const { data: user } = useFetchUserQuery();
 
     return (
         <div className="dropdown center">
             <a
-
                 className="btn btn-secondary dropdown-toggle align-bottom caret-off"
                 id="nav-drop-down-btn"
                 href="#"
@@ -18,7 +17,7 @@ function UserDropDown() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-                {user.full_name}
+                {!user ? "" : user.full_name}
             </a>
 
             <ul className="dropdown-menu">

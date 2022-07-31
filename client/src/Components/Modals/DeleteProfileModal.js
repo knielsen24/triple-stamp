@@ -12,9 +12,7 @@ import ButtonDeleteItem from "../Buttons/ButtonDeleteItem";
 
 function DeleteProfileModal() {
     const [deleteUser, { isLoading }] = useDeleteUserMutation();
-    const { data: user } = useFetchUserQuery({
-        refetchOnMountOrArgChange: true,
-    });
+    const { data: user } = useFetchUserQuery();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

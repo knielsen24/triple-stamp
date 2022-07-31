@@ -11,9 +11,7 @@ import "yup-phone";
 function EditProfileForm() {
     const [updateUser, { isLoading }] = useUpdateUserMutation();
 
-    const { data: user } = useFetchUserQuery({
-        refetchOnMountOrArgChange: true,
-    });
+    const { data: user } = useFetchUserQuery();
 
     const updateSchema = Yup.object().shape({
         full_name: Yup.string()
@@ -32,11 +30,11 @@ function EditProfileForm() {
             <Formik
                 enableReinitialize
                 initialValues={{
-                    id: user.id,
-                    full_name: user.full_name,
-                    phone: user.phone,
-                    business: user.business,
-                    account_name: user.account_name,
+                    id: "" || user.id,
+                    full_name: "" || user.full_name,
+                    phone: "" || user.phone,
+                    business: "" || user.business,
+                    account_name: "" || user.account_name,
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {

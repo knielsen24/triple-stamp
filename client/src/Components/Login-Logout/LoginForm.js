@@ -12,7 +12,8 @@ function LoginForm() {
     const navigate = useNavigate();
     const user = useSelector(setUser)
     console.log(user)
-    // const {} = useFetchUserQuery(user.id);
+
+    const {} = useFetchUserQuery(!user ? "" : user.id, {refetchOnMountOrArgChange: true});
 
     const [loginApi, { isLoading }] = useLoginApiMutation();
 
@@ -27,7 +28,7 @@ function LoginForm() {
         country: "",
         units: [{ label: "label" }],
         user_id: "",
-    };
+    }
 
     const loginSchema = Yup.object().shape({
         email: Yup.string().email("Invalid email").required("Required"),

@@ -21,7 +21,6 @@ function PropertyAllInspecitonsTable() {
     let allPropInspect;
 
     if (propInspections) {
-        console.log(propInspections);
         allPropInspect = propInspections.map((inspect) => {
             return (
                 <tr key={inspect.id}>

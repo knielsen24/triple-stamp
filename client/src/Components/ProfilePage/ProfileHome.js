@@ -6,9 +6,12 @@ import profileIcon from "../../assets/person-icon.svg";
 import "../../App.css";
 
 function ProfileHome() {
-    const { data: user } = useFetchUserQuery({
-        refetchOnMountOrArgChange: true,
-    });
+    const { data: user } = useFetchUserQuery();
+
+    let userImage;
+    if (user) {
+        userImage= user.image
+    }
 
     return (
         <div className="container align-content-items-center">
@@ -16,7 +19,7 @@ function ProfileHome() {
                 <div className="text-center" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img
-                            src={user.img_profile ? user.image : profileIcon}
+                            src={!userImage ? profileIcon : user.image}
                             className="img-thumbnail"
                             alt="profileIcon"
                             width="150px"
@@ -24,7 +27,7 @@ function ProfileHome() {
                     </div>
                     <div className="header text-center text-white">
                         <h5 className="card-title user-select-none">
-                            {user.full_name}
+                            {!user ? "" : user.full_name}
                         </h5>
                     </div>
                 </div>
@@ -32,16 +35,16 @@ function ProfileHome() {
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item user-select-none">
-                            Email: {user.email}
+                            Email: {!user ? "" : user.email}
                         </li>
                         <li className="list-group-item user-select-none">
-                            Phone: {user.phone}{" "}
+                            Phone: {!user ? "" : user.phone}
                         </li>
                         <li className="list-group-item user-select-none">
-                            Business: {user.business}{" "}
+                            Business: {!user ? "" : user.business}
                         </li>
                         <li className="list-group-item user-select-none">
-                            Account name: {user.account_name}
+                            Account name: {!user ? "" : user.account_name}
                         </li>
                     </ul>
                 </div>

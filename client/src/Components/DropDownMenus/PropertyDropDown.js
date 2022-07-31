@@ -11,7 +11,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
-import { setUser } from "../../app/features/userSlice";
 import { useFetchUserQuery } from "../../app/services/userApiSlice";
 
 function PropertyDropDown() {
