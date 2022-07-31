@@ -1,19 +1,4 @@
 puts "🌱 double stamping..."
-# 10.times do
-#     full_name = Faker::Name.first_name
-#     account_name = Faker::Name.last_name
-#     email = Faker::Internet.email
-#     password = Faker::Internet.password
-#     image = Faker::Avatar.image
-
-#     User.create(
-#         full_name: full_name,
-#         account_name: account_name,
-#         email: email,
-#         password_digest: password,
-#         image: image,
-#     )
-# end
 
 10.times do
     name = Faker::Address.community
@@ -24,7 +9,7 @@ puts "🌱 double stamping..."
     country = Faker::Address.country
     units = rand(1..50)
     image = Faker::LoremFlickr.image(search_terms: ['business'])
-    user_id = 1
+    user_id = 2
 
     Property.create(
         name: name,
@@ -62,9 +47,9 @@ statusArray = ["upcoming", "completed", "in progress"]
 Unit.all.each do |unit|
     5.times do
         # title = unit.number + " " + unit.label,
-        title = "#{unit.number} #{unit.label}"
+        title = "#{unit.label}"
         type_name = typeArrays.sample
-        scheduled_date = Date.today
+        scheduled_date = Faker::Date.between(from: '2020-01-01', to: '2022-12-31')
         status = statusArray.sample
         unit_id = unit.id
 
@@ -81,3 +66,20 @@ end
 
 puts "🌱 triple stamping..."
 puts "✅✅✅ You can't triple stamp a double stamp! Lloyd! Lloyd! Lloyd!"
+
+
+# 10.times do
+#     full_name = Faker::Name.first_name
+#     account_name = Faker::Name.last_name
+#     email = Faker::Internet.email
+#     password = Faker::Internet.password
+#     image = Faker::Avatar.image
+
+#     User.create(
+#         full_name: full_name,
+#         account_name: account_name,
+#         email: email,
+#         password_digest: password,
+#         image: image,
+#     )
+# end

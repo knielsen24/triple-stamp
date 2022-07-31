@@ -1,17 +1,16 @@
-import "../../App.css";
 
-function ButtonDeleteUser({ handleDeleteUser, id }) {
+function ButtonDeleteItem({ handleDelete, id, text }) {
     return (
         <button
             type="button"
             id="profile-btn-delete-account"
             className="btn btn-primary text-white opacity-75"
             data-bs-dismiss="modal"
-            onClick={() => handleDeleteUser(id)}
+            onClick={() => handleDelete(id)}
         >
-            Delete my account
+            {text}
         </button>
     );
 }
 
-export default ButtonDeleteUser;
+export default ButtonDeleteItem;

@@ -7,7 +7,7 @@ import {
 import { useDeletePropertyMutation } from "../../app/services/propertyApiSlice";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
-import ButtonDeleteProperty from "../Buttons/ButtonDeleteProperty";
+import ButtonDeleteItem from "../Buttons/ButtonDeleteItem";
 
 function DeletePropertyModal() {
     const property = useSelector(setSelectProperty);
@@ -74,10 +74,11 @@ function DeletePropertyModal() {
                             </p>
                         </div>
                         <div className="modal-footer">
-                            <ButtonCancelModal text={"cancel"} />
-                            <ButtonDeleteProperty
+                            <ButtonCancelModal />
+                            <ButtonDeleteItem
                                 id={property.id}
-                                handleDeleteProperty={handleDeleteProperty}
+                                handleDelete={handleDeleteProperty}
+                                text={"Delete this property"}
                             />
                         </div>
                     </div>

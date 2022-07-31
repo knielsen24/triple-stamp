@@ -20,7 +20,7 @@ function PropertyCard() {
                         <img
                             src={homeIcon}
                             className="img-thumbnail"
-                            alt="profileIcon"
+                            alt="home-icon"
                             width="150px"
                         />
                     </div>

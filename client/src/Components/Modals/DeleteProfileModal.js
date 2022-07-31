@@ -1,6 +1,5 @@
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
-import ButtonDeleteUser from "../Buttons/ButtonDeleteUser";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../app/features/userSlice";
 import { useDispatch } from "react-redux";
@@ -9,6 +8,7 @@ import {
     useFetchUserQuery,
 } from "../../app/services/userApiSlice";
 import "../../App.css";
+import ButtonDeleteItem from "../Buttons/ButtonDeleteItem";
 
 function DeleteProfileModal() {
     const [deleteUser, { isLoading }] = useDeleteUserMutation();
@@ -68,10 +68,11 @@ function DeleteProfileModal() {
                             </p>
                         </div>
                         <div className="modal-footer">
-                            <ButtonCancelModal text={"cancel"} />
-                            <ButtonDeleteUser
+                            <ButtonCancelModal />
+                            <ButtonDeleteItem
+                                handleDelete={handleDeleteUser}
                                 id={user.id}
-                                handleDeleteUser={handleDeleteUser}
+                                text={"Delete my account"}
                             />
                         </div>
                     </div>

@@ -6,52 +6,56 @@ import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
 import ButtonDeleteItem from "../Buttons/ButtonDeleteItem";
 
-function DeleteUnitModal() {
+function DeleteInspectionModal() {
     const dispatch = useDispatch();
     const unitState = useSelector(setSelectUnit);
     const unitsListState = useSelector(setUnitsList);
     const [deleteUnit] = useDeleteUnitMutation();
 
-    const handleDeleteUnit = (id) => {
-        deleteUnit(id).then(() => {
-            const filteredList = unitsListState.filter(
-                (unit) => unit.id !== id
-            );
-            dispatch(unitsList(filteredList));
-        });
+    const handleDeleteInspection = (id) => {
+        console.log(id);
+        // deleteUnit(id).then(() => {
+        //     const filteredList = unitsListState.filter(
+        //         (unit) => unit.id !== id
+        //     );
+        //     dispatch(unitsList(filteredList));
+        // });
     };
 
     return (
         <div>
             <div
                 className="modal fade"
-                id="delete-unit-form"
+                id="delete-inspections-modal"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabIndex="-1"
-                aria-labelledby="delete-unit-form"
+                aria-labelledby="delete-inspections-modal"
                 aria-hidden="true"
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="delete-unit-form">
-                                Are you sure you want to delete this unit?
+                            <h5
+                                className="modal-title"
+                                id="delete-inspections-modal"
+                            >
+                                Are you sure you want to delete this inspection?
                             </h5>
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
                             <p className="float-start m-0" id="modal-subtext">
-                                By clicking "Delete Unit" will permantly remove
-                                this item from your selected property.
+                                By clicking "Delete Inspection" will permantly
+                                remove this item from your account.
                             </p>
                         </div>
                         <div className="modal-footer">
                             <ButtonCancelModal />
                             <ButtonDeleteItem
-                                id={unitState.id}
-                                handleDelete={handleDeleteUnit}
-                                text={"Delete this unit"}
+                                handleDelete={handleDeleteInspection}
+                                id={""}
+                                text={"Delete Inspection"}
                             />
                         </div>
                     </div>
@@ -61,4 +65,4 @@ function DeleteUnitModal() {
     );
 }
 
-export default DeleteUnitModal;
+export default DeleteInspectionModal;
