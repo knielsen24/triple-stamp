@@ -8,15 +8,15 @@ function PropertyAllInspectionsList() {
                     className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseTwo"
+                    data-bs-target="#open-prop-all-inspections-collapse"
                     aria-expanded="false"
-                    aria-controls="panelsStayOpen-collapseTwo"
+                    aria-controls="open-prop-all-inspections-collapse"
                 >
                     All
                 </button>
             </h2>
             <div
-                id="panelsStayOpen-collapseTwo"
+                id="open-prop-all-inspections-collapse"
                 className="accordion-collapse collapse"
                 aria-labelledby="open-prop-all-inspections"
             >

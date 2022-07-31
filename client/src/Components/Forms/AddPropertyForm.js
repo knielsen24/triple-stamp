@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "yup-phone";
+import { unitsList } from "../../app/features/unitsListSlice";
 
 function AddPropertyForm() {
     const dispatch = useDispatch();
@@ -39,6 +40,7 @@ function AddPropertyForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     createProperty(values).then((r) => {
                         dispatch(selectProperty(r.data));
+                        dispatch(unitsList(r.data.units))
                         navigate("/dashboard/details");
                     });
                     setTimeout(() => {
