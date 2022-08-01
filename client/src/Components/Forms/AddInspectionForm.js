@@ -3,9 +3,7 @@ import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import {
-    useCreateInspectMutation,
-} from "../../app/services/propertyApiSlice";
+import { useCreateInspectMutation } from "../../app/services/propertyApiSlice";
 import { setSelectUnit } from "../../app/features/unitSlice";
 import { setUnitsList } from "../../app/features/unitsListSlice";
 import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
@@ -23,8 +21,7 @@ function AddInspectionForm() {
         });
     }
 
-
-    const statusArray = [" ", "upcoming", "in progress", "compeleted"];
+    const statusArray = ["none", "upcoming", "in progress", "compeleted"];
     const statusOptionList = statusArray.map((item, index) => {
         return <option key={index}>{item}</option>;
     });
@@ -77,7 +74,10 @@ function AddInspectionForm() {
                                 htmlFor="unit_id"
                                 className="form-label float-start"
                             >
-                                Unit # {unitsListState.length === 0 ? <ButtonOpenAddUnitModal/> : null}
+                                Unit #{" "}
+                                {unitsListState.length === 0 ? (
+                                    <ButtonOpenAddUnitModal />
+                                ) : null}
                             </label>
 
                             <select
@@ -89,6 +89,7 @@ function AddInspectionForm() {
                                 onBlur={handleBlur}
                                 value={values.unit_id}
                             >
+                                <option selected>Select a unit</option>
                                 {unitNumOptionList}
                             </select>
                             {errors.unit_id &&
@@ -126,10 +127,14 @@ function AddInspectionForm() {
                                 className="form-control form-select"
                                 type="string"
                                 name="type_name"
+                                // placeholder="Select a type"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.type_name}
                             >
+                                <option selected>
+                                    Select the type of inspection
+                                </option>
                                 {typeNameOptionList}
                             </select>{" "}
                             {errors.type_name &&
@@ -152,6 +157,7 @@ function AddInspectionForm() {
                                 onBlur={handleBlur}
                                 value={values.status}
                             >
+                                <option selected>Select the status</option>
                                 {statusOptionList}
                             </select>
                             {errors.status && touched.status && errors.status}
@@ -178,7 +184,6 @@ function AddInspectionForm() {
                         </div>
 
                         <div className="float-end">
-
                             <ButtonCancelModal />
                             <ButtonSaveChanges
                                 isSubmitting={isSubmitting}
