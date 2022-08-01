@@ -12,7 +12,7 @@ function PropInspectsTable({ propInspections }) {
         label: "",
         property_id: "",
         square_feet: "",
-    }
+    };
 
     let renderInspections;
 
@@ -38,15 +38,14 @@ function PropInspectsTable({ propInspections }) {
                             }}
                         />
                     </td>
-                    <td  data-bs-title="Default tooltip">
+                    <td data-bs-title="Default tooltip">
                         <img
                             src={trashCanIcon}
                             alt="trashcan-icon"
                             role="button"
                             data-bs-toggle="modal"
                             data-bs-target="#delete-inspections-modal"
-                            onClick={(e) => {
-                                e.preventDefault();
+                            onClick={() => {
                                 dispatch(selectInspection(inspect));
                             }}
                         />

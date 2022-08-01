@@ -10,6 +10,24 @@ function EditInspectionForm() {
     const dispatch = useDispatch();
     const inspectionState = useSelector(setSelectInspection);
     const [updateInspect] = useUpdateInspectMutation();
+    console.log(inspectionState)
+
+    const statusArray = ["none", "upcoming", "in progress", "compeleted"];
+    const typeNameArray = [
+        "move-in",
+        "move-out",
+        "annual",
+        "semi-annual",
+        "quarterly",
+        "monthly",
+    ];
+    const statusOptionList = statusArray.map((item, index) => {
+        return <option key={index}>{item}</option>;
+    });
+
+    const typeNameOptionList = typeNameArray.map((item, index) => {
+        return <option key={index}>{item}</option>;
+    });
 
     const updateSchema = Yup.object().shape({
         title: Yup.string()
@@ -23,6 +41,7 @@ function EditInspectionForm() {
             <Formik
                 enableReinitialize
                 initialValues={{
+                    id: "" || inspectionState.id,
                     title: "" || inspectionState.title,
                     type_name: "" || inspectionState.type_name,
                     status: "" || inspectionState.status,
@@ -74,15 +93,23 @@ function EditInspectionForm() {
                             >
                                 Type
                             </label>
-                            <input
+                            <select
                                 id="type_name"
-                                className="form-control"
+                                className="form-control form-select"
                                 type="string"
                                 name="type_name"
+                                // placeholder="Select a type"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.type_name}
-                            />
+                            >
+                                <option
+                                    defaultValue={
+                                        "Select the type of inspection"
+                                    }
+                                ></option>
+                                {typeNameOptionList}
+                            </select>{" "}
                             {errors.type_name &&
                                 touched.type_name &&
                                 errors.type_name}
@@ -94,15 +121,21 @@ function EditInspectionForm() {
                             >
                                 Status
                             </label>
-                            <input
+                            <select
                                 id="status"
-                                className="form-control"
+                                className="form-control form-select"
                                 type="string"
                                 name="status"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.status}
-                            />
+                            >
+                                <option selected={"Select the status"}>
+                                    Select the status
+                                </option>
+
+                                {statusOptionList}
+                            </select>
                             {errors.status && touched.status && errors.status}
                         </div>
                         <div className="mb-3">
@@ -110,7 +143,7 @@ function EditInspectionForm() {
                                 htmlFor="scheduled_date"
                                 className="form-label float-start"
                             >
-                                Scheduled Date
+                                Scheduled a date
                             </label>
                             <input
                                 id="scheduled_date"
@@ -125,6 +158,7 @@ function EditInspectionForm() {
                                 touched.scheduled_date &&
                                 errors.scheduled_date}
                         </div>
+
                         <div className="float-end">
                             <ButtonCancelModal />
                             <ButtonSaveChanges
