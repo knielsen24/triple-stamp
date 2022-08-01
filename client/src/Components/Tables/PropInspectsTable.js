@@ -38,7 +38,7 @@ function PropInspectsTable({ propInspections }) {
                             }}
                         />
                     </td>
-                    <td>
+                    <td  data-bs-title="Default tooltip">
                         <img
                             src={trashCanIcon}
                             alt="trashcan-icon"

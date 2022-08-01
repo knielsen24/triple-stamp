@@ -7,25 +7,23 @@ import { useCreateInspectMutation } from "../../app/services/propertyApiSlice";
 import { setSelectUnit } from "../../app/features/unitSlice";
 import { setUnitsList } from "../../app/features/unitsListSlice";
 import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
+import { DateTime } from "luxon";
+import { useState } from "react";
 
 function AddInspectionForm() {
     const dispatch = useDispatch();
     const unit = useSelector(setSelectUnit);
     const unitsListState = useSelector(setUnitsList);
+    const [unitID, setUnitID] = useState(unit.id);
     const [createInspect] = useCreateInspectMutation();
 
-    let unitNumOptionList;
-    if (unitsListState) {
-        unitNumOptionList = unitsListState.map((unit) => {
-            return <option key={unit.id}>{unit.number}</option>;
-        });
-    }
+    const handleUnitId = (e) => setUnitID(e.target.value);
+
+    const todaysDate = DateTime.now().toISODate();
+
+    const updateSchema = Yup.object().shape({});
 
     const statusArray = ["none", "upcoming", "in progress", "compeleted"];
-    const statusOptionList = statusArray.map((item, index) => {
-        return <option key={index}>{item}</option>;
-    });
-
     const typeNameArray = [
         "move-in",
         "move-out",
@@ -34,11 +32,26 @@ function AddInspectionForm() {
         "quarterly",
         "monthly",
     ];
+    const statusOptionList = statusArray.map((item, index) => {
+        return <option key={index}>{item}</option>;
+    });
+
     const typeNameOptionList = typeNameArray.map((item, index) => {
         return <option key={index}>{item}</option>;
     });
 
-    const updateSchema = Yup.object().shape({});
+    let unitNumOptionList;
+    if (unitsListState) {
+        unitNumOptionList = unitsListState.map((unit) => {
+            return (
+                <option key={unit.id} value={unit.id}>
+                    {unit.number + " " + (unit.label || "Label")}
+                </option>
+            );
+        });
+    }
+
+
 
     return (
         <div>
@@ -48,11 +61,12 @@ function AddInspectionForm() {
                     title: "New Inspection",
                     type_name: "",
                     status: "",
-                    scheduled_date: "",
-                    unit_id: "" || unit.id,
+                    scheduled_date: todaysDate,
+                    unit_id: "" || unitID,
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
+                    console.log(values);
                     createInspect(values);
                     setTimeout(() => {
                         setSubmitting(false);
@@ -85,11 +99,11 @@ function AddInspectionForm() {
                                 className="form-control form-select"
                                 type="string"
                                 name="unit_id"
-                                onChange={handleChange}
+                                onChange={handleChange && handleUnitId}
                                 onBlur={handleBlur}
                                 value={values.unit_id}
                             >
-                                <option selected>Select a unit</option>
+                                <option defaultValue={"Select a unit"}></option>
                                 {unitNumOptionList}
                             </select>
                             {errors.unit_id &&
@@ -132,9 +146,11 @@ function AddInspectionForm() {
                                 onBlur={handleBlur}
                                 value={values.type_name}
                             >
-                                <option selected>
-                                    Select the type of inspection
-                                </option>
+                                <option
+                                    defaultValue={
+                                        "Select the type of inspection"
+                                    }
+                                ></option>
                                 {typeNameOptionList}
                             </select>{" "}
                             {errors.type_name &&
@@ -157,7 +173,10 @@ function AddInspectionForm() {
                                 onBlur={handleBlur}
                                 value={values.status}
                             >
-                                <option selected>Select the status</option>
+                                <option selected={"Select the status"}>
+                                    Select the status
+                                </option>
+
                                 {statusOptionList}
                             </select>
                             {errors.status && touched.status && errors.status}
@@ -167,7 +186,7 @@ function AddInspectionForm() {
                                 htmlFor="scheduled_date"
                                 className="form-label float-start"
                             >
-                                Scheduled Date
+                                Scheduled a date
                             </label>
                             <input
                                 id="scheduled_date"

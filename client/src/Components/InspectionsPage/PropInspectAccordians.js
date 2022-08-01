@@ -9,7 +9,7 @@ function PropInspectAccordians() {
             <PropUpcomingInspects />
             <PropCompletedInspects />
             <PropInProgressInspects />
-            {/* <PropAllInspectsList /> */}
+            <PropAllInspectsList />
         </div>
     );
 }
