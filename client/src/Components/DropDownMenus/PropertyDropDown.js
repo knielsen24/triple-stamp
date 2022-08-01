@@ -29,11 +29,11 @@ function PropertyDropDown() {
 
     if (properties) {
         filteredProperties = properties.filter((property) => {
-            let propName = property.name.toLowerCase();
+            let name = property.name.toLowerCase();
             let searchLC = search.toLowerCase();
 
             if (search === "") return property;
-            else if (propName.includes(searchLC)) return property;
+            else if (name.includes(searchLC)) return property;
         });
         renderPropertyList = filteredProperties.map((property) => {
             return (
@@ -46,7 +46,7 @@ function PropertyDropDown() {
                             e.preventDefault();
                             dispatch(selectProperty(property));
                             dispatch(unitsList(property.units));
-                            // navigate("details");
+                            navigate("/dashboard/inspections/property");
                         }}
                     >
                         {property.name}

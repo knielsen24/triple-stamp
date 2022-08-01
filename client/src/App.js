@@ -13,10 +13,6 @@ function App() {
     const navigate = useNavigate()
     const { data: user } = useFetchUserQuery();
 
-    // if (!user) {
-    //     navigate("/")
-    // }
-
     return (
         <div className="container-fluid p-0" id="app-main-container">
             <Navbar />

@@ -31,7 +31,7 @@ function DeletePropertyModal() {
     const handleDeleteProperty = (id) => {
         deleteProperty(id).then(() => {
             dispatch(selectProperty(inititialState));
-            navigate("/dashboard");
+            navigate("/dashboard/main");
         });
     };
 

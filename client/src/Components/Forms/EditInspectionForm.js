@@ -32,9 +32,8 @@ function EditInspectionForm() {
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values)
-                    updateInspect(values)
-                    .then((r) => console.log(r.data));
+                    console.log(values);
+                    updateInspect(values);
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -123,7 +122,9 @@ function EditInspectionForm() {
                                 onBlur={handleBlur}
                                 value={values.scheduled_date}
                             />
-                            {errors.scheduled_date && touched.scheduled_date && errors.scheduled_date}
+                            {errors.scheduled_date &&
+                                touched.scheduled_date &&
+                                errors.scheduled_date}
                         </div>
                         <div className="float-end">
                             <ButtonCancelModal />

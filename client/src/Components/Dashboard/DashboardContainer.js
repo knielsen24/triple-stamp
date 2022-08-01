@@ -30,7 +30,7 @@ function PropertiesContainer() {
                     </div>
                     <Routes>
                         <Route path="main" />
-                        <Route path="inspections" element={<InspectionsContainer />} />
+                        <Route path="inspections/*" element={<InspectionsContainer />} />
                         <Route path="tasks" />
                         <Route path="details" element={<PropertyCard />} />
                     </Routes>
