@@ -3,7 +3,6 @@ import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import "yup-phone";
 import { setSelectInspection } from "../../app/features/inspectionSlice";
 import { useUpdateInspectMutation } from "../../app/services/propertyApiSlice";
 
@@ -11,7 +10,6 @@ function EditInspectionForm() {
     const dispatch = useDispatch();
     const inspectionState = useSelector(setSelectInspection);
     const [updateInspect] = useUpdateInspectMutation();
-    console.log(inspectionState)
 
     const updateSchema = Yup.object().shape({
         title: Yup.string()

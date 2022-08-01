@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { setSelectProperty } from "../../app/features/propertySlice";
 import DeleteInspectionModal from "../Modals/DeleteInspectionModal";
+import EditModalTemp from "../Modals/EditModalTemp";
 import PropInspectAccordians from "./PropInspectAccordians";
 
 function InspectionsContainer() {
@@ -12,7 +13,8 @@ function InspectionsContainer() {
                 <>
                     <PropInspectAccordians />
                     <DeleteInspectionModal />
-
+                    <EditModalTemp modalId={"edit-inspections-form"}
+                    header={"Edit inspection information"}/>
                 </>
             )}
         </div>

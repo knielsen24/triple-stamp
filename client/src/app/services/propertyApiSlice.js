@@ -69,8 +69,7 @@ export const propertyApi = createApi({
                     body: data,
                 }),
                 invalidatesTags: (result, error, arg) => [
-                    "properties",
-                    { type: "units", id: arg.id },
+                    { type: "units", id: arg.data },
                 ],
             }),
 
@@ -86,7 +85,7 @@ export const propertyApi = createApi({
             }),
 
             updateInspect: builder.mutation({
-                query: ({...data}) => ({
+                query: ({ ...data }) => ({
                     url: `/inspections/${data.id}`,
                     method: "PATCH",
                     body: data,
