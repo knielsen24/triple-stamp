@@ -76,7 +76,7 @@ function PropInspectsTable({ propInspections }) {
                         onClick={() => dispatch(selectUnit(initialValues))}
                     >
                         <th scope="row"></th>
-                        <td colspan="5">+ add inspection</td>
+                        <td colSpan="5">+ add inspection</td>
                         <td scope="row"></td>
                     </tr>
                     {renderInspections}

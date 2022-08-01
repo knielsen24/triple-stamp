@@ -9,6 +9,7 @@ import { useUpdateInspectMutation } from "../../app/services/propertyApiSlice";
 function EditInspectionForm() {
     const dispatch = useDispatch();
     const inspectionState = useSelector(setSelectInspection);
+    console.log(inspectionState.unit.property_id)
     const [updateInspect] = useUpdateInspectMutation();
 
     const updateSchema = Yup.object().shape({
@@ -23,7 +24,6 @@ function EditInspectionForm() {
             <Formik
                 enableReinitialize
                 initialValues={{
-                    id: "" || inspectionState.id,
                     title: "" || inspectionState.title,
                     type_name: "" || inspectionState.type_name,
                     status: "" || inspectionState.status,

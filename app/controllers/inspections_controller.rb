@@ -11,6 +11,21 @@ class InspectionsController < ApplicationController
         end
     end
 
+    def create
+        if params[:unit_id]
+            unit = Unit.find(params[:unit_id])
+            inspection = unit.inspections.create!(inspection_params)
+            render json: inspection, status: :created
+        elsif params[:property_id]
+            property = Property.find(params[:property_id])
+            # needs to check if the unit id exits
+            # creates inspection with unit id
+            # elsif the unit does not exit it creates a new unit
+            inspection = property.inspections.create!(inspection_params)
+            render json: inspection, status: :created
+        end
+    end
+
     def update
         inspection = Inspection.find(params[:id])
         inspection.update!(inspection_params)

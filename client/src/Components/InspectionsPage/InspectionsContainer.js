@@ -10,8 +10,7 @@ import PropInspectAccordians from "./PropInspectAccordians";
 function InspectionsContainer() {
     const property = useSelector(setSelectProperty);
     const unit = useSelector(setSelectUnit);
-    console.log(unit)
-
+   
     return (
         <div className="container border-endtext-center min-vh-100">
             <DeleteInspectionModal />
@@ -19,7 +18,7 @@ function InspectionsContainer() {
                 modalId={"edit-inspections-form"}
                 header={"Edit inspection information"}
             />
-            
+
             <Routes>
                 <Route
                     path="property"

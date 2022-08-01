@@ -3,38 +3,44 @@ import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { setSelectInspection } from "../../app/features/inspectionSlice";
-import { useUpdateInspectMutation } from "../../app/services/propertyApiSlice";
+import { useCreateUnitInspectMutation } from "../../app/services/propertyApiSlice";
 import { setSelectUnit } from "../../app/features/unitSlice";
+import { setSelectProperty } from "../../app/features/propertySlice";
 
 function AddInspectionForm() {
     const dispatch = useDispatch();
     const unit = useSelector(setSelectUnit);
-    const [updateInspect] = useUpdateInspectMutation();
+    const property = useSelector(setSelectProperty);
+    const [createUnitInspect] = useCreateUnitInspectMutation();
 
-    const updateSchema = Yup.object().shape({
-        title: Yup.string()
-            .min(1, "Too Short!")
-            .max(20, "Too Long!")
-            .required("Required"),
-    });
+    const updateSchema = Yup.object().shape({});
+
+    const handleEndpoint = (inspect) => {
+        console.log(inspect)
+        // if (unit.id === "") return createUnitInspect(inspect);
+        // else if
+    };
 
     return (
         <div>
             <Formik
                 enableReinitialize
                 initialValues={{
-                    id: "",
                     title: "New Inspection",
                     type_name: "",
                     status: "",
                     scheduled_date: "",
                     unit_id: "" || unit.id,
+                    unit: [
+                        {
+                            number: "",
+                            property_id: "" || property.id,
+                        },
+                    ],
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values);
-                    updateInspect(values);
+                    handleEndpoint(values);
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

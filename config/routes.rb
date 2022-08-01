@@ -42,9 +42,10 @@ Rails.application.routes.draw do
     delete "/units/:id", to: "units#destroy"
 
 # INSPECTION #
-    get "/units/:id/inspections", to: "inspections#index"
+    get "/units/:unit_id/inspections", to: "inspections#index"
     get "/properties/:property_id/inspections", to: "inspections#index"
-    # post "/units/:id/inspections", to: "inspections#create"
+    post "/units/:unit_id/inspections", to: "inspections#create"
+    post "/properties/:property_id/inspections", to: "inspections#create"
     patch "/inspections/:id", to: "inspections#update"
     delete "/inspections/:id", to: "inspections#destroy"
 
