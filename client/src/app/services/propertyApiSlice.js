@@ -84,7 +84,7 @@ export const propertyApi = createApi({
                 ],
             }),
 
-            createUnitInspect: builder.mutation({
+            createInspect: builder.mutation({
                 query: ({ ...data }) => ({
                     url: `/units/${data.unit_id}/inspections`,
                     method: "POST",
@@ -93,14 +93,14 @@ export const propertyApi = createApi({
                 invalidatesTags: ["inspections"],
             }),
 
-            createPropInspect: builder.mutation({
-                query: ({ ...data }) => ({
-                    url: `/property/${data.unit.property_id_id}/inspections`,
-                    method: "POST",
-                    body: data,
-                }),
-                invalidatesTags: ["inspections"],
-            }),
+            // createPropInspect: builder.mutation({
+            //     query: ({ ...data }) => ({
+            //         url: `/property/${data.property_id}/inspections`,
+            //         method: "POST",
+            //         body: data,
+            //     }),
+            //     invalidatesTags: ["inspections"],
+            // }),
 
             updateInspect: builder.mutation({
                 query: ({ ...data }) => ({
@@ -140,5 +140,6 @@ export const {
     useFetchPropInspectionsQuery,
     useUpdateInspectMutation,
     useDeleteInspectMutation,
-    useCreateUnitInspectMutation,
+    useCreateInspectMutation,
+    // useCreatePropInspectMutation,
 } = propertyApi;

@@ -9,7 +9,6 @@ import { useUpdateInspectMutation } from "../../app/services/propertyApiSlice";
 function EditInspectionForm() {
     const dispatch = useDispatch();
     const inspectionState = useSelector(setSelectInspection);
-    console.log(inspectionState.unit.property_id)
     const [updateInspect] = useUpdateInspectMutation();
 
     const updateSchema = Yup.object().shape({

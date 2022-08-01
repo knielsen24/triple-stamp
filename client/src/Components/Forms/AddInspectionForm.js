@@ -3,23 +3,42 @@ import ButtonCancelModal from "../Buttons/ButtonCancelModal";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useCreateUnitInspectMutation } from "../../app/services/propertyApiSlice";
+import {
+    useCreatePropInspectMutation,
+    useCreateInspectMutation,
+} from "../../app/services/propertyApiSlice";
 import { setSelectUnit } from "../../app/features/unitSlice";
 import { setSelectProperty } from "../../app/features/propertySlice";
+import { setUnitsList } from "../../app/features/unitsListSlice";
 
 function AddInspectionForm() {
     const dispatch = useDispatch();
     const unit = useSelector(setSelectUnit);
-    const property = useSelector(setSelectProperty);
-    const [createUnitInspect] = useCreateUnitInspectMutation();
+    const unitsListState = useSelector(setUnitsList);
+    const [createInspect] = useCreateInspectMutation();
+
+    const unitNumOptionList = unitsListState.map((unit) => {
+        return <option key={unit.id}>{unit.number}</option>;
+    });
+
+    const statusArray = [" ", "upcoming", "in progress", "compeleted"];
+    const statusOptionList = statusArray.map((item, index) => {
+        return <option key={index}>{item}</option>;
+    });
+
+    const typeNameArray = [
+        "move-in",
+        "move-out",
+        "annual",
+        "semi-annual",
+        "quarterly",
+        "monthly",
+    ];
+    const typeNameOptionList = typeNameArray.map((item, index) => {
+        return <option key={index}>{item}</option>;
+    });
 
     const updateSchema = Yup.object().shape({});
-
-    const handleEndpoint = (inspect) => {
-        console.log(inspect)
-        // if (unit.id === "") return createUnitInspect(inspect);
-        // else if
-    };
 
     return (
         <div>
@@ -31,16 +50,10 @@ function AddInspectionForm() {
                     status: "",
                     scheduled_date: "",
                     unit_id: "" || unit.id,
-                    unit: [
-                        {
-                            number: "",
-                            property_id: "" || property.id,
-                        },
-                    ],
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    handleEndpoint(values);
+                    createInspect(values);
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -63,15 +76,17 @@ function AddInspectionForm() {
                             >
                                 Unit #
                             </label>
-                            <input
+                            <select
                                 id="unit_id"
-                                className="form-control"
+                                className="form-control form-select"
                                 type="string"
                                 name="unit_id"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.unit_id}
-                            />
+                            >
+                                {unitNumOptionList}
+                            </select>
                             {errors.unit_id &&
                                 touched.unit_id &&
                                 errors.unit_id}
@@ -102,15 +117,17 @@ function AddInspectionForm() {
                             >
                                 Type
                             </label>
-                            <input
+                            <select
                                 id="type_name"
-                                className="form-control"
+                                className="form-control form-select"
                                 type="string"
                                 name="type_name"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.type_name}
-                            />
+                            >
+                                {typeNameOptionList}
+                            </select>{" "}
                             {errors.type_name &&
                                 touched.type_name &&
                                 errors.type_name}
@@ -122,15 +139,17 @@ function AddInspectionForm() {
                             >
                                 Status
                             </label>
-                            <input
+                            <select
                                 id="status"
-                                className="form-control"
+                                className="form-control form-select"
                                 type="string"
                                 name="status"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.status}
-                            />
+                            >
+                                {statusOptionList}
+                            </select>
                             {errors.status && touched.status && errors.status}
                         </div>
                         <div className="mb-3">
