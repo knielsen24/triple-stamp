@@ -1,5 +1,5 @@
 class InspectionsController < ApplicationController
-    # skip_before_action :authorize, except: :units_index
+    skip_before_action :authorize
 
     def index
         if params[:property_id]
@@ -11,10 +11,22 @@ class InspectionsController < ApplicationController
         end
     end
 
+    def update
+        inspection = Inspection.find(params[:id])
+        inspection.update!(inspection_params)
+        render json: inspection, status: :accepted
+    end
+
     def destroy
         inspection = Inspection.find(params[:id])
         inspection.destroy
         head :no_content
+    end
+
+    private
+
+    def inspection_params
+        params.permit(:title, :type_name, :status, :scheduled_date, :unit_id)
     end
 
 end

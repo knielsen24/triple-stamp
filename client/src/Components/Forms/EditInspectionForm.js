@@ -1,22 +1,23 @@
 import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
 import ButtonCancelModal from "../Buttons/ButtonCancelModal";
-
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "yup-phone";
+import { setSelectInspection } from "../../app/features/inspectionSlice";
+import { useUpdateInspectMutation } from "../../app/services/propertyApiSlice";
 
 function EditInspectionForm() {
     const dispatch = useDispatch();
-
+    const inspectionState = useSelector(setSelectInspection);
+    const [updateInspect] = useUpdateInspectMutation();
+    console.log(inspectionState)
 
     const updateSchema = Yup.object().shape({
-        number: Yup.string()
+        title: Yup.string()
             .min(1, "Too Short!")
             .max(20, "Too Long!")
             .required("Required"),
-        Label: Yup.string().min(1, "Too Short!").max(30, "Too Long!"),
-        square_feet: Yup.number(),
     });
 
     return (
@@ -24,17 +25,18 @@ function EditInspectionForm() {
             <Formik
                 enableReinitialize
                 initialValues={{
-                    id: "" || unitState.id,
-                    number: "" || unitState.number,
-                    square_feet: "" || unitState.square_feet,
-                    label: "" || unitState.label,
-                    property_id: "" || unitState.property_id,
+                    id: "" || inspectionState.id,
+                    title: "" || inspectionState.title,
+                    type_name: "" || inspectionState.type_name,
+                    status: "" || inspectionState.status,
+                    scheduled_date: "" || inspectionState.scheduled_date,
+                    unit_id: "" || inspectionState.unit_id,
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    updateUnit(values).then((r) => {
-                        handleUpdateUnit(r.data);
-                    });
+                    console.log(values)
+                    updateInspect(values)
+                    .then((r) => console.log(r.data));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -52,59 +54,78 @@ function EditInspectionForm() {
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label
-                                htmlFor="number"
+                                htmlFor="title"
                                 className="form-label float-start"
                             >
-                                Number or Identifier
+                                Title
                             </label>
                             <input
-                                id="number"
+                                id="title"
                                 className="form-control"
                                 type="string"
-                                name="number"
+                                name="title"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.number}
+                                value={values.title}
                             />
-                            {errors.number && touched.number && errors.number}
+                            {errors.title && touched.title && errors.title}
+                        </div>
+
+                        <div className="mb-3">
+                            <label
+                                htmlFor="type_name"
+                                className="form-label float-start"
+                            >
+                                Type
+                            </label>
+                            <input
+                                id="type_name"
+                                className="form-control"
+                                type="string"
+                                name="type_name"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.type_name}
+                            />
+                            {errors.type_name &&
+                                touched.type_name &&
+                                errors.type_name}
                         </div>
                         <div className="mb-3">
                             <label
-                                htmlFor="label"
+                                htmlFor="status"
                                 className="form-label float-start"
                             >
-                                Label
+                                Status
                             </label>
                             <input
-                                id="label"
+                                id="status"
                                 className="form-control"
                                 type="string"
-                                name="label"
+                                name="status"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.label}
+                                value={values.status}
                             />
-                            {errors.label && touched.label && errors.label}
+                            {errors.status && touched.status && errors.status}
                         </div>
                         <div className="mb-3">
                             <label
-                                htmlFor="square_feet"
+                                htmlFor="scheduled_date"
                                 className="form-label float-start"
                             >
-                                Square Feet
+                                Scheduled Date
                             </label>
                             <input
-                                id="square_feet"
+                                id="scheduled_date"
                                 className="form-control"
-                                type="string"
-                                name="square_feet"
+                                type="date"
+                                name="scheduled_date"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.square_feet}
+                                value={values.scheduled_date}
                             />
-                            {errors.square_feet &&
-                                touched.square_feet &&
-                                errors.square_feet}
+                            {errors.scheduled_date && touched.scheduled_date && errors.scheduled_date}
                         </div>
                         <div className="float-end">
                             <ButtonCancelModal />

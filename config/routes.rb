@@ -45,7 +45,7 @@ Rails.application.routes.draw do
     get "/units/:id/inspections", to: "inspections#index"
     get "/properties/:property_id/inspections", to: "inspections#index"
     # post "/units/:id/inspections", to: "inspections#create"
-    # patch "/inspections/:id", to: "inspections#update"
+    patch "/inspections/:id", to: "inspections#update"
     delete "/inspections/:id", to: "inspections#destroy"
 
 # Leave this here to help deploy your app later!

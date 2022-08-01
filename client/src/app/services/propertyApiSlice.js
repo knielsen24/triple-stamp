@@ -85,6 +85,17 @@ export const propertyApi = createApi({
                 ],
             }),
 
+            updateInspect: builder.mutation({
+                query: ({...data}) => ({
+                    url: `/inspections/${data.id}`,
+                    method: "PATCH",
+                    body: data,
+                }),
+                invalidatesTags: (result, error, arg) => [
+                    { type: "inspections", id: arg.data },
+                ],
+            }),
+
             deleteInspect: builder.mutation({
                 query: (id) => ({
                     url: `/inspections/${id}`,
@@ -110,5 +121,6 @@ export const {
     useDeleteUnitMutation,
 
     useFetchPropInspectionsQuery,
+    useUpdateInspectMutation,
     useDeleteInspectMutation,
 } = propertyApi;
