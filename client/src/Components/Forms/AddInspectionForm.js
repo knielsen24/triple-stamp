@@ -4,12 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import {
-    useCreatePropInspectMutation,
     useCreateInspectMutation,
 } from "../../app/services/propertyApiSlice";
 import { setSelectUnit } from "../../app/features/unitSlice";
-import { setSelectProperty } from "../../app/features/propertySlice";
 import { setUnitsList } from "../../app/features/unitsListSlice";
+import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
 
 function AddInspectionForm() {
     const dispatch = useDispatch();
@@ -17,9 +16,13 @@ function AddInspectionForm() {
     const unitsListState = useSelector(setUnitsList);
     const [createInspect] = useCreateInspectMutation();
 
-    const unitNumOptionList = unitsListState.map((unit) => {
-        return <option key={unit.id}>{unit.number}</option>;
-    });
+    let unitNumOptionList;
+    if (unitsListState) {
+        unitNumOptionList = unitsListState.map((unit) => {
+            return <option key={unit.id}>{unit.number}</option>;
+        });
+    }
+
 
     const statusArray = [" ", "upcoming", "in progress", "compeleted"];
     const statusOptionList = statusArray.map((item, index) => {
@@ -74,8 +77,9 @@ function AddInspectionForm() {
                                 htmlFor="unit_id"
                                 className="form-label float-start"
                             >
-                                Unit #
+                                Unit # {unitsListState.length === 0 ? <ButtonOpenAddUnitModal/> : null}
                             </label>
+
                             <select
                                 id="unit_id"
                                 className="form-control form-select"
@@ -174,6 +178,7 @@ function AddInspectionForm() {
                         </div>
 
                         <div className="float-end">
+
                             <ButtonCancelModal />
                             <ButtonSaveChanges
                                 isSubmitting={isSubmitting}
