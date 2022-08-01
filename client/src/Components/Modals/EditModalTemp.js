@@ -1,4 +1,5 @@
 import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
+import AddInspectionForm from "../Forms/AddInspectionForm";
 import EditInspectionForm from "../Forms/EditInspectionForm";
 import EditProfileForm from "../Forms/EditProfileForm";
 import EditPropertyForm from "../Forms/EditPropertyForm";
@@ -17,6 +18,9 @@ function EditModalTemp({ modalId, header }) {
     }
     if (modalId === "edit-inspections-form") {
         renderForm = <EditInspectionForm />;
+    }
+    if (modalId === "add-inspections-form") {
+        renderForm = <AddInspectionForm />;
     }
 
     return (

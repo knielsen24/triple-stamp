@@ -6,7 +6,10 @@ import "../../App";
 function BannerCardsContainer() {
     return (
         <div>
-            <div className="container text-center py-5 px-auto" id="ban-cards-container">
+            <div
+                className="container text-center py-5 px-auto"
+                id="ban-cards-container"
+            >
                 <div className="row">
                     <div className="col px-2 mx-sm-auto">
                         <img
@@ -16,7 +19,6 @@ function BannerCardsContainer() {
                         />
                     </div>
                     <div className="col px-2 mx-sm-auto">
-                        {" "}
                         <img
                             src={cardTwo}
                             alt="banner icons"
@@ -24,7 +26,6 @@ function BannerCardsContainer() {
                         />
                     </div>
                     <div className="col px-2 mx-sm-auto">
-                        {" "}
                         <img
                             src={cardThree}
                             alt="banner icons"

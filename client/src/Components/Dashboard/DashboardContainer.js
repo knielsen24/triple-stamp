@@ -5,10 +5,15 @@ import PropertyCard from "../DetailsPage/PropertyCard";
 import { Route, Routes } from "react-router-dom";
 import UnitsContainer from "../ManagementPage/UnitsContainer";
 import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
+import EditModalTemp from "../Modals/EditModalTemp";
 
-function PropertiesContainer() {
+function DashboardContainer() {
     return (
         <div className="container border-endtext-center min-vh-100">
+            <EditModalTemp
+                modalId={"add-inspections-form"}
+                header={"Add inspection"}
+            />
             <div className="row my-2">
                 <div className="col px-2 border-end min-vh-100 vw-25">
                     <p className="text-center user-select-none mb-1">
@@ -27,17 +32,20 @@ function PropertiesContainer() {
                             Dashboard
                         </p>
                         <DashBoardNav />
+                        <Routes>
+                            <Route path="main" />
+                            <Route
+                                path="inspections/*"
+                                element={<InspectionsContainer />}
+                            />
+                            <Route path="tasks" />
+                            <Route path="details" element={<PropertyCard />} />
+                        </Routes>
                     </div>
-                    <Routes>
-                        <Route path="main" />
-                        <Route path="inspections/*" element={<InspectionsContainer />} />
-                        <Route path="tasks" />
-                        <Route path="details" element={<PropertyCard />} />
-                    </Routes>
                 </div>
             </div>
         </div>
     );
 }
 
-export default PropertiesContainer;
+export default DashboardContainer;

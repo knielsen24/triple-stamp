@@ -1,10 +1,18 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import trashCanIcon from "../../assets/trashcan-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
 import { selectInspection } from "../../app/features/inspectionSlice";
+import { selectUnit, setSelectUnit } from "../../app/features/unitSlice";
 
 function PropInspectsTable({ propInspections }) {
     const dispatch = useDispatch();
+    const initialValues = {
+        id: "",
+        number: "",
+        label: "",
+        property_id: "",
+        square_feet: "",
+    }
 
     let renderInspections;
 
@@ -61,6 +69,16 @@ function PropInspectsTable({ propInspections }) {
                     </tr>
                 </thead>
                 <tbody className="table-group-divider">
+                    <tr
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#add-inspections-form"
+                        onClick={() => dispatch(selectUnit(initialValues))}
+                    >
+                        <th scope="row"></th>
+                        <td colspan="5">+ add inspection</td>
+                        <td scope="row"></td>
+                    </tr>
                     {renderInspections}
                 </tbody>
             </table>

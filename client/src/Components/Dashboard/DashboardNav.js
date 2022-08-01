@@ -11,7 +11,7 @@ function DashboardNav() {
     let detailsLinkhref;
     property.name !== ""
         ? (detailsLinkhref = "#")
-        : (detailsLinkhref = "/management/property-details");
+        : (detailsLinkhref = "/inspections/property");
 
 
     // need conditional rendering on inspections tab

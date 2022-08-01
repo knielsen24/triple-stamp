@@ -7,18 +7,18 @@ import PropInspectsTable from "../Tables/PropInspectsTable";
 
 function UnitAllInspects() {
     const property = useSelector(setSelectProperty);
-    const { data: propInspections } = useFetchPropInspectionsQuery(
-        property.id || ""
-    );
-    const unitState = useSelector(setSelectUnit)
-    console.log(unitState)
+    // const { data: propInspections } = useFetchPropInspectionsQuery(
+    //     property.id || ""
+    // );
+    const unitState = useSelector(setSelectUnit);
+    console.log(unitState);
 
     let upcomingList;
-    if (propInspections) {
-        upcomingList = propInspections.filter((inspect) => {
-            return inspect.status === "upcoming";
-        });
-    }
+    // if (propInspections) {
+    //     upcomingList = propInspections.filter((inspect) => {
+    //         return inspect.status === "upcoming";
+    //     });
+    // }
 
     return (
         <div className="accordion-item">
@@ -40,7 +40,9 @@ function UnitAllInspects() {
                 aria-labelledby="panelsStayOpen-prop-upcoming"
             >
                 <div className="accordion-body bg-light bg-opacity-50">
-                    <PropInspectsTable propInspections={upcomingList} />
+                    <PropInspectsTable
+                    // propInspections={upcomingList}
+                    />
                 </div>
             </div>
         </div>

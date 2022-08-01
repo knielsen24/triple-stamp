@@ -1,6 +1,4 @@
-import ButtonOpenDeleteUnitModal from "../Buttons/ButtonOpenDeleteUnitModal";
-
-function UnitDropDown() {
+function InspectionsDropDown() {
     return (
         <ul className="dropdown-menu bg-light ">
             <li>
@@ -8,21 +6,9 @@ function UnitDropDown() {
                     View Inspections
                 </a>
             </li>
-
             <li>
                 <a className="dropdown-item" href="#">
                     View Tasks
-                </a>
-            </li>
-            <li>
-                <a
-                    className="dropdown-item"
-                    role="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#add-inspections-form"
-                    href="#"
-                >
-                    Add New Inspection
                 </a>
             </li>
             <li>
@@ -38,11 +24,8 @@ function UnitDropDown() {
             <li>
                 <hr className="dropdown-divider" />
             </li>
-            <li>
-                <ButtonOpenDeleteUnitModal />
-            </li>
         </ul>
     );
 }
 
-export default UnitDropDown;
+export default InspectionsDropDown;
