@@ -1,8 +1,9 @@
 import { useDispatch } from "react-redux";
 import trashCanIcon from "../../assets/trashcan-icon.svg";
-import editIcon from "../../assets/edit-icon.svg";
+import threeDots from "../../assets/threedots.svg";
 import { selectInspection } from "../../app/features/inspectionSlice";
-import { selectUnit, setSelectUnit } from "../../app/features/unitSlice";
+import { selectUnit } from "../../app/features/unitSlice";
+import InspectionsDropDown from "../DropDownMenus/InspectionsDropDown";
 
 function PropInspectsTable({ propInspections }) {
     const dispatch = useDispatch();
@@ -20,35 +21,28 @@ function PropInspectsTable({ propInspections }) {
         renderInspections = propInspections.map((inspect) => {
             return (
                 <tr key={inspect.id}>
-                    <th scope="row">{inspect.unit.number}</th>
-                    <td>{inspect.title}</td>
-                    <td>{inspect.type_name}</td>
-                    <td>{inspect.status}</td>
-                    <td>{inspect.scheduled_date}</td>
-                    <td>
-                        <img
-                            src={editIcon}
-                            alt="edit-icon"
-                            role="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#edit-inspections-form"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                dispatch(selectInspection(inspect));
-                            }}
-                        />
+                    <th scope="col">{inspect.unit.number}</th>
+                    <td scope="col" colSpan="3">
+                        {inspect.title}
                     </td>
-                    <td data-bs-title="Default tooltip">
-                        <img
-                            src={trashCanIcon}
-                            alt="trashcan-icon"
-                            role="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#delete-inspections-modal"
-                            onClick={() => {
-                                dispatch(selectInspection(inspect));
-                            }}
-                        />
+                    <td scope="col">{inspect.type_name}</td>
+                    <td scope="col">{inspect.status}</td>
+                    <td scope="col">{inspect.scheduled_date}</td>
+                    <td scope="col">
+                        <div class="btn-group">
+                            <img
+                                src={threeDots}
+                                alt="trashcan-icon"
+                                role="button"
+                                class="btn btn-secondary dropdown-toggle bg-light bg-opacity-25 border-0"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                onClick={() => {
+                                    dispatch(selectInspection(inspect));
+                                }}
+                            />
+                            <InspectionsDropDown />
+                        </div>
                     </td>
                 </tr>
             );
@@ -61,7 +55,9 @@ function PropInspectsTable({ propInspections }) {
                 <thead>
                     <tr>
                         <th scope="col">Unit #</th>
-                        <th scope="col">Title</th>
+                        <th scope="col" colSpan="3">
+                            Title
+                        </th>
                         <th scope="col">Type</th>
                         <th scope="col">Status</th>
                         <th scope="col">Scheduled Date</th>
@@ -74,9 +70,11 @@ function PropInspectsTable({ propInspections }) {
                         data-bs-target="#add-inspections-form"
                         onClick={() => dispatch(selectUnit(initialValues))}
                     >
-                        <th scope="row"></th>
-                        <td colSpan="5">+ add inspection</td>
-                        <td scope="row"></td>
+                        <th scope="col"></th>
+                        <td scope="col" colSpan="3">
+                            + add inspection
+                        </td>
+                        <td scope="col" colSpan="4"></td>
                     </tr>
                     {renderInspections}
                 </tbody>

@@ -10,7 +10,6 @@ function EditInspectionForm() {
     const dispatch = useDispatch();
     const inspectionState = useSelector(setSelectInspection);
     const [updateInspect] = useUpdateInspectMutation();
-    console.log(inspectionState)
 
     const statusArray = ["none", "upcoming", "in progress", "compeleted"];
     const typeNameArray = [

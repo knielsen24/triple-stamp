@@ -1,9 +1,19 @@
+import ButtonOpenDeleteUnitModal from "../Buttons/ButtonOpenDeleteUnitModal";
+import editIcon from "../../assets/edit-icon.svg";
+
 function InspectionsDropDown() {
     return (
         <ul className="dropdown-menu bg-light ">
             <li>
-                <a className="dropdown-item" href="/dashboard/inspections/unit">
-                    View Inspections
+                <a
+                    className="dropdown-item"
+                    href="/dashboard/inspections/unit"
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-inspections-form"
+                >
+                    {" "}
+                    Edit Inspection {" " + " "}
+                    <img src={editIcon} alt="edit-icon" />
                 </a>
             </li>
             <li>
@@ -23,6 +33,9 @@ function InspectionsDropDown() {
             </li>
             <li>
                 <hr className="dropdown-divider" />
+            </li>
+            <li>
+                <ButtonOpenDeleteUnitModal />
             </li>
         </ul>
     );
