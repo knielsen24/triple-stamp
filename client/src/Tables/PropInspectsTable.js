@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import threeDots from "../assets/threedots.svg";
+import threeDots from "../assets/threedots-vertical.svg";
 import { selectInspection } from "../app/features/inspectionSlice";
 import { selectUnit } from "../app/features/unitSlice";
 import InspectionDropDown from "../DropDownMenus/InspectionDropDown";
@@ -75,7 +75,7 @@ function PropInspectsTable({ propInspections }) {
                 >
                     <th scope="col"></th>
                     <td scope="col" colSpan="3">
-                        + add inspection
+                        + Add inspection
                     </td>
                     <td scope="col" colSpan="4"></td>
                 </tr>

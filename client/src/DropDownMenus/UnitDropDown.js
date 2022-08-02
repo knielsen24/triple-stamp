@@ -22,7 +22,7 @@ function UnitDropDown() {
                     data-bs-target="#add-inspections-form"
                     href="#"
                 >
-                    Add New Inspection
+                    Add Inspection
                 </a>
             </li>
             <li>

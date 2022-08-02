@@ -7,7 +7,7 @@ function ButtonOpenAddPropertyModal() {
             data-bs-toggle="modal"
             data-bs-target="#add-property-form"
         >
-            {/* add plus icon */}+ add property
+            {/* add plus icon */}+ Add property
         </a>
     );
 }

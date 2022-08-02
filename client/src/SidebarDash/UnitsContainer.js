@@ -7,7 +7,7 @@ import UnitDropDown from "../DropDownMenus/UnitDropDown";
 import DeleteUnitModal from "../Modals/DeleteUnitModal";
 import EditModalTemp from "../Modals/EditModalTemp";
 import AddUnitModal from "../Modals/AddUnitModal";
-import threeDots from "../assets/threedots.svg";
+import threeDots from "../assets/threedots-horizontal.svg";
 import { useState } from "react";
 
 function UnitsContainer() {
