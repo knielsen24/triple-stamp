@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import { setSelectProperty } from "../app/features/propertySlice";
-import { useFetchPropInspectionsQuery } from "../app/api/propertyApiSlice";
+import { useFetchPropertyQuery, useFetchPropInspectionsQuery } from "../app/api/propertyApiSlice";
 import PropInspectsTable from "../Tables/PropInspectsTable";
 
 function PropAllInspectsList() {
     const property = useSelector(setSelectProperty);
+    // const {data: property} = useFetchPropertyQuery()
     const { data: propInspections } = useFetchPropInspectionsQuery(
         property.id || ""
     );

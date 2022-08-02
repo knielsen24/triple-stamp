@@ -20,9 +20,9 @@ function InspectionDropDown() {
             <li>
                 <a
                     className="dropdown-item"
-                    href="#"
-                    data-bs-toggle="modal"
-                    data-bs-target="#"
+                    href="full_report"
+                    // data-bs-toggle="modal"
+                    // data-bs-target="#"
                 >
                     View Full Report
                 </a>

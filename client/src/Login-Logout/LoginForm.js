@@ -14,13 +14,8 @@ import { skip, skipToken } from "@reduxjs/toolkit/query";
 function LoginForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    // const [skip, setSkip] = useState(second)
     const user = useSelector(setUser);
     const [loginApi] = useLoginApiMutation();
-
-    console.log(user);
-
-    const { data, isLoading, refetch } = useFetchUserQuery(user ? user.id : skipToken);
 
     const initialData = {
         name: "",
@@ -43,7 +38,7 @@ function LoginForm() {
             .required("Required"),
     });
 
-    if (isLoading) return <div>Loading...</div>;
+
 
     return (
         <div>
@@ -58,7 +53,6 @@ function LoginForm() {
                         .then((r) => {
                             dispatch(login(r.data));
                         })
-                        .then(refetch())
                         .then(dispatch(selectProperty(initialData)))
                         .then(navigate("dashboard"));
                     setTimeout(() => {

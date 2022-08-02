@@ -30,7 +30,7 @@ function DashboardNav() {
                 </li>
                 <li className="nav-item">
                     <NavLink
-                        to="inspections/property"
+                        to="inspections"
                         className={({ isActive }) =>
                             isActive ? activeClass : inactiveClass
                         }
@@ -40,7 +40,7 @@ function DashboardNav() {
                 </li>
                 <li className="nav-item">
                     <NavLink
-                        to="reports"
+                        to="tasks"
                         className={({ isActive }) =>
                             isActive ? activeClass : inactiveClass
                         }

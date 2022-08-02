@@ -2,7 +2,7 @@ import UnitAllInspects from "../AccordianItems/UnitAllInspects";
 
 function UnitInspectAccordians() {
     return (
-        <div className="accordion" id="unit-accordian-stay-open">
+        <div className="accordion" id="accordionPanelsStayOpenExample">
             <UnitAllInspects />
         </div>
     );

@@ -5,30 +5,34 @@ import Footer from "./HomePage/Footer";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Navbar from "./NavBar/Navbar";
 import Home from "./HomePage/Home";
-import { useSelector } from "react-redux";
-import { setUser } from "./app/features/userSlice";
-
+import { useDispatch, useSelector } from "react-redux";
+import { login, setUser } from "./app/features/userSlice";
+import {useEffect} from "react"
 
 function App() {
+    const dispatch = useDispatch()
     const navigate = useNavigate();
-    const { data: user, isLoading } = useFetchUserQuery();
+    // const user = useSelector(setUser);
+    const { data: user, isError } = useFetchUserQuery()
 
-    if(isLoading) {
-        <div>Loading</div>
-    }
+    // useEffect(() => {
+    //     fetch("/me")
+    //     .then(dispatch(login(user)))
+    // }, [])
+
 
     return (
         <div className="container-fluid p-0" id="app-main-container">
             <Navbar />
             <Routes>
-                <Route path="/" element={!user ? <Home /> : null} />
+                <Route path="/" element={!user || isError ? <Home /> : null} />
                 <Route
                     path="/profile"
-                    element={!user ? null : <ProfileHome />}
+                    element={!user || isError ? null : <ProfileHome />}
                 />
                 <Route
                     path="/dashboard/*"
-                    element={!user ? null : <DashboardContainer />}
+                    element={!user || isError ? null : <DashboardContainer />}
                 />
             </Routes>
             <Footer />

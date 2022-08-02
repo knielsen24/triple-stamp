@@ -8,6 +8,11 @@ class PropertiesController < ApplicationController
         end
     end
 
+    def show
+        property = Property.find(params[:id])
+        render json: property
+    end
+
     def create
         if params[:user_id]
             user = User.find(params[:user_id])

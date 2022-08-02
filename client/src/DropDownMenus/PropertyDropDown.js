@@ -4,6 +4,7 @@ import {
 } from "../app/features/propertySlice";
 import {
     useFetchPropertiesQuery,
+    useFetchPropertyQuery,
     useFetchPropUnitsQuery,
 } from "../app/api/propertyApiSlice";
 import { unitsList } from "../app/features/unitsListSlice";
@@ -22,8 +23,11 @@ function PropertyDropDown() {
     const property = useSelector(setSelectProperty);
 
     const { data: user } = useFetchUserQuery();
-    const { data: properties } = useFetchPropertiesQuery(user ? user.id : skipToken);
-    
+    const { data: properties } = useFetchPropertiesQuery(
+        user ? user.id : skipToken
+    );
+    // const { data } = useFetchPropertyQuery(property ? property.id : skipToken);
+
     const handleSearch = (e) => setSearch(e.target.value);
 
     let renderPropertyList;
@@ -43,9 +47,9 @@ function PropertyDropDown() {
                     <a
                         key={property.id}
                         className="dropdown-item bg-light"
+                        role="button"
                         href="#"
-                        onClick={(e) => {
-                            e.preventDefault();
+                        onClick={() => {
                             dispatch(selectProperty(property));
                             dispatch(unitsList(property.units));
                             navigate("/dashboard/inspections/property");

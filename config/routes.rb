@@ -25,13 +25,14 @@ Rails.application.routes.draw do
 
 # USER #
     post "/users", to: "users#create"
-    get "/users/:id", to: "users#show"
+    get "/me", to: "users#show"
     # get "/currentuser", to: "users#show"
     patch "/users/:id", to: "users#update"
     delete "/users/:id", to: "users#destroy"
 
 # PROPERTY #
     get "/users/:user_id/properties", to: "properties#index"
+    get "/property/:id", to: "properties#show"
     post "/users/:user_id/properties", to: "properties#create"
     patch "/properties/:id", to: "properties#update"
     delete "/properties/:id", to: "properties#destroy"

@@ -5,12 +5,16 @@ export const propertyApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000",
     }),
-    tagTypes: ["properties", "units", "inspections", "UNAUTHORIZED"],
+    tagTypes: ["properties", "property", "units", "inspections", "items", "UNAUTHORIZED"],
     endpoints(builder) {
         return {
             fetchProperties: builder.query({
                 query: (user_id) => `/users/${user_id}/properties`,
                 providesTags: ["properties", "units"],
+            }),
+            fetchProperty: builder.query({
+                query: (id) => `/properties/${id}`,
+                providesTags: ["property"],
             }),
             // Not using fetchPropUnits. Performance not as good
             fetchPropUnits: builder.query({
@@ -126,6 +130,7 @@ export const propertyApi = createApi({
 
 export const {
     useFetchPropertiesQuery,
+    useFetchPropertyQuery,
     useCreatePropertyMutation,
     useUpdatePropertyMutation,
     useDeletePropertyMutation,

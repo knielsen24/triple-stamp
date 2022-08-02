@@ -1,13 +1,18 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import threeDots from "../assets/threedots-vertical.svg";
-import { selectInspection } from "../app/features/inspectionSlice";
+import { setSelectInspection } from "../app/features/inspectionSlice";
 import { selectUnit } from "../app/features/unitSlice";
 import InspectionDropDown from "../DropDownMenus/InspectionDropDown";
-import { DateTime } from "luxon";
+import { useFetchInspectItemsQuery } from "../app/api/propertyApiSlice";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 
-function PropInspectsTable({ propInspections }) {
-    const dispatch = useDispatch();
-    // const formattedDate = DateTime.fromObject().toLocaleString();
+function FullReportTable({ propInspections }) {
+    const inspection = useSelector(setSelectInspection)
+
+    const { data: report } = useFetchInspectItemsQuery(inspection.id || "" );
+
+    console.log(inspection);
+    console.log(report)
 
     const initialValues = {
         id: "",
@@ -20,10 +25,11 @@ function PropInspectsTable({ propInspections }) {
     let renderInspections;
 
     if (propInspections) {
+        console.log(propInspections)
         renderInspections = propInspections.map((inspect) => {
             return (
                 <tr key={inspect.id}>
-                    <th scope="row">{inspect.unit.number}</th>
+                    <th scope="col">{inspect.unit.number}</th>
                     <td colSpan="3">{inspect.title}</td>
                     <td>{inspect.type_name}</td>
                     <td>{inspect.status}</td>
@@ -37,9 +43,7 @@ function PropInspectsTable({ propInspections }) {
                                 className="btn btn-secondary dropdown-toggle bg-light bg-opacity-25 border-0"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
-                                onClick={() =>
-                                    dispatch(selectInspection(inspect))
-                                }
+                                onClick={() => {}}
                             />
                             <InspectionDropDown />
                         </div>
@@ -67,7 +71,7 @@ function PropInspectsTable({ propInspections }) {
                     role="button"
                     data-bs-toggle="modal"
                     data-bs-target="#add-inspections-form"
-                    onClick={() => dispatch(selectUnit(initialValues))}
+                    // onClick={() => dispatch(selectUnit(initialValues))}
                 >
                     <th scope="col"></th>
                     <td colSpan="3">+ Add inspection</td>
@@ -79,4 +83,4 @@ function PropInspectsTable({ propInspections }) {
     );
 }
 
-export default PropInspectsTable;
+export default FullReportTable;

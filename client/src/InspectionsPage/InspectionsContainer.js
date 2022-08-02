@@ -6,10 +6,14 @@ import UnitAllInspects from "../AccordianItems/UnitAllInspects";
 import DeleteInspectionModal from "../Modals/DeleteInspectionModal";
 import EditModalTemp from "../Modals/EditModalTemp";
 import PropInspectAccordians from "./PropInspectAccordians";
+import ViewInspectReport from "./ViewInspectReport";
+import { setSelectInspection } from "../app/features/inspectionSlice";
 
 function InspectionsContainer() {
     const property = useSelector(setSelectProperty);
     const unit = useSelector(setSelectUnit);
+    const inspection = useSelector(setSelectInspection)
+    console.log(inspection)
 
     return (
         <div className="container border-endtext-center min-vh-100">
@@ -30,6 +34,10 @@ function InspectionsContainer() {
                 <Route
                     path="unit"
                     element={unit.name === "" ? null : <UnitAllInspects />}
+                />
+                <Route
+                    path="reports"
+                    element={inspection.title === "" ? null : <ViewInspectReport />}
                 />
             </Routes>
         </div>

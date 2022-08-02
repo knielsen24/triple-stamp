@@ -28,13 +28,12 @@ function UnitsContainer() {
                         dispatch(selectUnit(unit));
                     }}
                 >
-                    <td scope="col">{unit.number}</td>
-                    <td scope="col">{unit.label}</td>
+                    <td>{unit.number}</td>
+                    <td>{unit.label}</td>
                     {/* render on hover */}
-                    <td scope="col">
+                    <td>
                         <div className="btn-group dropend">
                             <img
-
                                 src={threeDots}
                                 alt="threedots-icon"
                                 role="button"
@@ -67,8 +66,8 @@ function UnitsContainer() {
             <table className="table table-borderless table-hover">
                 <tbody>
                     <tr scope="row">
-                        <td scope="col" colSpan="1"></td>
-                        <td scope="col" colSpan="2">
+                        <td colSpan="1"></td>
+                        <td colSpan="2">
                             {property.name !== "" ? (
                                 <ButtonOpenAddUnitModal />
                             ) : null}
