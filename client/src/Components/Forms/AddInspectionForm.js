@@ -9,10 +9,12 @@ import { setUnitsList } from "../../app/features/unitsListSlice";
 import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
 import { DateTime } from "luxon";
 import { useState } from "react";
+import { setSelectProperty } from "../../app/features/propertySlice";
 
 function AddInspectionForm() {
     const dispatch = useDispatch();
     const unit = useSelector(setSelectUnit);
+    const propertyState = useSelector(setSelectProperty)
     const unitsListState = useSelector(setUnitsList);
     const [unitID, setUnitID] = useState(unit.id);
     const [createInspect] = useCreateInspectMutation();
@@ -23,7 +25,7 @@ function AddInspectionForm() {
 
     const updateSchema = Yup.object().shape({});
 
-    const statusArray = ["none", "upcoming", "in progress", "compeleted"];
+    const statusArray = ["none", "upcoming", "in progress", "completed"];
     const typeNameArray = [
         "move-in",
         "move-out",
@@ -51,8 +53,6 @@ function AddInspectionForm() {
         });
     }
 
-
-
     return (
         <div>
             <Formik
@@ -63,6 +63,7 @@ function AddInspectionForm() {
                     status: "",
                     scheduled_date: todaysDate,
                     unit_id: "" || unitID,
+                    property_id: "" || propertyState.id
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
@@ -103,7 +104,7 @@ function AddInspectionForm() {
                                 onBlur={handleBlur}
                                 value={values.unit_id}
                             >
-                                <option defaultValue={"Select a unit"}></option>
+                                <option>Select a unit</option>
                                 {unitNumOptionList}
                             </select>
                             {errors.unit_id &&
@@ -146,11 +147,7 @@ function AddInspectionForm() {
                                 onBlur={handleBlur}
                                 value={values.type_name}
                             >
-                                <option
-                                    defaultValue={
-                                        "Select the type of inspection"
-                                    }
-                                ></option>
+                                <option>Select the type of inspection</option>
                                 {typeNameOptionList}
                             </select>{" "}
                             {errors.type_name &&
@@ -173,9 +170,7 @@ function AddInspectionForm() {
                                 onBlur={handleBlur}
                                 value={values.status}
                             >
-                                <option selected={"Select the status"}>
-                                    Select the status
-                                </option>
+                                <option>Select the status</option>
 
                                 {statusOptionList}
                             </select>

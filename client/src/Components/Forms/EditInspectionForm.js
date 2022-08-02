@@ -5,13 +5,16 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { setSelectInspection } from "../../app/features/inspectionSlice";
 import { useUpdateInspectMutation } from "../../app/services/propertyApiSlice";
+import { setSelectProperty } from "../../app/features/propertySlice";
+
 
 function EditInspectionForm() {
     const dispatch = useDispatch();
+    const propertyState = useSelector(setSelectProperty)
     const inspectionState = useSelector(setSelectInspection);
     const [updateInspect] = useUpdateInspectMutation();
 
-    const statusArray = ["none", "upcoming", "in progress", "compeleted"];
+    const statusArray = ["none", "upcoming", "in progress", "completed"];
     const typeNameArray = [
         "move-in",
         "move-out",
@@ -46,6 +49,7 @@ function EditInspectionForm() {
                     status: "" || inspectionState.status,
                     scheduled_date: "" || inspectionState.scheduled_date,
                     unit_id: "" || inspectionState.unit_id,
+                    property_id: "" || propertyState.id
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {

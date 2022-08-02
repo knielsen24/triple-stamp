@@ -1,13 +1,14 @@
-import ButtonOpenDeleteUnitModal from "../Buttons/ButtonOpenDeleteUnitModal";
+import trashCanIcon from "../../assets/trashcan-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
 
-function InspectionsDropDown() {
+function InspectionDropDown() {
     return (
         <ul className="dropdown-menu bg-light ">
             <li>
                 <a
                     className="dropdown-item"
-                    href="/dashboard/inspections/unit"
+                    href="#"
+                    role="button"
                     data-bs-toggle="modal"
                     data-bs-target="#edit-inspections-form"
                 >
@@ -17,28 +18,32 @@ function InspectionsDropDown() {
                 </a>
             </li>
             <li>
-                <a className="dropdown-item" href="#">
-                    View Tasks
-                </a>
-            </li>
-            <li>
                 <a
                     className="dropdown-item"
                     href="#"
                     data-bs-toggle="modal"
                     data-bs-target="#update-unit-form"
                 >
-                    Edit Information
+                    View form
                 </a>
             </li>
             <li>
                 <hr className="dropdown-divider" />
             </li>
             <li>
-                <ButtonOpenDeleteUnitModal />
+                <a
+                    className="dropdown-item"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#delete-inspections-modal"
+                >
+                    Delete Inspection {" " + " "}
+                    <img src={trashCanIcon} alt="trashcan-icon" />
+                </a>
             </li>
         </ul>
     );
 }
 
-export default InspectionsDropDown;
+export default InspectionDropDown;

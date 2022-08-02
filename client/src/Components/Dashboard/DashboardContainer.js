@@ -3,7 +3,7 @@ import AddPropertyModal from "../Modals/AddPropertyModal";
 import DashBoardNav from "./DashboardNav";
 import PropertyCard from "../DetailsPage/PropertyCard";
 import { Route, Routes } from "react-router-dom";
-import UnitsContainer from "../SideDash/UnitsContainer";
+import UnitsContainer from "../SidebarDash/UnitsContainer";
 import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
 import EditModalTemp from "../Modals/EditModalTemp";
 
@@ -16,8 +16,8 @@ function DashboardContainer() {
             />
             <div className="row my-2">
                 <div className="col px-2 border-end min-vh-100 vw-25">
-                    <p className="text-center user-select-none mb-1">
-                        Select Property
+                    <p className="text-start user-select-none mb-1 ps-0">
+                        My property
                     </p>
                     <div className="row mw-100 mb-3 align-content-items-center">
                         <PropertyDropDown />
