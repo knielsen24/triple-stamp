@@ -63,6 +63,29 @@ Unit.all.each do |unit|
     end
 end
 
+itemsNameArray = [
+    "floor", "wall", "celing", "oven", "stove", "refigerator", "window", "HAVAC", "plumbing", "faucet", "paint", "gutters", "door", "washer", "dryer", "roof", "fence", "cabinets", "mirror", "toilet", "closet"
+]
+conditionArray = ["needs repair", "minor touch up", "good", "needs cleaning" ]
+
+Inspection.all.each do |inspect|
+    5.times do
+        item_name = itemsNameArray.sample
+        category = Faker::House.room
+        condition = conditionArray.sample
+        comments = Faker::Lorem.sentence(word_count: 3)
+        inspection_id = inspect.id
+
+        Item.create(
+            item_name: item_name,
+            category: category,
+            condition: condition,
+            comments: comments,
+            inspection_id: inspection_id
+        )
+    end
+end
+
 
 puts "🌱 triple stamping..."
 puts "✅✅✅ You can't triple stamp a double stamp! Lloyd! Lloyd! Lloyd!"

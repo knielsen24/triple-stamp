@@ -45,7 +45,7 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        Reports
+                        Tasks
                     </NavLink>
                 </li>
                 <li className="nav-item">

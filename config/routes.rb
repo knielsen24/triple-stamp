@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :items
     resources :users do
         resources :properties
     end
