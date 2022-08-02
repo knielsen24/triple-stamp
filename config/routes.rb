@@ -13,8 +13,9 @@ Rails.application.routes.draw do
         resources :inspections
     end
 
-    resources :inspections
-
+    resources :inspections do
+        resources :items
+    end
 
 
 
@@ -49,6 +50,12 @@ Rails.application.routes.draw do
     post "/properties/:property_id/inspections", to: "inspections#create"
     patch "/inspections/:id", to: "inspections#update"
     delete "/inspections/:id", to: "inspections#destroy"
+
+# ITEM #
+    get "/inspections/:inspection_id/items", to: "items#index"
+    post "/inspections/:inspection_id/items", to: "items#create"
+    patch "/items/:id", to: "items#update"
+    patch "/items/:id", to: "items#destroy"
 
 # Leave this here to help deploy your app later!
     get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }

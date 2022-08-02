@@ -23,6 +23,11 @@ export const propertyApi = createApi({
                 providesTags: ["inspections"],
             }),
 
+            fetchInspectItems: builder.query({
+                query: (id) => `/inspections/${id}/items`,
+                providesTags: ["items"],
+            }),
+
             createProperty: builder.mutation({
                 query: ({ ...data }) => ({
                     url: `/users/${data.user_id}/properties`,
@@ -135,4 +140,6 @@ export const {
     useDeleteInspectMutation,
     useCreateInspectMutation,
     // useCreatePropInspectMutation,
+
+    useFetchInspectItemsQuery,
 } = propertyApi;
