@@ -111,7 +111,7 @@ export const propertyApi = createApi({
                     body: data,
                 }),
                 invalidatesTags: (result, error, arg) => [
-                    { type: "inspections", id: arg.data },
+                    { type: "inspections", id: arg.data.id },
                 ],
             }),
 

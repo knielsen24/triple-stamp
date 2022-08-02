@@ -1,17 +1,23 @@
 import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
 import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { setSelectInspection } from "../app/features/inspectionSlice";
 import { useUpdateInspectMutation } from "../app/api/propertyApiSlice";
 import { setSelectProperty } from "../app/features/propertySlice";
+import {useState} from "react"
+import { setSelectUnit } from "../app/features/unitSlice";
+import { setUnitsList } from "../app/features/unitsListSlice";
 
 function EditInspectionForm() {
-    const dispatch = useDispatch();
+    const unit = useSelector(setSelectUnit);
     const propertyState = useSelector(setSelectProperty);
     const inspectionState = useSelector(setSelectInspection);
+    const unitsListState = useSelector(setUnitsList);
+    const [unitID, setUnitID] = useState(unit.id);
     const [updateInspect] = useUpdateInspectMutation();
+    const handleUnitId = (e) => setUnitID(e.target.value);
 
     const statusArray = ["none", "upcoming", "in progress", "completed"];
     const typeNameArray = [
@@ -37,6 +43,17 @@ function EditInspectionForm() {
             .required("Required"),
     });
 
+    let unitNumOptionList;
+    if (unitsListState) {
+        unitNumOptionList = unitsListState.map((unit) => {
+            return (
+                <option key={unit.id} value={unit.id}>
+                    {unit.number + " " + (unit.label || "Label")}
+                </option>
+            );
+        });
+    }
+
     return (
         <div>
             <Formik
@@ -47,12 +64,11 @@ function EditInspectionForm() {
                     type_name: "" || inspectionState.type_name,
                     status: "" || inspectionState.status,
                     scheduled_date: "" || inspectionState.scheduled_date,
-                    unit_id: "" || inspectionState.unit_id,
+                    unit_id: "" || unitID,
                     property_id: "" || propertyState.id,
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values);
                     updateInspect(values);
                     setTimeout(() => {
                         setSubmitting(false);
@@ -69,6 +85,30 @@ function EditInspectionForm() {
                     isSubmitting,
                 }) => (
                     <form onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <label
+                                htmlFor="unit_id"
+                                className="form-label float-start"
+                            >
+                                Unit #{" "}
+                            </label>
+
+                            <select
+                                id="unit_id"
+                                className="form-control form-select"
+                                type="string"
+                                name="unit_id"
+                                onChange={handleChange && handleUnitId}
+                                onBlur={handleBlur}
+                                value={values.unit_id}
+                            >
+                                <option>Select a unit</option>
+                                {unitNumOptionList}
+                            </select>
+                            {errors.unit_id &&
+                                touched.unit_id &&
+                                errors.unit_id}
+                        </div>
                         <div className="mb-3">
                             <label
                                 htmlFor="title"

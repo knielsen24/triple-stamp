@@ -12,7 +12,6 @@ import { useState } from "react";
 import { setSelectProperty } from "../app/features/propertySlice";
 
 function AddInspectionForm() {
-    const dispatch = useDispatch();
     const unit = useSelector(setSelectUnit);
     const propertyState = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
