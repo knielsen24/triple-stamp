@@ -7,8 +7,7 @@ import { DateTime } from "luxon";
 
 function PropInspectsTable({ propInspections }) {
     const dispatch = useDispatch();
-    const todaysDate = DateTime.toLocaleString(DateTime.DATE_SHORT);
-    console.log(todaysDate)
+    // const formattedDate = DateTime.fromObject().toLocaleString();
 
     const initialValues = {
         id: "",
@@ -22,6 +21,7 @@ function PropInspectsTable({ propInspections }) {
 
     if (propInspections) {
         renderInspections = propInspections.map((inspect) => {
+
             return (
                 <tr key={inspect.id}>
                     <th scope="col">{inspect.unit.number}</th>
@@ -30,7 +30,7 @@ function PropInspectsTable({ propInspections }) {
                     </td>
                     <td scope="col">{inspect.type_name}</td>
                     <td scope="col">{inspect.status}</td>
-                    <td scope="col">{inspect.scheduled_date}</td>
+                    <td type="date" scope="col">{inspect.scheduled_date}</td>
                     <td scope="col">
                         <div className="btn-group">
                             <img

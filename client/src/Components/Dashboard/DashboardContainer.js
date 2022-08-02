@@ -4,12 +4,12 @@ import DashBoardNav from "./DashboardNav";
 import PropertyCard from "../DetailsPage/PropertyCard";
 import { Route, Routes } from "react-router-dom";
 import UnitsContainer from "../SidebarDash/UnitsContainer";
-import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
+import InspectionsContainer from "../../InspectionsPage/InspectionsContainer";
 import EditModalTemp from "../Modals/EditModalTemp";
 
 function DashboardContainer() {
     return (
-        <div className="container border-endtext-center min-vh-100">
+        <div className="container border-endtext-center min-vh-100 ">
             <EditModalTemp
                 modalId={"add-inspections-form"}
                 header={"Add inspection"}

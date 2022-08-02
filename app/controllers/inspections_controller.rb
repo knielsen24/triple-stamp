@@ -4,10 +4,10 @@ class InspectionsController < ApplicationController
     def index
         if params[:property_id]
             property = Property.find(params[:property_id])
-            render json: property.inspections
+            render json: property.inspections.order(:scheduled_date).reverse_order
         elsif params[:unit_id]
             unit = Unit.find(params[:unit_id])
-            render json: unit.inspections
+            render json: unit.inspections.order(:scheduled_date).reverse_order
         end
     end
 
