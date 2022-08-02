@@ -1,12 +1,12 @@
-import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
-import ButtonCancelModal from "../Buttons/ButtonCancelModal";
+import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useCreateInspectMutation } from "../app/services/propertyApiSlice";
+import { useCreateInspectMutation } from "../app/api/propertyApiSlice";
 import { setSelectUnit } from "../app/features/unitSlice";
 import { setUnitsList } from "../app/features/unitsListSlice";
-import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
+import ButtonOpenAddUnitModal from "../Components/Buttons/ButtonOpenAddUnitModal";
 import { DateTime } from "luxon";
 import { useState } from "react";
 import { setSelectProperty } from "../app/features/propertySlice";

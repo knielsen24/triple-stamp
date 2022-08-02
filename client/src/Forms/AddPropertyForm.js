@@ -1,7 +1,7 @@
-import { useCreatePropertyMutation } from "../app/services/propertyApiSlice";
-import { useFetchUserQuery } from "../app/services/userApiSlice";
+import { useCreatePropertyMutation } from "../app/api/propertyApiSlice";
+import { useFetchUserQuery } from "../app/api/userApiSlice";
 import { selectProperty } from "../app/features/propertySlice";
-import ButtonCancelModal from "../Buttons/ButtonCancelModal";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";

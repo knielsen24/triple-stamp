@@ -1,4 +1,4 @@
-import ButtonStartNow from "../Buttons/ButtonStartNow";
+import ButtonStartNow from "../Components/Buttons/ButtonStartNow";
 import BannerCardsContainer from "./BannerCardsContainer";
 import LoginModal from "../Login-Logout/LoginModal";
 import SignUpModal from "../Modals/SignUpModal";

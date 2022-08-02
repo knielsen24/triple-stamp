@@ -2,10 +2,10 @@ import {
     selectProperty,
     setSelectProperty,
 } from "../app/features/propertySlice";
-import { useUpdatePropertyMutation } from "../app/services/propertyApiSlice";
+import { useUpdatePropertyMutation } from "../app/api/propertyApiSlice";
 import { useDispatch, useSelector } from "react-redux";
-import ButtonCancelModal from "../Buttons/ButtonCancelModal";
-import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
+import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
 import { Formik } from "formik";
 import * as Yup from "yup";
 

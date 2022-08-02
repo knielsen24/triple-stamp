@@ -1,7 +1,7 @@
 import { setSelectProperty } from "../app/features/propertySlice";
 import { setUnitsList } from "../app/features/unitsListSlice";
 import { useSelector } from "react-redux";
-import ButtonManageAccountModals from "../Buttons/ButtonManageAccountModals";
+import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccountModals";
 import DeletePropertyModal from "../Modals/DeletePropertyModal";
 import homeIcon from "../assets/home-icon.svg";
 import EditModalTemp from "../Modals/EditModalTemp";

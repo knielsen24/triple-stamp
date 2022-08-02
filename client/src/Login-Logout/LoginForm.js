@@ -1,7 +1,7 @@
 import {
     useFetchUserQuery,
     useLoginApiMutation,
-} from "../app/services/userApiSlice";
+} from "../app/api/userApiSlice";
 import { selectProperty } from "../app/features/propertySlice";
 import { login, setUser } from "../app/features/userSlice";
 import { useNavigate } from "react-router-dom";

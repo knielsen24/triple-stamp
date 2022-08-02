@@ -1,9 +1,9 @@
 import {
     useFetchUserQuery,
     useUpdateUserMutation,
-} from "../app/services/userApiSlice";
-import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
-import ButtonCancelModal from "../Buttons/ButtonCancelModal";
+} from "../app/api/userApiSlice";
+import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "yup-phone";

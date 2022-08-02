@@ -1,14 +1,14 @@
-import ButtonCancelModal from "../Buttons/ButtonCancelModal";
-import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
+import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../app/features/userSlice";
 import { useDispatch } from "react-redux";
 import {
     useDeleteUserMutation,
     useFetchUserQuery,
-} from "../app/services/userApiSlice";
+} from "../app/api/userApiSlice";
 
-import ButtonDeleteItem from "../Buttons/ButtonDeleteItem";
+import ButtonDeleteItem from "../Components/Buttons/ButtonDeleteItem";
 
 function DeleteProfileModal() {
     const [deleteUser, { isLoading }] = useDeleteUserMutation();

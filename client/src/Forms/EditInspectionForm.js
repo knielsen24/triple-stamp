@@ -1,10 +1,10 @@
-import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
-import ButtonCancelModal from "../Buttons/ButtonCancelModal";
+import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { setSelectInspection } from "../app/features/inspectionSlice";
-import { useUpdateInspectMutation } from "../app/services/propertyApiSlice";
+import { useUpdateInspectMutation } from "../app/api/propertyApiSlice";
 import { setSelectProperty } from "../app/features/propertySlice";
 
 function EditInspectionForm() {

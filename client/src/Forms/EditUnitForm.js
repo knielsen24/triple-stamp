@@ -1,10 +1,10 @@
-import ButtonSaveChanges from "../Buttons/ButtonSaveChanges";
-import ButtonCancelModal from "../Buttons/ButtonCancelModal";
+import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 import { setSelectUnit } from "../app/features/unitSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useUpdateUnitMutation } from "../app/services/propertyApiSlice";
+import { useUpdateUnitMutation } from "../app/api/propertyApiSlice";
 import { setUnitsList, unitsList } from "../app/features/unitsListSlice";
 
 function EditUnitForm() {

@@ -1,5 +1,5 @@
 import DashboardContainer from "./Dashboard/DashboardContainer";
-import { useFetchUserQuery } from "./app/services/userApiSlice";
+import { useFetchUserQuery } from "./app/api/userApiSlice";
 import ProfileHome from "./ProfilePage/ProfileHome";
 import Footer from "./HomePage/Footer";
 import { Routes, Route, useNavigate } from "react-router-dom";

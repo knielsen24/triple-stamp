@@ -1,10 +1,10 @@
-import { useDeleteUnitMutation } from "../app/services/propertyApiSlice";
+import { useDeleteUnitMutation } from "../app/api/propertyApiSlice";
 import { setUnitsList, unitsList } from "../app/features/unitsListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectUnit } from "../app/features/unitSlice";
-import ButtonCancelModal from "../Buttons/ButtonCancelModal";
-import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
-import ButtonDeleteItem from "../Buttons/ButtonDeleteItem";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
+import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
+import ButtonDeleteItem from "../Components/Buttons/ButtonDeleteItem";
 
 function DeleteUnitModal() {
     const dispatch = useDispatch();

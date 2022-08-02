@@ -1,7 +1,7 @@
 import {
     useFetchUserQuery,
     useLogoutApiMutation,
-} from "../app/services/userApiSlice";
+} from "../app/api/userApiSlice";
 import { logout } from "../app/features/userSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";

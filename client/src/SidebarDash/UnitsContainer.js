@@ -1,4 +1,4 @@
-import ButtonOpenAddUnitModal from "../Buttons/ButtonOpenAddUnitModal";
+import ButtonOpenAddUnitModal from "../Components/Buttons/ButtonOpenAddUnitModal";
 import { setSelectProperty } from "../app/features/propertySlice";
 import { setUnitsList } from "../app/features/unitsListSlice";
 import { selectUnit } from "../app/features/unitSlice";

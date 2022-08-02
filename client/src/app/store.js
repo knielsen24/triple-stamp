@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./features/userSlice";
-import propertyReducer from "./features/propertySlice"
-import unitReducer from "./features/unitSlice"
-import unitsListReducer from "./features/unitsListSlice"
-import inspectionReducer from "./features/inspectionSlice"
+import propertyReducer from "./features/propertySlice";
+import unitReducer from "./features/unitSlice";
+import unitsListReducer from "./features/unitsListSlice";
+import inspectionReducer from "./features/inspectionSlice";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { userApi } from "./services/userApiSlice";
-import { propertyApi } from "./services/propertyApiSlice";
-// import { unitApi } from "./services/unitApiSlice";
+import { userApi } from "./api/userApiSlice";
+import { propertyApi } from "./api/propertyApiSlice";
+// import { unitApi } from "./api/unitApiSlice";
 
 export const store = configureStore({
     reducer: {
@@ -22,7 +22,7 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) => {
         return getDefaultMiddleware().concat(
             userApi.middleware,
-            propertyApi.middleware,
+            propertyApi.middleware
         );
     },
 });

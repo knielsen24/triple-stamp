@@ -4,10 +4,10 @@ import {
     selectProperty,
     setSelectProperty,
 } from "../app/features/propertySlice";
-import { useDeletePropertyMutation } from "../app/services/propertyApiSlice";
-import ButtonCancelModal from "../Buttons/ButtonCancelModal";
-import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
-import ButtonDeleteItem from "../Buttons/ButtonDeleteItem";
+import { useDeletePropertyMutation } from "../app/api/propertyApiSlice";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
+import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
+import ButtonDeleteItem from "../Components/Buttons/ButtonDeleteItem";
 
 function DeletePropertyModal() {
     const property = useSelector(setSelectProperty);

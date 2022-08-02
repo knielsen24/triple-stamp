@@ -1,4 +1,4 @@
-import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
+import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import AddUnitForm from "../Forms/AddUnitForm";
 
 function AddUnitModal() {

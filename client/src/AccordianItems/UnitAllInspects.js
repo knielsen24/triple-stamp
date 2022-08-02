@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { setSelectProperty } from "../app/features/propertySlice";
 import { setSelectUnit } from "../app/features/unitSlice";
-import { useFetchPropInspectionsQuery } from "../app/services/propertyApiSlice";
+import { useFetchPropInspectionsQuery } from "../app/api/propertyApiSlice";
 import PropInspectsTable from "../Tables/PropInspectsTable";
 
 function UnitAllInspects() {
@@ -11,7 +10,6 @@ function UnitAllInspects() {
     //     property.id || ""
     // );
     const unitState = useSelector(setSelectUnit);
-    console.log(unitState);
 
     let upcomingList;
     // if (propInspections) {

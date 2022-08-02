@@ -5,13 +5,13 @@ import {
 import {
     useFetchPropertiesQuery,
     useFetchPropUnitsQuery,
-} from "../app/services/propertyApiSlice";
+} from "../app/api/propertyApiSlice";
 import { unitsList } from "../app/features/unitsListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import ButtonOpenAddPropertyModal from "../Buttons/ButtonOpenAddPropertyModal";
-import { useFetchUserQuery } from "../app/services/userApiSlice";
+import ButtonOpenAddPropertyModal from "../Components/Buttons/ButtonOpenAddPropertyModal";
+import { useFetchUserQuery } from "../app/api/userApiSlice";
 
 function PropertyDropDown() {
     // useParams to render property link

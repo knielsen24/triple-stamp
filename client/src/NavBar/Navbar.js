@@ -1,10 +1,10 @@
-import { useFetchUserQuery } from "../app/services/userApiSlice";
+import { useFetchUserQuery } from "../app/api/userApiSlice";
 import UserDropDown from "../DropDownMenus/UserDropDown";
-import ButtonStartNow from "../Buttons/ButtonStartNow";
+import ButtonStartNow from "../Components/Buttons/ButtonStartNow";
 import logoName from "../assets/logo-name.png";
 import DashboardLinks from "./DashboardLinks";
 import HomeLinks from "./HomeLinks";
-import "../App.css"
+import "../App.css";
 import { useSelector } from "react-redux";
 import { setUser } from "../app/features/userSlice";
 

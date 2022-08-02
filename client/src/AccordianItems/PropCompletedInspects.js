@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { setSelectProperty } from "../app/features/propertySlice";
-import { useFetchPropInspectionsQuery } from "../app/services/propertyApiSlice";
+import { useFetchPropInspectionsQuery } from "../app/api/propertyApiSlice";
 import PropInspectsTable from "../Tables/PropInspectsTable";
 
 function PropCompletedInspects() {

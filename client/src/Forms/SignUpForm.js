@@ -1,4 +1,4 @@
-import { useCreateUserMutation } from "../app/services/userApiSlice";
+import { useCreateUserMutation } from "../app/api/userApiSlice";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";

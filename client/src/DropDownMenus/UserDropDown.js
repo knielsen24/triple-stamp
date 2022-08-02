@@ -1,4 +1,4 @@
-import { useFetchUserQuery } from "../app/services/userApiSlice";
+import { useFetchUserQuery } from "../app/api/userApiSlice";
 import Logout from "../Login-Logout/Logout";
 
 import { useSelector } from "react-redux";

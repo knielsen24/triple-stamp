@@ -1,4 +1,4 @@
-import ButtonCloseModalX from "../Buttons/ButtonCloseModalX";
+import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import AddInspectionForm from "../Forms/AddInspectionForm";
 import EditInspectionForm from "../Forms/EditInspectionForm";
 import EditProfileForm from "../Forms/EditProfileForm";
