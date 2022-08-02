@@ -1,16 +1,15 @@
-import DashboardContainer from "./Components/Dashboard/DashboardContainer";
+import DashboardContainer from "./Dashboard/DashboardContainer";
 import { useFetchUserQuery } from "./app/services/userApiSlice";
-import ProfileHome from "./Components/ProfilePage/ProfileHome";
-import Footer from "./Components/HomePage/Footer";
+import ProfileHome from "./ProfilePage/ProfileHome";
+import Footer from "./HomePage/Footer";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Navbar from "./Components/NavBar/Navbar";
-import Home from "./Components/HomePage/Home";
+import Navbar from "./NavBar/Navbar";
+import Home from "./HomePage/Home";
 import { useSelector } from "react-redux";
 import { setUser } from "./app/features/userSlice";
 
-
 function App() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const { data: user } = useFetchUserQuery();
 
     return (

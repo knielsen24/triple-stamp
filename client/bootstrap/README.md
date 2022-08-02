@@ -21,40 +21,36 @@
   <a href="https://blog.getbootstrap.com/">Blog</a>
 </p>
 
-
 ## Bootstrap 5
 
 Our default branch is for development of our Bootstrap 5 release. Head to the [`v4-dev` branch](https://github.com/twbs/bootstrap/tree/v4-dev) to view the readme, documentation, and source code for Bootstrap 4.
 
-
 ## Table of contents
 
-- [Quick start](#quick-start)
-- [Status](#status)
-- [What's included](#whats-included)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [Community](#community)
-- [Versioning](#versioning)
-- [Creators](#creators)
-- [Thanks](#thanks)
-- [Copyright and license](#copyright-and-license)
-
+-   [Quick start](#quick-start)
+-   [Status](#status)
+-   [What's included](#whats-included)
+-   [Bugs and feature requests](#bugs-and-feature-requests)
+-   [Documentation](#documentation)
+-   [Contributing](#contributing)
+-   [Community](#community)
+-   [Versioning](#versioning)
+-   [Creators](#creators)
+-   [Thanks](#thanks)
+-   [Copyright and license](#copyright-and-license)
 
 ## Quick start
 
 Several quick start options are available:
 
-- [Download the latest release](https://github.com/twbs/bootstrap/archive/v5.2.0.zip)
-- Clone the repo: `git clone https://github.com/twbs/bootstrap.git`
-- Install with [npm](https://www.npmjs.com/): `npm install bootstrap@v5.2.0`
-- Install with [yarn](https://yarnpkg.com/): `yarn add bootstrap@v5.2.0`
-- Install with [Composer](https://getcomposer.org/): `composer require twbs/bootstrap:5.2.0`
-- Install with [NuGet](https://www.nuget.org/): CSS: `Install-Package bootstrap` Sass: `Install-Package bootstrap.sass`
+-   [Download the latest release](https://github.com/twbs/bootstrap/archive/v5.2.0.zip)
+-   Clone the repo: `git clone https://github.com/twbs/bootstrap.git`
+-   Install with [npm](https://www.npmjs.com/): `npm install bootstrap@v5.2.0`
+-   Install with [yarn](https://yarnpkg.com/): `yarn add bootstrap@v5.2.0`
+-   Install with [Composer](https://getcomposer.org/): `composer require twbs/bootstrap:5.2.0`
+-   Install with [NuGet](https://www.nuget.org/): CSS: `Install-Package bootstrap` Sass: `Install-Package bootstrap.sass`
 
 Read the [Getting started page](https://getbootstrap.com/docs/5.2/getting-started/introduction/) for information on the framework contents, templates, examples, and more.
-
 
 ## Status
 
@@ -74,7 +70,6 @@ Read the [Getting started page](https://getbootstrap.com/docs/5.2/getting-starte
 [![Backers on Open Collective](https://img.shields.io/opencollective/backers/bootstrap)](#backers)
 [![Sponsors on Open Collective](https://img.shields.io/opencollective/sponsors/bootstrap)](#sponsors)
 
-
 ## What's included
 
 Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations.
@@ -82,64 +77,63 @@ Within the download you'll find the following directories and files, logically g
 <details>
   <summary>Download contents</summary>
 
-  ```text
-  bootstrap/
-  ├── css/
-  │   ├── bootstrap-grid.css
-  │   ├── bootstrap-grid.css.map
-  │   ├── bootstrap-grid.min.css
-  │   ├── bootstrap-grid.min.css.map
-  │   ├── bootstrap-grid.rtl.css
-  │   ├── bootstrap-grid.rtl.css.map
-  │   ├── bootstrap-grid.rtl.min.css
-  │   ├── bootstrap-grid.rtl.min.css.map
-  │   ├── bootstrap-reboot.css
-  │   ├── bootstrap-reboot.css.map
-  │   ├── bootstrap-reboot.min.css
-  │   ├── bootstrap-reboot.min.css.map
-  │   ├── bootstrap-reboot.rtl.css
-  │   ├── bootstrap-reboot.rtl.css.map
-  │   ├── bootstrap-reboot.rtl.min.css
-  │   ├── bootstrap-reboot.rtl.min.css.map
-  │   ├── bootstrap-utilities.css
-  │   ├── bootstrap-utilities.css.map
-  │   ├── bootstrap-utilities.min.css
-  │   ├── bootstrap-utilities.min.css.map
-  │   ├── bootstrap-utilities.rtl.css
-  │   ├── bootstrap-utilities.rtl.css.map
-  │   ├── bootstrap-utilities.rtl.min.css
-  │   ├── bootstrap-utilities.rtl.min.css.map
-  │   ├── bootstrap.css
-  │   ├── bootstrap.css.map
-  │   ├── bootstrap.min.css
-  │   ├── bootstrap.min.css.map
-  │   ├── bootstrap.rtl.css
-  │   ├── bootstrap.rtl.css.map
-  │   ├── bootstrap.rtl.min.css
-  │   └── bootstrap.rtl.min.css.map
-  └── js/
-      ├── bootstrap.bundle.js
-      ├── bootstrap.bundle.js.map
-      ├── bootstrap.bundle.min.js
-      ├── bootstrap.bundle.min.js.map
-      ├── bootstrap.esm.js
-      ├── bootstrap.esm.js.map
-      ├── bootstrap.esm.min.js
-      ├── bootstrap.esm.min.js.map
-      ├── bootstrap.js
-      ├── bootstrap.js.map
-      ├── bootstrap.min.js
-      └── bootstrap.min.js.map
-  ```
+```text
+bootstrap/
+├── css/
+│   ├── bootstrap-grid.css
+│   ├── bootstrap-grid.css.map
+│   ├── bootstrap-grid.min.css
+│   ├── bootstrap-grid.min.css.map
+│   ├── bootstrap-grid.rtl.css
+│   ├── bootstrap-grid.rtl.css.map
+│   ├── bootstrap-grid.rtl.min.css
+│   ├── bootstrap-grid.rtl.min.css.map
+│   ├── bootstrap-reboot.css
+│   ├── bootstrap-reboot.css.map
+│   ├── bootstrap-reboot.min.css
+│   ├── bootstrap-reboot.min.css.map
+│   ├── bootstrap-reboot.rtl.css
+│   ├── bootstrap-reboot.rtl.css.map
+│   ├── bootstrap-reboot.rtl.min.css
+│   ├── bootstrap-reboot.rtl.min.css.map
+│   ├── bootstrap-utilities.css
+│   ├── bootstrap-utilities.css.map
+│   ├── bootstrap-utilities.min.css
+│   ├── bootstrap-utilities.min.css.map
+│   ├── bootstrap-utilities.rtl.css
+│   ├── bootstrap-utilities.rtl.css.map
+│   ├── bootstrap-utilities.rtl.min.css
+│   ├── bootstrap-utilities.rtl.min.css.map
+│   ├── bootstrap.css
+│   ├── bootstrap.css.map
+│   ├── bootstrap.min.css
+│   ├── bootstrap.min.css.map
+│   ├── bootstrap.rtl.css
+│   ├── bootstrap.rtl.css.map
+│   ├── bootstrap.rtl.min.css
+│   └── bootstrap.rtl.min.css.map
+└── js/
+    ├── bootstrap.bundle.js
+    ├── bootstrap.bundle.js.map
+    ├── bootstrap.bundle.min.js
+    ├── bootstrap.bundle.min.js.map
+    ├── bootstrap.esm.js
+    ├── bootstrap.esm.js.map
+    ├── bootstrap.esm.min.js
+    ├── bootstrap.esm.min.js.map
+    ├── bootstrap.js
+    ├── bootstrap.js.map
+    ├── bootstrap.min.js
+    └── bootstrap.min.js.map
+```
+
 </details>
 
 We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified CSS and JS (`bootstrap.min.*`). [Source maps](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) (`bootstrap.*.map`) are available for use with certain browsers' developer tools. Bundled JS files (`bootstrap.bundle.js` and minified `bootstrap.bundle.min.js`) include [Popper](https://popper.js.org/).
 
-
 ## Bugs and feature requests
 
 Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/twbs/bootstrap/blob/main/.github/CONTRIBUTING.md#using-the-issue-tracker) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/twbs/bootstrap/issues/new).
-
 
 ## Documentation
 
@@ -162,7 +156,6 @@ You can find all our previous releases docs on <https://getbootstrap.com/docs/ve
 
 [Previous releases](https://github.com/twbs/bootstrap/releases) and their documentation are also available for download.
 
-
 ## Contributing
 
 Please read through our [contributing guidelines](https://github.com/twbs/bootstrap/blob/main/.github/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
@@ -171,18 +164,16 @@ Moreover, if your pull request contains JavaScript patches or features, you must
 
 Editor preferences are available in the [editor config](https://github.com/twbs/bootstrap/blob/main/.editorconfig) for easy use in common text editors. Read more and download plugins at <https://editorconfig.org/>.
 
-
 ## Community
 
 Get updates on Bootstrap's development and chat with the project maintainers and community members.
 
-- Follow [@getbootstrap on Twitter](https://twitter.com/getbootstrap).
-- Read and subscribe to [The Official Bootstrap Blog](https://blog.getbootstrap.com/).
-- Join [the official Slack room](https://bootstrap-slack.herokuapp.com/).
-- Chat with fellow Bootstrappers in IRC. On the `irc.libera.chat` server, in the `#bootstrap` channel.
-- Implementation help may be found at Stack Overflow (tagged [`bootstrap-5`](https://stackoverflow.com/questions/tagged/bootstrap-5)).
-- Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/browse/keyword/bootstrap) or similar delivery mechanisms for maximum discoverability.
-
+-   Follow [@getbootstrap on Twitter](https://twitter.com/getbootstrap).
+-   Read and subscribe to [The Official Bootstrap Blog](https://blog.getbootstrap.com/).
+-   Join [the official Slack room](https://bootstrap-slack.herokuapp.com/).
+-   Chat with fellow Bootstrappers in IRC. On the `irc.libera.chat` server, in the `#bootstrap` channel.
+-   Implementation help may be found at Stack Overflow (tagged [`bootstrap-5`](https://stackoverflow.com/questions/tagged/bootstrap-5)).
+-   Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/browse/keyword/bootstrap) or similar delivery mechanisms for maximum discoverability.
 
 ## Versioning
 
@@ -190,19 +181,17 @@ For transparency into our release cycle and in striving to maintain backward com
 
 See [the Releases section of our GitHub project](https://github.com/twbs/bootstrap/releases) for changelogs for each release version of Bootstrap. Release announcement posts on [the official Bootstrap blog](https://blog.getbootstrap.com/) contain summaries of the most noteworthy changes made in each release.
 
-
 ## Creators
 
 **Mark Otto**
 
-- <https://twitter.com/mdo>
-- <https://github.com/mdo>
+-   <https://twitter.com/mdo>
+-   <https://github.com/mdo>
 
 **Jacob Thornton**
 
-- <https://twitter.com/fat>
-- <https://github.com/fat>
-
+-   <https://twitter.com/fat>
+-   <https://github.com/fat>
 
 ## Thanks
 
@@ -213,11 +202,10 @@ See [the Releases section of our GitHub project](https://github.com/twbs/bootstr
 Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
 
 <a href="https://www.netlify.com/">
-  <img src="https://www.netlify.com/v3/img/components/full-logo-light.svg" alt="Netlify" width="147" height="40">
+  <img src="https://www.netlify.com/v3/img/full-logo-light.svg" alt="Netlify" width="147" height="40">
 </a>
 
 Thanks to [Netlify](https://www.netlify.com/) for providing us with Deploy Previews!
-
 
 ## Sponsors
 
@@ -234,13 +222,11 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 [![OC sponsor 8](https://opencollective.com/bootstrap/sponsor/8/avatar.svg)](https://opencollective.com/bootstrap/sponsor/8/website)
 [![OC sponsor 9](https://opencollective.com/bootstrap/sponsor/9/avatar.svg)](https://opencollective.com/bootstrap/sponsor/9/website)
 
-
 ## Backers
 
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/bootstrap#backer)]
 
 [![Backers](https://opencollective.com/bootstrap/backers.svg?width=890)](https://opencollective.com/bootstrap#backers)
-
 
 ## Copyright and license
 
