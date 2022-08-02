@@ -9,16 +9,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useFetchPropertiesQuery } from "../app/api/propertyApiSlice";
-import { skipToken } from "@reduxjs/toolkit/query";
+import { skip, skipToken } from "@reduxjs/toolkit/query";
 
 function LoginForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    // const [skip, setSkip] = useState(second)
+    const user = useSelector(setUser);
     const [loginApi] = useLoginApiMutation();
-    const userState = useSelector(setUser);
-    console.log(userState);
 
-    const { data, isLoading } = useFetchUserQuery(userState ? userState.id : skipToken);
+    console.log(user);
+
+    const { data, isLoading, refetch } = useFetchUserQuery(user ? user.id : skipToken);
 
     const initialData = {
         name: "",
@@ -56,6 +58,7 @@ function LoginForm() {
                         .then((r) => {
                             dispatch(login(r.data));
                         })
+                        .then(refetch())
                         .then(dispatch(selectProperty(initialData)))
                         .then(navigate("dashboard"));
                     setTimeout(() => {

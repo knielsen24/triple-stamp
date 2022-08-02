@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ButtonOpenAddPropertyModal from "../Components/Buttons/ButtonOpenAddPropertyModal";
 import { useFetchUserQuery } from "../app/api/userApiSlice";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 function PropertyDropDown() {
     // useParams to render property link
@@ -21,7 +22,7 @@ function PropertyDropDown() {
     const property = useSelector(setSelectProperty);
 
     const { data: user } = useFetchUserQuery();
-    const { data: properties } = useFetchPropertiesQuery(user.id || "");
+    const { data: properties } = useFetchPropertiesQuery(user ? user.id : skipToken);
     console.log(properties)
     const handleSearch = (e) => setSearch(e.target.value);
 

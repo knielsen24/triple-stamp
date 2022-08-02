@@ -7,13 +7,15 @@ import Navbar from "./NavBar/Navbar";
 import Home from "./HomePage/Home";
 import { useSelector } from "react-redux";
 import { setUser } from "./app/features/userSlice";
-import { useFetchPropertiesQuery } from "./app/api/propertyApiSlice";
-import { useState } from "react";
+
 
 function App() {
     const navigate = useNavigate();
-    const { data: user } = useFetchUserQuery();
-    // const user = useSelector(setUser)
+    const { data: user, isLoading } = useFetchUserQuery();
+
+    if(isLoading) {
+        <div>Loading</div>
+    }
 
     return (
         <div className="container-fluid p-0" id="app-main-container">
