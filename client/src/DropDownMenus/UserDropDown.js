@@ -1,11 +1,8 @@
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import Logout from "../Login-Logout/Logout";
 
-import { useSelector } from "react-redux";
-import { setUser } from "../app/features/userSlice";
-
 function UserDropDown() {
-    const { data: user } = useFetchUserQuery();
+    const { data: user, isError } = useFetchUserQuery();
 
     return (
         <div className="dropdown center">
@@ -17,7 +14,7 @@ function UserDropDown() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-                {!user ? "" : user.full_name}
+                {!user || isError ? "" : user.full_name}
             </a>
 
             <ul className="dropdown-menu">
@@ -26,7 +23,6 @@ function UserDropDown() {
                         My profile
                     </a>
                 </li>
-
                 <li>
                     <a className="dropdown-item" href="/dashboard/home">
                         Dashboard
@@ -36,7 +32,6 @@ function UserDropDown() {
                     <hr className="dropdown-divider" />
                 </li>
                 <li>
-                    {/* add log out icon */}
                     <Logout />
                 </li>
             </ul>

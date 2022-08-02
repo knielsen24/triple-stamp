@@ -1,39 +1,22 @@
 import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import { useNavigate } from "react-router-dom";
-import { logout } from "../app/features/userSlice";
-import { useDispatch } from "react-redux";
 import {
     useDeleteUserMutation,
     useFetchUserQuery,
+    useLoginApiMutation,
 } from "../app/api/userApiSlice";
 
 import ButtonDeleteItem from "../Components/Buttons/ButtonDeleteItem";
 
 function DeleteProfileModal() {
-    const [deleteUser, { isLoading }] = useDeleteUserMutation();
-    const { data: user } = useFetchUserQuery();
-    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [deleteUser] = useDeleteUserMutation();
+    const [logoutApi] = useLoginApiMutation();
+    const { data: user } = useFetchUserQuery();
 
     const handleDeleteUser = (id) => {
-        deleteUser(id).then(handleLogout());
-    };
-
-    // Handle Logout is used twice now.
-    // Need to figure out how to use the API Slice to handle this query
-
-    const handleLogout = () => {
-        fetch("/logout", { method: "DELETE" })
-            .then((r) => {
-                if (r.ok) {
-                    dispatch(logout());
-                }
-            })
-            .then(navigate("/"));
-        // logoutApi().then(() => {
-        //     dispatch(logout(user)).then(navigate("/"));
-        // });
+        logoutApi().then(deleteUser(id)).then(navigate("/"));
     };
 
     return (

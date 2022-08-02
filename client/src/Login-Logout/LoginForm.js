@@ -1,20 +1,13 @@
-import {
-    useFetchUserQuery,
-    useLoginApiMutation,
-} from "../app/api/userApiSlice";
+import { useLoginApiMutation } from "../app/api/userApiSlice";
 import { selectProperty } from "../app/features/propertySlice";
-import { login, setUser } from "../app/features/userSlice";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useFetchPropertiesQuery } from "../app/api/propertyApiSlice";
-import { skip, skipToken } from "@reduxjs/toolkit/query";
 
 function LoginForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector(setUser);
     const [loginApi] = useLoginApiMutation();
 
     const initialData = {
@@ -38,8 +31,6 @@ function LoginForm() {
             .required("Required"),
     });
 
-
-
     return (
         <div>
             <Formik
@@ -50,9 +41,6 @@ function LoginForm() {
                 validationSchema={loginSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     loginApi(values)
-                        .then((r) => {
-                            dispatch(login(r.data));
-                        })
                         .then(dispatch(selectProperty(initialData)))
                         .then(navigate("dashboard"));
                     setTimeout(() => {

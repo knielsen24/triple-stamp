@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./features/userSlice";
 import propertyReducer from "./features/propertySlice";
 import unitReducer from "./features/unitSlice";
 import unitsListReducer from "./features/unitsListSlice";
@@ -11,7 +10,6 @@ import { propertyApi } from "./api/propertyApiSlice";
 
 export const store = configureStore({
     reducer: {
-        user: userReducer,
         property: propertyReducer,
         unit: unitReducer,
         unitsList: unitsListReducer,

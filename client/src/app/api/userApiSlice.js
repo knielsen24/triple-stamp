@@ -31,13 +31,6 @@ export const userApi = createApi({
                 providesTags: ["user"],
             }),
 
-            // need to add user_id params...
-            // on login response take user id to make query
-            // fetchUser: builder.query({
-            //     query: () => "/currentuser",
-            //     providesTags: ["user"],
-            // }),
-
             createUser: builder.mutation({
                 query: ({ ...data }) => ({
                     url: "/users",
