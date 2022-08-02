@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import { setSelectProperty } from "../app/features/propertySlice";
-import { setSelectUnit } from "../app/features/unitSlice";
+import { setSelectProperty } from "../../app/features/propertySlice";
+import { setSelectUnit } from "../../app/features/unitSlice";
 import UnitAllInspects from "../AccordianItems/UnitAllInspects";
-import DeleteInspectionModal from "../Components/Modals/DeleteInspectionModal";
-import EditModalTemp from "../Components/Modals/EditModalTemp";
+import DeleteInspectionModal from "../Modals/DeleteInspectionModal";
+import EditModalTemp from "../Modals/EditModalTemp";
 import PropInspectAccordians from "./PropInspectAccordians";
 
 function InspectionsContainer() {

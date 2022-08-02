@@ -4,7 +4,7 @@ import DashBoardNav from "./DashboardNav";
 import PropertyCard from "../DetailsPage/PropertyCard";
 import { Route, Routes } from "react-router-dom";
 import UnitsContainer from "../SidebarDash/UnitsContainer";
-import InspectionsContainer from "../../InspectionsPage/InspectionsContainer";
+import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
 import EditModalTemp from "../Modals/EditModalTemp";
 
 function DashboardContainer() {
