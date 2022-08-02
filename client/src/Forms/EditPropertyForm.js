@@ -192,8 +192,11 @@ function EditPropertyForm() {
                                 otherwise
                                 render error message
                             */}
-                            <ButtonCancelModal isSubmitting={isSubmitting} />
-                            <ButtonSaveChanges />
+                            <ButtonCancelModal />
+                            <ButtonSaveChanges
+                                isSubmitting={isSubmitting}
+                                text={"Update"}
+                            />
                         </div>
                     </form>
                 )}
@@ -203,67 +206,3 @@ function EditPropertyForm() {
 }
 
 export default EditPropertyForm;
-
-// function EditPropertyForm() {
-//     const property = useSelector(setSelectProperty);
-//     const [updateProperty, isLoading] = useUpdatePropertyMutation();
-
-//     const initialValues={
-//         id: property.id,
-//         name: property.name,
-//         address: property.address,
-//         city: property.city,
-//         state: property.state,
-//         postal_code: property.postal_code,
-//         country: property.country,
-//         units: property.units,
-//         user_id: property.user_id,
-//     }
-
-//     const [formData, setFormData] = useState(initialValues);
-
-//     console.log(property);
-
-//     // need to check if the id is going through
-//     return (
-//         <div>
-//             <form onSubmit={handleSubmit}>
-//                 <div className="mb-3">
-//                     <label htmlFor="name" className="form-label float-start">
-//                         Property name
-//                     </label>
-//                     <input
-//                         id="name"
-//                         className="form-control"
-//                         type="string"
-//                         name="name"
-//                         onChange={handleChange}
-//                         onBlur={handleBlur}
-//                         value={values.name}
-//                     />
-//                     {errors.name && touched.name && errors.name}
-//                 </div>
-
-//                 <div className="float-end">
-//                     {/*
-//                                 this needs a conditon
-//                                 if form is validated then close modal
-//                                 otherwise
-//                                 render error message
-//                             */}
-//                     <ButtonCancelAddProperty />
-//                     <button
-//                         type="stringit"
-//                         disabled={isSubmitting}
-//                         className="btn btn-primary"
-//                         id="modal-btn-start-now"
-//                         data-bs-dismiss="modal"
-//                         aria-label="Close"
-//                     >
-//                         Create Property
-//                     </button>
-//                 </div>
-//             </form>
-//         </div>
-//     );
-// export default EditPropertyForm;

@@ -17,6 +17,7 @@ function InspectionsContainer() {
             <EditModalTemp
                 modalId={"edit-inspections-form"}
                 header={"Edit inspection information"}
+                buttonText={"Click update to save changes"}
             />
 
             <Routes>

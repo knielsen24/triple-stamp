@@ -201,7 +201,7 @@ function AddInspectionForm() {
                             <ButtonCancelModal />
                             <ButtonSaveChanges
                                 isSubmitting={isSubmitting}
-                                text={"Save Changes"}
+                                text={"Add inspection"}
                             />
                         </div>
                     </form>

@@ -8,18 +8,17 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { useFetchPropertiesQuery } from "../app/api/propertyApiSlice";
+import { skipToken } from "@reduxjs/toolkit/query";
 
 function LoginForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector(setUser);
-    console.log(user);
+    const [loginApi] = useLoginApiMutation();
+    const userState = useSelector(setUser);
+    console.log(userState);
 
-    const {} = useFetchUserQuery(!user ? "" : user.id, {
-        refetchOnMountOrArgChange: true,
-    });
-
-    const [loginApi, { isLoading }] = useLoginApiMutation();
+    const { data, isLoading } = useFetchUserQuery(userState ? userState.id : skipToken);
 
     const initialData = {
         name: "",
@@ -41,6 +40,8 @@ function LoginForm() {
             .max(30, "Too Long!")
             .required("Required"),
     });
+
+    if (isLoading) return <div>Loading...</div>;
 
     return (
         <div>

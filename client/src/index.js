@@ -6,14 +6,11 @@ import React from "react";
 import App from "./App";
 import "./index.css";
 
-
 ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <Provider store={store}>
-                <App />
-            </Provider>
-        </BrowserRouter>
-    </React.StrictMode>,
+    <BrowserRouter>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </BrowserRouter>,
     document.getElementById("root")
 );

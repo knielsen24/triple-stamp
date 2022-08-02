@@ -5,7 +5,7 @@ import EditProfileForm from "../Forms/EditProfileForm";
 import EditPropertyForm from "../Forms/EditPropertyForm";
 import EditUnitForm from "../Forms/EditUnitForm";
 
-function EditModalTemp({ modalId, header }) {
+function EditModalTemp({ modalId, header, buttonText }) {
     let renderForm;
     if (modalId === "edit-property-form") {
         renderForm = <EditPropertyForm />;
@@ -41,7 +41,7 @@ function EditModalTemp({ modalId, header }) {
                                 {header}
                                 <div>
                                     <p id="modal-subtext">
-                                        Click save changes to update
+                                        {buttonText}
                                     </p>
                                 </div>
                             </h5>

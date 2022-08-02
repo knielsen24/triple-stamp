@@ -16,6 +16,7 @@ function PropertyCard() {
             <EditModalTemp
                 modalId={"edit-property-form"}
                 header={"Edit your property information"}
+                buttonText={"Click update to save changes"}
             />
             <DeletePropertyModal />
             <div id="profile-main-card-container" className="card mx-3">

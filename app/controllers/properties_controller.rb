@@ -45,7 +45,6 @@ class PropertiesController < ApplicationController
 
     def update_property_params
         params.permit(
-            :id,
             :name,
             :address,
             :city,

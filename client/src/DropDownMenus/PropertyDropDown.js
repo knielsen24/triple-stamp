@@ -22,6 +22,7 @@ function PropertyDropDown() {
 
     const { data: user } = useFetchUserQuery();
     const { data: properties } = useFetchPropertiesQuery(user.id || "");
+    console.log(properties)
     const handleSearch = (e) => setSearch(e.target.value);
 
     let renderPropertyList;

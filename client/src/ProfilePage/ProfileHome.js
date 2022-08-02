@@ -33,6 +33,7 @@ function ProfileHome() {
                 <EditModalTemp
                     modalId={"update-profile-form"}
                     header={"Edit your profile information"}
+                    buttonText={"Click update to save changes"}
                 />
                 {/* <EditProfileModal /> */}
                 <DeleteProfileModal />

@@ -165,7 +165,7 @@ function EditInspectionForm() {
                             <ButtonCancelModal />
                             <ButtonSaveChanges
                                 isSubmitting={isSubmitting}
-                                text={"Save Changes"}
+                                text={"Update"}
                             />
                         </div>
                     </form>

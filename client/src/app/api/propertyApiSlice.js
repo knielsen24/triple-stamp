@@ -9,7 +9,7 @@ export const propertyApi = createApi({
     endpoints(builder) {
         return {
             fetchProperties: builder.query({
-                query: (id) => `/users/${id}/properties`,
+                query: (user_id) => `/users/${user_id}/properties`,
                 providesTags: ["properties", "units"],
             }),
             // Not using fetchPropUnits. Performance not as good

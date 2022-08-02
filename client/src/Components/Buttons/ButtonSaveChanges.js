@@ -1,5 +1,5 @@
 
-function ButtonSaveChanges({ isSubmitting }) {
+function ButtonSaveChanges({ isSubmitting, text }) {
     return (
         <button
             type="submit"
@@ -9,7 +9,7 @@ function ButtonSaveChanges({ isSubmitting }) {
             data-bs-dismiss="modal"
             aria-label="Close"
         >
-            Save Changes
+            {text}
         </button>
     );
 }

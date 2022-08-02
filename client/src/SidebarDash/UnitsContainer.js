@@ -8,11 +8,13 @@ import DeleteUnitModal from "../Modals/DeleteUnitModal";
 import EditModalTemp from "../Modals/EditModalTemp";
 import AddUnitModal from "../Modals/AddUnitModal";
 import threeDots from "../assets/threedots.svg";
+import { useState } from "react";
 
 function UnitsContainer() {
     const dispatch = useDispatch();
     const property = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
+    const [isShown, setIsShown] = useState(false);
 
     const buttonClassName =
         "btn btn-secondary dropdown-toggle bg-transparent border-0";
@@ -30,8 +32,9 @@ function UnitsContainer() {
                     <td scope="col">{unit.label}</td>
                     {/* render on hover */}
                     <td scope="col">
-                        <div className="btn-group dropend ">
+                        <div className="btn-group dropend">
                             <img
+
                                 src={threeDots}
                                 alt="threedots-icon"
                                 role="button"
@@ -59,6 +62,7 @@ function UnitsContainer() {
             <EditModalTemp
                 modalId={"update-unit-form"}
                 header={"Edit unit information"}
+                buttonText={"Click update to save changes"}
             />
             <table className="table table-borderless table-hover">
                 <tbody>
@@ -78,18 +82,3 @@ function UnitsContainer() {
 }
 
 export default UnitsContainer;
-
-//  /* <button
-//                         key={unit.id}
-//                         type="button"
-//                         className={buttonClassName}
-//                         aria-current="true"
-//                         data-bs-toggle="dropdown"
-//                         aria-expanded="false"
-//                         onClick={() => {
-//                             dispatch(selectUnit(unit));
-//                         }}
-//                     ></button> */}
-//                 {/* {unit.number + " " + (unit.label || "Label")}
-
-//                     /> */

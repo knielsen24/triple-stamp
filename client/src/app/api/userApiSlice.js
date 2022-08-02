@@ -23,7 +23,7 @@ export const userApi = createApi({
                     method: "POST",
                     body: data,
                 }),
-                invalidatesTags: ["user"],
+                providesTags: ["user"],
             }),
 
             fetchUser: builder.query({

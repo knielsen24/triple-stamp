@@ -22,9 +22,9 @@ function InspectionDropDown() {
                     className="dropdown-item"
                     href="#"
                     data-bs-toggle="modal"
-                    data-bs-target="#update-unit-form"
+                    data-bs-target="#"
                 >
-                    View form
+                    View Full Report
                 </a>
             </li>
             <li>

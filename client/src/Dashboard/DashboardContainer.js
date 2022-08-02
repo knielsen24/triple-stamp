@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import UnitsContainer from "../SidebarDash/UnitsContainer";
 import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
 import EditModalTemp from "../Modals/EditModalTemp";
+import DashboardHome from "./DashboardHome";
 
 function DashboardContainer() {
     return (
@@ -13,6 +14,7 @@ function DashboardContainer() {
             <EditModalTemp
                 modalId={"add-inspections-form"}
                 header={"Add inspection"}
+                buttonText={"Click update to save changes"}
             />
             <div className="row my-2">
                 <div className="col px-2 border-end min-vh-100 vw-25">
@@ -33,7 +35,7 @@ function DashboardContainer() {
                         </p>
                         <DashBoardNav />
                         <Routes>
-                            <Route path="main" />
+                            <Route path="main" element={<DashboardHome />} />
                             <Route
                                 path="inspections/*"
                                 element={<InspectionsContainer />}
