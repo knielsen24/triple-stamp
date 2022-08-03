@@ -52,6 +52,7 @@ function EditProfileForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -135,17 +136,9 @@ function EditProfileForm() {
                         </div>
 
                         <div className="float-end">
-                            {/*
-                                this needs a conditon
-                                if form is validated then close modal
-                                otherwise
-                                render error message
-                                ONE option is to create two seperate buttons
-                                would need to create state for errors,
-                                so button rerenders with correct attributes
-                            */}
                             <ButtonCancelModal />
                             <ButtonSaveChanges
+                                isValid={isValid}
                                 isSubmitting={isSubmitting}
                                 text={"Save Changes"}
                             />

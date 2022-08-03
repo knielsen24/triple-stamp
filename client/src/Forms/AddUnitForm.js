@@ -54,6 +54,7 @@ function AddUnitForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -105,7 +106,7 @@ function AddUnitForm() {
                             <ButtonCancelModal />
                             <button
                                 type="submit"
-                                disabled={isSubmitting}
+                                disabled={isValid ? isSubmitting : true}
                                 className="btn btn-primary"
                                 id="modal-btn-start-now"
                                 data-bs-dismiss="modal"

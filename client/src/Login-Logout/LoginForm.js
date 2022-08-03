@@ -2,13 +2,17 @@ import { useLoginApiMutation } from "../app/api/userApiSlice";
 import { selectProperty } from "../app/features/propertySlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
+import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
 
 function LoginForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [loginApi] = useLoginApiMutation();
+    const [loginApi, {error}] = useLoginApiMutation();
+    // const [error, setError] = useState([]);
 
     const initialData = {
         name: "",
@@ -40,9 +44,18 @@ function LoginForm() {
                 }}
                 validationSchema={loginSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    loginApi(values)
-                        .then(dispatch(selectProperty(initialData)))
-                        .then(navigate("dashboard/main"));
+                    loginApi(values).then((r) => {
+                        console.log(error);
+                        // if (r.data.full_name !== "") {
+                        //     r.json().then(dispatch(selectProperty(initialData))).then(
+                        //         navigate("/dashboard/main")
+                        //     );
+                        // }
+                        // else {
+                        //     r.json().then((errorData) => setError(errorData.error));
+                        // }
+                    });
+
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -56,6 +69,7 @@ function LoginForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -96,25 +110,24 @@ function LoginForm() {
                                 touched.password &&
                                 errors.password}
                         </div>
-
-                        <div className="float-end">
-                            {/*
-                                this needs a conditon
-                                if form is validated then close modal
-                                otherwise
-                                render error message
-                            */}
-
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="btn btn-primary"
-                                id="modal-btn-start-now"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
+                        {error ? error.length > 0 && (
+                            <div
+                                style={{
+                                    color: "red",
+                                    listStyleType: "none",
+                                    textAlign: "center",
+                                }}
                             >
-                                Sign in
-                            </button>
+                                <p>{error}</p>
+                            </div>
+                        ) : null}
+                        <div className="float-end">
+                            <ButtonCancelModal />
+                            <ButtonSaveChanges
+                                isValid={isValid}
+                                isSubmitting={isSubmitting}
+                                text={"Sign In"}
+                            />
                         </div>
                     </form>
                 )}

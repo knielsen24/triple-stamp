@@ -59,6 +59,7 @@ function EditUnitForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -120,6 +121,7 @@ function EditUnitForm() {
                         <div className="float-end">
                             <ButtonCancelModal />
                             <ButtonSaveChanges
+                                isValid={isValid}
                                 isSubmitting={isSubmitting}
                                 text={"Update"}
                             />

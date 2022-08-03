@@ -64,6 +64,7 @@ function EditPropertyForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -194,6 +195,7 @@ function EditPropertyForm() {
                             */}
                             <ButtonCancelModal />
                             <ButtonSaveChanges
+                                isValid={isValid}
                                 isSubmitting={isSubmitting}
                                 text={"Update"}
                             />

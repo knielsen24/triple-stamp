@@ -2,6 +2,8 @@ import { useCreateUserMutation } from "../app/api/userApiSlice";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
+import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 
 function SignUpForm() {
     const navigate = useNavigate();
@@ -51,6 +53,7 @@ function SignUpForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -131,28 +134,13 @@ function SignUpForm() {
                                 touched.account_name &&
                                 errors.account_name}
                         </div>
-
                         <div className="float-end">
-                            {/*
-                                this needs a conditon
-                                if form is validated then close modal
-                                otherwise
-                                render error message
-                                ONE option is to create two seperate buttons
-                                would need to create state for errors,
-                                so button rerenders with correct attributes
-                            */}
-
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="btn btn-primary"
-                                id="modal-btn-start-now"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            >
-                                Finish Sign Up
-                            </button>
+                            <ButtonCancelModal />
+                            <ButtonSaveChanges
+                                isValid={isValid}
+                                isSubmitting={isSubmitting}
+                                text={"Finish Sign Up"}
+                            />
                         </div>
                     </form>
                 )}
@@ -162,35 +150,3 @@ function SignUpForm() {
 }
 
 export default SignUpForm;
-
-// fetch("http://localhost:4000/signup", {
-//     method: "POST",
-//     headers: {
-//         "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(values),
-// }).then((r) => {
-//     if (r.ok) {
-//         r.json().then((user) => dispatch(login(user)))
-//         .then(setTimeout(() => {
-//             setSubmitting(false);
-//         }, 400));
-//     } else {
-//         r.json().then((errorData) =>
-//             setErrors(errorData.errors)
-//         );
-//     }
-// });
-// validate={(values) => {
-//     const errors = {};
-//     if (!values.email) {
-//         errors.email = "Required";
-//     } else if (
-//         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-//             values.email
-//         )
-//     ) {
-//         errors.email = "Invalid email address";
-//     }
-//     return errors;
-// }}

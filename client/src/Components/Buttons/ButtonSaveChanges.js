@@ -1,9 +1,10 @@
 
-function ButtonSaveChanges({ isSubmitting, text }) {
+function ButtonSaveChanges({ isSubmitting, text, isValid }) {
+
     return (
         <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isValid ? isSubmitting : true}
             className="btn btn-primary"
             id="modal-btn-start-now"
             data-bs-dismiss="modal"

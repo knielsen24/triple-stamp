@@ -86,6 +86,7 @@ function EditInspectionForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -208,6 +209,7 @@ function EditInspectionForm() {
                             <ButtonCancelModal />
 
                             <ButtonSaveChanges
+                                isValid={isValid}
                                 isSubmitting={isSubmitting}
                                 text={"Update"}
                             />

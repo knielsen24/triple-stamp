@@ -50,24 +50,31 @@ function AddInspectionForm() {
         });
     }
 
-    const updateSchema = Yup.object().shape({});
+    const initialFormData = {
+        title: "New Inspection",
+        type_name: "",
+        status: "",
+        scheduled_date: todaysDate,
+        unit_id: unitID || unit.id,
+        property_id: "" || propertyState.id,
+    };
+
+    const updateSchema = Yup.object().shape({
+        title: Yup.string().min(2, "Too Short!").max(50, "Too Long!"),
+        unit_id: Yup.number().required("Required"),
+        scheduled_date: Yup.date().required(),
+    });
 
     return (
         <div>
             <Formik
                 enableReinitialize
-                initialValues={{
-                    title: "New Inspection",
-                    type_name: "",
-                    status: "",
-                    scheduled_date: todaysDate,
-                    unit_id: unitID || unit.id,
-                    property_id: "" || propertyState.id,
-                }}
+                initialValues={initialFormData}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     createInspect(values);
-                    setUnitID("")
+                    // .then(resetForm(initialFormData))
+                    setUnitID("");
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -81,6 +88,7 @@ function AddInspectionForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -198,7 +206,10 @@ function AddInspectionForm() {
 
                         <div className="float-end">
                             <ButtonCancelModal />
+                            {console.log(errors)}
                             <ButtonSaveChanges
+                                isValid={isValid}
+                                errors={errors}
                                 isSubmitting={isSubmitting}
                                 text={"Add inspection"}
                             />
