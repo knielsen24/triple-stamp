@@ -1,7 +1,14 @@
 import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import LoginForm from "./LoginForm";
+import { useState } from "react";
 
 function LoginModal() {
+    const [errorMessage, setErrorMessage] = useState(false);
+
+    const handleSubmitError = (message) => {
+        setErrorMessage(message)
+    }
+
     return (
         <div>
             <div
@@ -11,7 +18,7 @@ function LoginModal() {
                 data-bs-keyboard="false"
                 tabIndex="-1"
                 aria-labelledby="login-form"
-                aria-hidden="true"
+                aria-hidden={errorMessage ? "false" : "true"}
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
@@ -27,7 +34,7 @@ function LoginModal() {
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
-                            <LoginForm />
+                            <LoginForm handleSubmitError={handleSubmitError} />
                         </div>
                     </div>
                 </div>

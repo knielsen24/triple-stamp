@@ -24,8 +24,6 @@ function InspectionsContainer() {
     // } = useFetchPropertyQuery(property ? property.id : skipToken);
     // console.log(isSuccess ? data : null);
 
-    console.log(property)
-
     return (
         <div className="container border-endtext-center min-vh-100">
             <DeleteInspectionModal />
@@ -34,29 +32,29 @@ function InspectionsContainer() {
                 header={"Edit inspection information"}
                 buttonText={"Click update to save changes"}
             />
-            <div class="row align-content-between">
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-header">Inspections </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Today!</h5>
-                            <p class="card-text">
+            <div className="row align-content-between">
+                <div className="col-6">
+                    <div className="card">
+                        <div className="card-header">Inspections </div>
+                        <div className="card-body">
+                            <h5 className="card-title">Today!</h5>
+                            <p className="card-text">
                                 looks like there are no inspections scheduled
                                 today
                             </p>
-                            <a href="#" class="btn btn-primary">
+                            <a href="#" className="btn btn-primary">
                                 Go to inspection
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 ">
-                    <div class="card">
-                        <div class="card-header">Inspections </div>
-                        <div class="card-body">
-                            <h5 class="card-title">This week</h5>
-                            <p class="card-text">start planning</p>
-                            <a href="/dashboard/inspections/property" class="btn btn-primary">
+                <div className="col-6 ">
+                    <div className="card">
+                        <div className="card-header">Inspections </div>
+                        <div className="card-body">
+                            <h5 className="card-title">This week</h5>
+                            <p className="card-text">start planning</p>
+                            <a href="/dashboard/inspections/property" className="btn btn-primary">
                                 Checkout the schedule
                             </a>
                         </div>

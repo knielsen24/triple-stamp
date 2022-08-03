@@ -7,8 +7,8 @@ function PropInspectAccordians() {
     return (
         <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
             <PropUpcomingInspects />
-            <PropCompletedInspects />
             <PropInProgressInspects />
+            <PropCompletedInspects />
             <PropAllInspectsList />
         </div>
     );

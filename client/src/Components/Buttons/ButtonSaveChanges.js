@@ -1,5 +1,5 @@
 
-function ButtonSaveChanges({ isSubmitting, text, isValid }) {
+function ButtonSaveChanges({ isSubmitting, text, isValid, error }) {
 
     return (
         <button

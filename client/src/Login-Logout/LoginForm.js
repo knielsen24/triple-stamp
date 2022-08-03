@@ -2,17 +2,16 @@ import { useLoginApiMutation } from "../app/api/userApiSlice";
 import { selectProperty } from "../app/features/propertySlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
 
-function LoginForm() {
+function LoginForm({ handleSubmitError }) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [loginApi, {error}] = useLoginApiMutation();
-    // const [error, setError] = useState([]);
+    const [loginApi, { error }] = useLoginApiMutation();
+    // console.log(error);
 
     const initialData = {
         name: "",
@@ -44,21 +43,21 @@ function LoginForm() {
                 }}
                 validationSchema={loginSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    loginApi(values).then((r) => {
-                        console.log(error);
-                        // if (r.data.full_name !== "") {
-                        //     r.json().then(dispatch(selectProperty(initialData))).then(
-                        //         navigate("/dashboard/main")
-                        //     );
-                        // }
-                        // else {
-                        //     r.json().then((errorData) => setError(errorData.error));
-                        // }
-                    });
-
-                    setTimeout(() => {
-                        setSubmitting(false);
-                    }, 400);
+                    loginApi(values)
+                        .unwrap()
+                        .then((payload) => {
+                            if (payload.id) {
+                                dispatch(selectProperty(initialData));
+                                navigate("/dashboard/main");
+                                setSubmitting(false);
+                            }
+                        })
+                        .catch((error) => {
+                            if (error) {
+                                handleSubmitError(error.data.error);
+                                setSubmitting(false);
+                            }
+                        });
                 }}
             >
                 {({
@@ -70,6 +69,7 @@ function LoginForm() {
                     handleSubmit,
                     isSubmitting,
                     isValid,
+                    // resetForm,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -110,20 +110,11 @@ function LoginForm() {
                                 touched.password &&
                                 errors.password}
                         </div>
-                        {error ? error.length > 0 && (
-                            <div
-                                style={{
-                                    color: "red",
-                                    listStyleType: "none",
-                                    textAlign: "center",
-                                }}
-                            >
-                                <p>{error}</p>
-                            </div>
-                        ) : null}
+
                         <div className="float-end">
                             <ButtonCancelModal />
                             <ButtonSaveChanges
+                                // error={error}
                                 isValid={isValid}
                                 isSubmitting={isSubmitting}
                                 text={"Sign In"}

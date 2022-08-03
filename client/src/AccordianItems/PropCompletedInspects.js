@@ -13,7 +13,7 @@ function PropCompletedInspects() {
     } = useFetchPropInspectionsQuery(property ? property.id : skipToken);
 
     let completedList;
-    
+
     if (isSuccess) {
         completedList = propInspections.filter((inspect) => {
             return inspect.status === "completed";
@@ -27,7 +27,7 @@ function PropCompletedInspects() {
                 id="open-prop-completed-inspections"
             >
                 <button
-                    className="accordion-button collapsed"
+                    className="accordion-button collapsed bg-success bg-opacity-50"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#open-prop-completed-inspections-collapse"
