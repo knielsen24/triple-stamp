@@ -35,13 +35,13 @@ function DashboardContainer() {
                         </p>
                         <DashBoardNav />
                         <Routes>
-                            <Route path="main" element={<DashboardHome />} />
+                            <Route path="/main" element={<DashboardHome />} />
                             <Route
-                                path="inspections/*"
+                                path="/inspections/*"
                                 element={<InspectionsContainer />}
                             />
-                            <Route path="tasks" />
-                            <Route path="details" element={<PropertyCard />} />
+                            <Route path="/tasks" />
+                            <Route path="/details" element={<PropertyCard />} />
                         </Routes>
                     </div>
                 </div>

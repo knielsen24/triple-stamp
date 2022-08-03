@@ -13,6 +13,7 @@ import { useState } from "react";
 function UnitsContainer() {
     const dispatch = useDispatch();
     const property = useSelector(setSelectProperty);
+    
     const unitsListState = useSelector(setUnitsList);
     const [isShown, setIsShown] = useState(false);
 

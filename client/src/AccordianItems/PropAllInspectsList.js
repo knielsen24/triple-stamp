@@ -1,14 +1,19 @@
-import { useSelector } from "react-redux";
-import { setSelectProperty } from "../app/features/propertySlice";
-import { useFetchPropertyQuery, useFetchPropInspectionsQuery } from "../app/api/propertyApiSlice";
+import {
+    useFetchPropertyQuery,
+    useFetchPropInspectionsQuery,
+} from "../app/api/propertyApiSlice";
 import PropInspectsTable from "../Tables/PropInspectsTable";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 function PropAllInspectsList() {
-    const property = useSelector(setSelectProperty);
-    // const {data: property} = useFetchPropertyQuery()
+    // const property = useSelector(setSelectProperty);
+    const { data: property, isSuccess } = useFetchPropertyQuery();
+   console.log(isSuccess)
+
     const { data: propInspections } = useFetchPropInspectionsQuery(
-        property.id || ""
+        property && isSuccess ? property.id : skipToken
     );
+    console.log(propInspections);
 
     return (
         <div className="accordion-item">

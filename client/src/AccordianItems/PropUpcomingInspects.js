@@ -3,15 +3,20 @@ import { useSelector } from "react-redux";
 import { setSelectProperty } from "../app/features/propertySlice";
 import { useFetchPropInspectionsQuery } from "../app/api/propertyApiSlice";
 import PropInspectsTable from "../Tables/PropInspectsTable";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 function PropUpcomingInspects() {
     const property = useSelector(setSelectProperty);
-    const { data: propInspections } = useFetchPropInspectionsQuery(
-        property.id || ""
-    );
+    const {
+        data: propInspections,
+        isSuccess,
+        isLoading,
+    } = useFetchPropInspectionsQuery(property ? property.id : skipToken);
 
     let upcomingList;
-    if (propInspections) {
+    if (isLoading) return <div>Loading...</div>;
+
+    if (isSuccess) {
         upcomingList = propInspections.filter((inspect) => {
             return inspect.status === "upcoming";
         });

@@ -8,12 +8,19 @@ import EditModalTemp from "../Modals/EditModalTemp";
 import PropInspectAccordians from "./PropInspectAccordians";
 import ViewInspectReport from "./ViewInspectReport";
 import { setSelectInspection } from "../app/features/inspectionSlice";
+import { useFetchPropertyQuery } from "../app/api/propertyApiSlice";
 
 function InspectionsContainer() {
     const property = useSelector(setSelectProperty);
     const unit = useSelector(setSelectUnit);
-    const inspection = useSelector(setSelectInspection)
-    console.log(inspection)
+    const inspection = useSelector(setSelectInspection);
+
+    const { data = [], isFetching, isLoading, isSuccess } = useFetchPropertyQuery();
+    console.log(isSuccess ? data : null)
+    console.log(data)
+    // if (isLoading) {
+    //     return <div>Loading...</div>
+    // }
 
     return (
         <div className="container border-endtext-center min-vh-100">
@@ -28,7 +35,7 @@ function InspectionsContainer() {
                 <Route
                     path="property"
                     element={
-                        property.name === "" ? null : <PropInspectAccordians />
+                        property ?  <PropInspectAccordians /> : null
                     }
                 />
                 <Route
@@ -37,7 +44,9 @@ function InspectionsContainer() {
                 />
                 <Route
                     path="reports"
-                    element={inspection.title === "" ? null : <ViewInspectReport />}
+                    element={
+                        inspection.title === "" ? null : <ViewInspectReport />
+                    }
                 />
             </Routes>
         </div>

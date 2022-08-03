@@ -7,7 +7,12 @@ import Navbar from "./NavBar/Navbar";
 import Home from "./HomePage/Home";
 
 function App() {
-    const { data: user, isError } = useFetchUserQuery();
+    const { data: user, isError, isLoading } = useFetchUserQuery();
+    // const { data: properties, isSuccess } = useFetchPropertiesQuery(
+    //     !user || isError ? skipToken : user.id
+    // );
+
+    if(isLoading) return <div>Loading</div>
 
     return (
         <div className="container-fluid p-0" id="app-main-container">

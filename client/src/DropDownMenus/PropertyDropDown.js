@@ -21,19 +21,27 @@ function PropertyDropDown() {
     const navigate = useNavigate();
     const [search, setSearch] = useState("");
     const property = useSelector(setSelectProperty);
+    // const [property, setProperty] = useState(null)
 
-    const { data: user } = useFetchUserQuery();
-    const { data: properties } = useFetchPropertiesQuery(
-        user ? user.id : skipToken
+    const { data: user, isError } = useFetchUserQuery();
+
+    const {
+        data: properties,
+        isSuccess,
+        isFetching,
+    } = useFetchPropertiesQuery(!user || isError ? skipToken : user.id);
+
+    const { refetch } = useFetchPropertyQuery(
+        property && isSuccess ? property.id : skipToken
     );
-    // const { data } = useFetchPropertyQuery(property ? property.id : skipToken);
 
     const handleSearch = (e) => setSearch(e.target.value);
 
     let renderPropertyList;
     let filteredProperties;
 
-    if (properties) {
+    if (isFetching) return <div>Loading </div>;
+    if (isSuccess) {
         filteredProperties = properties.filter((property) => {
             let name = property.name.toLowerCase();
             let searchLC = search.toLowerCase();
@@ -52,6 +60,7 @@ function PropertyDropDown() {
                         onClick={() => {
                             dispatch(selectProperty(property));
                             dispatch(unitsList(property.units));
+                            refetch();
                             navigate("/dashboard/inspections/property");
                         }}
                     >
@@ -72,7 +81,7 @@ function PropertyDropDown() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                 >
-                    {property.name || ""}
+                    {!user || isError ? null : property.name}
                 </a>
                 <ul className="dropdown-menu dropdown-menu p-3 bg-light ">
                     <form className="d-flex" role="search">

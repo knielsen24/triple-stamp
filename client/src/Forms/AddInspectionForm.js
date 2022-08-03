@@ -61,7 +61,7 @@ function AddInspectionForm() {
                     type_name: "",
                     status: "",
                     scheduled_date: todaysDate,
-                    unit_id: "" || unitID,
+                    unit_id: unitID,
                     property_id: "" || propertyState.id,
                 }}
                 validationSchema={updateSchema}

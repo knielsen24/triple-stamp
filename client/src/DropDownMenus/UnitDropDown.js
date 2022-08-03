@@ -4,7 +4,7 @@ function UnitDropDown() {
     return (
         <ul className="dropdown-menu bg-light ">
             <li>
-                <a className="dropdown-item" href="/dashboard/inspections/unit">
+                <a className="dropdown-item" href="unit">
                     View Inspections
                 </a>
             </li>
