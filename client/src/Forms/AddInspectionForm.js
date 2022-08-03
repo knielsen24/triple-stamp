@@ -15,14 +15,12 @@ function AddInspectionForm() {
     const unit = useSelector(setSelectUnit);
     const propertyState = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
-    const [unitID, setUnitID] = useState(unit.id);
+    const [unitID, setUnitID] = useState("");
     const [createInspect] = useCreateInspectMutation();
 
     const handleUnitId = (e) => setUnitID(e.target.value);
 
     const todaysDate = DateTime.now().toISODate();
-
-    const updateSchema = Yup.object().shape({});
 
     const statusArray = ["none", "upcoming", "in progress", "completed"];
     const typeNameArray = [
@@ -52,6 +50,8 @@ function AddInspectionForm() {
         });
     }
 
+    const updateSchema = Yup.object().shape({});
+
     return (
         <div>
             <Formik
@@ -61,13 +61,13 @@ function AddInspectionForm() {
                     type_name: "",
                     status: "",
                     scheduled_date: todaysDate,
-                    unit_id: unitID,
+                    unit_id: unitID || unit.id,
                     property_id: "" || propertyState.id,
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values);
                     createInspect(values);
+                    setUnitID("")
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

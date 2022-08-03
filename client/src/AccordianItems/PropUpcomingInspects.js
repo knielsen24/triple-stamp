@@ -14,7 +14,6 @@ function PropUpcomingInspects() {
     } = useFetchPropInspectionsQuery(property ? property.id : skipToken);
 
     let upcomingList;
-    if (isLoading) return <div>Loading...</div>;
 
     if (isSuccess) {
         upcomingList = propInspections.filter((inspect) => {

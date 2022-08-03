@@ -13,7 +13,7 @@ function PropCompletedInspects() {
     } = useFetchPropInspectionsQuery(property ? property.id : skipToken);
 
     let completedList;
-    if (isLoading) return <div>Loading...</div>;
+    
     if (isSuccess) {
         completedList = propInspections.filter((inspect) => {
             return inspect.status === "completed";

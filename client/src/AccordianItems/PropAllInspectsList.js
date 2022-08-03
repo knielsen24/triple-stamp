@@ -6,6 +6,7 @@ import { setSelectProperty } from "../app/features/propertySlice";
 
 function PropAllInspectsList() {
     const property = useSelector(setSelectProperty);
+    
     const {
         data: propInspections,
         isSuccess,
@@ -13,11 +14,10 @@ function PropAllInspectsList() {
     } = useFetchPropInspectionsQuery(property ? property.id : skipToken);
 
     let completeList;
-    if (isLoading) return <div>Loading...</div>;
+
     if (isSuccess) {
         completeList = propInspections
     }
-
 
     return (
         <div className="accordion-item">

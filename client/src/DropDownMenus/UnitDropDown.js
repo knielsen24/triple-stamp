@@ -8,12 +8,6 @@ function UnitDropDown() {
                     View Inspections
                 </a>
             </li>
-
-            {/* <li>
-                <a className="dropdown-item" href="#">
-                    View Tasks
-                </a>
-            </li> */}
             <li>
                 <a
                     className="dropdown-item"

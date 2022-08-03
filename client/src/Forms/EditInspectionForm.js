@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import { setSelectInspection } from "../app/features/inspectionSlice";
 import { useUpdateInspectMutation } from "../app/api/propertyApiSlice";
 import { setSelectProperty } from "../app/features/propertySlice";
-import {useState} from "react"
+import { useState } from "react";
 import { setSelectUnit } from "../app/features/unitSlice";
 import { setUnitsList } from "../app/features/unitsListSlice";
 
@@ -15,8 +15,10 @@ function EditInspectionForm() {
     const propertyState = useSelector(setSelectProperty);
     const inspectionState = useSelector(setSelectInspection);
     const unitsListState = useSelector(setUnitsList);
-    const [unitID, setUnitID] = useState(unit.id);
+    const [unitID, setUnitID] = useState("");
     const [updateInspect] = useUpdateInspectMutation();
+    console.log(inspectionState)
+
     const handleUnitId = (e) => setUnitID(e.target.value);
 
     const statusArray = ["none", "upcoming", "in progress", "completed"];
@@ -53,7 +55,7 @@ function EditInspectionForm() {
             );
         });
     }
-
+    console.log(unitID)
     return (
         <div>
             <Formik
@@ -64,12 +66,13 @@ function EditInspectionForm() {
                     type_name: "" || inspectionState.type_name,
                     status: "" || inspectionState.status,
                     scheduled_date: "" || inspectionState.scheduled_date,
-                    unit_id: "" || unitID,
+                    unit_id: unitID || inspectionState.id,
                     property_id: "" || propertyState.id,
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     updateInspect(values);
+                    setUnitID("")
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -203,6 +206,7 @@ function EditInspectionForm() {
 
                         <div className="float-end">
                             <ButtonCancelModal />
+
                             <ButtonSaveChanges
                                 isSubmitting={isSubmitting}
                                 text={"Update"}

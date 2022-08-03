@@ -17,11 +17,11 @@ function DashboardContainer() {
                 buttonText={"Click update to save changes"}
             />
             <div className="row my-2">
-                <div className="col px-2 border min-vh-100 vw-25">
+                <div className="col px-2 border min-vh-100 vw-25 ">
                     <p className="text-start user-select-none mb-1 ps-0">
                         My property
                     </p>
-                    <div className="row mw-100 mb-3 align-content-items-center">
+                    <div className="row mw-100 mb-3 ">
                         <PropertyDropDown />
                         <AddPropertyModal />
                     </div>

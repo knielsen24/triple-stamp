@@ -13,7 +13,7 @@ function PropInProgressInspects() {
     } = useFetchPropInspectionsQuery(property ? property.id : skipToken);
 
     let inProgressList;
-    if (isLoading) return <div>Loading...</div>;
+
     if (isSuccess) {
         inProgressList = propInspections.filter((inspect) => {
             return inspect.status === "in progress";

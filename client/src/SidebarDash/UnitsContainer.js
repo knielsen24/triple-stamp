@@ -13,7 +13,7 @@ import { useState } from "react";
 function UnitsContainer() {
     const dispatch = useDispatch();
     const property = useSelector(setSelectProperty);
-    
+
     const unitsListState = useSelector(setUnitsList);
     const [isShown, setIsShown] = useState(false);
 
@@ -64,7 +64,7 @@ function UnitsContainer() {
                 header={"Edit unit information"}
                 buttonText={"Click update to save changes"}
             />
-            <table className="table table-borderless table-hover">
+            <table className="table table-borderless table-hover user-select-none">
                 <tbody>
                     <tr scope="row">
                         <td colSpan="1"></td>

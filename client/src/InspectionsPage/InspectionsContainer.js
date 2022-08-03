@@ -15,12 +15,15 @@ function InspectionsContainer() {
     const unit = useSelector(setSelectUnit);
     const inspection = useSelector(setSelectInspection);
 
-    const { data = [], isFetching, isLoading, isSuccess } = useFetchPropertyQuery();
-    console.log(isSuccess ? data : null)
-    console.log(data)
-    // if (isLoading) {
-    //     return <div>Loading...</div>
-    // }
+    const {
+        data = [],
+        isFetching,
+        isLoading,
+        isSuccess,
+    } = useFetchPropertyQuery();
+    // console.log(isSuccess ? data : null);
+
+    console.log(property)
 
     return (
         <div className="container border-endtext-center min-vh-100">
@@ -30,13 +33,40 @@ function InspectionsContainer() {
                 header={"Edit inspection information"}
                 buttonText={"Click update to save changes"}
             />
+            <div class="row align-content-between">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-header">Inspections </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Today!</h5>
+                            <p class="card-text">
+                                looks like there are no inspections scheduled
+                                today
+                            </p>
+                            <a href="#" class="btn btn-primary">
+                                Go to inspection
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 ">
+                    <div class="card">
+                        <div class="card-header">Inspections </div>
+                        <div class="card-body">
+                            <h5 class="card-title">This week</h5>
+                            <p class="card-text">start planning</p>
+                            <a href="/dashboard/inspections/property#" class="btn btn-primary">
+                                Checkout the schedule
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <Routes>
                 <Route
                     path="property"
-                    element={
-                        property ?  <PropInspectAccordians /> : null
-                    }
+                    element={property ? <PropInspectAccordians /> : null}
                 />
                 <Route
                     path="unit"
