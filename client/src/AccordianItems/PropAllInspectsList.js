@@ -6,7 +6,7 @@ import { setSelectProperty } from "../app/features/propertySlice";
 
 function PropAllInspectsList() {
     const property = useSelector(setSelectProperty);
-    
+
     const {
         data: propInspections,
         isSuccess,
@@ -20,10 +20,10 @@ function PropAllInspectsList() {
     }
 
     return (
-        <div className="accordion-item">
+        <div className="accordion-item ">
             <h2 className="accordion-header" id="open-prop-all-inspections">
                 <button
-                    className="accordion-button collapsed"
+                    className="accordion-button collapsed bg-warning bg-opacity-50"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#open-prop-all-inspections-collapse"

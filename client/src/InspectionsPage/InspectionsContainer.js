@@ -9,18 +9,19 @@ import PropInspectAccordians from "./PropInspectAccordians";
 import ViewInspectReport from "./ViewInspectReport";
 import { setSelectInspection } from "../app/features/inspectionSlice";
 import { useFetchPropertyQuery } from "../app/api/propertyApiSlice";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 function InspectionsContainer() {
     const property = useSelector(setSelectProperty);
     const unit = useSelector(setSelectUnit);
     const inspection = useSelector(setSelectInspection);
 
-    const {
-        data = [],
-        isFetching,
-        isLoading,
-        isSuccess,
-    } = useFetchPropertyQuery();
+    // const {
+    //     data = [],
+    //     isFetching,
+    //     isLoading,
+    //     isSuccess,
+    // } = useFetchPropertyQuery(property ? property.id : skipToken);
     // console.log(isSuccess ? data : null);
 
     console.log(property)
@@ -55,7 +56,7 @@ function InspectionsContainer() {
                         <div class="card-body">
                             <h5 class="card-title">This week</h5>
                             <p class="card-text">start planning</p>
-                            <a href="/dashboard/inspections/property#" class="btn btn-primary">
+                            <a href="/dashboard/inspections/property" class="btn btn-primary">
                                 Checkout the schedule
                             </a>
                         </div>
@@ -66,7 +67,7 @@ function InspectionsContainer() {
             <Routes>
                 <Route
                     path="property"
-                    element={property ? <PropInspectAccordians /> : null}
+                    element={property.name ? <PropInspectAccordians /> : null}
                 />
                 <Route
                     path="unit"

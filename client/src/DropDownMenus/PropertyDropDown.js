@@ -40,7 +40,7 @@ function PropertyDropDown() {
     let renderPropertyList;
     let filteredProperties;
 
-    if (isFetching) return <div>Loading </div>;
+    // if (isFetching) return <div>Loading </div>;
     if (isSuccess) {
         filteredProperties = properties.filter((property) => {
             let name = property.name.toLowerCase();
@@ -61,7 +61,7 @@ function PropertyDropDown() {
                             dispatch(selectProperty(property));
                             dispatch(unitsList(property.units));
                             refetch();
-                            navigate("/dashboard/inspections/property");
+                            // navigate("/dashboard/inspections/property");
                         }}
                     >
                         {property.name}

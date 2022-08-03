@@ -25,7 +25,7 @@ function PropUpcomingInspects() {
         <div className="accordion-item">
             <h2 className="accordion-header" id="panelsStayOpen-prop-upcoming">
                 <button
-                    className="accordion-button"
+                    className="accordion-button bg-info bg-opacity-50"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-prop-collapseUpcoming"
