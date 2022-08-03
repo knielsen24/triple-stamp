@@ -14,7 +14,7 @@ function PropCompletedInspects() {
 
     let completedList;
     if (isLoading) return <div>Loading...</div>;
-    if (propInspections) {
+    if (isSuccess) {
         completedList = propInspections.filter((inspect) => {
             return inspect.status === "completed";
         });

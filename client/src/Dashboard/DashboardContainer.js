@@ -10,14 +10,14 @@ import DashboardHome from "./DashboardHome";
 
 function DashboardContainer() {
     return (
-        <div className="container border-endtext-center min-vh-100 ">
+        <div className="container border-end min-vh-100 ">
             <EditModalTemp
                 modalId={"add-inspections-form"}
                 header={"Add inspection"}
                 buttonText={"Click update to save changes"}
             />
             <div className="row my-2">
-                <div className="col px-2 border-end min-vh-100 vw-25">
+                <div className="col px-2 border min-vh-100 vw-25">
                     <p className="text-start user-select-none mb-1 ps-0">
                         My property
                     </p>
@@ -29,9 +29,9 @@ function DashboardContainer() {
                     <UnitsContainer />
                 </div>
                 <div className="col-9 p-0 mx-3 vw-75">
-                    <div className="row mx-3">
+                    <div className="row mx-3 mt-4">
                         <p className="text-center user-select-none mb-1">
-                            Dashboard
+
                         </p>
                         <DashBoardNav />
                         <Routes>

@@ -16,8 +16,8 @@ function Navbar() {
         >
             <div className="container-md d-flex" id="main-nav-container">
                 <a
-                    className="navbar-brand mx-sm-2 align-top"
-                    href={!user || isError ? "/" : "#"}
+                    className="navbar-brand mx-5 align-top"
+                    href={user || !isError ? "/" : "/"}
                 >
                     <img src={logoName} alt="logo" id="logo-name" />
                 </a>
@@ -33,10 +33,10 @@ function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div
-                    className="collapse navbar-collapse"
+                    className="collapse navbar-collapse align-end"
                     id="navbarNavAltMarkup"
                 >
-                    <div className="navbar-nav">
+                    <div className="navbar-nav position-absolute end-0 me-5">
                         {!user || isError ? (
                             <>
                                 <HomeLinks />
@@ -49,9 +49,6 @@ function Navbar() {
                             </>
                         )}
                     </div>
-                    {/* <div className="navbar-nav p-1 ms-2" id="nav-div-start-now">
-                        {user ? <UserDropDown /> : <ButtonStartNow />}
-                    </div> */}
                 </div>
             </div>
         </nav>

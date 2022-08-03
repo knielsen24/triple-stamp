@@ -1,11 +1,11 @@
 function HomeLinks() {
     return (
         <>
-            <a className="nav-link" type="button" href="#">
+            <a className="nav-link mx-3" type="button" href="#">
                 Features
             </a>
             <a
-                className="nav-link"
+                className="nav-link me-3"
                 type="button"
                 href="#"
                 data-bs-toggle="modal"

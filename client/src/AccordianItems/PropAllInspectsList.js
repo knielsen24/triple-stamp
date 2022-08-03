@@ -1,19 +1,23 @@
-import {
-    useFetchPropertyQuery,
-    useFetchPropInspectionsQuery,
-} from "../app/api/propertyApiSlice";
+import { useFetchPropInspectionsQuery } from "../app/api/propertyApiSlice";
 import PropInspectsTable from "../Tables/PropInspectsTable";
 import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { useSelector } from "react-redux";
+import { setSelectProperty } from "../app/features/propertySlice";
 
 function PropAllInspectsList() {
-    // const property = useSelector(setSelectProperty);
-    const { data: property, isSuccess } = useFetchPropertyQuery();
-   console.log(isSuccess)
+    const property = useSelector(setSelectProperty);
+    const {
+        data: propInspections,
+        isSuccess,
+        isLoading,
+    } = useFetchPropInspectionsQuery(property ? property.id : skipToken);
 
-    const { data: propInspections } = useFetchPropInspectionsQuery(
-        property && isSuccess ? property.id : skipToken
-    );
-    console.log(propInspections);
+    let completeList;
+    if (isLoading) return <div>Loading...</div>;
+    if (isSuccess) {
+        completeList = propInspections
+    }
+
 
     return (
         <div className="accordion-item">
@@ -35,7 +39,7 @@ function PropAllInspectsList() {
                 aria-labelledby="open-prop-all-inspections"
             >
                 <div className="accordion-body bg-light bg-opacity-50">
-                    <PropInspectsTable propInspections={propInspections} />
+                    <PropInspectsTable propInspections={completeList} />
                 </div>
             </div>
         </div>

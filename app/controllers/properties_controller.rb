@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
     def index
         if params[:user_id]
             user = User.find(params[:user_id])
-            render json: user.properties
+            render json: user.properties.order(:name)
         end
     end
 

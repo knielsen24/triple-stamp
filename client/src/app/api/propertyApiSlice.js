@@ -48,7 +48,7 @@ export const propertyApi = createApi({
                     body: data,
                 }),
                 invalidatesTags: (result, error, arg) => [
-                    { type: "properties", id: arg.id },
+                    { type: "properties", id: arg.data},
                 ],
             }),
 
@@ -69,7 +69,7 @@ export const propertyApi = createApi({
                     body: data,
                 }),
                 invalidatesTags: (result, error, arg) => [
-                    { type: "properties", id: arg.property_id },
+                    { type: "properties", id: arg.data },
                 ],
             }),
 
@@ -111,7 +111,7 @@ export const propertyApi = createApi({
                     body: data,
                 }),
                 invalidatesTags: (result, error, arg) => [
-                    { type: "inspections", id: arg.data.id },
+                    { type: "inspections", id: arg.data },
                 ],
             }),
 
