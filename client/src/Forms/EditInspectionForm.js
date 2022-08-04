@@ -17,7 +17,6 @@ function EditInspectionForm() {
     const unitsListState = useSelector(setUnitsList);
     const [unitID, setUnitID] = useState("");
     const [updateInspect] = useUpdateInspectMutation();
-    console.log(inspectionState)
 
     const handleUnitId = (e) => setUnitID(e.target.value);
 
@@ -56,23 +55,25 @@ function EditInspectionForm() {
         });
     }
 
+    const initialFormData = {
+        id: "" || inspectionState.id,
+        title: "" || inspectionState.title,
+        type_name: "" || inspectionState.type_name,
+        status: "" || inspectionState.status,
+        scheduled_date: "" || inspectionState.scheduled_date,
+        unit_id: unitID || unit.id,
+        property_id: "" || propertyState.id,
+    };
+
     return (
         <div>
             <Formik
                 enableReinitialize
-                initialValues={{
-                    id: "" || inspectionState.id,
-                    title: "" || inspectionState.title,
-                    type_name: "" || inspectionState.type_name,
-                    status: "" || inspectionState.status,
-                    scheduled_date: "" || inspectionState.scheduled_date,
-                    unit_id: unitID || inspectionState.id,
-                    property_id: "" || propertyState.id,
-                }}
+                initialValues={initialFormData}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     updateInspect(values);
-                    setUnitID("")
+                    setUnitID("");
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

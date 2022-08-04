@@ -73,7 +73,6 @@ function AddInspectionForm() {
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     createInspect(values);
-                    // .then(resetForm(initialFormData))
                     setUnitID("");
                     setTimeout(() => {
                         setSubmitting(false);
@@ -206,7 +205,7 @@ function AddInspectionForm() {
 
                         <div className="float-end">
                             <ButtonCancelModal />
-                            {console.log(errors)}
+
                             <ButtonSaveChanges
                                 isValid={isValid}
                                 errors={errors}

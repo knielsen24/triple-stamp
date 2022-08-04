@@ -6,13 +6,13 @@ import { Route, Routes } from "react-router-dom";
 import UnitsContainer from "../SidebarDash/UnitsContainer";
 import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
 import EditModalTemp from "../Modals/EditModalTemp";
-import DashboardHome from "./DashboardHome";
+import DashboardMain from "./DashboardMain";
 
 function DashboardContainer() {
     return (
         <div className="container border-end min-vh-100 ">
             <EditModalTemp
-                modalId={"add-inspections-form"}
+                modalId={"add-inspection-form"}
                 header={"Add inspection"}
                 buttonText={"Click update to save changes"}
             />
@@ -30,12 +30,10 @@ function DashboardContainer() {
                 </div>
                 <div className="col-9 p-0 mx-3 vw-75">
                     <div className="row mx-3 mt-4">
-                        <p className="text-center user-select-none mb-1">
-
-                        </p>
+                        <p className="text-center user-select-none mb-1"></p>
                         <DashBoardNav />
                         <Routes>
-                            <Route path="/main" element={<DashboardHome />} />
+                            <Route path="/main" element={<DashboardMain />} />
                             <Route
                                 path="/inspections/*"
                                 element={<InspectionsContainer />}

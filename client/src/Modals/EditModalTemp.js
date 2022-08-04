@@ -16,10 +16,10 @@ function EditModalTemp({ modalId, header, buttonText }) {
     if (modalId === "update-unit-form") {
         renderForm = <EditUnitForm />;
     }
-    if (modalId === "edit-inspections-form") {
+    if (modalId === "edit-inspection-form") {
         renderForm = <EditInspectionForm />;
     }
-    if (modalId === "add-inspections-form") {
+    if (modalId === "add-inspection-form") {
         renderForm = <AddInspectionForm />;
     }
 
@@ -40,9 +40,7 @@ function EditModalTemp({ modalId, header, buttonText }) {
                             <h5 className="modal-title" id={modalId}>
                                 {header}
                                 <div>
-                                    <p id="modal-subtext">
-                                        {buttonText}
-                                    </p>
+                                    <p id="modal-subtext">{buttonText}</p>
                                 </div>
                             </h5>
                             <ButtonCloseModalX />

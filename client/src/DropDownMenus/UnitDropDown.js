@@ -13,7 +13,7 @@ function UnitDropDown() {
                     className="dropdown-item"
                     role="button"
                     data-bs-toggle="modal"
-                    data-bs-target="#add-inspections-form"
+                    data-bs-target="#add-inspection-form"
                     href="#"
                 >
                     Add Inspection

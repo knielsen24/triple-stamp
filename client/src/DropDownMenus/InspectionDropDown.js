@@ -10,7 +10,7 @@ function InspectionDropDown() {
                     href="#"
                     role="button"
                     data-bs-toggle="modal"
-                    data-bs-target="#edit-inspections-form"
+                    data-bs-target="#edit-inspection-form"
                 >
                     {" "}
                     Edit Inspection {" " + " "}

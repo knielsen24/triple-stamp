@@ -8,27 +8,18 @@ import EditModalTemp from "../Modals/EditModalTemp";
 import PropInspectAccordians from "./PropInspectAccordians";
 import ViewInspectReport from "./ViewInspectReport";
 import { setSelectInspection } from "../app/features/inspectionSlice";
-import { useFetchPropertyQuery } from "../app/api/propertyApiSlice";
-import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { Link } from "react-router-dom";
 
 function InspectionsContainer() {
     const property = useSelector(setSelectProperty);
     const unit = useSelector(setSelectUnit);
     const inspection = useSelector(setSelectInspection);
 
-    // const {
-    //     data = [],
-    //     isFetching,
-    //     isLoading,
-    //     isSuccess,
-    // } = useFetchPropertyQuery(property ? property.id : skipToken);
-    // console.log(isSuccess ? data : null);
-
     return (
         <div className="container border-endtext-center min-vh-100">
             <DeleteInspectionModal />
             <EditModalTemp
-                modalId={"edit-inspections-form"}
+                modalId={"edit-inspection-form"}
                 header={"Edit inspection information"}
                 buttonText={"Click update to save changes"}
             />
@@ -54,9 +45,12 @@ function InspectionsContainer() {
                         <div className="card-body">
                             <h5 className="card-title">This week</h5>
                             <p className="card-text">start planning</p>
-                            <a href="/dashboard/inspections/property" className="btn btn-primary">
+                            <Link
+                                to="/dashboard/inspections/property"
+                                className="btn btn-primary"
+                            >
                                 Checkout the schedule
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

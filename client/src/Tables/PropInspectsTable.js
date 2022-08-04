@@ -66,7 +66,7 @@ function PropInspectsTable({ propInspections }) {
                 <tr
                     role="button"
                     data-bs-toggle="modal"
-                    data-bs-target="#add-inspections-form"
+                    data-bs-target="#add-inspection-form"
                     onClick={() => dispatch(selectUnit(initialValues))}
                 >
                     <th scope="col"></th>

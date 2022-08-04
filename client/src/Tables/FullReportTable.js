@@ -7,12 +7,12 @@ import { useFetchInspectItemsQuery } from "../app/api/propertyApiSlice";
 import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 function FullReportTable({ propInspections }) {
-    const inspection = useSelector(setSelectInspection)
+    const inspection = useSelector(setSelectInspection);
 
-    const { data: report } = useFetchInspectItemsQuery(inspection.id || "" );
+    const { data: report } = useFetchInspectItemsQuery(inspection.id || "");
 
     console.log(inspection);
-    console.log(report)
+    console.log(report);
 
     const initialValues = {
         id: "",
@@ -25,7 +25,7 @@ function FullReportTable({ propInspections }) {
     let renderInspections;
 
     if (propInspections) {
-        console.log(propInspections)
+        console.log(propInspections);
         renderInspections = propInspections.map((inspect) => {
             return (
                 <tr key={inspect.id}>
@@ -70,7 +70,7 @@ function FullReportTable({ propInspections }) {
                 <tr
                     role="button"
                     data-bs-toggle="modal"
-                    data-bs-target="#add-inspections-form"
+                    data-bs-target="#add-inspection-form"
                     // onClick={() => dispatch(selectUnit(initialValues))}
                 >
                     <th scope="col"></th>
