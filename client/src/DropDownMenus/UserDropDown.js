@@ -21,7 +21,7 @@ function UserDropDown() {
 
             <ul className="dropdown-menu">
                 <li>
-                    <Link to="/profile" className="dropdown-item">
+                    <Link to="/dashboard/profile" className="dropdown-item">
                         My profile
                         <img
                             src={personIcon}

@@ -8,8 +8,12 @@ import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
 import EditModalTemp from "../Modals/EditModalTemp";
 import DashboardMain from "./DashboardMain";
 import buildingIcon from "../assets/building-icon.svg";
+import { useFetchUserQuery } from "../app/api/userApiSlice";
+import ProfileHome from "./ProfileHome";
 
 function DashboardContainer() {
+    const { data: user, isError, isLoading } = useFetchUserQuery();
+
     return (
         <div className="container min-vh-100 ">
             <EditModalTemp
@@ -17,11 +21,11 @@ function DashboardContainer() {
                 header={"Add inspection"}
                 buttonText={"Click update to save changes"}
             />
-            <div className="row my-2">
-                <div className="col mt-3 border rounded min-vh-100 vw-25 sticky-top">
+            <div className="row ">
+                <div className="col mt-3 border rounded min-vh-100 vw-25">
                     <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold">
-
-                        My property <img
+                        My property{" "}
+                        <img
                             src={buildingIcon}
                             alt="edit-icon"
                             className="align-middle mb-1"
@@ -46,6 +50,12 @@ function DashboardContainer() {
                             />
                             <Route path="/tasks" />
                             <Route path="/details" element={<PropertyCard />} />
+                            <Route
+                                path="/profile"
+                                element={
+                                    !user || isError ? null : <ProfileHome />
+                                }
+                            />
                         </Routes>
                     </div>
                 </div>

@@ -35,7 +35,6 @@ function ProfileHome() {
                     header={"Edit your profile information"}
                     buttonText={"Click update to save changes"}
                 />
-                {/* <EditProfileModal /> */}
                 <DeleteProfileModal />
                 <div className="card-body">
                     <ul className="list-group list-group-flush">

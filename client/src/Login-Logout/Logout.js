@@ -12,7 +12,7 @@ function Logout() {
             href="#"
             onClick={(e) => {
                 e.preventDefault();
-                logoutApi().then(navigate(""));
+                logoutApi().then(navigate("/"));
             }}
         >
             Sign out
