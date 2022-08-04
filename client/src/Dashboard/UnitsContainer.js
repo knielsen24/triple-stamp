@@ -61,7 +61,8 @@ function UnitsContainer() {
     }
 
     return (
-        <div className="align-items-center ">
+        <div className="align-items-center "
+        >
             <AddUnitModal />
             <DeleteUnitModal />
             <EditModalTemp
@@ -69,7 +70,8 @@ function UnitsContainer() {
                 header={"Edit unit information"}
                 buttonText={"Click update to save changes"}
             />
-            <table className="table table-borderless table-hover user-select-none ">
+            <table className="table table-borderless table-hover user-select-none "
+            >
                 <tbody>
                     <tr scope="row">
                         <td colSpan="1"></td>

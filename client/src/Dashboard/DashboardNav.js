@@ -82,7 +82,7 @@ function DashboardNav() {
                         />
                     </NavLink>
                 </li>
-                <li>
+                <li className="border-start border-secondary">
                     <UserDropDown />
                 </li>
             </ul>

@@ -23,7 +23,7 @@ function DashboardContainer() {
                 buttonText={""}
             />
             <div className="row ">
-                <div className="col mt-3 border rounded min-vh-100 vw-25 ">
+                <div className="col mt-3 border rounded min-vh-75 vw-25 ">
                     <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold ">
                         My property{" "}
                         <img
