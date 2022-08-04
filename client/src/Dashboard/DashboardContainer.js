@@ -10,6 +10,7 @@ import DashboardMain from "./DashboardMain";
 import buildingIcon from "../assets/building-icon.svg";
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import ProfileHome from "./ProfileHome";
+import ItemsContainer from "./ItemsContainer";
 
 function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
@@ -48,7 +49,7 @@ function DashboardContainer() {
                                 path="/inspections/*"
                                 element={<InspectionsContainer />}
                             />
-                            <Route path="/tasks" />
+                            <Route path="/items" element={<ItemsContainer />} />
                             <Route path="/details" element={<PropertyCard />} />
                             <Route
                                 path="/profile"

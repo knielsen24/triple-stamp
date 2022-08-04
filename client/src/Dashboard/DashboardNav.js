@@ -10,7 +10,8 @@ import UserDropDown from "../DropDownMenus/UserDropDown";
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
-    let activeClass = "nav-link active bg-success bg-opacity-25 p-2 text-dark fw-bold border-0 ";
+    let activeClass =
+        "nav-link active bg-success bg-opacity-25 p-2 text-dark fw-bold border-0 ";
     let inactiveClass = "nav-link text-dark btn";
 
     let detailsLinkhref;
@@ -21,7 +22,7 @@ function DashboardNav() {
     return (
         <div className="text-center py-1 mb-4 fw-bold ts-primary-green rounded justify-content-center shadow-sm">
             <ul className="nav nav-pills nav-justified">
-                <li className="nav-item p-0 m-0 btn">
+                <li className="nav-item p-0 m-0 btn ">
                     <NavLink
                         to="main"
                         className={({ isActive }) =>
@@ -53,12 +54,12 @@ function DashboardNav() {
                 </li>
                 <li className="nav-item p-0 m-0 btn">
                     <NavLink
-                        to="tasks"
+                        to="items"
                         className={({ isActive }) =>
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        Tasks{" "}
+                        Items
                         <img
                             src={checkListIcon}
                             alt="checklist-icon"
@@ -82,7 +83,7 @@ function DashboardNav() {
                     </NavLink>
                 </li>
                 <li>
-                <UserDropDown />
+                    <UserDropDown />
                 </li>
             </ul>
         </div>

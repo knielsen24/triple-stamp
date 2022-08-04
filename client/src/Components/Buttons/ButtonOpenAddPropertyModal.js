@@ -1,4 +1,3 @@
-
 function ButtonOpenAddPropertyModal() {
     return (
         <a
@@ -7,7 +6,7 @@ function ButtonOpenAddPropertyModal() {
             data-bs-toggle="modal"
             data-bs-target="#add-property-form"
         >
-            {/* add plus icon */}+ Add property
+            + Add property
         </a>
     );
 }

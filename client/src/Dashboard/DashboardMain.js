@@ -26,7 +26,9 @@ function DashboardMain() {
                             View inspections
                         </div>
                         <div className="card-body">
-                            <p className="card-text">Select your property to view</p>
+                            <p className="card-text">
+                                Select your property to view
+                            </p>
                             <Link
                                 to="/dashboard/inspections/property"
                                 className="btn bg-secondary text-white bg-opacity-75"
@@ -40,7 +42,9 @@ function DashboardMain() {
             <div className="row mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3">
                     <div className="card">
-                        <div className="card-header fw-bold">Create a new inspection</div>
+                        <div className="card-header fw-bold">
+                            Create a new inspection
+                        </div>
                         <div className="card-body">
                             <p className="card-text">
                                 looks like there are no inspections scheduled
@@ -59,10 +63,12 @@ function DashboardMain() {
                 </div>
                 <div className="col-6 p-0">
                     <div className="card">
-                        <div className="card-header">Add a property to your portfolio </div>
+                        <div className="card-header">
+                            Add a property to your portfolio{" "}
+                        </div>
                         <div className="card-body">
                             <p className="card-text">Fill out details</p>
-                            {/* <ButtonOpenAddPropertyModal /> */}
+
                             <a
                                 href="#"
                                 className="btn bg-secondary text-white bg-opacity-75"

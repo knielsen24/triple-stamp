@@ -6,7 +6,7 @@ function ButtonOpenAddUnitModal() {
             data-bs-toggle="modal"
             data-bs-target="#add-unit-form"
         >
-            {/* add plus icon */}+ Add unit
+            + Add unit
         </button>
     );
 }
