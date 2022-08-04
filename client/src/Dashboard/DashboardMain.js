@@ -1,5 +1,6 @@
 import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccountModals";
 import ButtonOpenAddPropertyModal from "../Components/Buttons/ButtonOpenAddPropertyModal";
+import { Link } from "react-router-dom";
 
 function DashboardMain() {
     return (
@@ -14,7 +15,7 @@ function DashboardMain() {
                                 looks like there are no inspections scheduled
                                 today
                             </p>
-                            <a href="#" className="btn btn-secondary">
+                            <a href="#" className="btn bg-secondary text-white bg-opacity-75">
                                 Go to inspection
                             </a>
                         </div>
@@ -26,9 +27,12 @@ function DashboardMain() {
                         <div className="card-body">
                             <h5 className="card-title">This week</h5>
                             <p className="card-text">start planning</p>
-                            <a href="#" className="btn btn-secondary ">
+                            <Link
+                                to="/dashboard/inspections/property"
+                                className="btn bg-secondary text-white bg-opacity-75"
+                            >
                                 Checkout the schedule
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -47,7 +51,7 @@ function DashboardMain() {
                             </p>
                             <a
                                 href="#"
-                                className="btn btn-secondary"
+                                className="btn bg-secondary text-white bg-opacity-75"
                                 data-bs-toggle="modal"
                                 data-bs-target="#add-inspection-form"
                             >
@@ -65,7 +69,7 @@ function DashboardMain() {
                             {/* <ButtonOpenAddPropertyModal /> */}
                             <a
                                 href="#"
-                                className="btn btn-secondary"
+                                className="btn bg-secondary text-white bg-opacity-75"
                                 data-bs-toggle="modal"
                                 data-bs-target="#add-property-form"
                             >

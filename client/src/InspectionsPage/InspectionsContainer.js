@@ -33,13 +33,13 @@ function InspectionsContainer() {
                                 looks like there are no inspections scheduled
                                 today
                             </p>
-                            <a href="#" className="btn btn-primary">
+                            <a href="#" className="btn bg-secondary text-white bg-opacity-75">
                                 Go to inspection
                             </a>
                         </div>
                     </div>
                 </div>
-                <div className="col-6 p-0 pe-3">
+                <div className="col-6 p-0 ">
                     <div className="card">
                         <div className="card-header">Inspections </div>
                         <div className="card-body">
@@ -47,7 +47,7 @@ function InspectionsContainer() {
                             <p className="card-text">start planning</p>
                             <Link
                                 to="/dashboard/inspections/property"
-                                className="btn btn-primary"
+                                className="btn bg-secondary text-white bg-opacity-75"
                             >
                                 Checkout the schedule
                             </Link>

@@ -8,7 +8,7 @@ function UserDropDown() {
     const { data: user, isError } = useFetchUserQuery();
 
     return (
-        <div className="dropdown center">
+        <div className="dropdown center p-1">
             <a
                 className="btn btn-secondary dropdown-toggle align-bottom caret-off nav-drop-down-btn"
                 href="#"
