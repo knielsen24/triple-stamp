@@ -50,7 +50,7 @@ function PropInspectsTable({ propInspections }) {
     }
 
     return (
-        <table className="table table-hover user-select-none">
+        <table className="table table-hover user-select-none text-capitalize">
             <thead className="text-center">
                 <tr>
                     <th scope="col" className="text-start">

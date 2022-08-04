@@ -54,7 +54,7 @@ function FullReportTable({ propInspections }) {
     }
 
     return (
-        <table className="table table-hover user-select-none">
+        <table className="table table-hover user-select-none text-capitalize">
             <thead>
                 <tr>
                     <th scope="col">Unit #</th>

@@ -10,7 +10,7 @@ function App() {
     const { data: user, isError } = useFetchUserQuery();
 
     return (
-        <div className="container-fluid p-0" id="app-main-container">
+        <div className="container-fluid p-0 " id="app-main-container">
             <Navbar />
             <Routes>
                 <Route path="/" element={!user || isError ? <Home /> : null} />
