@@ -3,7 +3,7 @@ import AddPropertyModal from "../Modals/AddPropertyModal";
 import DashBoardNav from "./DashboardNav";
 import PropertyCard from "../DetailsPage/PropertyCard";
 import { Route, Routes } from "react-router-dom";
-import UnitsContainer from "../SidebarDash/UnitsContainer";
+import UnitsContainer from "../Dashboard/UnitsContainer";
 import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
 import EditModalTemp from "../Modals/EditModalTemp";
 import DashboardMain from "./DashboardMain";
