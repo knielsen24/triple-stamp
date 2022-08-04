@@ -10,16 +10,6 @@ import WelcomeUser from "./Components/WelcomeUser";
 function App() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
-    const handleWelcomeMessage = () => {
-        setTimeout(() => console.log("Hello, World!"), 3000)
-
-    }
-
-    if (user || !isError) {
-        handleWelcomeMessage()
-    }
-
-
     return (
         <div className="container-fluid p-0 " id="app-main-container">
             {!user || isError ? <Navbar /> : <WelcomeUser user={user} />}
