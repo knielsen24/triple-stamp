@@ -23,8 +23,8 @@ function InspectionsContainer() {
                 header={"Edit inspection information"}
                 buttonText={"Click update to save changes"}
             />
-            <div className="row align-content-between">
-                <div className="col-6">
+            <div className="row align-content-between mb-4 user-select-none">
+                <div className="col-6 p-0 pe-3">
                     <div className="card">
                         <div className="card-header">Inspections </div>
                         <div className="card-body">
@@ -39,7 +39,7 @@ function InspectionsContainer() {
                         </div>
                     </div>
                 </div>
-                <div className="col-6 ">
+                <div className="col-6 p-0 pe-3">
                     <div className="card">
                         <div className="card-header">Inspections </div>
                         <div className="card-body">

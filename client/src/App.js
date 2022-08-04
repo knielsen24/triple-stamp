@@ -11,7 +11,8 @@ function App() {
 
     return (
         <div className="container-fluid p-0 " id="app-main-container">
-            <Navbar />
+            {!user || isError ? <Navbar /> : null}
+   
             <Routes>
                 <Route path="/" element={!user || isError ? <Home /> : null} />
                 <Route

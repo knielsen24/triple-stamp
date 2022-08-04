@@ -7,11 +7,24 @@ import HomeLinks from "./HomeLinks";
 import "../App.css";
 
 function Navbar() {
-    const { data: user, isError } = useFetchUserQuery();
+    const { data: user, isError, isLoading } = useFetchUserQuery();
+
+    let signUpNav =
+        "navbar navbar-expand-sm navbar-light border-bottom border-1 sticky-top";
+    let isLoggedIn =
+        "navbar navbar-expand-sm navbar-light border-bottom border-1";
+
+    if (isLoading) {
+        return (
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        );
+    }
 
     return (
         <nav
-            className="navbar navbar-expand-sm navbar-light border-bottom border-1 sticky-top"
+            className={user || !isError ? isLoggedIn : signUpNav}
             id="nav-container"
         >
             <div className="container-md d-flex" id="main-nav-container">

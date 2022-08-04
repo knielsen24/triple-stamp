@@ -2,14 +2,6 @@ import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccount
 import ButtonOpenAddPropertyModal from "../Components/Buttons/ButtonOpenAddPropertyModal";
 
 function DashboardMain() {
-    // ***** buttons or links to the following *****
-    //  add property button
-    //  add unit
-    //  add inspection
-    //  property all inspections
-    //  upcoming inspections
-    //  past inspections
-
     return (
         <div>
             <div className="row align-content-between mb-4 user-select-none">
@@ -22,7 +14,7 @@ function DashboardMain() {
                                 looks like there are no inspections scheduled
                                 today
                             </p>
-                            <a href="#" className="btn btn-primary">
+                            <a href="#" className="btn btn-secondary">
                                 Go to inspection
                             </a>
                         </div>
@@ -34,7 +26,7 @@ function DashboardMain() {
                         <div className="card-body">
                             <h5 className="card-title">This week</h5>
                             <p className="card-text">start planning</p>
-                            <a href="#" className="btn btn-primary">
+                            <a href="#" className="btn btn-secondary ">
                                 Checkout the schedule
                             </a>
                         </div>
@@ -55,7 +47,7 @@ function DashboardMain() {
                             </p>
                             <a
                                 href="#"
-                                className="btn btn-primary"
+                                className="btn btn-secondary"
                                 data-bs-toggle="modal"
                                 data-bs-target="#add-inspection-form"
                             >
@@ -73,7 +65,7 @@ function DashboardMain() {
                             {/* <ButtonOpenAddPropertyModal /> */}
                             <a
                                 href="#"
-                                className="btn btn-primary"
+                                className="btn btn-secondary"
                                 data-bs-toggle="modal"
                                 data-bs-target="#add-property-form"
                             >

@@ -11,14 +11,14 @@ import buildingIcon from "../assets/building-icon.svg";
 
 function DashboardContainer() {
     return (
-        <div className="container min-vh-100">
+        <div className="container min-vh-100 ">
             <EditModalTemp
                 modalId={"add-inspection-form"}
                 header={"Add inspection"}
                 buttonText={"Click update to save changes"}
             />
             <div className="row my-2">
-                <div className="col mt-3 border rounded min-vh-100 vw-25">
+                <div className="col mt-3 border rounded min-vh-100 vw-25 sticky-top">
                     <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold">
 
                         My property <img
