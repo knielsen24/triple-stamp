@@ -7,6 +7,7 @@ import UnitsContainer from "../Dashboard/UnitsContainer";
 import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
 import EditModalTemp from "../Modals/EditModalTemp";
 import DashboardMain from "./DashboardMain";
+import buildingIcon from "../assets/building-icon.svg";
 
 function DashboardContainer() {
     return (
@@ -18,8 +19,13 @@ function DashboardContainer() {
             />
             <div className="row my-2">
                 <div className="col mt-3 border rounded min-vh-100 vw-25">
-                    <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0">
-                        My property
+                    <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold">
+
+                        My property <img
+                            src={buildingIcon}
+                            alt="edit-icon"
+                            className="align-middle mb-1"
+                        />
                     </p>
                     <div className="row mw-100 mb-3 justify-content-center">
                         <PropertyDropDown />
@@ -28,7 +34,7 @@ function DashboardContainer() {
                     <hr className="w-auto m-0" />
                     <UnitsContainer />
                 </div>
-                <div className="col-md-9 p-0 mx-3 mt-3 vw-75 rounded bg-gradient bg-opacity-25 col-sm-12">
+                <div className="col-md-9 p-0 mx-1 mt-2 vw-75 rounded bg-gradient bg-opacity-25 col-sm-12">
                     <div className="row mx-3 mt-2">
                         <p className="text-center user-select-none mb-1"></p>
                         <DashBoardNav />

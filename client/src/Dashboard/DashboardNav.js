@@ -3,12 +3,13 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import homeIcon from "../assets/home-icon.svg";
 import calendarIcon from "../assets/calendar-icon.svg";
+import checkListIcon from "../assets/check-list-icon.svg";
+import detailsIcon from "../assets/details-icon.svg";
 
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
-    let activeClass =
-        "nav-link active bg-white text-dark fw-bold border-0";
+    let activeClass = "nav-link active bg-white text-dark fw-bold border-0";
     let inactiveClass = "nav-link text-dark btn";
 
     let detailsLinkhref;
@@ -19,7 +20,7 @@ function DashboardNav() {
     // need conditional rendering on inspections tab
 
     return (
-        <div className="text-center p-2 mb-3 fw-bold ts-primary-green rounded">
+        <div className="text-center py-2 mb-4 fw-bold ts-primary-green rounded">
             <ul className="nav nav-pills nav-justified">
                 <li className="nav-item justify-content-center">
                     <NavLink
@@ -58,7 +59,12 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        Tasks
+                        Tasks{" "}
+                        <img
+                            src={checkListIcon}
+                            alt="edit-icon"
+                            className="align-middle ms-2 mb-1"
+                        />
                     </NavLink>
                 </li>
                 <li className="nav-item">
@@ -69,6 +75,11 @@ function DashboardNav() {
                         }
                     >
                         Details
+                        <img
+                            src={checkListIcon}
+                            alt="edit-icon"
+                            className="align-middle ms-2 mb-1"
+                        />
                     </NavLink>
                 </li>
             </ul>

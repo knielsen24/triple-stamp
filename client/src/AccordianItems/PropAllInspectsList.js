@@ -23,7 +23,7 @@ function PropAllInspectsList() {
         <div className="accordion-item ">
             <h2 className="accordion-header" id="open-prop-all-inspections">
                 <button
-                    className="accordion-button collapsed ts-primary-text-green fw-bold"
+                    className="accordion-button collapsed ts-primary-orange text-white fw-bold"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#open-prop-all-inspections-collapse"

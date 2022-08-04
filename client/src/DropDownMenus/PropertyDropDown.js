@@ -83,11 +83,7 @@ function PropertyDropDown() {
                 </a>
                 <ul className="dropdown-menu dropdown-menu p-3 bg-light ">
                     <form className="d-flex" role="search">
-                        {/* <i><img
-                            src={searchIcon}
-                            alt="edit-icon"
-                            className="align-middle ms-4 mb-1"
-                        /></i> */}
+                    <i class="bi bi-calendar2"></i>
                         <input
                             className="form-control me-2 mb-1 bg-opacity-75"
                             type="search"
