@@ -16,7 +16,7 @@ function DashboardNav() {
     // need conditional rendering on inspections tab
 
     return (
-        <div className="text-center mb-3">
+        <div className="text-center mb-3 fw-bold">
             <ul className="nav nav-pills nav-justified">
                 <li className="nav-item">
                     <NavLink

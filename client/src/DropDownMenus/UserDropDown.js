@@ -7,8 +7,8 @@ function UserDropDown() {
     return (
         <div className="dropdown center">
             <a
-                className="btn btn-secondary dropdown-toggle align-bottom caret-off"
-                id="nav-drop-down-btn"
+                className="btn btn-secondary dropdown-toggle align-bottom caret-off nav-drop-down-btn"
+
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"

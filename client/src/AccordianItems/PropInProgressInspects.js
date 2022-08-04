@@ -27,7 +27,7 @@ function PropInProgressInspects() {
                 id="open-prop-inProgress-inspections"
             >
                 <button
-                    className="accordion-button collapsed bg-warning bg-opacity-25"
+                    className="accordion-button collapsed ts-primary-text-green fw-bold"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#open-prop-inProgress-inspections-collapse"

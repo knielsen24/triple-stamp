@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { unitsList } from "../app/features/unitsListSlice";
+import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
 
 function AddPropertyForm() {
     const dispatch = useDispatch();
@@ -55,7 +56,7 @@ function AddPropertyForm() {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
-                    isValid
+                    isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -78,22 +79,12 @@ function AddPropertyForm() {
                         </div>
 
                         <div className="float-end">
-                            {/*
-                                this needs a conditon
-                                if form is validated then close modal
-                                otherwise
-                                render error message
-                            */}
                             <ButtonCancelModal />
-                            <button
-                                type="submit"
-                                disabled={isValid ? isSubmitting : true}                                className="btn btn-primary"
-                                id="modal-btn-start-now"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            >
-                                Create Property
-                            </button>
+                            <ButtonSaveChanges
+                                isSubmitting={isSubmitting}
+                                text={"Create Property"}
+                                isValid={isValid}
+                            />
                         </div>
                     </form>
                 )}

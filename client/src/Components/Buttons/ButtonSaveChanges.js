@@ -1,12 +1,11 @@
 
-function ButtonSaveChanges({ isSubmitting, text, isValid, error }) {
+function ButtonSaveChanges({ isSubmitting, text, isValid }) {
 
     return (
         <button
             type="submit"
             disabled={isValid ? isSubmitting : true}
-            className="btn btn-primary"
-            id="modal-btn-start-now"
+            className="btn btn-secondary nav-btn-start-now"
             data-bs-dismiss="modal"
             aria-label="Close"
         >

@@ -27,7 +27,7 @@ function PropCompletedInspects() {
                 id="open-prop-completed-inspections"
             >
                 <button
-                    className="accordion-button collapsed bg-success bg-opacity-50"
+                    className="accordion-button collapsed ts-primary-text-green fw-bold"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#open-prop-completed-inspections-collapse"

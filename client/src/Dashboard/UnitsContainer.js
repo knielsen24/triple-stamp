@@ -9,18 +9,23 @@ import EditModalTemp from "../Modals/EditModalTemp";
 import AddUnitModal from "../Modals/AddUnitModal";
 import threeDots from "../assets/threedots-horizontal.svg";
 import { useState } from "react";
+import { render } from "react-dom";
 
 function UnitsContainer() {
     const dispatch = useDispatch();
     const property = useSelector(setSelectProperty);
-
     const unitsListState = useSelector(setUnitsList);
     const [isShown, setIsShown] = useState(false);
 
     const buttonClassName =
-        "btn btn-secondary dropdown-toggle bg-transparent border-0";
+        "btn btn-secondary dropdown-toggle bg-transparent border-0 p-0";
+
     let renderUnitList;
+    let sortedList;
+
     if (unitsListState) {
+        // sortedList = unitsListState.map(unit => unit.label);
+        // console.log(sortedList);
         renderUnitList = unitsListState.map((unit) => {
             return (
                 <tr
@@ -32,7 +37,7 @@ function UnitsContainer() {
                     <td>{unit.number}</td>
                     <td>{unit.label}</td>
                     {/* render on hover */}
-                    <td>
+                    <td className="pe-0 start-end">
                         <div className="btn-group dropend">
                             <img
                                 src={threeDots}
@@ -52,7 +57,7 @@ function UnitsContainer() {
                     </td>
                 </tr>
             );
-        });
+        }).sort((a, b) => a.label - b.label)
     }
 
     return (

@@ -1,132 +1,147 @@
 /* APP */
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 #app-main-container {
-  min-width: 435px;
-  max-width: 1200px;
-  justify-content: center;
-  padding: 10px;
-  margin: auto;
+    min-width: 435px;
+    max-width: 1200px;
+    justify-content: center;
+    padding: 10px;
+    margin: auto;
 }
 
 /* navbar */
 
 #nav-container {
-  background-color: white;
+    background-color: white;
 }
 
 #logo-name {
-  max-width: 175px;
+    max-width: 175px;
 }
 
 /* #nav-height {
   height: 80px;
 } */
 
-#nav-btn-start-now {
-  text-align: center;
-  background-color: #9AEEAC;
-  text-transform: capitalize;
-  width: 150px;
-  font-weight: bold;
-  color: white;
-  border: 0;
+.nav-btn-start-now {
+    text-align: center;
+    background-color: #9aeeac;
+    text-transform: capitalize;
+    width: 150px;
+    font-weight: bold;
+    color: white;
+    border: 0;
 }
 
-#nav-drop-down-btn {
-  text-align: center;
-  background-color: #9AEEAC;
-  text-transform: capitalize;
-  width: 150px;
-  font-weight: bold;
-  color: white;
-  border: 0;
+.nav-drop-down-btn {
+    text-align: center;
+    background-color: #9aeeac;
+    text-transform: capitalize;
+    width: 150px;
+    font-weight: bold;
+    color: white;
+    border: 0;
 }
-
 
 /* HOME PAGE */
 
 #home-ban {
-  background-color: #FFC179;
+    background-color: #ffc179;
 
-  max-width:1200px;
-  height: 600px;
-  padding: 0;
-  padding-top: 50px;
-  margin: 0;
+    max-width: 1200px;
+    height: 600px;
+    padding: 0;
+    padding-top: 50px;
+    margin: 0;
 }
 
 #ban-statement {
-  color: white;
-  font-size: 50px;
-  text-transform: capitalize;
-  font-weight: bold;
+    color: white;
+    font-size: 50px;
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
-#ban-cards-container{
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
+#ban-cards-container {
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
 }
 
 #banner-cards {
-  min-width: 100px;
-  flex-direction: column;
+    min-width: 100px;
+    flex-direction: column;
 }
 
 /* SIGN UP MODAL */
 
 #start-now-modal {
-  min-width: 375px;
+    min-width: 375px;
 }
 
-#modal-btn-start-now {
-  text-align: center;
-  background-color: #9AEEAC;
-  text-transform: capitalize;
-  font-weight: bold;
-  color: white;
-  border: 0;
+.modal-btn-start-now {
+    text-align: center;
+    background-color: #9aeeac;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: white;
+    border: 0;
 }
 
 #modal-subtext {
-  font-size: 15px;
-  color: #AFACAC;
+    font-size: 15px;
+    color: #afacac;
 }
 
 #modal-logo {
-  width: 50px;
+    width: 50px;
 }
 
 /* FOOTER */
 
 #footer-links {
-  font-size: 13px;
+    font-size: 13px;
 }
 
 /* Profile Page */
-#profile-card-bg{
-  background-color: #FFC179;
+#profile-card-bg {
+    background-color: #ffc179;
 }
 
 #profile-btn-delete-account {
-  text-align: center;
-  background-color: #fa5c5c;
-  text-transform: capitalize;
-  font-weight: bold;
-  color: white;
-  border: 0;
+    text-align: center;
+    background-color: #fa5c5c;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: white;
+    border: 0;
 }
 
 .dropdown-toggle.caret-off::after {
-  display: none;
+    display: none;
 }
 
 .toggle-align-end::after {
-  position: absolute;
-  left: 80%;
-  margin-top: 0.47em;
+    position: absolute;
+    left: 80%;
+    margin-top: 0.47em;
+}
+
+.ts-primary-green {
+    background-color: #9aeeac;
+}
+
+.ts-primary-orange {
+    background-color: #ffc179;
+}
+
+.ts-primary-text-green {
+    color: #9aeeac;
+}
+
+.ts-primary-text-orange {
+    color: #ffc179;
 }
