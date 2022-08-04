@@ -10,7 +10,7 @@ import UserDropDown from "../DropDownMenus/UserDropDown";
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
-    let activeClass = "nav-link active bg-white p-2 text-dark fw-bold border-0";
+    let activeClass = "nav-link active bg-success bg-opacity-25 p-2 text-dark fw-bold border-0";
     let inactiveClass = "nav-link text-dark btn";
 
     let detailsLinkhref;

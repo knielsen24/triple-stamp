@@ -39,7 +39,7 @@ function DashboardContainer() {
                     <UnitsContainer />
                 </div>
                 <div className="col-md-9 p-0 mx-1 mt-2 vw-75 rounded bg-gradient bg-opacity-25 col-sm-12">
-                    <div className="row mx-3 mt-2">
+                    <div className="row mx-3">
                         <p className="text-center user-select-none mb-1"></p>
                         <DashBoardNav />
                         <Routes>
