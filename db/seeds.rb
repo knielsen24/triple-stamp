@@ -9,7 +9,7 @@ puts "🌱 double stamping..."
     country = Faker::Address.country
     units = rand(1..50)
     image = Faker::LoremFlickr.image(search_terms: ['business'])
-    user_id = 2
+    user_id = 1
 
     Property.create(
         name: name,
@@ -23,7 +23,7 @@ puts "🌱 double stamping..."
     )
 end
 
-labelsArray = ["office 1", "office 2", "office 3", "restaurante 1", "restaurante 2", "restaurante 3", "apartment 1", "apartment 2", "apartment 3"]
+labelsArray = ["Dentist office", "Doctor office", "Phyical Therapy", "Dim Sum house", "Dumpling House", "Noodle House", "Spicy Hot Pot", "BBQ Place", "Fish house", "Steak House", "Shrimp House", "House of Potato"]
 
 Property.all.each do |property|
     10.times do

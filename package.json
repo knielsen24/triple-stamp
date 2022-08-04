@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.0",
-    "full-icu": "^1.4.0"
+    "full-icu": "^1.4.0",
+    "yup-password": "^0.2.2"
   }
 }
