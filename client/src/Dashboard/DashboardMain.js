@@ -63,7 +63,7 @@ function DashboardMain() {
                 </div>
                 <div className="col-6 p-0">
                     <div className="card">
-                        <div className="card-header">
+                        <div className="card-header fw-bold">
                             Add a property to your portfolio{" "}
                         </div>
                         <div className="card-body">

@@ -22,22 +22,24 @@ function UserDropDown() {
             <ul className="dropdown-menu">
                 <li>
                     <Link to="/dashboard/profile" className="dropdown-item">
-                        My profile
+
                         <img
                             src={personIcon}
                             alt="profile-icon"
-                            className="align-middle ms-4 mb-1"
+                            className="align-middle me-3 mb-1"
                         />
+                        My profile
                     </Link>
                 </li>
                 <li>
                     <Link to="/dashboard/main" className="dropdown-item">
-                        Dashboard
+
                         <img
                             src={dashboardIcon}
                             alt="dashboard-icon"
-                            className="align-middle ms-4 mb-1"
+                            className="align-middle me-3 mb-1"
                         />
+                        Dashboard
                     </Link>
                 </li>
                 <li>

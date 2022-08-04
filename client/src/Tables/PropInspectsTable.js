@@ -3,6 +3,7 @@ import threeDots from "../assets/threedots-vertical.svg";
 import { selectInspection } from "../app/features/inspectionSlice";
 import { selectUnit } from "../app/features/unitSlice";
 import InspectionDropDown from "../DropDownMenus/InspectionDropDown";
+import plusIcon from "../assets/plus-icon.svg";
 import { DateTime } from "luxon";
 
 function PropInspectsTable({ propInspections }) {
@@ -23,9 +24,13 @@ function PropInspectsTable({ propInspections }) {
         renderInspections = propInspections.map((inspect) => {
             return (
                 <tr className="text-center" key={inspect.id}>
-                    <th scope="row" className="text-start">{inspect.unit.number}</th>
-                    <td colSpan="3" className="text-start">{inspect.title}</td>
-                    <td className="text-start">{inspect.type_name }</td>
+                    <th scope="row" className="text-start">
+                        {inspect.unit.number}
+                    </th>
+                    <td colSpan="3" className="text-start">
+                        {inspect.title}
+                    </td>
+                    <td className="text-start">{inspect.type_name}</td>
                     <td>{inspect.status}</td>
                     <td type="date">{inspect.scheduled_date}</td>
                     <td>
@@ -59,7 +64,9 @@ function PropInspectsTable({ propInspections }) {
                     <th scope="col" colSpan="3" className="text-start">
                         Title
                     </th>
-                    <th scope="col" className="text-start">Type</th>
+                    <th scope="col" className="text-start">
+                        Type
+                    </th>
                     <th scope="col">Status</th>
                     <th scope="col">Scheduled Date</th>
                 </tr>
@@ -72,7 +79,14 @@ function PropInspectsTable({ propInspections }) {
                     onClick={() => dispatch(selectUnit(initialValues))}
                 >
                     <th scope="col"></th>
-                    <td colSpan="3">+ Add inspection</td>
+                    <td colSpan="3">
+                        <img
+                            src={plusIcon}
+                            alt="edit-icon"
+                            className="align-middle me-1 mb-1"
+                        />
+                        Add inspection
+                    </td>
                     <td colSpan="4"></td>
                 </tr>
                 {renderInspections}

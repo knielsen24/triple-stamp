@@ -1,3 +1,5 @@
+import plusIcon from "../../assets/plus-icon.svg";
+
 function ButtonOpenAddUnitModal() {
     return (
         <button
@@ -6,7 +8,12 @@ function ButtonOpenAddUnitModal() {
             data-bs-toggle="modal"
             data-bs-target="#add-unit-form"
         >
-            + Add unit
+            <img
+                src={plusIcon}
+                alt="edit-icon"
+                className="align-middle me-1 mb-1"
+            />
+            Add unit
         </button>
     );
 }

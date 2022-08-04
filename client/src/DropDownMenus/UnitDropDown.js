@@ -1,13 +1,15 @@
-import ButtonOpenDeleteUnitModal from "../Components/Buttons/ButtonOpenDeleteUnitModal";
+import trashCanIcon from "../assets/trashcan-icon.svg";
+import editIcon from "../assets/edit-icon.svg";
+import plusIcon from "../assets/plus-icon.svg";
 
 function UnitDropDown() {
     return (
         <ul className="dropdown-menu bg-light ">
-            <li>
+            {/* <li>
                 <a className="dropdown-item" href="unit">
                     View Inspections
                 </a>
-            </li>
+            </li> */}
             <li>
                 <a
                     className="dropdown-item"
@@ -16,6 +18,11 @@ function UnitDropDown() {
                     data-bs-target="#add-inspection-form"
                     href="#"
                 >
+                    <img
+                        src={plusIcon}
+                        alt="edit-icon"
+                        className="align-middle me-3 mb-1"
+                    />
                     Add Inspection
                 </a>
             </li>
@@ -26,6 +33,11 @@ function UnitDropDown() {
                     data-bs-toggle="modal"
                     data-bs-target="#update-unit-form"
                 >
+                    <img
+                        src={editIcon}
+                        alt="edit-icon"
+                        className="align-middle me-3 mb-1"
+                    />
                     Edit Information
                 </a>
             </li>
@@ -33,7 +45,19 @@ function UnitDropDown() {
                 <hr className="dropdown-divider" />
             </li>
             <li>
-                <ButtonOpenDeleteUnitModal />
+                <a
+                    className="dropdown-item"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#delete-unit-form"
+                >
+                    <img
+                        src={trashCanIcon}
+                        alt="edit-icon"
+                        className="align-middle me-3 mb-1"
+                    />
+                    Delete Unit
+                </a>
             </li>
         </ul>
     );

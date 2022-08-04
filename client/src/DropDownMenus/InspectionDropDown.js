@@ -3,7 +3,7 @@ import editIcon from "../assets/edit-icon.svg";
 
 function InspectionDropDown() {
     return (
-        <ul className="dropdown-menu bg-light ">
+        <ul className="dropdown-menu bg-white ">
             <li>
                 <a
                     className="dropdown-item"
@@ -12,22 +12,24 @@ function InspectionDropDown() {
                     data-bs-toggle="modal"
                     data-bs-target="#edit-inspection-form"
                 >
-
-                    <img src={editIcon} alt="edit-icon" className="align-b me-2"/>
+                    <img
+                        src={editIcon}
+                        alt="edit-icon"
+                        className="align-middle me-3 mb-1"
+                    />
                     Edit Inspection
-
                 </a>
             </li>
-            <li>
+            {/* <li>
                 <a
                     className="dropdown-item"
-                    href="full_report"
-                    // data-bs-toggle="modal"
-                    // data-bs-target="#"
+                    href="#"
+                    disable
+                    // href="full_report"
                 >
                     View Full Report
                 </a>
-            </li>
+            </li> */}
             <li>
                 <hr className="dropdown-divider" />
             </li>
@@ -39,8 +41,12 @@ function InspectionDropDown() {
                     data-bs-toggle="modal"
                     data-bs-target="#delete-inspections-modal"
                 >
-                    Delete Inspection {" " + " "}
-                    <img src={trashCanIcon} alt="trashcan-icon" />
+                    <img
+                        src={trashCanIcon}
+                        alt="trashcan-icon"
+                        className="align-middle me-3 mb-1"
+                    />
+                    Delete Inspection
                 </a>
             </li>
         </ul>

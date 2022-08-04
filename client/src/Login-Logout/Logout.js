@@ -1,6 +1,6 @@
 import { useLogoutApiMutation } from "../app/api/userApiSlice";
 import { useNavigate } from "react-router-dom";
-import loginIcon from "../assets/login-icon.svg";
+import logoutIcon from "../assets/logout-icon.svg";
 
 function Logout() {
     const navigate = useNavigate();
@@ -15,8 +15,12 @@ function Logout() {
                 logoutApi().then(navigate("/"));
             }}
         >
+            <img
+                src={logoutIcon}
+                alt="logout-icon"
+                className="align-middle me-3 mb-1"
+            />
             Sign out
-            <img src={loginIcon} alt="logout-icon" className="align-middle ms-5 mb-1" />
         </a>
     );
 }
