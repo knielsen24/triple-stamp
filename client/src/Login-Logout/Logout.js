@@ -16,7 +16,7 @@ function Logout() {
             }}
         >
             Sign out
-            <img src={loginIcon} alt="edit-icon" className="align-middle ms-5 mb-1" />
+            <img src={loginIcon} alt="logout-icon" className="align-middle ms-5 mb-1" />
         </a>
     );
 }

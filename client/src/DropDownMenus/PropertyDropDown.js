@@ -5,7 +5,6 @@ import {
 import {
     useFetchPropertiesQuery,
     useFetchPropertyQuery,
-    useFetchPropUnitsQuery,
 } from "../app/api/propertyApiSlice";
 import { unitsList } from "../app/features/unitsListSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -15,13 +14,13 @@ import ButtonOpenAddPropertyModal from "../Components/Buttons/ButtonOpenAddPrope
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import { skipToken } from "@reduxjs/toolkit/dist/query";
 
+
 function PropertyDropDown() {
     // useParams to render property link
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [search, setSearch] = useState("");
     const property = useSelector(setSelectProperty);
-    // const [property, setProperty] = useState(null)
 
     const { data: user, isError } = useFetchUserQuery();
 
@@ -61,7 +60,6 @@ function PropertyDropDown() {
                             dispatch(selectProperty(property));
                             dispatch(unitsList(property.units));
                             refetch();
-                            // navigate("/dashboard/inspections/property");
                         }}
                     >
                         {property.name}
@@ -75,7 +73,7 @@ function PropertyDropDown() {
         <div className="w-100">
             <div className="dropdown-center ">
                 <a
-                    className="btn text-white bg-secondary bg-opacity-75 dropdown-toggle w-100 justify-content-center ms-2 fw-bold"
+                    className="btn text-white bg-secondary bg-opacity-75 dropdown-toggle w-100 justify-content-center  ms-2 fw-bold"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -85,8 +83,13 @@ function PropertyDropDown() {
                 </a>
                 <ul className="dropdown-menu dropdown-menu p-3 bg-light ">
                     <form className="d-flex" role="search">
+                        {/* <i><img
+                            src={searchIcon}
+                            alt="edit-icon"
+                            className="align-middle ms-4 mb-1"
+                        /></i> */}
                         <input
-                            className="form-control me-2 mb-1"
+                            className="form-control me-2 mb-1 bg-opacity-75"
                             type="search"
                             placeholder="Search"
                             aria-label="Search"
