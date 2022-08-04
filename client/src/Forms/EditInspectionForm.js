@@ -11,7 +11,6 @@ import { setSelectUnit } from "../app/features/unitSlice";
 import { setUnitsList } from "../app/features/unitsListSlice";
 
 function EditInspectionForm() {
-    const unit = useSelector(setSelectUnit);
     const propertyState = useSelector(setSelectProperty);
     const inspectionState = useSelector(setSelectInspection);
     const unitsListState = useSelector(setUnitsList);
@@ -61,7 +60,7 @@ function EditInspectionForm() {
         type_name: "" || inspectionState.type_name,
         status: "" || inspectionState.status,
         scheduled_date: "" || inspectionState.scheduled_date,
-        unit_id: unitID || unit.id,
+        unit_id: unitID || inspectionState.unit_id,
         property_id: "" || propertyState.id,
     };
 
@@ -95,7 +94,7 @@ function EditInspectionForm() {
                                 htmlFor="unit_id"
                                 className="form-label float-start"
                             >
-                                Unit #{" "}
+                                Unit #
                             </label>
 
                             <select
