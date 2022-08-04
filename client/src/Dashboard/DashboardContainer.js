@@ -20,7 +20,7 @@ function DashboardContainer() {
             <EditModalTemp
                 modalId={"add-inspection-form"}
                 header={"Add inspection"}
-                buttonText={"Click update to save changes"}
+                buttonText={""}
             />
             <div className="row ">
                 <div className="col mt-3 border rounded min-vh-100 vw-25 ">
