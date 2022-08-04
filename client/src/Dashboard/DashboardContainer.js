@@ -1,7 +1,7 @@
 import PropertyDropDown from "../DropDownMenus/PropertyDropDown";
 import AddPropertyModal from "../Modals/AddPropertyModal";
 import DashBoardNav from "./DashboardNav";
-import PropertyCard from "../DetailsPage/PropertyCard";
+import PropertyCard from "./PropertyCard";
 import { Route, Routes } from "react-router-dom";
 import UnitsContainer from "../Dashboard/UnitsContainer";
 import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
@@ -15,7 +15,7 @@ function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
-        <div className="container min-vh-100">
+        <div className="container ">
             <EditModalTemp
                 modalId={"add-inspection-form"}
                 header={"Add inspection"}

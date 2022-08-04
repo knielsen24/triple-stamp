@@ -16,7 +16,7 @@ function InspectionsContainer() {
     const inspection = useSelector(setSelectInspection);
 
     return (
-        <div className="container border-endtext-center min-vh-100">
+        <div className="container border-endtext-center min-vh-100 mt-2">
             <DeleteInspectionModal />
             <EditModalTemp
                 modalId={"edit-inspection-form"}
@@ -26,14 +26,12 @@ function InspectionsContainer() {
             <div className="row align-content-between mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3">
                     <div className="card">
-                        <div className="card-header">Inspections </div>
+                        <div className="card-header fw-bold">Scheduled Today </div>
                         <div className="card-body">
-                            <h5 className="card-title">Today!</h5>
                             <p className="card-text">
-                                looks like there are no inspections scheduled
-                                today
+                                Feature coming soon...
                             </p>
-                            <a href="#" className="btn bg-secondary text-white bg-opacity-75">
+                            <a href="#" className="btn bg-secondary text-white bg-opacity-75" >
                                 Go to inspection
                             </a>
                         </div>
@@ -41,10 +39,9 @@ function InspectionsContainer() {
                 </div>
                 <div className="col-6 p-0 ">
                     <div className="card">
-                        <div className="card-header">Inspections </div>
+                        <div className="card-header fw-bold">View scheduled lists </div>
                         <div className="card-body">
-                            <h5 className="card-title">This week</h5>
-                            <p className="card-text">start planning</p>
+                            <p className="card-text">Upcoming, in-progress, completed, all</p>
                             <Link
                                 to="/dashboard/inspections/property"
                                 className="btn bg-secondary text-white bg-opacity-75"

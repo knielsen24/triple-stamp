@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
 
 function AddUnitForm() {
     const dispatch = useDispatch();
@@ -104,16 +105,12 @@ function AddUnitForm() {
                                 render error message
                             */}
                             <ButtonCancelModal />
-                            <button
-                                type="submit"
-                                disabled={isValid ? isSubmitting : true}
-                                className="btn btn-primary"
-                                id="modal-btn-start-now"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            >
-                                Add unit
-                            </button>
+                            <ButtonSaveChanges
+                                isSubmitting={isSubmitting}
+                                text={"Create unit"}
+                                isValid={isValid}
+                            />
+
                         </div>
                     </form>
                 )}

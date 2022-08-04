@@ -61,7 +61,7 @@ function UnitsContainer() {
     }
 
     return (
-        <div className="align-items-center">
+        <div className="align-items-center ">
             <AddUnitModal />
             <DeleteUnitModal />
             <EditModalTemp

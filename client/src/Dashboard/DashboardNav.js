@@ -10,7 +10,7 @@ import UserDropDown from "../DropDownMenus/UserDropDown";
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
-    let activeClass = "nav-link active bg-success bg-opacity-25 p-2 text-dark fw-bold border-0";
+    let activeClass = "nav-link active bg-success bg-opacity-25 p-2 text-dark fw-bold border-0 ";
     let inactiveClass = "nav-link text-dark btn";
 
     let detailsLinkhref;
@@ -18,10 +18,8 @@ function DashboardNav() {
         ? (detailsLinkhref = "#")
         : (detailsLinkhref = "/inspections/property");
 
-    // need conditional rendering on inspections tab
-
     return (
-        <div className="text-center py-1 mb-4 fw-bold ts-primary-green rounded justify-content-center sticky-top">
+        <div className="text-center py-1 mb-4 fw-bold ts-primary-green rounded justify-content-center shadow-sm">
             <ul className="nav nav-pills nav-justified">
                 <li className="nav-item p-0 m-0 btn">
                     <NavLink
@@ -33,7 +31,7 @@ function DashboardNav() {
                         Main{" "}
                         <img
                             src={homeIcon}
-                            alt="edit-icon"
+                            alt="home-icon"
                             className="align-middle mb-1"
                         />
                     </NavLink>
@@ -48,7 +46,7 @@ function DashboardNav() {
                         Inspections
                         <img
                             src={calendarIcon}
-                            alt="edit-icon"
+                            alt="calendar-icon"
                             className="align-middle ms-2 mb-1"
                         />
                     </NavLink>
@@ -63,7 +61,7 @@ function DashboardNav() {
                         Tasks{" "}
                         <img
                             src={checkListIcon}
-                            alt="edit-icon"
+                            alt="checklist-icon"
                             className="align-middle ms-2 mb-1"
                         />
                     </NavLink>
@@ -77,8 +75,8 @@ function DashboardNav() {
                     >
                         Details
                         <img
-                            src={checkListIcon}
-                            alt="edit-icon"
+                            src={detailsIcon}
+                            alt="Clipboard-icon"
                             className="align-middle ms-2 mb-1"
                         />
                     </NavLink>

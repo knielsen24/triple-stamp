@@ -140,7 +140,7 @@ function EditProfileForm() {
                             <ButtonSaveChanges
                                 isValid={isValid}
                                 isSubmitting={isSubmitting}
-                                text={"Save Changes"}
+                                text={"Update"}
                             />
                         </div>
                     </form>
