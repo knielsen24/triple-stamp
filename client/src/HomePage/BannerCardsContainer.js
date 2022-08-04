@@ -11,7 +11,7 @@ function BannerCardsContainer() {
                 id="ban-cards-container"
             >
                 <div className="row">
-                    <div className="col px-2 mx-sm-auto">
+                    <div className="col px-2 mx-auto">
                         <img
                             src={cardOne}
                             alt="banner icons"

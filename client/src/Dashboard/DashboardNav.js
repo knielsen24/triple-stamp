@@ -5,8 +5,8 @@ import { NavLink } from "react-router-dom";
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
-    let activeClass = "nav-link active bg-secondary bg-opacity-75 fw-bold";
-    let inactiveClass = "nav-link text-dark ";
+    let activeClass = "nav-link active bg-secondary bg-opacity-75 fw-bold border-0";
+    let inactiveClass = "nav-link text-dark btn";
 
     let detailsLinkhref;
     property.name !== ""

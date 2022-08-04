@@ -1,5 +1,8 @@
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import Logout from "../Login-Logout/Logout";
+import { Link } from "react-router-dom";
+import dashboardIcon from "../assets/dashboard-icon.svg"
+import personIcon from "../assets/person-icon.svg"
 
 function UserDropDown() {
     const { data: user, isError } = useFetchUserQuery();
@@ -8,7 +11,6 @@ function UserDropDown() {
         <div className="dropdown center">
             <a
                 className="btn btn-secondary dropdown-toggle align-bottom caret-off nav-drop-down-btn"
-
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -19,14 +21,16 @@ function UserDropDown() {
 
             <ul className="dropdown-menu">
                 <li>
-                    <a className="dropdown-item" href="/profile">
+                    <Link to="/profile" className="dropdown-item">
                         My profile
-                    </a>
+                        <img src={personIcon} alt="edit-icon" className="align-middle ms-5 mb-1" />
+                    </Link>
                 </li>
                 <li>
-                    <a className="dropdown-item" href="/dashboard/home">
+                    <Link to="/dashboard/main" className="dropdown-item">
                         Dashboard
-                    </a>
+                        <img src={dashboardIcon} alt="edit-icon" className="align-middle ms-5 mb-1" />
+                    </Link>
                 </li>
                 <li>
                     <hr className="dropdown-divider" />
