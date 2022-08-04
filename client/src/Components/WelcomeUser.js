@@ -1,6 +1,10 @@
 import logoName from "../assets/logo-name.png";
 
 function WelcomeUser({ user }) {
+    if (user) {
+        setTimeout(3000)
+    }
+
     return (
         <div className="ts-primary-orange fw-bold text-center rounded">
             Hi {user.full_name}! Welcome to{" "}to your dashboard
