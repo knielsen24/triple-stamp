@@ -12,7 +12,7 @@ function DashboardMain() {
 
     return (
         <div>
-            <div className="row align-content-between mb-4">
+            <div className="row align-content-between mb-4 user-select-none">
                 <div className="col-6">
                     <div className="card">
                         <div className="card-header">Inspections </div>
@@ -41,7 +41,7 @@ function DashboardMain() {
                     </div>
                 </div>
             </div>
-            <div className="row mb-4">
+            <div className="row mb-4 user-select-none">
                 <div className="col-6">
                     <div className="card">
                         <div className="card-header">Forms </div>

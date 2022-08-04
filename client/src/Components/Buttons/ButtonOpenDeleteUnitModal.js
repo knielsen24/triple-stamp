@@ -7,7 +7,7 @@ function ButtonOpenDeleteUnitModal() {
             data-bs-toggle="modal"
             data-bs-target="#delete-unit-form"
         >
-            {/* add plus icon */}Delete Unit
+            Delete Unit
         </a>
     );
 }

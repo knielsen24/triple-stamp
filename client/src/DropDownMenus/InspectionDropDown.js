@@ -12,9 +12,10 @@ function InspectionDropDown() {
                     data-bs-toggle="modal"
                     data-bs-target="#edit-inspection-form"
                 >
-                    {" "}
-                    Edit Inspection {" " + " "}
-                    <img src={editIcon} alt="edit-icon" />
+
+                    <img src={editIcon} alt="edit-icon" className="align-b me-2"/>
+                    Edit Inspection
+
                 </a>
             </li>
             <li>

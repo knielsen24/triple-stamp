@@ -12,14 +12,14 @@ function PropertyCard() {
     const numberofUnits = unitsListState.length;
 
     return (
-        <div className="container align-content-items-center">
+        <div className="container align-content-items-center rounded">
             <EditModalTemp
                 modalId={"edit-property-form"}
                 header={"Edit your property information"}
                 buttonText={"Click update to save changes"}
             />
             <DeletePropertyModal />
-            <div id="profile-main-card-container" className="card mx-3">
+            <div id="profile-main-card-container " className="card mx-3 ">
                 <div className="text-center" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img
@@ -29,7 +29,7 @@ function PropertyCard() {
                             width="150px"
                         />
                     </div>
-                    <div className="header text-center text-white">
+                    <div className="header text-center text-white m-2">
                         <h5 className="card-title user-select-none">
                             {property.name}
                         </h5>
@@ -37,23 +37,23 @@ function PropertyCard() {
                 </div>
 
                 <div className="card-body">
-                    <ul className="list-group list-group-flush">
-                        <li className="list-group-item user-select-none">
+                    <ul className="list-group list-group-flush user-select-none">
+                        <li className="list-group-item ">
                             Address: {property.address}
                         </li>
-                        <li className="list-group-item user-select-none">
+                        <li className="list-group-item ">
                             City: {property.city}{" "}
                         </li>
-                        <li className="list-group-item user-select-none">
+                        <li className="list-group-item ">
                             State: {property.state}{" "}
                         </li>
-                        <li className="list-group-item user-select-none">
+                        <li className="list-group-item ">
                             Zip code: {property.postal_code}{" "}
                         </li>
-                        <li className="list-group-item user-select-none">
+                        <li className="list-group-item ">
                             Country: {property.country}{" "}
                         </li>
-                        <li className="list-group-item user-select-none">
+                        <li className="list-group-item ">
                             No. of Units: {numberofUnits}{" "}
                         </li>
                     </ul>
