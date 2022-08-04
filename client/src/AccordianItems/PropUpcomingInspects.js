@@ -7,11 +7,9 @@ import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 function PropUpcomingInspects() {
     const property = useSelector(setSelectProperty);
-    const {
-        data: propInspections,
-        isSuccess,
-        isLoading,
-    } = useFetchPropInspectionsQuery(property ? property.id : skipToken);
+    const { data: propInspections, isSuccess } = useFetchPropInspectionsQuery(
+        property ? property.id : skipToken
+    );
 
     let upcomingList;
 

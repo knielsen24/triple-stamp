@@ -7,16 +7,14 @@ import { setSelectProperty } from "../app/features/propertySlice";
 function PropAllInspectsList() {
     const property = useSelector(setSelectProperty);
 
-    const {
-        data: propInspections,
-        isSuccess,
-        isLoading,
-    } = useFetchPropInspectionsQuery(property ? property.id : skipToken);
+    const { data: propInspections, isSuccess } = useFetchPropInspectionsQuery(
+        property ? property.id : skipToken
+    );
 
     let completeList;
 
     if (isSuccess) {
-        completeList = propInspections
+        completeList = propInspections;
     }
 
     return (

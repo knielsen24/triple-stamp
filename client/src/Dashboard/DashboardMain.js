@@ -1,5 +1,4 @@
-import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccountModals";
-import ButtonOpenAddPropertyModal from "../Components/Buttons/ButtonOpenAddPropertyModal";
+
 import { Link } from "react-router-dom";
 
 function DashboardMain() {

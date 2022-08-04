@@ -14,21 +14,16 @@ import ButtonOpenAddPropertyModal from "../Components/Buttons/ButtonOpenAddPrope
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import { skipToken } from "@reduxjs/toolkit/dist/query";
 
-
 function PropertyDropDown() {
-    // useParams to render property link
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const [search, setSearch] = useState("");
     const property = useSelector(setSelectProperty);
 
     const { data: user, isError } = useFetchUserQuery();
 
-    const {
-        data: properties,
-        isSuccess,
-        isFetching,
-    } = useFetchPropertiesQuery(!user || isError ? skipToken : user.id);
+    const { data: properties, isSuccess } = useFetchPropertiesQuery(
+        !user || isError ? skipToken : user.id
+    );
 
     const { refetch } = useFetchPropertyQuery(
         property && isSuccess ? property.id : skipToken
@@ -39,7 +34,6 @@ function PropertyDropDown() {
     let renderPropertyList;
     let filteredProperties;
 
-    // if (isFetching) return <div>Loading </div>;
     if (isSuccess) {
         filteredProperties = properties.filter((property) => {
             let name = property.name.toLowerCase();
@@ -83,7 +77,7 @@ function PropertyDropDown() {
                 </a>
                 <ul className="dropdown-menu dropdown-menu p-3 bg-light ">
                     <form className="d-flex" role="search">
-                    <i class="bi bi-calendar2"></i>
+                        {/* <i class="bi bi-calendar2"></i> */}
                         <input
                             className="form-control me-2 mb-1 bg-opacity-75"
                             type="search"
