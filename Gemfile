@@ -53,3 +53,5 @@ gem "active_model_serializers", "~> 0.10.12"
 gem 'faker'
 
 gem 'irb'
+
+gem "ruby-lsp", "~> 0.2.1", :group => :development
