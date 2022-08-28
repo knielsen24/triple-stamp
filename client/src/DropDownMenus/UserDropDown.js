@@ -8,9 +8,9 @@ function UserDropDown() {
     const { data: user, isError } = useFetchUserQuery();
 
     return (
-        <div className="dropdown center p-1">
+        <div className="dropdown center inline">
             <a
-                className="btn btn-secondary dropdown-toggle align-bottom nav-drop-down-btn"
+                className="btn btn-secondary dropdown-toggle nav-drop-down-btn"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"

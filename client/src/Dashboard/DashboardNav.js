@@ -10,9 +10,11 @@ import UserDropDown from "../DropDownMenus/UserDropDown";
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
+    const navLinkClass = "nav-item btn";
+    const imgClass = "align-middle me-2 mb-1"
     let activeClass =
-        "nav-link active bg-success bg-opacity-25 p-2 text-dark fw-bold border-0 ";
-    let inactiveClass = "nav-link text-dark btn";
+        "nav-link active bg-success bg-opacity-25 text-dark fw-bold border-0 btn";
+    let inactiveClass = "nav-link text-dark nav-item";
 
     let detailsLinkhref;
     property.name !== ""
@@ -20,9 +22,9 @@ function DashboardNav() {
         : (detailsLinkhref = "/inspections/property");
 
     return (
-        <div className="text-center py-1 mb-4 fw-bold ts-primary-green rounded justify-content-center shadow-sm">
+        <div className="text-center py-1 mb-4 fw-bold ts-primary-green rounded shadow-sm">
             <ul className="nav nav-pills nav-justified">
-                <li className="nav-item p-0 m-0 btn ">
+                <li className={navLinkClass}>
                     <NavLink
                         to="main"
                         className={({ isActive }) =>
@@ -32,12 +34,12 @@ function DashboardNav() {
                         <img
                             src={homeIcon}
                             alt="home-icon"
-                            className="align-middle me-2 mb-1"
+                            className={imgClass}
                         />
                         Main{" "}
                     </NavLink>
                 </li>
-                <li className="nav-item p-0 m-0 btn">
+                <li className={navLinkClass}>
                     <NavLink
                         to="inspections"
                         className={({ isActive }) =>
@@ -47,12 +49,12 @@ function DashboardNav() {
                         <img
                             src={calendarIcon}
                             alt="calendar-icon"
-                            className="align-middle me-2 mb-1"
+                            className={imgClass}
                         />
                         Inspections
                     </NavLink>
                 </li>
-                <li className="nav-item p-0 m-0 btn">
+                <li className={navLinkClass}>
                     <NavLink
                         to="items"
                         className={({ isActive }) =>
@@ -62,13 +64,12 @@ function DashboardNav() {
                         <img
                             src={checkListIcon}
                             alt="checklist-icon"
-                            className="align-middle me-2 mb-1"
+                            className={imgClass}
                         />
                         Items
-
                     </NavLink>
                 </li>
-                <li className="nav-item p-0 m-0 btn">
+                <li className={navLinkClass}>
                     <NavLink
                         to="details"
                         className={({ isActive }) =>
@@ -78,13 +79,12 @@ function DashboardNav() {
                         <img
                             src={detailsIcon}
                             alt="Clipboard-icon"
-                            className="align-middle me-2 mb-1"
+                            className={imgClass}
                         />
                         Details
-
                     </NavLink>
                 </li>
-                <li className="border-start border-secondary">
+                <li className="border-start border-secondary nav-item">
                     <UserDropDown />
                 </li>
             </ul>
