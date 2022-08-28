@@ -39,7 +39,7 @@ function SignUpForm() {
                 onSubmit={(values, { setSubmitting }) => {
                     createUser(values)
                         .then((r) => {})
-                        .then(navigate("dashboard"));
+                        .then(navigate("dashboard/main"));
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);

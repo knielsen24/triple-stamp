@@ -29,12 +29,12 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        Main{" "}
                         <img
                             src={homeIcon}
                             alt="home-icon"
-                            className="align-middle mb-1"
+                            className="align-middle me-2 mb-1"
                         />
+                        Main{" "}
                     </NavLink>
                 </li>
                 <li className="nav-item p-0 m-0 btn">
@@ -44,12 +44,12 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        Inspections
                         <img
                             src={calendarIcon}
                             alt="calendar-icon"
-                            className="align-middle ms-2 mb-1"
+                            className="align-middle me-2 mb-1"
                         />
+                        Inspections
                     </NavLink>
                 </li>
                 <li className="nav-item p-0 m-0 btn">
@@ -59,12 +59,13 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        Items
                         <img
                             src={checkListIcon}
                             alt="checklist-icon"
-                            className="align-middle ms-2 mb-1"
+                            className="align-middle me-2 mb-1"
                         />
+                        Items
+
                     </NavLink>
                 </li>
                 <li className="nav-item p-0 m-0 btn">
@@ -74,12 +75,13 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        Details
                         <img
                             src={detailsIcon}
                             alt="Clipboard-icon"
-                            className="align-middle ms-2 mb-1"
+                            className="align-middle me-2 mb-1"
                         />
+                        Details
+
                     </NavLink>
                 </li>
                 <li className="border-start border-secondary">
