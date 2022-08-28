@@ -9,17 +9,16 @@ import EditModalTemp from "../Modals/EditModalTemp";
 function PropertyCard() {
     const property = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
-    const numberofUnits = unitsListState.length;
 
     return (
-        <div className="container align-content-items-center rounded">
+        <div className="container align-content-items-center rounded p-0">
             <EditModalTemp
                 modalId={"edit-property-form"}
                 header={"Edit your property information"}
                 buttonText={"Click update to save changes"}
             />
             <DeletePropertyModal />
-            <div id="profile-main-card-container " className="card mx-3 ">
+            <div id="profile-main-card-container " className="card">
                 <div className="text-center" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img
@@ -54,7 +53,7 @@ function PropertyCard() {
                             Country: {property.country}{" "}
                         </li>
                         <li className="list-group-item ">
-                            No. of Units: {numberofUnits}{" "}
+                            No. of Units: {unitsListState.length}{" "}
                         </li>
                     </ul>
                 </div>

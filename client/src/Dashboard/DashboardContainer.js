@@ -28,9 +28,9 @@ function DashboardContainer() {
                     <img
                             src={buildingIcon}
                             alt="edit-icon"
-                            className="align-middle mb-1"
+                            className="align-middle mb-1 me-2"
                         />
-                        {" "}My property
+                        My property
                     </p>
                     <div className="row mw-100 mb-3 justify-content-center ">
                         <PropertyDropDown />

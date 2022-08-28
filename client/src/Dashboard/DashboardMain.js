@@ -68,7 +68,6 @@ function DashboardMain() {
                         </div>
                         <div className="card-body">
                             <p className="card-text">Fill out details</p>
-
                             <a
                                 href="#"
                                 className="btn bg-secondary text-white bg-opacity-75"
