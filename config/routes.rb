@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     end
 
 
-
 # SESSION #
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
@@ -26,7 +25,6 @@ Rails.application.routes.draw do
 # USER #
     post "/users", to: "users#create"
     get "/me", to: "users#show"
-    # get "/currentuser", to: "users#show"
     patch "/users/:id", to: "users#update"
     delete "/users/:id", to: "users#destroy"
 
