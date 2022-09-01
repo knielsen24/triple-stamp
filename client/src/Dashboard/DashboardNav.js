@@ -23,7 +23,7 @@ function DashboardNav() {
         : (detailsLinkhref = "/inspections/property");
 
     return (
-        <div className="text-center mb-3 fw-bold ts-primary-green rounded shadow-sm">
+        <div className="text-center mb-3 fw-bold ts-primary-green rounded shadow-sm sticky-top p-0">
             <ul className="nav nav-pills nav-justified ">
                 <li className={navLinkClass}>
                     <NavLink

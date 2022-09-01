@@ -22,10 +22,10 @@ function DashboardContainer() {
                 header={"Add inspection"}
                 buttonText={""}
             />
-            <div className="row ">
-                <div className="col mt-3 border rounded min-vh-75 vw-25 ">
+            <div className="row mt-3">
+                <div className="col border rounded min-vh-75 vw-25">
                     <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold ">
-                    <img
+                        <img
                             src={buildingIcon}
                             alt="edit-icon"
                             className="align-middle mb-1 me-2"
@@ -39,9 +39,8 @@ function DashboardContainer() {
                     <hr className="w-auto m-0" />
                     <UnitsContainer />
                 </div>
-                <div className="col-md-9 p-0 mx-1 mt-3 vw-75 rounded bg-gradient bg-opacity-25 col-m-12">
-                    <div className="row ms-3">
-                        <p className="text-center user-select-none mb-1"></p>
+                <div className="col-md-9 rounded bg-gradient bg-opacity-25 col-m-12">
+                    <div className="row ms-2">
                         <DashBoardNav />
                         <Routes>
                             <Route path="/main" element={<DashboardMain />} />

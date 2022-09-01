@@ -5,33 +5,19 @@ import "../";
 
 function BannerCardsContainer() {
     return (
-        <div>
-            <div
-                className="container text-center py-5 px-auto"
-                id="ban-cards-container"
-            >
-                <div className="row">
-                    <div className="col px-2 mx-auto">
-                        <img
-                            src={cardOne}
-                            alt="banner icons"
-                            id="banner-cards"
-                        />
-                    </div>
-                    <div className="col px-2 mx-sm-auto">
-                        <img
-                            src={cardTwo}
-                            alt="banner icons"
-                            id="banner-cards"
-                        />
-                    </div>
-                    <div className="col px-2 mx-sm-auto">
-                        <img
-                            src={cardThree}
-                            alt="banner icons"
-                            id="banner-cards"
-                        />
-                    </div>
+        <div
+            className="container text-center py-5 px-auto"
+            id="ban-cards-container"
+        >
+            <div className="row">
+                <div className="col px-5  ">
+                    <img src={cardOne} alt="banner icons" id="banner-cards" />
+                </div>
+                <div className="col px-5 ">
+                    <img src={cardTwo} alt="banner icons" id="banner-cards" />
+                </div>
+                <div className="col px-5 ">
+                    <img src={cardThree} alt="banner icons" id="banner-cards" />
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@ export const propertyApi = createApi({
                 query: (id) => `/properties/${id}`,
                 providesTags: ["property"],
             }),
-            // Not using fetchPropUnits. Performance not as good
+            // Not using fetchPropUnits. Performance is subpar
             fetchPropUnits: builder.query({
                 query: (id) => `/properties/${id}/units`,
                 providesTags: ["units"],

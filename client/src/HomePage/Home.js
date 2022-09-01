@@ -5,18 +5,16 @@ import SignUpModal from "../Modals/SignUpModal";
 
 function Home() {
     return (
-        <div className="container-fluid">
-            <div className="container text-center" id="home-ban">
-                <header className="user-select-none" id="ban-statement">
-                    transforming real estate task management
-                </header>
-                <BannerCardsContainer />
-                <div className="m-sm-auto">
-                    <ButtonStartNow />
-                </div>
-                <SignUpModal />
-                <LoginModal />
+        <div className="container text-center mt-4" id="home-ban">
+            <header className="user-select-none" id="ban-statement">
+                transforming property task management
+            </header>
+            <BannerCardsContainer />
+            <div className="m-sm-auto">
+                <ButtonStartNow />
             </div>
+            <SignUpModal />
+            <LoginModal />
         </div>
     );
 }
