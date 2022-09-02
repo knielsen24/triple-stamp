@@ -11,14 +11,14 @@ function PropertyCard() {
     const unitsListState = useSelector(setUnitsList);
 
     return (
-        <div className="container align-content-items-center rounded p-0">
+        <div className="container align-content-items-center rounded p-0 shadow-sm">
             <EditModalTemp
                 modalId={"edit-property-form"}
                 header={"Edit your property information"}
                 buttonText={"Click update to save changes"}
             />
             <DeletePropertyModal />
-            <div id="profile-main-card-container " className="card">
+            <div id="profile-main-card-container" className="card">
                 <div className="text-center" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img

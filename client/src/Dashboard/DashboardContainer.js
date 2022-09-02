@@ -23,7 +23,7 @@ function DashboardContainer() {
                 buttonText={""}
             />
             <div className="row mt-3">
-                <div className="col border rounded min-vh-75 vw-25">
+                <div className="col border rounded min-vh-75 vw-25 shadow-sm">
                     <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold ">
                         <img
                             src={buildingIcon}
