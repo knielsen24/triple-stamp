@@ -2,11 +2,10 @@ import ButtonStartNow from "../Components/Buttons/ButtonStartNow";
 import cardOne from "../assets/card1.svg";
 import cardTwo from "../assets/card2.svg";
 import cardThree from "../assets/card3.svg";
-import skyline from "../assets/skyline-background.jpg";
 
 function Home() {
     return (
-        <div className="container text-center mt-4 home-container img-fluid bg-opacity-50">
+        <div className="container text-center mt-4 home-container img-fluid bg-opacity-50 rounded-4">
             <div className="row">
                 <h5
                     className="text-secondary my-5 user-select-none"
