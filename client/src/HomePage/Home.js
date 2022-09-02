@@ -5,7 +5,7 @@ import cardThree from "../assets/card3.svg";
 
 function Home() {
     return (
-        <div className="container text-center mt-4 home-container img-fluid bg-opacity-50 rounded-4">
+        <div className="container text-center mt-4 home-container img-fluid bg-opacity-50 rounded-5 shadow-sm">
             <div className="row">
                 <h5
                     className="text-secondary my-5 user-select-none"
@@ -44,7 +44,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-            {/* <BannerCardsContainer /> */}
             <div className="m-5">
                 <ButtonStartNow />
             </div>
