@@ -25,7 +25,7 @@ function InspectionsContainer() {
             />
             <div className="row align-content-between mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3">
-                    <div className="card">
+                    <div className="card shadow-sm">
                         <div className="card-header fw-bold">Scheduled Today </div>
                         <div className="card-body">
                             <p className="card-text">
@@ -38,7 +38,7 @@ function InspectionsContainer() {
                     </div>
                 </div>
                 <div className="col-6 p-0 ">
-                    <div className="card">
+                    <div className="card shadow-sm">
                         <div className="card-header fw-bold">View scheduled lists </div>
                         <div className="card-body">
                             <p className="card-text">Upcoming, in-progress, completed, all</p>

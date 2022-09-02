@@ -39,7 +39,7 @@ function DashboardContainer() {
                     <hr className="w-auto m-0" />
                     <UnitsContainer />
                 </div>
-                <div className="col-md-9 rounded bg-gradient bg-opacity-25 col-m-12">
+                <div className="col-md-9 rounded bg-gradient bg-opacity-25 col-m-12 ">
                     <div className="row ms-2">
                         <DashBoardNav />
                         <Routes>

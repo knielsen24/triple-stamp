@@ -27,7 +27,7 @@ function Navbar() {
             className={user || !isError ? isLoggedIn : signUpNav}
             id="nav-container"
         >
-            <div className="container-md d-flex " id="main-nav-container">
+            <div className="container-md d-flex" id="main-nav-container">
                 <a
                     className="navbar-brand mx-5 align-top"
                     href={user || !isError ? "/" : "/"}

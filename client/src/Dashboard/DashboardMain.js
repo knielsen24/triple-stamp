@@ -5,7 +5,7 @@ function DashboardMain() {
         <div>
             <div className="row align-content-between mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3 ">
-                    <div className="card">
+                    <div className="card shadow-sm">
                         <div className="card-header fw-bold">
                             Today's agenda
                         </div>
@@ -21,7 +21,7 @@ function DashboardMain() {
                     </div>
                 </div>
                 <div className="col-6 p-0">
-                    <div className="card">
+                    <div className="card shadow-sm">
                         <div className="card-header fw-bold">
                             View inspections
                         </div>
@@ -41,7 +41,7 @@ function DashboardMain() {
             </div>
             <div className="row mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3">
-                    <div className="card">
+                    <div className="card shadow-sm">
                         <div className="card-header fw-bold">
                             Create a new inspection
                         </div>
@@ -62,7 +62,7 @@ function DashboardMain() {
                     </div>
                 </div>
                 <div className="col-6 p-0">
-                    <div className="card">
+                    <div className="card shadow-sm">
                         <div className="card-header fw-bold">
                             Add a property to your portfolio{" "}
                         </div>
