@@ -69,7 +69,7 @@ function UnitsContainer() {
                 header={"Edit unit information"}
                 buttonText={"Click update to save changes"}
             />
-            <table className="table table-borderless table-hover user-select-none text-capitalize "
+            <table className="table table-borderless table-hover text-capitalize "
             >
                 <tbody>
                     <tr scope="row">

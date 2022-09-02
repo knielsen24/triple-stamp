@@ -29,14 +29,14 @@ function PropertyCard() {
                         />
                     </div>
                     <div className="header text-center text-white m-2">
-                        <h5 className="card-title user-select-none">
+                        <h5 className="card-title">
                             {property.name}
                         </h5>
                     </div>
                 </div>
 
                 <div className="card-body">
-                    <ul className="list-group list-group-flush user-select-none">
+                    <ul className="list-group list-group-flush ">
                         <li className="list-group-item ">
                             Address: {property.address}
                         </li>

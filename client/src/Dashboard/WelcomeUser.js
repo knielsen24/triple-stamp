@@ -5,10 +5,21 @@ function WelcomeUser({ user }) {
 
     const handleRemoveWelcome = () => setHideWelcome(false);
 
+    const toastTrigger = document.getElementById("liveToastBtn");
+    const toastLiveExample = document.getElementById("liveToast");
+
+    // if (toastTrigger) {
+    //     toastTrigger.addEventListener("click", () => {
+    //         const toast = new bootstrap.Toast(toastLiveExample);
+
+    //         toast.show();
+    //     });
+    // }
+
     if (hideWelcome) {
         return (
             <div className="ts-primary-orange fw-bold text-center rounded p-1 my-2">
-                Hi {user.full_name}! Welcome to to your dashboard
+                Hi {user.full_name}! Welcome to your dashboard.
                 <button
                     type="button"
                     className="btn-close float-end pe-2"
@@ -18,8 +29,8 @@ function WelcomeUser({ user }) {
         );
     }
 
-    if(!hideWelcome) {
-        return <></>
+    if (!hideWelcome) {
+        return <></>;
     }
 }
 

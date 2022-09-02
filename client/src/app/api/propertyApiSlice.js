@@ -90,7 +90,7 @@ export const propertyApi = createApi({
                     method: "DELETE",
                 }),
                 invalidatesTags: (result, error, arg) => [
-                    // "properties",
+                    "inspections",
                     { type: "units", id: arg.id },
                 ],
             }),

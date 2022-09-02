@@ -2,6 +2,7 @@
 
 .App {
     text-align: center;
+    font-family: sans-serif;
 }
 
 #app-main-container {
@@ -32,7 +33,7 @@
     text-transform: capitalize;
     width: 150px;
     font-weight: bold;
-    color: white;
+    color: black;
     border: 0;
 }
 
@@ -48,19 +49,14 @@
 
 /* HOME PAGE */
 
-#home-ban {
-    background-color: #fdbb6e;
-
-    max-width: 1400px;
-    height: 600px;
-    padding: 0;
-    padding-top: 50px;
-    margin: 0;
+.home-container {
+    background-image: url("./assets/skyline-background.jpg");
+    background-size: cover;
+    height: 75vh;
 }
-
 #ban-statement {
     color: white;
-    font-size: 50px;
+    font-size: 35px;
     text-transform: capitalize;
     font-weight: bold;
 }
