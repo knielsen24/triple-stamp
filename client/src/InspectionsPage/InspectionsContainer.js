@@ -21,7 +21,6 @@ function InspectionsContainer() {
             <EditModalTemp
                 modalId={"edit-inspection-form"}
                 header={"Edit inspection information"}
-                buttonText={"Click update to save changes"}
             />
             <div className="row align-content-between mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3">

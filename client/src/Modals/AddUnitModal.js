@@ -15,7 +15,7 @@ function AddUnitModal() {
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header bg-light">
                             <h5 className="modal-title" id="add-unit-form">
                                 Add unit to property
                             </h5>

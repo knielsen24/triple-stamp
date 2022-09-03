@@ -1,11 +1,12 @@
 import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import AddInspectionForm from "../Forms/AddInspectionForm";
+import AddPropertyForm from "../Forms/AddPropertyForm";
 import EditInspectionForm from "../Forms/EditInspectionForm";
 import EditProfileForm from "../Forms/EditProfileForm";
 import EditPropertyForm from "../Forms/EditPropertyForm";
 import EditUnitForm from "../Forms/EditUnitForm";
 
-function EditModalTemp({ modalId, header, buttonText }) {
+function EditModalTemp({ modalId, header }) {
     let renderForm;
     if (modalId === "edit-property-form") {
         renderForm = <EditPropertyForm />;
@@ -22,6 +23,9 @@ function EditModalTemp({ modalId, header, buttonText }) {
     if (modalId === "add-inspection-form") {
         renderForm = <AddInspectionForm />;
     }
+    if (modalId === "add-property-form") {
+        renderForm = <AddPropertyForm />;
+    }
 
     return (
         <div>
@@ -36,12 +40,9 @@ function EditModalTemp({ modalId, header, buttonText }) {
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header bg-light" >
                             <h5 className="modal-title" id={modalId}>
                                 {header}
-                                <div>
-                                    <p id="modal-subtext">{buttonText}</p>
-                                </div>
                             </h5>
                             <ButtonCloseModalX />
                         </div>

@@ -1,5 +1,4 @@
 import PropertyDropDown from "../DropDownMenus/PropertyDropDown";
-import AddPropertyModal from "../Modals/AddPropertyModal";
 import DashBoardNav from "./DashboardNav";
 import PropertyCard from "./PropertyCard";
 import { Route, Routes } from "react-router-dom";
@@ -20,7 +19,10 @@ function DashboardContainer() {
             <EditModalTemp
                 modalId={"add-inspection-form"}
                 header={"Add inspection"}
-                buttonText={""}
+            />
+            <EditModalTemp
+                modalId={"add-property-form"}
+                header={"Add property"}
             />
             <div className="row mt-3">
                 <div className="col border rounded vw-25 shadow-sm">
@@ -34,7 +36,7 @@ function DashboardContainer() {
                     </p>
                     <div className="row mw-100 mb-3 justify-content-center ">
                         <PropertyDropDown />
-                        <AddPropertyModal />
+
                     </div>
                     <hr className="w-auto m-0" />
                     <UnitsContainer />

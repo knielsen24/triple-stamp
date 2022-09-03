@@ -17,10 +17,9 @@ function ProfileCard() {
             <EditModalTemp
                 modalId={"update-profile-form"}
                 header={"Edit your profile information"}
-                buttonText={"Click update to save changes"}
             />
             <DeleteProfileModal />
-            <div id="profile-main-card-container" className="card">
+            <div className="card" id="profile-main-card-container">
                 <div className="text-center bg-light" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img

@@ -66,7 +66,6 @@ function UnitsContainer() {
             <EditModalTemp
                 modalId={"update-unit-form"}
                 header={"Edit unit information"}
-                buttonText={"Click update to save changes"}
             />
             <table className="table table-borderless table-hover text-capitalize ">
                 <tbody>
