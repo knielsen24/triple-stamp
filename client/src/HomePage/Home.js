@@ -5,7 +5,7 @@ import cardThree from "../assets/card3.svg";
 
 function Home() {
     return (
-        <div className="text-center p-3 mt-4 home-container img-fluid rounded-5 shadow-sm ">
+        <div className="text-center p-3 mt-4 home-container img-fluid shadow-sm ">
             <div className="row">
                 <h5
                     className="text-secondary my-5 user-select-none"
