@@ -1,12 +1,13 @@
 import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import AddInspectionForm from "../Forms/AddInspectionForm";
 import AddPropertyForm from "../Forms/AddPropertyForm";
+import AddUnitForm from "../Forms/AddUnitForm";
 import EditInspectionForm from "../Forms/EditInspectionForm";
 import EditProfileForm from "../Forms/EditProfileForm";
 import EditPropertyForm from "../Forms/EditPropertyForm";
 import EditUnitForm from "../Forms/EditUnitForm";
 
-function EditModalTemp({ modalId, header }) {
+function EditAddModal({ modalId, header }) {
     let renderForm;
     if (modalId === "edit-property-form") {
         renderForm = <EditPropertyForm />;
@@ -26,6 +27,9 @@ function EditModalTemp({ modalId, header }) {
     if (modalId === "add-property-form") {
         renderForm = <AddPropertyForm />;
     }
+    if (modalId === "add-unit-form") {
+        renderForm = <AddUnitForm />;
+    }
 
     return (
         <div>
@@ -38,9 +42,9 @@ function EditModalTemp({ modalId, header }) {
                 aria-labelledby={modalId}
                 aria-hidden="true"
             >
-                <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
-                        <div className="modal-header bg-light" >
+                        <div className="modal-header bg-light">
                             <h5 className="modal-title" id={modalId}>
                                 {header}
                             </h5>
@@ -54,4 +58,4 @@ function EditModalTemp({ modalId, header }) {
     );
 }
 
-export default EditModalTemp;
+export default EditAddModal;

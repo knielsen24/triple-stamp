@@ -1,13 +1,14 @@
 import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import LoginForm from "./LoginForm";
 import { useState } from "react";
+import logo from "../assets/logo-svg.svg";
 
 function LoginModal() {
     const [errorMessage, setErrorMessage] = useState(false);
 
     const handleSubmitError = (message) => {
-        setErrorMessage(message)
-    }
+        setErrorMessage(message);
+    };
 
     return (
         <div>
@@ -20,16 +21,15 @@ function LoginModal() {
                 aria-labelledby="login-form"
                 aria-hidden={errorMessage ? "false" : "true"}
             >
-                <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title user-select-none" id="login-form">
-                                Welcome back to tripleStamp
-                                <div>
-                                    <p className="float-start" id="modal-subtext">
-                                        Enter your login credentials
-                                    </p>
-                                </div>
+                        <div className="modal-header bg-light">
+                        <img className="logo" src={logo}/>
+                            <h5
+                                className="modal-title text-center user-select-none"
+                                id="start-now-modal"
+                            >
+                                Welcome to tripleStamp{" "}
                             </h5>
                             <ButtonCloseModalX />
                         </div>

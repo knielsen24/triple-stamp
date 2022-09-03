@@ -46,7 +46,7 @@ function DeletePropertyModal() {
                 aria-labelledby="delete-property-form"
                 aria-hidden="true"
             >
-                <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5

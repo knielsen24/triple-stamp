@@ -4,7 +4,7 @@ import { setSelectProperty } from "../app/features/propertySlice";
 import { setSelectUnit } from "../app/features/unitSlice";
 import UnitAllInspects from "../AccordianItems/UnitAllInspects";
 import DeleteInspectionModal from "../Modals/DeleteInspectionModal";
-import EditModalTemp from "../Modals/EditModalTemp";
+import EditAddModal from "../Modals/EditAddModal";
 import PropInspectAccordians from "./PropInspectAccordians";
 import ViewInspectReport from "./ViewInspectReport";
 import { setSelectInspection } from "../app/features/inspectionSlice";
@@ -18,19 +18,22 @@ function InspectionsContainer() {
     return (
         <div className="container border-endtext-center min-vh-75 mt-2">
             <DeleteInspectionModal />
-            <EditModalTemp
+            <EditAddModal
                 modalId={"edit-inspection-form"}
                 header={"Edit inspection information"}
             />
             <div className="row align-content-between mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3">
                     <div className="card shadow-sm">
-                        <div className="card-header fw-bold">Scheduled Today </div>
+                        <div className="card-header fw-bold">
+                            Scheduled Today{" "}
+                        </div>
                         <div className="card-body">
-                            <p className="card-text">
-                                Feature coming soon...
-                            </p>
-                            <a href="#" className="btn bg-secondary text-white bg-opacity-75" >
+                            <p className="card-text">Feature coming soon...</p>
+                            <a
+                                href="#"
+                                className="btn bg-secondary text-white bg-opacity-75"
+                            >
                                 Go to inspection
                             </a>
                         </div>
@@ -38,9 +41,13 @@ function InspectionsContainer() {
                 </div>
                 <div className="col-6 p-0 ">
                     <div className="card shadow-sm">
-                        <div className="card-header fw-bold">View scheduled lists </div>
+                        <div className="card-header fw-bold">
+                            View scheduled lists{" "}
+                        </div>
                         <div className="card-body">
-                            <p className="card-text">Upcoming, in-progress, completed, all</p>
+                            <p className="card-text">
+                                Upcoming, in-progress, completed, all
+                            </p>
                             <Link
                                 to="/dashboard/inspections/property"
                                 className="btn bg-secondary text-white bg-opacity-75"

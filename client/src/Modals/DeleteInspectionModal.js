@@ -23,7 +23,7 @@ function DeleteInspectionModal() {
                 aria-labelledby="delete-inspections-modal"
                 aria-hidden="true"
             >
-                <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5

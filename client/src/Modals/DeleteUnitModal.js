@@ -32,7 +32,7 @@ function DeleteUnitModal() {
                 aria-labelledby="delete-unit-form"
                 aria-hidden="true"
             >
-                <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="delete-unit-form">

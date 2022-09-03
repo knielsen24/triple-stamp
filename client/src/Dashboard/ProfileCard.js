@@ -2,7 +2,7 @@ import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccount
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import DeleteProfileModal from "../Modals/DeleteProfileModal";
 import profileIcon from "../assets/person-icon.svg";
-import EditModalTemp from "../Modals/EditModalTemp";
+import EditAddModal from "../Modals/EditAddModal";
 
 function ProfileCard() {
     const { data: user } = useFetchUserQuery();
@@ -14,7 +14,7 @@ function ProfileCard() {
 
     return (
         <div className="container align-content-items-center p-0 shadow-sm">
-            <EditModalTemp
+            <EditAddModal
                 modalId={"update-profile-form"}
                 header={"Edit your profile information"}
             />

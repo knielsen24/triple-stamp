@@ -13,9 +13,14 @@ function App() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
-        <div className="container-fluid p-0 position-relative min-vh-100" id="app-main-container">
+        <div
+            className="container-fluid p-0 position-relative min-vh-100"
+            id="app-main-container"
+        >
+            <SignUpModal />
+            <LoginModal />
             {!user || isError ? null : <WelcomeUser user={user} />}
-            {!user || isError ? <Navbar /> : null }
+            {!user || isError ? <Navbar /> : null}
             <Loading isLoading={isLoading} />
             <Routes>
                 <Route path="/" element={!user || isError ? <Home /> : null} />
@@ -26,8 +31,6 @@ function App() {
             </Routes>
 
             <Footer />
-            <SignUpModal />
-            <LoginModal />
         </div>
     );
 }

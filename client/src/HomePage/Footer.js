@@ -18,10 +18,10 @@ function Footer() {
 
     return (
         <footer className={footerClass}>
-            <div className="container footer-container">
-                <div className="row">
+            <div className="container">
+                <div className="row justify-content-between">
                     <div className="col">
-                        <img className="logo" src={logoName} alt="logo-name" />
+                        <img className="footer-logo" src={logoName} alt="logo-name" />
                     </div>
 
                     <div className="col ">
@@ -33,7 +33,7 @@ function Footer() {
                                     href={linkedinUrl}
                                 >
                                     <img
-                                        className="logo"
+                                        className="footer-logo"
                                         src={linkedInIcon}
                                         alt="logo-name"
                                     />
@@ -47,7 +47,7 @@ function Footer() {
                                     href={githubUrl}
                                 >
                                     <img
-                                        className="logo"
+                                        className="footer-logo"
                                         src={githubIcon}
                                         alt="logo-name"
                                     />
@@ -60,7 +60,7 @@ function Footer() {
                                     href={emailAddress}
                                 >
                                     <img
-                                        className="logo"
+                                        className="footer-logo"
                                         src={emailIcon}
                                         alt="logo-name"
                                     />

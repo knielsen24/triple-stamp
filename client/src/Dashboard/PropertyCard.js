@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccountModals";
 import DeletePropertyModal from "../Modals/DeletePropertyModal";
 import homeIcon from "../assets/home-icon.svg";
-import EditModalTemp from "../Modals/EditModalTemp";
+import EditAddModal from "../Modals/EditAddModal";
 
 function PropertyCard() {
     const property = useSelector(setSelectProperty);
@@ -12,7 +12,7 @@ function PropertyCard() {
 
     return (
         <div className="container align-content-items-center rounded p-0 shadow-sm">
-            <EditModalTemp
+            <EditAddModal
                 modalId={"edit-property-form"}
                 header={"Edit your property information"}
             />

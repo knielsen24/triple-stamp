@@ -2,12 +2,11 @@
 
 .App {
     text-align: center;
-    font-family: sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 #app-main-container {
     min-width: 435px;
-
     justify-content: center;
     padding: 10px;
     padding-bottom: 0px;
@@ -79,7 +78,7 @@
 
 /* SIGN UP MODAL */
 
-#start-now-modal {
+.modal-min-w {
     min-width: 375px;
 }
 
@@ -108,8 +107,8 @@ footer {
     width: 100%;
    }
 
-.footer-container {
-
+.footer-logo {
+    height: 20px;
 }
 
 #footer-links {
@@ -161,11 +160,7 @@ footer {
 }
 
 .logo {
-    height: 20px;
+    height: 30px;
 }
 
-/* DASHBOARD */
 
-.dashboard-container {
-
-}
