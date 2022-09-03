@@ -18,7 +18,7 @@ function WelcomeUser({ user }) {
 
     if (hideWelcome) {
         return (
-            <div className="ts-primary-orange fw-bold text-center rounded p-1 my-2 shadow-sm">
+            <div className="container ts-primary-orange fw-bold text-center rounded p-1 mb-2 shadow-sm">
                 Hi {user.full_name}! Welcome to your dashboard.
                 <button
                     type="button"

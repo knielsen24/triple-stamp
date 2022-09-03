@@ -44,7 +44,7 @@ function DeleteProfileModal() {
                         <div className="modal-body">
                             <div className="row">
                                 <p className="float-start">
-                                    By clicking "Delete My Account" will
+                                    By clicking "Delete" will
                                     permantly remove your account with
                                     tripleStamp and will not be
                                     recoverable.
@@ -55,7 +55,7 @@ function DeleteProfileModal() {
                             <ButtonDeleteItem
                                 handleDelete={handleDeleteUser}
                                 id={user.id}
-                                text={"Delete my account"}
+                                text={"Delete"}
                             />
                         </div>
                         </div>

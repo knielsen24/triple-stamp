@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function DashboardMain() {
     return (
-        <div>
+        <div className="container mt-3">
             <div className="row align-content-between mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3 ">
                     <div className="card shadow-sm">

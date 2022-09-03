@@ -43,7 +43,7 @@ function DeleteUnitModal() {
                         <div className="modal-body">
                             <div className="row">
                                 <p className="float-start">
-                                    By clicking "Delete Unit" will permantly
+                                    By clicking "Delete" will permantly
                                     remove this item from your selected property
                                     and all associated inspections.
                                 </p>
@@ -53,7 +53,7 @@ function DeleteUnitModal() {
                                 <ButtonDeleteItem
                                     id={unitState.id}
                                     handleDelete={handleDeleteUnit}
-                                    text={"Delete unit"}
+                                    text={"Delete"}
                                 />
                             </div>
                         </div>

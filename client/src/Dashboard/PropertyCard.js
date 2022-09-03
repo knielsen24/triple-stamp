@@ -11,7 +11,7 @@ function PropertyCard() {
     const unitsListState = useSelector(setUnitsList);
 
     return (
-        <div className="container align-content-items-center rounded p-0 shadow-sm">
+        <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm">
             <EditAddModal
                 modalId={"edit-property-form"}
                 header={"Edit your property information"}
@@ -20,12 +20,7 @@ function PropertyCard() {
             <div className="card" id="profile-main-card-container">
                 <div className="text-center bg-light" id="profile-card-bg">
                     <div className="m-2 p-1">
-                        <img
-                            src={homeIcon}
-                            // className="img-thumbnail"
-                            alt="home-icon"
-                            width="150px"
-                        />
+                        <img src={homeIcon} alt="home-icon" width="75px"/>
                     </div>
                     <div className="header text-center">
                         <h5 className="card-title text-dark m-2 p-1">

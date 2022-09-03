@@ -13,7 +13,7 @@ function ProfileCard() {
     }
 
     return (
-        <div className="container align-content-items-center p-0 shadow-sm">
+        <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm">
             <EditAddModal
                 modalId={"update-profile-form"}
                 header={"Edit your profile information"}
@@ -24,9 +24,8 @@ function ProfileCard() {
                     <div className="m-2 p-1">
                         <img
                             src={!userImage ? profileIcon : user.image}
-                            // className="img-thumbnail"
                             alt="profileIcon"
-                            width="150px"
+                            width="75px"
                         />
                     </div>
                     <div className="header text-center">

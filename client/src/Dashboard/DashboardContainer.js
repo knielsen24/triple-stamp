@@ -15,7 +15,7 @@ function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
-        <div className="container dashboard-container">
+        <div className="container dashboard-container h-auto">
             <EditAddModal
                 modalId={"add-inspection-form"}
                 header={"Add inspection"}
@@ -24,9 +24,9 @@ function DashboardContainer() {
                 modalId={"add-property-form"}
                 header={"Add property"}
             />
-            <div className="row mt-3">
+            <div className="row">
                 <div className="col border rounded vw-25 shadow-sm">
-                    <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold ">
+                    <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold">
                         <img
                             src={buildingIcon}
                             alt="edit-icon"
@@ -41,7 +41,7 @@ function DashboardContainer() {
                     <UnitsContainer />
                 </div>
                 <div className="col-md-9 rounded bg-gradient bg-opacity-25 col-m-12 ">
-                    <div className="row ms-2">
+                    <div className="row ms-1">
                         <DashBoardNav />
                         <Routes>
                             <Route path="/main" element={<DashboardMain />} />

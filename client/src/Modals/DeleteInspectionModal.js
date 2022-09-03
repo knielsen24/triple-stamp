@@ -37,7 +37,7 @@ function DeleteInspectionModal() {
                         <div className="modal-body">
                             <div className="row">
                                 <p className="float-start">
-                                    By clicking "Delete Inspection" will
+                                    By clicking "Delete" will
                                     permantly remove this item from this property.
                                 </p>
                             </div>
@@ -46,7 +46,7 @@ function DeleteInspectionModal() {
                                 <ButtonDeleteItem
                                     handleDelete={handleDeleteInspection}
                                     id={inspection.id}
-                                    text={"Delete Inspection"}
+                                    text={"Delete"}
                                 />
                             </div>
                         </div>

@@ -63,7 +63,7 @@ function DeletePropertyModal() {
                                     {property.name} at {property.address}
                                 </p>
                                 <p className="float-start">
-                                    By clicking "Delete Property" will
+                                    By clicking "Delete" will
                                     permantly remove this property from your account including all
                                     associated information.
                                 </p>
@@ -73,7 +73,7 @@ function DeletePropertyModal() {
                                 <ButtonDeleteItem
                                     id={property.id}
                                     handleDelete={handleDeleteProperty}
-                                    text={"delete property"}
+                                    text={"delete"}
                                 />
                             </div>
                         </div>

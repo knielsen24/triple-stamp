@@ -16,7 +16,7 @@ function InspectionsContainer() {
     const inspection = useSelector(setSelectInspection);
 
     return (
-        <div className="container border-endtext-center min-vh-75 mt-2">
+        <div className="container border-endtext-center min-vh-75 mt-3">
             <DeleteInspectionModal />
             <EditAddModal
                 modalId={"edit-inspection-form"}
