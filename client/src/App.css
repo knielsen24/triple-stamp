@@ -7,9 +7,10 @@
 
 #app-main-container {
     min-width: 435px;
-    max-width: 1200px;
+
     justify-content: center;
     padding: 10px;
+    padding-bottom: 0px;
     margin: auto;
 }
 
@@ -17,15 +18,19 @@
 
 #nav-container {
     background-color: white;
+
+}
+
+#main-nav-container {
+    max-width: 75vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 
 #logo-name {
     max-width: 175px;
 }
 
-/* #nav-height {
-  height: 80px;
-} */
 
 .nav-btn-start-now {
     text-align: center;
@@ -52,7 +57,7 @@
 .home-container {
     background-image: url("./assets/skyline-background.jpg");
     background-size: cover;
-    height: 75vh;
+    height: 50vh;
 }
 #ban-statement {
     color: white;
@@ -97,6 +102,15 @@
 }
 
 /* FOOTER */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+   }
+
+.footer-container {
+    max-width: 75vw;
+}
 
 #footer-links {
     font-size: 13px;
@@ -144,4 +158,14 @@
 
 .ts-secondary-green {
     color: #EAFFEE;
+}
+
+.logo {
+    height: 20px;
+}
+
+/* DASHBOARD */
+
+.dashboard-container {
+    max-width: 75vw;
 }

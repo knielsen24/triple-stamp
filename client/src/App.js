@@ -13,7 +13,7 @@ function App() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
-        <div className="container-fluid p-0 " id="app-main-container">
+        <div className="container-fluid p-0 position-relative min-vh-100" id="app-main-container">
             {!user || isError ? <Navbar /> : null }
             <Loading isLoading={isLoading} />
             <Routes>

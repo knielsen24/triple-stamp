@@ -5,7 +5,7 @@ import cardThree from "../assets/card3.svg";
 
 function Home() {
     return (
-        <div className="container text-center mt-4 home-container img-fluid bg-opacity-50 rounded-5 shadow-sm">
+        <div className="text-center p-3 mt-4 home-container img-fluid rounded-5 shadow-sm ">
             <div className="row">
                 <h5
                     className="text-secondary my-5 user-select-none"
@@ -14,10 +14,15 @@ function Home() {
                     transforming real estate task management
                 </h5>
             </div>
-            <div className="row my-3"> </div>
-            <div className="row my-3"> </div>
+
+            <div className="m-5">
+                <ButtonStartNow />
+            </div>
+            <div className="row my-5"> </div>
+            <div className="row my-5"> </div>
+            <div className="row my-5"> </div>
             <div
-                className=" container text-center my-5 px-auto"
+                className="container text-center my-5 px-auto"
                 id="ban-cards-container"
             >
                 <div className="row mt-5">
@@ -43,9 +48,6 @@ function Home() {
                         />
                     </div>
                 </div>
-            </div>
-            <div className="m-5">
-                <ButtonStartNow />
             </div>
         </div>
     );

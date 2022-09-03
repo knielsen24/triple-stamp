@@ -16,7 +16,7 @@ function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
-        <div className="container ">
+        <div className="container dashboard-container">
             <EditModalTemp
                 modalId={"add-inspection-form"}
                 header={"Add inspection"}
