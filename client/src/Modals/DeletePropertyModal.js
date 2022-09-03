@@ -54,22 +54,18 @@ function DeletePropertyModal() {
                                 id="delete-property-form"
                             >
                                 Are you sure you want to delete this property?
-                                <div>
-                                    <p
-                                        className="float-start"
-                                        id="modal-subtext"
-                                    >
-                                        Property: Name, Property: address
-                                    </p>
-                                </div>
                             </h5>
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
+                            <div>
+                                <p className="float-start" id="modal-subtext">
+                                    {property.name} at {property.address}
+                                </p>
+                            </div>
                             <p className="float-start m-0" id="modal-subtext">
                                 By clicking "Delete This property" will
-                                permantly remove *****property.name**** at
-                                ***property.address*** with tripleStamp and your
+                                permantly remove the property and all associated
                                 information will not be recoverable.
                             </p>
                         </div>

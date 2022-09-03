@@ -74,7 +74,7 @@ function Footer() {
                             id="footer-links"
                             href={presentationUrl}
                         >
-                            Proposal
+                            Project Proposal
                         </a>
                     </div>
                     <div className="col">
@@ -83,7 +83,7 @@ function Footer() {
                             id="footer-links"
                             href={figmaUrl}
                         >
-                            Wireframe
+                            Wireframe Templates
                         </a>
                     </div>
                 </div>

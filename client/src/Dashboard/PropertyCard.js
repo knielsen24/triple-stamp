@@ -19,7 +19,7 @@ function PropertyCard() {
             />
             <DeletePropertyModal />
             <div id="profile-main-card-container" className="card">
-                <div className="text-center" id="profile-card-bg">
+                <div className="text-center bg-secondary bg-opacity-25" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img
                             src={homeIcon}

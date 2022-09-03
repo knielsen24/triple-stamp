@@ -22,9 +22,9 @@
 }
 
 #main-nav-container {
-    max-width: 75vw;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    /* max-width: 75vw; */
+    /* margin-left: 15vw;
+    margin-right: 15vw; */
 }
 
 #logo-name {
@@ -57,7 +57,7 @@
 .home-container {
     background-image: url("./assets/skyline-background.jpg");
     background-size: cover;
-    height: 50vh;
+    height: 45vh;
 }
 #ban-statement {
     color: white;
@@ -109,7 +109,7 @@ footer {
    }
 
 .footer-container {
-    
+
 }
 
 #footer-links {
@@ -118,7 +118,7 @@ footer {
 
 /* Profile Page */
 #profile-card-bg {
-    background-color: #ffc179;
+    /* background-color: #ffc179; */
 }
 
 #profile-btn-delete-account {

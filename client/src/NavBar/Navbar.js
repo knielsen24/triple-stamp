@@ -27,7 +27,7 @@ function Navbar() {
             className={user || !isError ? isLoggedIn : signUpNav}
             id="nav-container"
         >
-            <div className="container fluid" id="main-nav-container">
+            <div className="container fluid " id="main-nav-container">
                 <a
                     className="navbar-brand align-top"
                     href={user || !isError ? "/" : "/"}
@@ -46,11 +46,11 @@ function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div
-                    className="collapse navbar-collapse float-end"
+                    className="collapse navbar-collapse"
                     id="navbarNavAltMarkup"
 
                 >
-                    <div className="navbar-nav float-end me-auto">
+                    <div className="navbar-nav ms-auto">
                         {!user || isError ? (
                             <>
                                 <HomeLinks />

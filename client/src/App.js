@@ -14,6 +14,7 @@ function App() {
 
     return (
         <div className="container-fluid p-0 position-relative min-vh-100" id="app-main-container">
+            {!user || isError ? null : <WelcomeUser user={user} />}
             {!user || isError ? <Navbar /> : null }
             <Loading isLoading={isLoading} />
             <Routes>
@@ -23,7 +24,7 @@ function App() {
                     element={!user || isError ? null : <DashboardContainer />}
                 />
             </Routes>
-            {!user || isError ? null : <WelcomeUser user={user} />}
+
             <Footer />
             <SignUpModal />
             <LoginModal />
