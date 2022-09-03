@@ -19,16 +19,20 @@ function Footer() {
     return (
         <footer className={footerClass}>
             <div className="container">
-                <div className="row justify-content-between">
-                    <div className="col">
-                        <img className="footer-logo" src={logoName} alt="logo-name" />
+                <div className="row justify-content-between align-items-end">
+                    <div className="col ">
+                        <img
+                            className="footer-logo"
+                            src={logoName}
+                            alt="logo-name"
+                        />
                     </div>
 
-                    <div className="col ">
+                    <div className="col">
                         <div className="row">
-                            <div className="col-2">
+                            <div className="col-2 align-middle">
                                 <a
-                                    className={aTagClass}
+                                    className="nav-link text-decoration-none "
                                     id="footer-links"
                                     href={linkedinUrl}
                                 >
@@ -42,7 +46,7 @@ function Footer() {
 
                             <div className="col-2">
                                 <a
-                                    className={aTagClass}
+                                    className="nav-link text-decoration-none"
                                     id="footer-links"
                                     href={githubUrl}
                                 >
@@ -55,7 +59,7 @@ function Footer() {
                             </div>
                             <div className="col-2">
                                 <a
-                                    className={aTagClass}
+                                    className="nav-link text-decoration-none "
                                     id="footer-links"
                                     href={emailAddress}
                                 >
@@ -70,7 +74,7 @@ function Footer() {
                     </div>
                     <div className="col">
                         <a
-                            className={aTagClass}
+                            className="nav-link text-decoration-none text-center"
                             id="footer-links"
                             href={presentationUrl}
                         >
@@ -79,7 +83,7 @@ function Footer() {
                     </div>
                     <div className="col">
                         <a
-                            className={aTagClass}
+                            className="nav-link text-decoration-none float-end"
                             id="footer-links"
                             href={figmaUrl}
                         >

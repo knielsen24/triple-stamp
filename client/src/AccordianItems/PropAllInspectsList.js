@@ -18,7 +18,7 @@ function PropAllInspectsList() {
     }
 
     return (
-        <div className="accordion-item">
+        <div className="accordion-item ">
             <h2 className="accordion-header" id="open-prop-all-inspections">
                 <button
                     className="accordion-button collapsed bg-light text-secondary fw-bold"

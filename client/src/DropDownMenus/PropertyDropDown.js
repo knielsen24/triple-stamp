@@ -44,7 +44,7 @@ function PropertyDropDown() {
         });
         renderPropertyList = filteredProperties.map((property) => {
             return (
-                <li className="" key={property.id}>
+                <li className="overflow-auto" key={property.id}>
                     <a
                         key={property.id}
                         className="dropdown-item bg-light"
@@ -64,7 +64,7 @@ function PropertyDropDown() {
     }
 
     return (
-        <div className="w-100">
+        <div className="w-100 ">
             <div className="dropdown-center ">
                 <a
                     className="btn text-white bg-secondary bg-opacity-75 dropdown-toggle w-100 justify-content-center  ms-2 fw-bold"

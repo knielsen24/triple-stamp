@@ -5,7 +5,7 @@ import PropUpcomingInspects from "../AccordianItems/PropUpcomingInspects";
 
 function PropInspectAccordians() {
     return (
-        <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
+        <div className="accordion p-0" id="accordionPanelsStayOpenExample">
             <PropUpcomingInspects />
             <PropInProgressInspects />
             <PropCompletedInspects />

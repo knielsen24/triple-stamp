@@ -65,23 +65,22 @@ function UnitsContainer() {
                 modalId={"update-unit-form"}
                 header={"Edit unit information"}
             />
-            <EditAddModal
-                modalId={"add-unit-form"}
-                header={"Add unit"}
-            />
-            <table className="table table-borderless table-hover text-capitalize ">
-                <tbody>
-                    <tr scope="row">
-                        <td colSpan="1"></td>
-                        <td colSpan="2">
-                            {property.name !== "" ? (
-                                <ButtonOpenAddUnitModal />
-                            ) : null}
-                        </td>
-                    </tr>
-                    {property.name !== "" ? renderUnitList : null}
-                </tbody>
-            </table>
+            <EditAddModal modalId={"add-unit-form"} header={"Add unit"} />
+            <div className="">
+                <table className="table table-borderless table-hover text-capitalize ">
+                    <tbody>
+                        <tr scope="row">
+                            <td colSpan="1"></td>
+                            <td colSpan="2">
+                                {property.name !== "" ? (
+                                    <ButtonOpenAddUnitModal />
+                                ) : null}
+                            </td>
+                        </tr>
+                        {property.name !== "" ? renderUnitList : null}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }

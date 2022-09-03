@@ -10,14 +10,6 @@ function PropInspectsTable({ propInspections }) {
     const dispatch = useDispatch();
     // const formattedDate = DateTime.fromObject().toLocaleString();
 
-    const initialValues = {
-        id: "",
-        number: "",
-        label: "",
-        property_id: "",
-        square_feet: "",
-    };
-
     let renderInspections;
 
     if (propInspections) {
@@ -76,7 +68,7 @@ function PropInspectsTable({ propInspections }) {
                     role="button"
                     data-bs-toggle="modal"
                     data-bs-target="#add-inspection-form"
-                    onClick={() => dispatch(selectUnit(initialValues))}
+                    onClick={() => dispatch(selectUnit(""))}
                 >
                     <th scope="col"></th>
                     <td colSpan="3">

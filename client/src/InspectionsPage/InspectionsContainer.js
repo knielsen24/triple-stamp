@@ -16,13 +16,13 @@ function InspectionsContainer() {
     const inspection = useSelector(setSelectInspection);
 
     return (
-        <div className="container border-endtext-center min-vh-75 mt-3">
+        <div className="container border-endtext-center mt-3 me-auto h-100">
             <DeleteInspectionModal />
             <EditAddModal
                 modalId={"edit-inspection-form"}
                 header={"Edit inspection information"}
             />
-            <div className="row align-content-between mb-4 user-select-none">
+            <div className="row align-content-between mb-3 user-select-none">
                 <div className="col-6 p-0 pe-3">
                     <div className="card shadow-sm">
                         <div className="card-header fw-bold">
@@ -39,7 +39,7 @@ function InspectionsContainer() {
                         </div>
                     </div>
                 </div>
-                <div className="col-6 p-0 ">
+                <div className="col-6 p-0">
                     <div className="card shadow-sm">
                         <div className="card-header fw-bold">
                             View scheduled lists{" "}
@@ -58,23 +58,28 @@ function InspectionsContainer() {
                     </div>
                 </div>
             </div>
-
-            <Routes>
-                <Route
-                    path="property"
-                    element={property.name ? <PropInspectAccordians /> : null}
-                />
-                <Route
-                    path="unit"
-                    element={unit.name === "" ? null : <UnitAllInspects />}
-                />
-                <Route
-                    path="reports"
-                    element={
-                        inspection.title === "" ? null : <ViewInspectReport />
-                    }
-                />
-            </Routes>
+            <div className="row">
+                <Routes>
+                    <Route
+                        path="property"
+                        element={
+                            property.name ? <PropInspectAccordians /> : null
+                        }
+                    />
+                    <Route
+                        path="unit"
+                        element={unit.name === "" ? null : <UnitAllInspects />}
+                    />
+                    <Route
+                        path="reports"
+                        element={
+                            inspection.title === "" ? null : (
+                                <ViewInspectReport />
+                            )
+                        }
+                    />
+                </Routes>
+            </div>
         </div>
     );
 }
