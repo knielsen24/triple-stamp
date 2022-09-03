@@ -34,25 +34,28 @@ function DeleteUnitModal() {
             >
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header bg-light">
                             <h5 className="modal-title" id="delete-unit-form">
                                 Are you sure you want to delete this unit?
                             </h5>
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
-                            <p className="float-start m-0" id="modal-subtext">
-                                By clicking "Delete Unit" will permantly remove
-                                this item from your selected property and all associated inspections.
-                            </p>
-                        </div>
-                        <div className="modal-footer">
-                            <ButtonCancelModal />
-                            <ButtonDeleteItem
-                                id={unitState.id}
-                                handleDelete={handleDeleteUnit}
-                                text={"Delete this unit"}
-                            />
+                            <div className="row">
+                                <p className="float-start">
+                                    By clicking "Delete Unit" will permantly
+                                    remove this item from your selected property
+                                    and all associated inspections.
+                                </p>
+                            </div>
+                            <div className="float-end">
+                                <ButtonCancelModal />
+                                <ButtonDeleteItem
+                                    id={unitState.id}
+                                    handleDelete={handleDeleteUnit}
+                                    text={"Delete unit"}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

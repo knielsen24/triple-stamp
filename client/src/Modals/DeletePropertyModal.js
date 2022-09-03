@@ -48,7 +48,7 @@ function DeletePropertyModal() {
             >
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header bg-light">
                             <h5
                                 className="modal-title"
                                 id="delete-property-form"
@@ -58,24 +58,24 @@ function DeletePropertyModal() {
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
-                            <div>
-                                <p className="float-start" id="modal-subtext">
+                            <div className="row">
+                                <p className="float-start">
                                     {property.name} at {property.address}
                                 </p>
+                                <p className="float-start">
+                                    By clicking "Delete Property" will
+                                    permantly remove this property from your account including all
+                                    associated information.
+                                </p>
                             </div>
-                            <p className="float-start m-0" id="modal-subtext">
-                                By clicking "Delete This property" will
-                                permantly remove the property and all associated
-                                information will not be recoverable.
-                            </p>
-                        </div>
-                        <div className="modal-footer">
-                            <ButtonCancelModal />
-                            <ButtonDeleteItem
-                                id={property.id}
-                                handleDelete={handleDeleteProperty}
-                                text={"Delete this property"}
-                            />
+                            <div className="float-end">
+                                <ButtonCancelModal />
+                                <ButtonDeleteItem
+                                    id={property.id}
+                                    handleDelete={handleDeleteProperty}
+                                    text={"delete property"}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

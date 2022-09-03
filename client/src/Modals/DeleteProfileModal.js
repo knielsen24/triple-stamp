@@ -32,7 +32,7 @@ function DeleteProfileModal() {
             >
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header bg-light">
                             <h5
                                 className="modal-title"
                                 id="delete-account-form"
@@ -42,13 +42,15 @@ function DeleteProfileModal() {
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
-                            <p className="float-start m-0" id="modal-subtext">
-                                By clicking "Delete My Account" will permantly
-                                remove your account with tripleStamp and your
-                                information will not be recoverable.
-                            </p>
-                        </div>
-                        <div className="modal-footer">
+                            <div className="row">
+                                <p className="float-start">
+                                    By clicking "Delete My Account" will
+                                    permantly remove your account with
+                                    tripleStamp and will not be
+                                    recoverable.
+                                </p>
+                            </div>
+                            <div className="float-end">
                             <ButtonCancelModal />
                             <ButtonDeleteItem
                                 handleDelete={handleDeleteUser}
@@ -56,6 +58,8 @@ function DeleteProfileModal() {
                                 text={"Delete my account"}
                             />
                         </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

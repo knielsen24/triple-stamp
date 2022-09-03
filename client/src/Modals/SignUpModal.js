@@ -19,7 +19,7 @@ function SignUpModal() {
                         <div className="modal-header bg-light">
                             <img className="logo" src={logo}/>
                             <h5
-                                className="modal-title text-center user-select-none"
+                                className="modal-title user-select-none"
                                 id="start-now-modal"
                             >
                                 Welcome to tripleStamp{" "}

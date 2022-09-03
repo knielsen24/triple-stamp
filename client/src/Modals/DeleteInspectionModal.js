@@ -25,7 +25,7 @@ function DeleteInspectionModal() {
             >
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header bg-light">
                             <h5
                                 className="modal-title"
                                 id="delete-inspections-modal"
@@ -35,18 +35,20 @@ function DeleteInspectionModal() {
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
-                            <p className="float-start m-0" id="modal-subtext">
-                                By clicking "Delete Inspection" will permantly
-                                remove this item from your account.
-                            </p>
-                        </div>
-                        <div className="modal-footer">
-                            <ButtonCancelModal />
-                            <ButtonDeleteItem
-                                handleDelete={handleDeleteInspection}
-                                id={inspection.id}
-                                text={"Delete Inspection"}
-                            />
+                            <div className="row">
+                                <p className="float-start">
+                                    By clicking "Delete Inspection" will
+                                    permantly remove this item from this property.
+                                </p>
+                            </div>
+                            <div className="float-end">
+                                <ButtonCancelModal />
+                                <ButtonDeleteItem
+                                    handleDelete={handleDeleteInspection}
+                                    id={inspection.id}
+                                    text={"Delete Inspection"}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
