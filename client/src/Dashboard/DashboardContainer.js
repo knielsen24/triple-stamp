@@ -9,7 +9,7 @@ import EditModalTemp from "../Modals/EditModalTemp";
 import DashboardMain from "./DashboardMain";
 import buildingIcon from "../assets/building-icon.svg";
 import { useFetchUserQuery } from "../app/api/userApiSlice";
-import ProfileHome from "./ProfileHome";
+import ProfileCard from "./ProfileCard";
 import ItemsContainer from "./ItemsContainer";
 
 function DashboardContainer() {
@@ -53,7 +53,7 @@ function DashboardContainer() {
                             <Route
                                 path="/profile"
                                 element={
-                                    !user || isError ? null : <ProfileHome />
+                                    !user || isError ? null : <ProfileCard />
                                 }
                             />
                         </Routes>

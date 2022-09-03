@@ -4,7 +4,7 @@ import DeleteProfileModal from "../Modals/DeleteProfileModal";
 import profileIcon from "../assets/person-icon.svg";
 import EditModalTemp from "../Modals/EditModalTemp";
 
-function ProfileHome() {
+function ProfileCard() {
     const { data: user } = useFetchUserQuery();
 
     let userImage;
@@ -13,29 +13,30 @@ function ProfileHome() {
     }
 
     return (
-        <div className="container align-content-items-center">
-            <div id="profile-main-card-container" className="card m-3">
-                <div className="text-center" id="profile-card-bg">
+        <div className="container align-content-items-center p-0 shadow-sm">
+            <EditModalTemp
+                modalId={"update-profile-form"}
+                header={"Edit your profile information"}
+                buttonText={"Click update to save changes"}
+            />
+            <DeleteProfileModal />
+            <div id="profile-main-card-container" className="card">
+                <div className="text-center bg-light" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img
                             src={!userImage ? profileIcon : user.image}
-                            className="img-thumbnail"
+                            // className="img-thumbnail"
                             alt="profileIcon"
                             width="150px"
                         />
                     </div>
-                    <div className="header text-center text-white">
-                        <h5 className="card-title user-select-none">
+                    <div className="header text-center">
+                        <h5 className="card-title text-dark m-2 p-1">
                             {!user ? "" : user.full_name}
                         </h5>
                     </div>
                 </div>
-                <EditModalTemp
-                    modalId={"update-profile-form"}
-                    header={"Edit your profile information"}
-                    buttonText={"Click update to save changes"}
-                />
-                <DeleteProfileModal />
+
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item user-select-none">
@@ -67,4 +68,4 @@ function ProfileHome() {
     );
 }
 
-export default ProfileHome;
+export default ProfileCard;

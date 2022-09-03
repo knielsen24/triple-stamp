@@ -19,17 +19,17 @@ function PropertyCard() {
             />
             <DeletePropertyModal />
             <div id="profile-main-card-container" className="card">
-                <div className="text-center bg-secondary bg-opacity-25" id="profile-card-bg">
+                <div className="text-center bg-light" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img
                             src={homeIcon}
-                            className="img-thumbnail"
+                            // className="img-thumbnail"
                             alt="home-icon"
                             width="150px"
                         />
                     </div>
-                    <div className="header text-center text-white m-2">
-                        <h5 className="card-title">
+                    <div className="header text-center">
+                        <h5 className="card-title text-dark m-2 p-1">
                             {property.name}
                         </h5>
                     </div>
