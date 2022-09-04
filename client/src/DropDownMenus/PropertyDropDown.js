@@ -44,10 +44,10 @@ function PropertyDropDown() {
         });
         renderPropertyList = filteredProperties.map((property) => {
             return (
-                <li className="overflow-auto" key={property.id}>
+                <li key={property.id}>
                     <a
                         key={property.id}
-                        className="dropdown-item bg-light"
+                        className="dropdown-item"
                         role="button"
                         href="#"
                         onClick={() => {
@@ -67,7 +67,7 @@ function PropertyDropDown() {
         <div className="w-100 ">
             <div className="dropdown-center ">
                 <a
-                    className="btn text-white bg-secondary bg-opacity-75 dropdown-toggle w-100 justify-content-center  ms-2 fw-bold"
+                    className="btn text-white bg-secondary dropdown-toggle w-100 justify-content-center ms-2 fw-bold"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -75,7 +75,7 @@ function PropertyDropDown() {
                 >
                     {!user || isError ? null : property.name}
                 </a>
-                <ul className="dropdown-menu dropdown-menu p-3 bg-light ">
+                <ul className="dropdown-menu p-3 bg-light">
                     <form className="d-flex" role="search">
                         {/* <i class="bi bi-calendar2"></i> */}
                         <input

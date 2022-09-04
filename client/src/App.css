@@ -151,4 +151,9 @@ footer {
     height: 25px;
 }
 
+/* DASHBOARD */
+
+.dashboard-container {
+    height: 70vh;
+}
 
