@@ -16,13 +16,13 @@ function SignUpModal() {
             >
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
-                        <div className="modal-header bg-light">
-                            <img className="logo" src={logo}/>
+                        <div className="modal-header bg-light text-center ">
+                            <img className="logo ms-1" src={logo} />
                             <h5
-                                className="modal-title user-select-none"
+                                className="modal-title w-100"
                                 id="start-now-modal"
                             >
-                                Welcome to tripleStamp{" "}
+                                Welcome to tripleStamp
                             </h5>
                             <ButtonCloseModalX />
                         </div>
@@ -30,7 +30,7 @@ function SignUpModal() {
                             <div className="row">
                                 <div className="col text-center">
                                     <div className="row mt-0">
-                                        <p className="mb-3">
+                                        <p className="my-2">
                                             Start now - it's free. No credit
                                             card needed
                                         </p>

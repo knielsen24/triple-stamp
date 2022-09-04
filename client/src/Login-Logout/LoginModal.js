@@ -23,10 +23,10 @@ function LoginModal() {
             >
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
-                        <div className="modal-header bg-light">
-                        <img className="logo" src={logo}/>
+                        <div className="modal-header bg-light text-center">
+                        <img className="logo ms-1" src={logo}/>
                             <h5
-                                className="modal-title text-center user-select-none"
+                                className="modal-title w-100"
                                 id="start-now-modal"
                             >
                                 Welcome to tripleStamp{" "}
