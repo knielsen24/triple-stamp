@@ -29,7 +29,7 @@ function Footer() {
                     </div>
 
                     <div className="col">
-                        <div className="row">
+                        <div className="row justify-content-center">
                             <div className="col-2 align-middle">
                                 <a
                                     className="nav-link text-decoration-none "
@@ -72,6 +72,15 @@ function Footer() {
                             </div>
                         </div>
                     </div>
+                    {/* <div className="col">
+                        <a
+                            className="nav-link text-decoration-none text-center"
+                            id="footer-links"
+                            href={presentationUrl}
+                        >
+                            Portfolio (Coming Soon)
+                        </a>
+                    </div> */}
                     <div className="col">
                         <a
                             className="nav-link text-decoration-none text-center"

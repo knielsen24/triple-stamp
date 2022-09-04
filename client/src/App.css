@@ -20,11 +20,9 @@
 
 }
 
-
 #logo-name {
     max-width: 175px;
 }
-
 
 .nav-btn-start-now {
     text-align: center;
@@ -108,11 +106,6 @@ footer {
 
 #footer-links {
     font-size: 13px;
-}
-
-/* Profile Page */
-#profile-card-bg {
-    /* background-color: #ffc179; */
 }
 
 #profile-btn-delete-account {

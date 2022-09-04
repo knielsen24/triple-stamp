@@ -10,12 +10,13 @@ import UserDropDown from "../DropDownMenus/UserDropDown";
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
-    const navLinkClass = "nav-link btn";
+    const navLinkClass = "nav-link";
     const dropDownClass = "nav-item btn border-0";
-    const imgClass = "me-2 mb-1";
+    const imgClass = "me-1 mb-1 align-items-center";
     let activeClass =
-        "nav-link active bg-light text-dark border-0";
-    let inactiveClass = "nav-link text-dark nav-item";
+        "nav-link active fw-bold bg-light text-dark border-0 navbar-text";
+    let inactiveClass =
+        "nav-link text-dark align-items-center navbar-text";
 
     let detailsLinkhref;
     property.name !== ""
@@ -23,8 +24,8 @@ function DashboardNav() {
         : (detailsLinkhref = "/inspections/property");
 
     return (
-        <nav className=" text-center fw-bold ts-primary-green rounded shadow-sm sticky-top p-0">
-            <ul className="nav nav-pills nav-justified">
+        <nav className="navbar-nav ts-primary-green rounded shadow-sm sticky-top">
+            <ul className="nav nav-pills nav-justified ">
                 <li className={navLinkClass}>
                     <NavLink
                         to="main"
@@ -55,7 +56,7 @@ function DashboardNav() {
                         Inspections
                     </NavLink>
                 </li>
-                <li className={navLinkClass}>
+                {/* <li className={navLinkClass}>
                     <NavLink
                         to="items"
                         className={({ isActive }) =>
@@ -69,7 +70,7 @@ function DashboardNav() {
                         />
                         Items
                     </NavLink>
-                </li>
+                </li> */}
                 <li className={navLinkClass}>
                     <NavLink
                         to="details"
@@ -86,7 +87,7 @@ function DashboardNav() {
                     </NavLink>
                 </li>
                 <li className={dropDownClass}>
-                 {/* "border-start border-secondary nav-item" */}
+                    {/* "border-start border-secondary nav-item" */}
                     <NavLink to="#">
                         <UserDropDown />
                     </NavLink>
