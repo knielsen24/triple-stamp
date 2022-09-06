@@ -49,7 +49,7 @@
 .home-container {
     background-image: url("./assets/skyline-background-v2.jpg");
     background-size: cover;
-    height: 45vh;
+    height: 50vh;
 }
 #ban-statement {
     color: white;
@@ -67,6 +67,10 @@
 #banner-cards {
     min-width: 100px;
     flex-direction: column;
+}
+
+.icon-tiles {
+    height: 75px;
 }
 
 /* SIGN UP MODAL */
