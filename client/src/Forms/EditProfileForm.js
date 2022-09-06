@@ -35,6 +35,7 @@ function EditProfileForm() {
                     phone: "" || user.phone,
                     business: "" || user.business,
                     account_name: "" || user.account_name,
+                    image: "" || user.image,
                 }}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
@@ -55,6 +56,26 @@ function EditProfileForm() {
                     isValid,
                 }) => (
                     <form onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <label
+                                htmlFor="image"
+                                className="form-label float-start"
+                            >
+                                Image URL
+                            </label>
+                            <input
+                                id="image"
+                                className="form-control"
+                                type="string"
+                                name="image"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.image}
+                            />
+                            {errors.image &&
+                                touched.image &&
+                                errors.image}
+                        </div>
                         <div className="mb-3">
                             <label
                                 htmlFor="full_name"

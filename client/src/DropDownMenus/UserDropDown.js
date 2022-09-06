@@ -10,7 +10,7 @@ function UserDropDown() {
     return (
         <div className="dropdown-center inline p-1">
             <a
-                className="btn-secondary dropdown-toggle caret-off"
+                className="btn-secondary dropdown-toggle text-secondary"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -18,13 +18,13 @@ function UserDropDown() {
             >
                 {user ? user.fullname : null}
                 <img
-                    src={personIcon}
+                    src={user ? user.image : personIcon}
                     alt="profile-icon"
-                    className="align-middle profile-dropdown"
+                    className="align-middle profile-dropdown rounded-circle"
                 />
 
             </a>
-            <ul className="dropdown-menu">
+            <ul className="dropdown-menu mt-2 bg-light">
                 <li>
                     <Link to="/dashboard/profile" className="dropdown-item">
                         <img

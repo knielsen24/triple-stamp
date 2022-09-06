@@ -23,9 +23,10 @@ function ProfileCard() {
                 <div className="text-center bg-light" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img
+                            className="rounded-circle"
                             src={!userImage ? profileIcon : user.image}
                             alt="profileIcon"
-                            width="75px"
+                            width="115px"
                         />
                     </div>
                     <div className="header text-center">
