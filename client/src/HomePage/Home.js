@@ -38,7 +38,7 @@ function Home() {
                     </div>
                     <div>
                         <h5>Plan</h5>
-                        <p>Create and maintain your schedule in real time</p>
+                        <p>Maintain your planning schedule in real time</p>
                     </div>
                 </div>
                 <div className="col text-center">
@@ -51,7 +51,7 @@ function Home() {
                     </div>
                     <div>
                         <h5>Inspect</h5>
-                        <p>Create and track all your inspections</p>
+                        <p>Track and record all your inspections</p>
                     </div>
                 </div>
                 <div className="col text-center">

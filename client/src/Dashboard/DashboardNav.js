@@ -10,8 +10,8 @@ import UserDropDown from "../DropDownMenus/UserDropDown";
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
-    const navLinkClass = "nav-link h-100 ";
-    const dropDownClass = "nav-item dropdown";
+    const navLinkClass = "nav-link h-100";
+    const dropDownClass = "mx-4 dropdown";
     // border-start rounded-0 border-secondary
     const imgClass = "me-1 mb-1 ";
     let activeClass =
@@ -25,7 +25,7 @@ function DashboardNav() {
         : (detailsLinkhref = "/inspections/property");
 
     return (
-        <nav className="navbar-nav rounded shadow-sm sticky-top">
+        <nav className="navbar-nav rounded bg-white shadow-sm sticky-top p-0">
             <ul className="nav nav-justified align-items-center align-items-end">
                 <li className={navLinkClass}>
                     <NavLink
@@ -87,8 +87,9 @@ function DashboardNav() {
                         Details
                     </NavLink>
                 </li>
+                <div className="vr h-75 align-self-center"></div>
                 <li className={dropDownClass}>
-                    {/* "border-start border-secondary nav-item" */}
+
                     <NavLink to="#">
                         <UserDropDown />
                     </NavLink>
