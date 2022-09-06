@@ -5,7 +5,7 @@ import manageIcon from "../assets/manage-icon.svg";
 
 function Home() {
     const iconClass = "icon-tiles";
-    const iconDiv = "mb-3"
+    const iconDiv = "mb-4"
 
     return (
         <div>
