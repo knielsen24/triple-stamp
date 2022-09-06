@@ -11,13 +11,13 @@ function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
     const navLinkClass = "nav-link h-100 ";
-    const dropDownClass = "nav-item btn border-0 ";
+    const dropDownClass = "nav-item dropdown";
     // border-start rounded-0 border-secondary
     const imgClass = "me-1 mb-1 ";
     let activeClass =
-        "nav-link active fw-bold bg-secondary text-dark bg-opacity-50 border-0 navbar-text h-100";
+        "nav-link fw-bold ts-primary-green text-dark navbar-text rounded pill-height ";
     let inactiveClass =
-        "nav-link text-dark align-items-center navbar-text";
+        "nav-link text-dark align-items-center navbar-text rounded ";
 
     let detailsLinkhref;
     property.name !== ""
@@ -25,8 +25,8 @@ function DashboardNav() {
         : (detailsLinkhref = "/inspections/property");
 
     return (
-        <nav className="navbar-nav ts-primary-green rounded shadow-sm sticky-top">
-            <ul className="nav nav-pills nav-justified align-items-center">
+        <nav className="navbar-nav rounded shadow-sm sticky-top">
+            <ul className="nav nav-justified align-items-center align-items-end">
                 <li className={navLinkClass}>
                     <NavLink
                         to="main"
