@@ -173,3 +173,10 @@ footer {
     /* height: 1px; */
     /* margin-top: 10px; */
 }
+
+
+.dash-main-btn {
+    text-align: center;
+    font-weight: bold;
+    border: 0;
+}

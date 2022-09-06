@@ -34,11 +34,11 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        <img
+                        {/* <img
                             src={homeIcon}
                             alt="home-icon"
                             className={imgClass}
-                        />
+                        /> */}
                         Main{" "}
                     </NavLink>
                 </li>
@@ -49,11 +49,11 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        <img
+                        {/* <img
                             src={calendarIcon}
                             alt="calendar-icon"
                             className={imgClass}
-                        />
+                        /> */}
                         Inspections
                     </NavLink>
                 </li>
@@ -79,17 +79,16 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        <img
+                        {/* <img
                             src={detailsIcon}
                             alt="Clipboard-icon"
                             className={imgClass}
-                        />
+                        /> */}
                         Details
                     </NavLink>
                 </li>
                 <div className="vr h-75 align-self-center"></div>
                 <li className={dropDownClass}>
-
                     <NavLink to="#">
                         <UserDropDown />
                     </NavLink>

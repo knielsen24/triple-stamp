@@ -14,6 +14,7 @@ function InspectionsContainer() {
     const property = useSelector(setSelectProperty);
     const unit = useSelector(setSelectUnit);
     const inspection = useSelector(setSelectInspection);
+    const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75";
 
     return (
         <div className="container border-endtext-center mt-3 me-auto h-100">
@@ -30,12 +31,11 @@ function InspectionsContainer() {
                         </div>
                         <div className="card-body">
                             <p className="card-text">
-                                looks like there are no inspections scheduled
-                                today
+                                Add a new inspection to an unit
                             </p>
                             <a
                                 href="#"
-                                className="btn bg-secondary text-white bg-opacity-75"
+                                className={buttonClass}
                                 data-bs-toggle="modal"
                                 data-bs-target="#add-inspection-form"
                             >
@@ -55,9 +55,9 @@ function InspectionsContainer() {
                             </p>
                             <Link
                                 to="/dashboard/inspections/property"
-                                className="btn bg-secondary text-white bg-opacity-75"
+                                className={buttonClass}
                             >
-                                Checkout the schedule
+                                View list
                             </Link>
                         </div>
                     </div>
