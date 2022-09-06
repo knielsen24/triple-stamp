@@ -27,7 +27,7 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className="container mt-3 p-3 d-flex flex-row justify-content-around align-items-center">
+            <div className="container mt-5 p-3 d-flex flex-row justify-content-around align-items-center">
                 <div className="col text-center">
                     <div className={iconDiv} >
                         <img
