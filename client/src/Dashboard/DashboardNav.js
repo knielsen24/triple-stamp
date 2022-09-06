@@ -10,11 +10,12 @@ import UserDropDown from "../DropDownMenus/UserDropDown";
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
-    const navLinkClass = "nav-link";
-    const dropDownClass = "nav-item btn border-0";
-    const imgClass = "me-1 mb-1 align-items-center";
+    const navLinkClass = "nav-link h-100 ";
+    const dropDownClass = "nav-item btn border-0 ";
+    // border-start rounded-0 border-secondary
+    const imgClass = "me-1 mb-1 ";
     let activeClass =
-        "nav-link active fw-bold bg-light text-dark border-0 navbar-text";
+        "nav-link active fw-bold bg-secondary text-dark bg-opacity-50 border-0 navbar-text h-100";
     let inactiveClass =
         "nav-link text-dark align-items-center navbar-text";
 
@@ -25,7 +26,7 @@ function DashboardNav() {
 
     return (
         <nav className="navbar-nav ts-primary-green rounded shadow-sm sticky-top">
-            <ul className="nav nav-pills nav-justified ">
+            <ul className="nav nav-pills nav-justified align-items-center">
                 <li className={navLinkClass}>
                     <NavLink
                         to="main"

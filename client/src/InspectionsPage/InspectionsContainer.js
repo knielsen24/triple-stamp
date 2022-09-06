@@ -26,15 +26,20 @@ function InspectionsContainer() {
                 <div className="col-6 p-0 pe-3">
                     <div className="card shadow-sm">
                         <div className="card-header fw-bold">
-                            Scheduled Today{" "}
+                            Create a new inspection
                         </div>
                         <div className="card-body">
-                            <p className="card-text">Feature coming soon...</p>
+                            <p className="card-text">
+                                looks like there are no inspections scheduled
+                                today
+                            </p>
                             <a
                                 href="#"
                                 className="btn bg-secondary text-white bg-opacity-75"
+                                data-bs-toggle="modal"
+                                data-bs-target="#add-inspection-form"
                             >
-                                Go to inspection
+                                Create Inspection
                             </a>
                         </div>
                     </div>
@@ -42,11 +47,11 @@ function InspectionsContainer() {
                 <div className="col-6 p-0">
                     <div className="card shadow-sm">
                         <div className="card-header fw-bold">
-                            View scheduled lists{" "}
+                            View inspection lists{" "}
                         </div>
                         <div className="card-body">
                             <p className="card-text">
-                                Upcoming, in-progress, completed, all
+                                Upcoming, in-progress, completed, and all
                             </p>
                             <Link
                                 to="/dashboard/inspections/property"

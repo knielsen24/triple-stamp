@@ -82,7 +82,7 @@ function AddPropertyForm() {
                             <ButtonCancelModal />
                             <ButtonSaveChanges
                                 isSubmitting={isSubmitting}
-                                text={"Create Property"}
+                                text={"Add Property"}
                                 isValid={isValid}
                             />
                         </div>

@@ -4,23 +4,7 @@ function DashboardMain() {
     return (
         <div className="container mt-3">
             <div className="row align-content-between mb-4 user-select-none">
-                <div className="col-6 p-0 pe-3 ">
-                    <div className="card shadow-sm">
-                        <div className="card-header fw-bold">
-                            Today's agenda
-                        </div>
-                        <div className="card-body">
-                            <p className="card-text">Feature coming soon...</p>
-                            <a
-                                href="#"
-                                className="btn bg-secondary text-white bg-opacity-75"
-                            >
-                                Go to inspection
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-6 p-0">
+                <div className="col-6 p-0 pe-3">
                     <div className="card shadow-sm">
                         <div className="card-header fw-bold">
                             View inspections
@@ -33,8 +17,28 @@ function DashboardMain() {
                                 to="/dashboard/inspections/property"
                                 className="btn bg-secondary text-white bg-opacity-75"
                             >
-                                Checkout the schedule
+                                View the list
                             </Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-6 p-0  ">
+                    <div className="card shadow-sm">
+                        <div className="card-header fw-bold">
+                            Create a new inspection
+                        </div>
+                        <div className="card-body">
+                            <p className="card-text">
+                                Schedule a new inspection for an unit
+                            </p>
+                            <a
+                                href="#"
+                                className="btn bg-secondary text-white bg-opacity-75"
+                                data-bs-toggle="modal"
+                                data-bs-target="#add-inspection-form"
+                            >
+                                Create Inspection
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -43,7 +47,7 @@ function DashboardMain() {
                 <div className="col-6 p-0 pe-3">
                     <div className="card shadow-sm">
                         <div className="card-header fw-bold">
-                            Create a new inspection
+                            Add an unit to the property
                         </div>
                         <div className="card-body">
                             <p className="card-text">
@@ -54,9 +58,9 @@ function DashboardMain() {
                                 href="#"
                                 className="btn bg-secondary text-white bg-opacity-75"
                                 data-bs-toggle="modal"
-                                data-bs-target="#add-inspection-form"
+                                data-bs-target="#add-unit-form"
                             >
-                                Create Inspection
+                                Add unit
                             </a>
                         </div>
                     </div>

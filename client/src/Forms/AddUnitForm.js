@@ -107,7 +107,7 @@ function AddUnitForm() {
                             <ButtonCancelModal />
                             <ButtonSaveChanges
                                 isSubmitting={isSubmitting}
-                                text={"Create unit"}
+                                text={"Add unit"}
                                 isValid={isValid}
                             />
 
