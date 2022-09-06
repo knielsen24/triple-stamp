@@ -159,6 +159,10 @@ footer {
     height: 25px;
 }
 
+.profile-dropdown {
+    height: 30px;
+}
+
 /* DASHBOARD */
 
 .dashboard-container {

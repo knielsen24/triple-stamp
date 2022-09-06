@@ -8,15 +8,21 @@ function UserDropDown() {
     const { data: user, isError } = useFetchUserQuery();
 
     return (
-        <div className="dropdown center inline p-1">
+        <div className="dropdown-center inline p-1">
             <a
-                className="btn btn-secondary dropdown-toggle nav-drop-down-btn"
+                className="btn-secondary dropdown-toggle caret-off"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-                {!user || isError ? "" : user.full_name}
+                {user ? user.fullname : null}
+                <img
+                    src={personIcon}
+                    alt="profile-icon"
+                    className="align-middle profile-dropdown"
+                />
+
             </a>
             <ul className="dropdown-menu">
                 <li>
