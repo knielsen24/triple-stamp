@@ -20,8 +20,10 @@ FRONTEND (VIEW)
 * Bootstrap 5: Custom CSS
 
 BACKEND (CONTROLLER)
-* Ruby on Rails: Custom Controller, Models, Serializers, Routes
+* Ruby on Rails: Custom Controller, Models, Serializers
     * Full CRUD for all models
+    * User login token
+    * RESTful API Routes
 * Active Record: Model associations and resources
 * PostgreSQL database
 
