@@ -15,24 +15,24 @@ USER STORIES
 MVC
 
 MODEL (Full CRUD for all models)
-    * User
-    * Property
-    * Unit
-    * Inspection
+* User
+* Property
+* Unit
+* Inspection
 
 FRONTEND (VIEW)
-    * React.js: Single page application (SPA)
-    * Redux: Toolkit for global state management
-    * RTK Query: for data fetching and caching
-    * React Router V6: Application routing and rendering
-    * Formik: controlled forms library
-    * Bootstrap 5: Custom CSS
+* React.js: Single page application (SPA)
+* Redux: Toolkit for global state management
+* RTK Query: for data fetching and caching
+* React Router V6: Application routing and rendering
+* Formik: controlled forms library
+* Bootstrap 5: Custom CSS
 
 BACKEND (CONTROLLER)
-    * Ruby on Rails: Custom Controller, Models, Serializers, Routes
-        Full CRUD for all models
-    * Active Record: Model associations and resources
-    * PostgreSQL database
+* Ruby on Rails: Custom Controller, Models, Serializers, Routes
+ * Full CRUD for all models
+* Active Record: Model associations and resources
+* PostgreSQL database
 
 MODEL RELATIONSHIPS
 ![Alt text](./client/src/assets/slideshow*models.jpg)
