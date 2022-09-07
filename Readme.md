@@ -12,7 +12,7 @@ USER STORIES
 * add an unit to a property
 * add an inspection to a property
 
-MVC
+### Model - View - Controller
 
 MODEL (Full CRUD for all models)
 * User
@@ -30,7 +30,7 @@ FRONTEND (VIEW)
 
 BACKEND (CONTROLLER)
 * Ruby on Rails: Custom Controller, Models, Serializers, Routes
- * Full CRUD for all models
+    * Full CRUD for all models
 * Active Record: Model associations and resources
 * PostgreSQL database
 
