@@ -38,6 +38,7 @@ USER STORIES
 * add an inspection to a unit
 
 ### CUSTOM UI/UX DESIGN SCREENSHOTS
+Bootstrap 5 CSS
 
 Landing Page
 ![landing page](./client/src/assets/ts-landing-page.jpg)
@@ -48,13 +49,11 @@ User Sign up
 User Login
 ![login](./client/src/assets/login-modal.jpg)
 
-Profile Page
-![signup](./client/src/assets/signup-modal.jpg)
-
-
-
-
 Dashboard Main (Welcome Message)
+![Dashboard Welcome](./client/src/assets/dashboard-welcome.jpg)
+
+Profile Page
+![profile page](./client/src/assets/profile-page.jpg)
 
 Inspections View List Open
 ![inspection list closed](./client/src/assets/inspections-list-closed.jpg)
@@ -62,12 +61,15 @@ Inspections View List Open
 Inspections View List Closed
 ![inspection list Open](./client/src/assets/inspections-list-opem.jpg)
 
+Add Inspection Form
+![inspection form](./client/src/assets/inspection-form.jpg)
+
 Dashboard Details (Property)
 ![property details](./client/src/assets/property-details.jpg)
 
 Dropdown Menu
 ![dropdown](./client/src/assets/property-dropdown.jpg)
 
-Add Inspection Form
+
 
 
