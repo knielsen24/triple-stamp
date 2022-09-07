@@ -4,13 +4,13 @@
 ![Alt text](./client/src/assets/slideshow*technologies.jpg)
 
 USER STORIES
-    * create an account/sign up
-    * sign in with login credentials
-    * edit profile
-    * delete profile
-    * add a property to their account
-    * add an unit to a property
-    * add an inspection to a property
+* create an account/sign up
+* sign in with login credentials
+* edit profile
+* delete profile
+* add a property to their account
+* add an unit to a property
+* add an inspection to a property
 
 MVC
 
