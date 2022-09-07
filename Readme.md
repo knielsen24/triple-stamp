@@ -1,8 +1,5 @@
-**************Welcome to tripleStamp!**************
+Welcome to tripleStamp!
 "Transforming Real Estate Task Management"
-
-***WHAT IS TRIPLESTAMP?***
-tripleStamp is a full stack web application designed to organize and facilitate property task management for managers, landlords and owners.
 
 ![Alt text](./client/src/assets/slideshow-technologies.jpg)
 
@@ -36,6 +33,9 @@ BACKEND (CONTROLLER)
         Full CRUD for all models
     - Active Record: Model associations and resources
     - PostgreSQL database
+
+MODEL RELATIONSHIPS
+![Alt text](./client/src/assets/slideshow-models.jpg)
 
 CUSTOM UI/UX DESIGN SCREENSHOTS
 
