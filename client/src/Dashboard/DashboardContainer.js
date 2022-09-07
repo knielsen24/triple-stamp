@@ -24,7 +24,7 @@ function DashboardContainer() {
                 modalId={"add-property-form"}
                 header={"Add property"}
             />
-            <div className="row me-auto" >
+            <div className="row me-auto mt-1" >
                 <nav className="col border rounded vw-25 shadow-sm ">
                     <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold">
                         <img
