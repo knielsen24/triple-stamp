@@ -1,4 +1,4 @@
-## Welcome to tripleStamp! ##
+## Welcome to tripleStamp!
 "Transforming Real Estate Task Management"
 
 ![Alt text](./client/src/assets/slideshow*technologies.jpg)
