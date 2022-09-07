@@ -59,7 +59,7 @@ Inspections View List Open
 ![inspection list closed](./client/src/assets/inspections-list-closed.jpg)
 
 Inspections View List Closed
-![inspection list Open](./client/src/assets/inspections-list-opem.jpg)
+![inspection list Open](./client/src/assets/inspections-list-open.jpg)
 
 Add Inspection Form
 ![inspection form](./client/src/assets/inspection-form.jpg)
