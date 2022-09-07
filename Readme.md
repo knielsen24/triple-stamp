@@ -1,7 +1,7 @@
 ## Welcome to tripleStamp!
 "Transforming Real Estate Task Management"
 
-![Alt text](./client/src/assets/slideshow*technologies.jpg)
+![technologies](./client/src/assets/slideshow-technologies.jpg)
 
 ### Model - View - Controller
 
@@ -26,7 +26,7 @@ BACKEND (CONTROLLER)
 * PostgreSQL database
 
 MODEL RELATIONSHIPS
-![Alt text](./client/src/assets/slideshow*models.jpg)
+![models](./client/src/assets/slideshow-models.jpg)
 
 USER STORIES
 * create an account/sign up
@@ -40,7 +40,7 @@ USER STORIES
 ### CUSTOM UI/UX DESIGN SCREENSHOTS
 
 Landing Page
-![Alt text](./client/src/assets/ts*landing*page.jpg)
+![landing page](./client/src/assets/ts-landing-page.jpg)
 
 User Sign up
 
