@@ -35,7 +35,7 @@ USER STORIES
 * delete profile
 * add a property to their account
 * add an unit to a property
-* add an inspection to a property
+* add an inspection to a unit
 
 ### CUSTOM UI/UX DESIGN SCREENSHOTS
 
@@ -43,18 +43,30 @@ Landing Page
 ![landing page](./client/src/assets/ts-landing-page.jpg)
 
 User Sign up
+![signup](./client/src/assets/signup-modal.jpg)
 
 User Login
+![login](./client/src/assets/login-modal.jpg)
 
 Profile Page
+![signup](./client/src/assets/signup-modal.jpg)
 
-Edit Profile
+
+
 
 Dashboard Main (Welcome Message)
 
-Dashboard Inspections View List
+Inspections View List Open
+![inspection list closed](./client/src/assets/inspections-list-closed.jpg)
+
+Inspections View List Closed
+![inspection list Open](./client/src/assets/inspections-list-opem.jpg)
 
 Dashboard Details (Property)
+![property details](./client/src/assets/property-details.jpg)
+
+Dropdown Menu
+![dropdown](./client/src/assets/property-dropdown.jpg)
 
 Add Inspection Form
 
