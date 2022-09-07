@@ -3,15 +3,6 @@
 
 ![Alt text](./client/src/assets/slideshow*technologies.jpg)
 
-USER STORIES
-* create an account/sign up
-* sign in with login credentials
-* edit profile
-* delete profile
-* add a property to their account
-* add an unit to a property
-* add an inspection to a property
-
 ### Model - View - Controller
 
 MODEL (Full CRUD for all models)
@@ -37,7 +28,16 @@ BACKEND (CONTROLLER)
 MODEL RELATIONSHIPS
 ![Alt text](./client/src/assets/slideshow*models.jpg)
 
-CUSTOM UI/UX DESIGN SCREENSHOTS
+USER STORIES
+* create an account/sign up
+* sign in with login credentials
+* edit profile
+* delete profile
+* add a property to their account
+* add an unit to a property
+* add an inspection to a property
+
+### CUSTOM UI/UX DESIGN SCREENSHOTS
 
 Landing Page
 ![Alt text](./client/src/assets/ts*landing*page.jpg)
