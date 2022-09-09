@@ -13,10 +13,10 @@ MODEL (Full CRUD for all models)
 
 FRONTEND (VIEW)
 * React.js: Single page application (SPA)
-* Redux: Toolkit for global state management
-* RTK Query: for data fetching and caching
+* Redux Toolkit: Global application state management
+* RTK Query: Data fetching and caching
 * React Router V6: Application routing and rendering
-* Formik: controlled forms library
+* Formik: Controlled forms library
 * Bootstrap 5: Custom CSS
 
 BACKEND (CONTROLLER)

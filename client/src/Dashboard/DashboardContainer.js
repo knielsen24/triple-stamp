@@ -15,7 +15,7 @@ function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
-        <div className="container h-100 dashboard-containter" >
+        <div className="container h-100 dashboard-containter ">
             <EditAddModal
                 modalId={"add-inspection-form"}
                 header={"Add inspection"}
@@ -24,23 +24,26 @@ function DashboardContainer() {
                 modalId={"add-property-form"}
                 header={"Add property"}
             />
-            <div className="row me-auto mt-1" >
-                <nav className="col border rounded vw-25 shadow-sm ">
-                    <p className="text-start user-select-none mt-3 mb-2 ms-2 ps-0 fw-bold">
-                        <img
-                            src={buildingIcon}
-                            alt="edit-icon"
-                            className="align-middle mb-1 me-2"
-                        />
-                        My property
-                    </p>
-                    <div className="row mw-100 mb-3 justify-content-center">
-                        <PropertyDropDown />
+            <div className="row mh-100">
+                <div className="col border rounded vw-25 shadow-sm mt-1 ">
+                    <div className="row sticky-top" >
+                        <div className="text-start user-select-none mt-3 mb-2 ms-4 ps-0 fw-bold position-relative">
+                            <img
+                                src={buildingIcon}
+                                alt="edit-icon"
+                                className="align-middle mb-1 me-2"
+                            />
+                            My property
+                        </div>
+                        <div className="row mw-100 mb-3 justify-content-center">
+                            <PropertyDropDown />
+                        </div>
                     </div>
+
                     <hr className="w-auto m-0" />
                     <UnitsContainer />
-                </nav>
-                <div className="col-md-9 rounded bg-gradient bg-opacity-25 col-m-12">
+                </div>
+                <div className="col-md-9 rounded bg-gradient bg-opacity-25 col-m-12 mt-1 sticky-top">
                     <div className="row ms-1">
                         <DashBoardNav />
                         <Routes>
