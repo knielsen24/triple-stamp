@@ -10,6 +10,7 @@ import buildingIcon from "../assets/building-icon.svg";
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import ProfileCard from "./ProfileCard";
 import ItemsContainer from "./ItemsContainer";
+import DeleteProfileModal from "../Modals/DeleteProfileModal";
 
 function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
@@ -24,6 +25,11 @@ function DashboardContainer() {
                 modalId={"add-property-form"}
                 header={"Add property"}
             />
+            <EditAddModal
+                modalId={"update-profile-form"}
+                header={"Edit your profile information"}
+            />
+            <DeleteProfileModal />
             <div className="row mh-100">
                 <div className="col border rounded vw-25 shadow-sm mt-1 ">
                     <div className="row sticky-top" >
