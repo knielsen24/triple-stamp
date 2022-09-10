@@ -13,7 +13,7 @@ function Footer() {
         "https://www.figma.com/file/JwTKdTLfaxo4khUwfn2WrT/Triple-Stamp?node-id=0%3A1";
 
     const footerClass =
-        "mt-auto border-top border-1 py-4 bg-secondary text-white text";
+        "mt-auto border-top border-1 py-3 bg-secondary text-white text";
     const aTagClass = "nav-link text-decoration-none";
 
     return (

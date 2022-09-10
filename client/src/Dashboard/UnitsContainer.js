@@ -59,7 +59,7 @@ function UnitsContainer() {
     }
 
     return (
-        <div className="align-items-center">
+        <div className="align-items-center ">
             <DeleteUnitModal />
             <EditAddModal
                 modalId={"update-unit-form"}

@@ -180,3 +180,19 @@ footer {
     font-weight: bold;
     border: 0;
 }
+
+.dash-height {
+    height: 92vh;
+}
+
+.units-container {
+    position: sticky;
+}
+
+.overflow-x-0 {
+    overflow-x: hidden;
+}
+
+.overflow-y-0 {
+    overflow-y: hidden;
+}
