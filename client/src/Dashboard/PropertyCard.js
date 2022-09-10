@@ -2,9 +2,8 @@ import { setSelectProperty } from "../app/features/propertySlice";
 import { setUnitsList } from "../app/features/unitsListSlice";
 import { useSelector } from "react-redux";
 import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccountModals";
-import DeletePropertyModal from "../Modals/DeletePropertyModal";
 import homeIcon from "../assets/home-icon.svg";
-import EditAddModal from "../Modals/EditAddModal";
+
 
 function PropertyCard() {
     const property = useSelector(setSelectProperty);
@@ -12,7 +11,6 @@ function PropertyCard() {
 
     return (
         <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
-            
             <div className="card" id="profile-main-card-container">
                 <div className="text-center bg-light" id="profile-card-bg">
                     <div className="m-2 p-1">
@@ -47,6 +45,7 @@ function PropertyCard() {
                         </li>
                     </ul>
                 </div>
+                
                 <div className="card-footer bg-white text-muted text-center">
                     {property.name === "" ? null : (
                         <ButtonManageAccountModals

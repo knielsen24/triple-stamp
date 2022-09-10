@@ -1,8 +1,7 @@
 import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccountModals";
 import { useFetchUserQuery } from "../app/api/userApiSlice";
-import DeleteProfileModal from "../Modals/DeleteProfileModal";
 import profileIcon from "../assets/person-icon.svg";
-import EditAddModal from "../Modals/EditAddModal";
+
 
 function ProfileCard() {
     const { data: user } = useFetchUserQuery();

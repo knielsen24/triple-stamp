@@ -4,8 +4,6 @@ import { setUnitsList } from "../app/features/unitsListSlice";
 import { selectUnit } from "../app/features/unitSlice";
 import { useDispatch, useSelector } from "react-redux";
 import UnitDropDown from "../DropDownMenus/UnitDropDown";
-import DeleteUnitModal from "../Modals/DeleteUnitModal";
-import EditAddModal from "../Modals/EditAddModal";
 import threeDots from "../assets/threedots-horizontal.svg";
 
 function UnitsContainer() {
@@ -60,8 +58,6 @@ function UnitsContainer() {
 
     return (
         <div className="align-items-center ">
-            <DeleteUnitModal />
-            
             <div className="">
                 <table className="table table-borderless table-hover text-capitalize ">
                     <tbody>

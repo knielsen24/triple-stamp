@@ -3,8 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import { setSelectProperty } from "../app/features/propertySlice";
 import { setSelectUnit } from "../app/features/unitSlice";
 import UnitAllInspects from "../AccordianItems/UnitAllInspects";
-import DeleteInspectionModal from "../Modals/DeleteInspectionModal";
-import EditAddModal from "../Modals/EditAddModal";
 import PropInspectAccordians from "./PropInspectAccordians";
 import ViewInspectReport from "./ViewInspectReport";
 import { setSelectInspection } from "../app/features/inspectionSlice";
@@ -18,11 +16,6 @@ function InspectionsContainer() {
 
     return (
         <div className="container border-endtext-center mt-3 me-auto h-100 dash-page-mt">
-            <DeleteInspectionModal />
-            <EditAddModal
-                modalId={"edit-inspection-form"}
-                header={"Edit inspection information"}
-            />
             <div className="row align-content-between mb-3 user-select-none">
                 <div className="col-6 p-0 pe-3">
                     <div className="card shadow-sm">

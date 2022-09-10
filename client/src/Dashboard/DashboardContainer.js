@@ -12,35 +12,16 @@ import ProfileCard from "./ProfileCard";
 import ItemsContainer from "./ItemsContainer";
 import DeleteProfileModal from "../Modals/DeleteProfileModal";
 import DeletePropertyModal from "../Modals/DeletePropertyModal";
+import DeleteUnitModal from "../Modals/DeleteUnitModal";
+import DeleteInspectionModal from "../Modals/DeleteInspectionModal";
+import ModalsContainer from "./ModalsContainer";
 
 function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
         <div className="container dashboard-containter ">
-            <EditAddModal
-                modalId={"add-inspection-form"}
-                header={"Add inspection"}
-            />
-            <EditAddModal
-                modalId={"add-property-form"}
-                header={"Add property"}
-            />
-            <EditAddModal
-                modalId={"update-profile-form"}
-                header={"Edit your profile information"}
-            />
-            <EditAddModal
-                modalId={"update-unit-form"}
-                header={"Edit unit information"}
-            />
-            <EditAddModal modalId={"add-unit-form"} header={"Add unit"} />
-            <EditAddModal
-                modalId={"edit-property-form"}
-                header={"Edit your property information"}
-            />
-            <DeletePropertyModal />
-            <DeleteProfileModal />
+            <ModalsContainer />
             <div className="row mh-100">
                 <div className="col dash-height units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top mw-100">
                     <div className="row sticky-top bg-white mb-0">

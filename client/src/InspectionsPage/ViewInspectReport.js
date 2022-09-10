@@ -1,12 +1,11 @@
-import React from 'react'
-import FullReportTable from '../Tables/FullReportTable'
+import FullReportTable from "../Tables/FullReportTable";
 
 function ViewInspectReport() {
-  return (
-    <div>
-        <FullReportTable />
-    </div>
-  )
+    return (
+        <div>
+            <FullReportTable />
+        </div>
+    );
 }
 
-export default ViewInspectReport
+export default ViewInspectReport;

@@ -80,29 +80,6 @@ function DashboardMain() {
                     </div>
                 </div>
             </div>
-            <div className="row mb-4 user-select-none">
-                {/* <div className="col-6 p-0 pe-3">
-                    <div className="card shadow-sm">
-                        <div className="card-header fw-bold">
-                            Add an unit to the property
-                        </div>
-                        <div className="card-body">
-                            <p className="card-text">
-                                looks like there are no inspections scheduled
-                                today
-                            </p>
-                            <a
-                                href="#"
-                                className={buttonClass}
-                                data-bs-toggle="modal"
-                                data-bs-target="#add-unit-form"
-                            >
-                                + Add unit
-                            </a>
-                        </div>
-                    </div>
-                </div> */}
-            </div>
         </div>
     );
 }
