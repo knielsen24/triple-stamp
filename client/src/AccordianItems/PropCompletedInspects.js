@@ -40,7 +40,7 @@ function PropCompletedInspects() {
                 className="accordion-collapse collapse"
                 aria-labelledby="open-prop-completed-inspections"
             >
-                <div className="accordion-body bg-light bg-opacity-50">
+                <div className="accordion-body bg-light py-0">
                     <PropInspectsTable propInspections={completedList} />
                 </div>
             </div>

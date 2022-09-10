@@ -19,7 +19,7 @@ function PropUpcomingInspects() {
     }
 
     return (
-        <div className="accordion-item">
+        <div className="accordion-item ">
             <h2 className="accordion-header" id="panelsStayOpen-prop-upcoming">
                 <button
                     className="accordion-button bg-info bg-opacity-25 fw-bold text-secondary"
@@ -34,10 +34,10 @@ function PropUpcomingInspects() {
             </h2>
             <div
                 id="panelsStayOpen-prop-collapseUpcoming"
-                className="accordion-collapse collapse show "
+                className="accordion-collapse collapse show"
                 aria-labelledby="panelsStayOpen-prop-upcoming"
             >
-                <div className="accordion-body bg-light bg-opacity-50">
+                <div className="accordion-body bg-light py-0">
                     <PropInspectsTable propInspections={upcomingList} />
                 </div>
             </div>

@@ -3,7 +3,7 @@ import editIcon from "../assets/edit-icon.svg";
 
 function InspectionDropDown() {
     return (
-        <ul className="dropdown-menu bg-white ">
+        <ul className="dropdown-menu bg-light ">
             <li>
                 <a
                     className="dropdown-item"

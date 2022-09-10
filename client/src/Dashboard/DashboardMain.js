@@ -4,7 +4,7 @@ function DashboardMain() {
     const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75";
 
     return (
-        <div className="container mt-3 dash-page-mt">
+        <div className="container dash-page-mt">
             <div className="row align-content-between mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3 h-100">
                     <div className="card shadow-sm">

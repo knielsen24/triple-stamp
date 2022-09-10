@@ -18,7 +18,7 @@ function PropAllInspectsList() {
     }
 
     return (
-        <div className="accordion-item p-0">
+        <div className="accordion-item">
             <h2 className="accordion-header" id="open-prop-all-inspections">
                 <button
                     className="accordion-button collapsed bg-light text-secondary fw-bold"
@@ -36,7 +36,7 @@ function PropAllInspectsList() {
                 className="accordion-collapse collapse"
                 aria-labelledby="open-prop-all-inspections"
             >
-                <div className="accordion-body bg-light bg-opacity-50">
+                <div className="accordion-body bg-light py-0">
                     <PropInspectsTable propInspections={completeList} />
                 </div>
             </div>

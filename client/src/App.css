@@ -205,3 +205,12 @@ footer {
 ::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
 }
+
+.dash-page-container {
+    min-height: 80vh;
+    max-height: 83vh;
+}
+
+.table-height {
+    max-height: 40vh;
+}

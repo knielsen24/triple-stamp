@@ -40,7 +40,7 @@ function DashboardContainer() {
                     </div>
                     <UnitsContainer />
                 </div>
-                <div className="col-md-9 dash-height rounded bg-gradient bg-opacity-25 col-m-12 mt-1 sticky-top overflow-auto">
+                <div className="col-md-9 dash-height rounded bg-gradient bg-opacity-25 col-m-12 mt-1 sticky-top ">
                     <div className="row ms-1">
                         <DashBoardNav />
                         <Routes>

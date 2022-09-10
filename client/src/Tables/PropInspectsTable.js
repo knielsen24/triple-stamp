@@ -47,43 +47,46 @@ function PropInspectsTable({ propInspections }) {
     }
 
     return (
-        <table className="table table-hover text-capitalize">
-            <thead className="text-center">
-                <tr>
-                    <th scope="col" className="text-start">
-                        Unit #
-                    </th>
-                    <th scope="col" colSpan="3" className="text-start">
-                        Title
-                    </th>
-                    <th scope="col" className="text-start">
-                        Type
-                    </th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Scheduled Date</th>
-                </tr>
-            </thead>
-            <tbody className="table-group-divider">
-                <tr
-                    role="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#add-inspection-form"
-                    onClick={() => dispatch(selectUnit(""))}
-                >
-                    <th scope="col"></th>
-                    <td colSpan="3">
-                        <img
-                            src={plusIcon}
-                            alt="edit-icon"
-                            className="align-middle me-1 mb-1"
-                        />
-                        Add inspection
-                    </td>
-                    <td colSpan="4"></td>
-                </tr>
-                {renderInspections}
-            </tbody>
-        </table>
+        <div className="table-height overflow-auto">
+            <table className="table table-responsive table-hover text-capitalize ">
+                <thead className="text-center table light sticky-top">
+                    <tr>
+                        <th scope="col" className="text-start">
+                            Unit #
+                        </th>
+                        <th scope="col" colSpan="3" className="text-start">
+                            Title
+                        </th>
+                        <th scope="col" className="text-start">
+                            Type
+                        </th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Scheduled Date</th>
+                    </tr>
+                </thead>
+                <tbody className="table-group-divider bg-white table-height ">
+                    <tr
+                        // className="fixed-relative"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#add-inspection-form"
+                        onClick={() => dispatch(selectUnit(""))}
+                    >
+                        <th scope="col"></th>
+                        <td colSpan="3">
+                            <img
+                                src={plusIcon}
+                                alt="edit-icon"
+                                className="align-middle me-1 mb-1"
+                            />
+                            Add inspection
+                        </td>
+                        <td colSpan="4"></td>
+                    </tr>
+                    {renderInspections}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
