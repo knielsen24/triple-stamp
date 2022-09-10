@@ -36,7 +36,7 @@ function PropAllInspectsList() {
                 className="accordion-collapse collapse"
                 aria-labelledby="open-prop-all-inspections"
             >
-                <div className="accordion-body bg-light py-0">
+                <div className="accordion-body bg-light pb-0 pt-2">
                     <PropInspectsTable propInspections={completeList} />
                 </div>
             </div>

@@ -16,7 +16,7 @@ function InspectionsContainer() {
 
     return (
         <div className="container border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto">
-            <div className="row align-content-between mb-3 user-select-none">
+            <div className="row align-content-between mb-2 user-select-none">
                 <div className="col-6 p-0 pe-3">
                     <div className="card shadow-sm">
                         <div className="card-header fw-bold">

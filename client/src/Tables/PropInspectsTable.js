@@ -49,24 +49,24 @@ function PropInspectsTable({ propInspections }) {
     return (
         <div className="table-height overflow-auto">
             <table className="table table-responsive table-hover text-capitalize ">
-                <thead className="text-center table light sticky-top">
-                    <tr>
-                        <th scope="col" className="text-start">
+                <thead className="text-center bg-light sticky-top w-100">
+                    <tr className="sticky-top">
+                        <th scope="col" className="text-start sticky-top">
                             Unit #
                         </th>
-                        <th scope="col" colSpan="3" className="text-start">
+                        <th scope="col" colSpan="3" className="text-start sticky-top">
                             Title
                         </th>
-                        <th scope="col" className="text-start">
+                        <th scope="col" className="text-start sticky-top">
                             Type
                         </th>
                         <th scope="col">Status</th>
                         <th scope="col">Scheduled Date</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody className="table-group-divider bg-white table-height ">
+                <tbody className="bg-white table-group-divider">
                     <tr
-                        // className="fixed-relative"
                         role="button"
                         data-bs-toggle="modal"
                         data-bs-target="#add-inspection-form"
