@@ -1,4 +1,3 @@
-import PropAllInspectsList from "../AccordianItems/PropAllInspectsList";
 import PropCompletedInspects from "../AccordianItems/PropCompletedInspects";
 import PropInProgressInspects from "../AccordianItems/PropInProgressInspects";
 import PropUpcomingInspects from "../AccordianItems/PropUpcomingInspects";
@@ -9,7 +8,6 @@ function PropInspectAccordians() {
             <PropUpcomingInspects />
             <PropInProgressInspects />
             <PropCompletedInspects />
-            <PropAllInspectsList />
         </div>
     );
 }

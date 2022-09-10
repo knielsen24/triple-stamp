@@ -37,7 +37,7 @@ function PropUpcomingInspects() {
                 className="accordion-collapse collapse show"
                 aria-labelledby="panelsStayOpen-prop-upcoming"
             >
-                <div className="accordion-body bg-light pb-0 pt-2">
+                <div className="accordion-body p-0">
                     <PropInspectsTable propInspections={upcomingList} />
                 </div>
             </div>

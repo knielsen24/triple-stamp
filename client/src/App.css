@@ -212,3 +212,11 @@ footer {
 .table-height {
     max-height: 45vh;
 }
+
+.table-height-all {
+    max-height: 60vh;
+}
+
+.accordian-purple-muted-bg {
+    background-color: #E5DFFF;
+}

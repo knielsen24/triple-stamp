@@ -16,6 +16,7 @@ function PropInspectsTable({ propInspections }) {
         renderInspections = propInspections.map((inspect) => {
             return (
                 <tr className="text-center" key={inspect.id}>
+                    <td scope="col"></td>
                     <th scope="row" className="text-start">
                         {inspect.unit.number}
                     </th>
@@ -48,9 +49,10 @@ function PropInspectsTable({ propInspections }) {
 
     return (
         <div className="table-height overflow-auto">
-            <table className="table table-responsive table-hover text-capitalize ">
+            <table className="table table-responsive table-hover text-capitalize mb-0">
                 <thead className="text-center bg-light sticky-top">
                     <tr className="sticky-top border-bottom border-3">
+                        <th scrop="col"></th>
                         <th scope="col" className="text-start sticky-top">
                             Unit #
                         </th>
@@ -76,7 +78,8 @@ function PropInspectsTable({ propInspections }) {
                         data-bs-target="#add-inspection-form"
                         onClick={() => dispatch(selectUnit(""))}
                     >
-                        <th scope="col"></th>
+                        <td scope="col"></td>
+                        <td scope="col"></td>
                         <td colSpan="3">
                             <img
                                 src={plusIcon}

@@ -18,26 +18,35 @@ function PropAllInspectsList() {
     }
 
     return (
-        <div className="accordion-item">
-            <h2 className="accordion-header" id="open-prop-all-inspections">
-                <button
-                    className="accordion-button collapsed bg-light text-secondary fw-bold"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#open-prop-all-inspections-collapse"
-                    aria-expanded="false"
-                    aria-controls="open-prop-all-inspections-collapse"
-                >
-                    All
-                </button>
-            </h2>
+        <div className="accordion p-0" id="accordionPanelsStayOpenExample">
             <div
-                id="open-prop-all-inspections-collapse"
-                className="accordion-collapse collapse"
-                aria-labelledby="open-prop-all-inspections"
+                data-bs-spy="scroll"
+                data-bs-target="#view-lists"
+                data-bs-offset="0"
+                data-bs-smooth-scroll="true"
+                className="accordion-item scrollspy-example"
+                tabindex="0"
             >
-                <div className="accordion-body bg-light pb-0 pt-2">
-                    <PropInspectsTable propInspections={completeList} />
+                <h2 className="accordion-header " id="open-prop-all-inspections">
+                    <button
+                        className="accordion-button collapsed accordian-purple-muted-bg text-secondary fw-bold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#open-prop-all-inspections-collapse"
+                        aria-expanded="false"
+                        aria-controls="open-prop-all-inspections-collapse"
+                    >
+                        All
+                    </button>
+                </h2>
+                <div
+                    id="open-prop-all-inspections-collapse"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="open-prop-all-inspections"
+                >
+                    <div className="accordion-body p-0 table-height-all overflow-auto">
+                        <PropInspectsTable propInspections={completeList} />
+                    </div>
                 </div>
             </div>
         </div>

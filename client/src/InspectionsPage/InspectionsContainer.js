@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import { setSelectProperty } from "../app/features/propertySlice";
 import { setSelectUnit } from "../app/features/unitSlice";
 import UnitAllInspects from "../AccordianItems/UnitAllInspects";
 import PropInspectAccordians from "./PropInspectAccordians";
 import ViewInspectReport from "./ViewInspectReport";
 import { setSelectInspection } from "../app/features/inspectionSlice";
-import { Link } from "react-router-dom";
+import PropAllInspectsList from "../AccordianItems/PropAllInspectsList";
 
 function InspectionsContainer() {
     const property = useSelector(setSelectProperty);
@@ -15,7 +15,7 @@ function InspectionsContainer() {
     const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75";
 
     return (
-        <div className="container border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto">
+        <div className="container border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto ">
             <div className="row align-content-between mb-2 user-select-none">
                 <div className="col-6 p-0 pe-3">
                     <div className="card shadow-sm">
@@ -40,17 +40,20 @@ function InspectionsContainer() {
                 <div className="col-6 p-0">
                     <div className="card shadow-sm">
                         <div className="card-header fw-bold">
-                            View inspection lists{" "}
+                            View inspections list{" "}
                         </div>
-                        <div className="card-body">
+                        <div
+                            id="view-lists"
+                            className="card-body view-lists-scrollspy"
+                        >
                             <p className="card-text">
                                 Upcoming, in-progress, completed, and all
                             </p>
                             <Link
-                                to="/dashboard/inspections/property"
+                                to="/dashboard/inspections/property/all"
                                 className={buttonClass}
                             >
-                                View list
+                                View All
                             </Link>
                         </div>
                     </div>
@@ -65,8 +68,8 @@ function InspectionsContainer() {
                         }
                     />
                     <Route
-                        path="unit"
-                        element={unit.name === "" ? null : <UnitAllInspects />}
+                        path="property/all"
+                        element={property.name ? <PropAllInspectsList /> : null}
                     />
                     <Route
                         path="reports"

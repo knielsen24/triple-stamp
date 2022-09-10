@@ -40,7 +40,7 @@ function PropInProgressInspects() {
                 className="accordion-collapse collapse"
                 aria-labelledby="open-prop-inProgress-inspections"
             >
-                <div className="accordion-body bg-light pb-0 pt-2">
+                <div className="accordion-body p-0">
                     <PropInspectsTable propInspections={inProgressList} />
                 </div>
             </div>
