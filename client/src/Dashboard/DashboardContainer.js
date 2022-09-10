@@ -38,7 +38,7 @@ function DashboardContainer() {
                 </div>
                 <div className="col-md-9 dash-height rounded bg-gradient bg-opacity-25 col-m-12 mt-1 sticky-top ">
                     <div className="row ms-1">
-                        {!user || isError ? null : <WelcomeUser user={user} />}
+
                         <DashBoardNav />
                         <Routes>
                             <Route path="/main" element={<DashboardMain />} />
@@ -55,6 +55,7 @@ function DashboardContainer() {
                                 }
                             />
                         </Routes>
+                        {!user || isError ? null : <WelcomeUser user={user} />}
                     </div>
                 </div>
             </div>

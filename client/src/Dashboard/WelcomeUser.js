@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function WelcomeUser({ user }) {
     const [hideWelcome, setHideWelcome] = useState(true);
 
+    useEffect(() => {
+        setTimeout(()=> {
+            setHideWelcome(false)
+        }, 3000)
+
+
+    }, [])
+
+
     if (hideWelcome) {
         return (
-            <div className="ts-primary-orange fw-bold text-center rounded p-1 mb-2 shadow-sm">
+            <div className="ts-primary-orange fw-bold text-center rounded fixed-bottom p-1 mb-5 shadow-sm">
                 Hi {user.full_name}! Welcome to your dashboard.
                 <button
                     type="button"
