@@ -16,8 +16,6 @@ function InspectionsContainer() {
 
     const [tableHeight, setTableHeight] = useState(false);
 
-    console.log(tableHeight)
-
     const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75";
     const buttonClassLists =
         "btn btn-secondary dash-main-btn text-white opacity-75 ";
@@ -28,7 +26,7 @@ function InspectionsContainer() {
                 <div className="col-6 p-0 pe-3">
                     <div className="card shadow-sm">
                         <div className="card-header fw-bold">
-                            Add a new inspection to an unit
+                            Add a new inspection
                         </div>
                         <div className="card-body">
                             {/* <p className="card-text">
@@ -40,7 +38,7 @@ function InspectionsContainer() {
                                 data-bs-toggle="modal"
                                 data-bs-target="#add-inspection-form"
                             >
-                                + Create New
+                                + Create
                             </a>
                         </div>
                     </div>
