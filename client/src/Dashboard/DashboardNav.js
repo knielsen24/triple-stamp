@@ -1,19 +1,20 @@
 import { setSelectProperty } from "../app/features/propertySlice";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import UserDropDown from "../DropDownMenus/UserDropDown";
 import homeIcon from "../assets/home-icon.svg";
 import calendarIcon from "../assets/calendar-icon.svg";
 import checkListIcon from "../assets/check-list-icon.svg";
 import detailsIcon from "../assets/details-icon.svg";
-import UserDropDown from "../DropDownMenus/UserDropDown";
+
 
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
+    const imgClass = "me-1 mb-1 ";
     const navLinkClass = "nav-link h-100";
     const dropDownClass = "mx-4 dropdown";
-    // border-start rounded-0 border-secondary
-    const imgClass = "me-1 mb-1 ";
+
     let activeClass =
         "nav-link fw-bold ts-primary-green text-dark navbar-text rounded pill-height ";
     let inactiveClass =
@@ -44,7 +45,7 @@ function DashboardNav() {
                 </li>
                 <li className={navLinkClass}>
                     <NavLink
-                        to="inspections"
+                        to="inspections/property"
                         className={({ isActive }) =>
                             isActive ? activeClass : inactiveClass
                         }

@@ -8,7 +8,7 @@ import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 function FullReportTable({ propInspections }) {
     const inspection = useSelector(setSelectInspection);
-
+    const dispatch = useDispatch();
     const { data: report } = useFetchInspectItemsQuery(inspection.id || "");
 
     console.log(inspection);

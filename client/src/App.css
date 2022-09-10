@@ -206,10 +206,9 @@ footer {
 }
 
 .dash-page-container {
-    min-height: 80vh;
-    max-height: 85vh;
+    max-height: 84vh;
 }
 
 .table-height {
-    max-height: 38vh;
+    max-height: 45vh;
 }
