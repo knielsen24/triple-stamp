@@ -16,7 +16,7 @@ function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
-        <div className="container dashboard-containter overflow-y-0"
+        <div className="container dashboard-containter "
 
         >
             <EditAddModal
@@ -33,7 +33,7 @@ function DashboardContainer() {
             />
             <DeleteProfileModal />
             <div className="row mh-100">
-                <div className="col dash-height units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top">
+                <div className="col dash-height units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top ">
                     <div className="row" >
                         <div className="text-start user-select-none mt-3 mb-2 ms-4 ps-0 fw-bold position-relative">
                             <img
