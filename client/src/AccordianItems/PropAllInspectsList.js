@@ -4,7 +4,7 @@ import { skipToken } from "@reduxjs/toolkit/dist/query";
 import { useSelector } from "react-redux";
 import { setSelectProperty } from "../app/features/propertySlice";
 
-function PropAllInspectsList() {
+function PropAllInspectsList({ tableHeight }) {
     const property = useSelector(setSelectProperty);
 
     const { data: propInspections, isSuccess } = useFetchPropInspectionsQuery(
@@ -41,7 +41,7 @@ function PropAllInspectsList() {
                     aria-labelledby="open-prop-all-inspections"
                 >
                     <div className="accordion-body p-0 table-height-all overflow-auto">
-                        <PropInspectsTable propInspections={completeList} />
+                        <PropInspectsTable propInspections={completeList} tableHeight={tableHeight} />
                     </div>
                 </div>
             </div>

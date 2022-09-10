@@ -6,7 +6,7 @@ import InspectionDropDown from "../DropDownMenus/InspectionDropDown";
 import plusIcon from "../assets/plus-icon.svg";
 import { DateTime } from "luxon";
 
-function PropInspectsTable({ propInspections }) {
+function PropInspectsTable({ propInspections, tableHeight }) {
     const dispatch = useDispatch();
     // const formattedDate = DateTime.fromObject().toLocaleString();
 
@@ -48,7 +48,7 @@ function PropInspectsTable({ propInspections }) {
     }
 
     return (
-        <div className="table-height overflow-auto">
+        <div className={tableHeight ? "table-height-all overflow-auto" : "table-height overflow-auto"}>
             <table className="table table-responsive table-hover text-capitalize mb-0">
                 <thead className="text-center bg-light sticky-top">
                     <tr className="sticky-top border-bottom border-3">
