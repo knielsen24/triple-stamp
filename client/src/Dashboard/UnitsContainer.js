@@ -61,11 +61,7 @@ function UnitsContainer() {
     return (
         <div className="align-items-center ">
             <DeleteUnitModal />
-            <EditAddModal
-                modalId={"update-unit-form"}
-                header={"Edit unit information"}
-            />
-            <EditAddModal modalId={"add-unit-form"} header={"Add unit"} />
+            
             <div className="">
                 <table className="table table-borderless table-hover text-capitalize ">
                     <tbody>

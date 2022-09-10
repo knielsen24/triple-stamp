@@ -12,11 +12,7 @@ function PropertyCard() {
 
     return (
         <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
-            <EditAddModal
-                modalId={"edit-property-form"}
-                header={"Edit your property information"}
-            />
-            <DeletePropertyModal />
+            
             <div className="card" id="profile-main-card-container">
                 <div className="text-center bg-light" id="profile-card-bg">
                     <div className="m-2 p-1">

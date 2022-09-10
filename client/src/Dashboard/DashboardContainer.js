@@ -11,6 +11,7 @@ import { useFetchUserQuery } from "../app/api/userApiSlice";
 import ProfileCard from "./ProfileCard";
 import ItemsContainer from "./ItemsContainer";
 import DeleteProfileModal from "../Modals/DeleteProfileModal";
+import DeletePropertyModal from "../Modals/DeletePropertyModal";
 
 function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
@@ -29,6 +30,16 @@ function DashboardContainer() {
                 modalId={"update-profile-form"}
                 header={"Edit your profile information"}
             />
+            <EditAddModal
+                modalId={"update-unit-form"}
+                header={"Edit unit information"}
+            />
+            <EditAddModal modalId={"add-unit-form"} header={"Add unit"} />
+            <EditAddModal
+                modalId={"edit-property-form"}
+                header={"Edit your property information"}
+            />
+            <DeletePropertyModal />
             <DeleteProfileModal />
             <div className="row mh-100">
                 <div className="col dash-height units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top mw-100">
