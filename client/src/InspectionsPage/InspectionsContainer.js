@@ -13,6 +13,8 @@ function InspectionsContainer() {
     const unit = useSelector(setSelectUnit);
     const inspection = useSelector(setSelectInspection);
     const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75";
+    const buttonClassLists =
+        "btn btn-secondary dash-main-btn text-white opacity-75";
 
     return (
         <div className="container border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto ">
@@ -42,19 +44,26 @@ function InspectionsContainer() {
                         <div className="card-header fw-bold">
                             View inspections list{" "}
                         </div>
-                        <div
-                            id="view-lists"
-                            className="card-body view-lists-scrollspy"
-                        >
+                        <div className="card-body row">
                             <p className="card-text">
                                 Upcoming, in-progress, completed, and all
                             </p>
-                            <Link
-                                to="/dashboard/inspections/property/all"
-                                className={buttonClass}
-                            >
-                                View All
-                            </Link>
+                            <div className="col">
+                                <Link
+                                    to="/dashboard/inspections/property"
+                                    className={buttonClassLists}
+                                >
+                                    View by status
+                                </Link>
+                            </div>
+                            <div className="col">
+                                <Link
+                                    to="/dashboard/inspections/property/all"
+                                    className={buttonClassLists}
+                                >
+                                    View All
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

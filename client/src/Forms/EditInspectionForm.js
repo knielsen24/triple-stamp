@@ -19,7 +19,7 @@ function EditInspectionForm() {
 
     const handleUnitId = (e) => setUnitID(e.target.value);
 
-    const statusArray = ["none", "upcoming", "in progress", "completed"];
+    const statusArray = ["upcoming", "in progress", "completed"];
     const typeNameArray = [
         "move-in",
         "move-out",
@@ -99,7 +99,7 @@ function EditInspectionForm() {
 
                             <select
                                 id="unit_id"
-                                className="form-control form-select"
+                                className="form-control form-select capitalize"
                                 type="string"
                                 name="unit_id"
                                 onChange={handleChange && handleUnitId}
@@ -141,7 +141,7 @@ function EditInspectionForm() {
                             </label>
                             <select
                                 id="type_name"
-                                className="form-control form-select"
+                                className="form-control form-select text-capitalize"
                                 type="string"
                                 name="type_name"
                                 // placeholder="Select a type"
@@ -163,13 +163,13 @@ function EditInspectionForm() {
                         <div className="mb-3">
                             <label
                                 htmlFor="status"
-                                className="form-label float-start"
+                                className="form-label float-start "
                             >
                                 Status
                             </label>
                             <select
                                 id="status"
-                                className="form-control form-select"
+                                className="form-control form-select text-capitalize"
                                 type="string"
                                 name="status"
                                 onChange={handleChange}

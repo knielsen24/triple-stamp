@@ -2,16 +2,10 @@ import { setSelectProperty } from "../app/features/propertySlice";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import UserDropDown from "../DropDownMenus/UserDropDown";
-import homeIcon from "../assets/home-icon.svg";
-import calendarIcon from "../assets/calendar-icon.svg";
-import checkListIcon from "../assets/check-list-icon.svg";
-import detailsIcon from "../assets/details-icon.svg";
-
 
 function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
-    const imgClass = "me-1 mb-1 ";
     const navLinkClass = "nav-link h-100";
     const dropDownClass = "mx-4 dropdown";
 
@@ -35,11 +29,6 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        {/* <img
-                            src={homeIcon}
-                            alt="home-icon"
-                            className={imgClass}
-                        /> */}
                         Main{" "}
                     </NavLink>
                 </li>
@@ -50,29 +39,10 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        {/* <img
-                            src={calendarIcon}
-                            alt="calendar-icon"
-                            className={imgClass}
-                        /> */}
                         Inspections
                     </NavLink>
                 </li>
-                {/* <li className={navLinkClass}>
-                    <NavLink
-                        to="items"
-                        className={({ isActive }) =>
-                            isActive ? activeClass : inactiveClass
-                        }
-                    >
-                        <img
-                            src={checkListIcon}
-                            alt="checklist-icon"
-                            className={imgClass}
-                        />
-                        Items
-                    </NavLink>
-                </li> */}
+
                 <li className={navLinkClass}>
                     <NavLink
                         to="details"
@@ -80,11 +50,6 @@ function DashboardNav() {
                             isActive ? activeClass : inactiveClass
                         }
                     >
-                        {/* <img
-                            src={detailsIcon}
-                            alt="Clipboard-icon"
-                            className={imgClass}
-                        /> */}
                         Details
                     </NavLink>
                 </li>
@@ -100,3 +65,31 @@ function DashboardNav() {
 }
 
 export default DashboardNav;
+
+{
+    /*
+
+import homeIcon from "../assets/home-icon.svg";
+import calendarIcon from "../assets/calendar-icon.svg";
+import checkListIcon from "../assets/check-list-icon.svg";
+import detailsIcon from "../assets/details-icon.svg";
+
+const imgClass = "me-1 mb-1 ";
+
+<img
+    src={homeIcon}
+    alt="home-icon"
+    className={imgClass}
+/>
+
+<img
+    src={calendarIcon}
+    alt="calendar-icon"
+    className={imgClass}
+/>
+    <img
+    src={detailsIcon}
+    alt="Clipboard-icon"
+    className={imgClass}
+/> */
+}
