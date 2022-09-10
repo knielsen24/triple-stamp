@@ -31,8 +31,7 @@ function UnitsContainer() {
                     >
                         <td>{unit.number}</td>
                         <td>{unit.label}</td>
-                        {/* render on hover */}
-                        <td className="pe-0 start-end">
+                        <td className="pe-0 ">
                             <div className="btn-group dropend">
                                 <img
                                     src={threeDots}
@@ -57,22 +56,20 @@ function UnitsContainer() {
     }
 
     return (
-        <div className="align-items-center ">
-            <div className="">
-                <table className="table table-borderless table-hover text-capitalize ">
-                    <tbody>
-                        <tr scope="row">
-                            <td colSpan="1"></td>
-                            <td colSpan="2">
-                                {property.name !== "" ? (
-                                    <ButtonOpenAddUnitModal />
-                                ) : null}
-                            </td>
-                        </tr>
-                        {property.name !== "" ? renderUnitList : null}
-                    </tbody>
-                </table>
-            </div>
+        <div>
+            <table className="table table-borderless table-hover text-capitalize ">
+                <tbody>
+                    <tr scope="row">
+                        <td colSpan="1"></td>
+                        <td colSpan="2">
+                            {property.name !== "" ? (
+                                <ButtonOpenAddUnitModal />
+                            ) : null}
+                        </td>
+                    </tr>
+                    {property.name !== "" ? renderUnitList : null}
+                </tbody>
+            </table>
         </div>
     );
 }
