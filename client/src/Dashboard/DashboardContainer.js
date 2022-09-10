@@ -16,9 +16,7 @@ function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
-        <div className="container dashboard-containter "
-
-        >
+        <div className="container dashboard-containter ">
             <EditAddModal
                 modalId={"add-inspection-form"}
                 header={"Add inspection"}
@@ -33,22 +31,21 @@ function DashboardContainer() {
             />
             <DeleteProfileModal />
             <div className="row mh-100">
-                <div className="col dash-height units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top ">
-                    <div className="row" >
-                        <div className="text-start user-select-none mt-3 mb-2 ms-4 ps-0 fw-bold position-relative">
+                <div className="col dash-height units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top mw-100">
+                    <div className="row sticky-top bg-white mb-0">
+                        <div className="text-start user-select-none mt-3 mb-2 ms-4 ps-0 fw-bold sticky-top">
                             <img
                                 src={buildingIcon}
                                 alt="edit-icon"
-                                className="align-middle mb-1 me-2"
+                                className="mb-1 me-2"
                             />
                             My property
                         </div>
-                        <div className="row mw-100 mb-3 justify-content-center">
+                        <div className="row justify-content-center">
                             <PropertyDropDown />
                         </div>
+                        <hr className="align-items-center mx-1 mt-3 mb-0"></hr>
                     </div>
-
-                    <hr className="w-auto m-0" />
                     <UnitsContainer />
                 </div>
                 <div className="col-md-9 dash-height rounded bg-gradient bg-opacity-25 col-m-12 mt-1 sticky-top overflow-auto">

@@ -25,7 +25,7 @@ function DashboardNav() {
         : (detailsLinkhref = "/inspections/property");
 
     return (
-        <nav className="navbar-nav rounded bg-white shadow-sm sticky-top p-0 border">
+        <nav className="navbar-nav rounded bg-white shadow-sm sticky-top p-0 border ">
             <ul className="nav nav-justified align-items-center align-items-end">
                 <li className={navLinkClass}>
                     <NavLink

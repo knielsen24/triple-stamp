@@ -182,7 +182,8 @@ footer {
 }
 
 .dash-height {
-    height: 92vh;
+    min-height: 88vh;
+    max-height: 92vh;
 }
 
 .units-container {
@@ -195,6 +196,10 @@ footer {
 
 .overflow-y-0 {
     overflow-y: hidden;
+}
+
+.dash-page-mt {
+    margin-top: 10px;
 }
 
 ::-webkit-scrollbar {

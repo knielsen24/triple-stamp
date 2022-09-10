@@ -17,7 +17,7 @@ function InspectionsContainer() {
     const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75";
 
     return (
-        <div className="container border-endtext-center mt-3 me-auto h-100">
+        <div className="container border-endtext-center mt-3 me-auto h-100 dash-page-mt">
             <DeleteInspectionModal />
             <EditAddModal
                 modalId={"edit-inspection-form"}

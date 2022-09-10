@@ -11,7 +11,7 @@ function PropertyCard() {
     const unitsListState = useSelector(setUnitsList);
 
     return (
-        <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm">
+        <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
             <EditAddModal
                 modalId={"edit-property-form"}
                 header={"Edit your property information"}

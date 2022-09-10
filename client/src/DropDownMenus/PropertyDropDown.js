@@ -64,7 +64,7 @@ function PropertyDropDown() {
     }
 
     return (
-        <div className="w-100 ">
+        <div className="">
             <div className="dropdown-center ">
                 <a
                     className="btn text-white bg-secondary bg-opacity-75 dropdown-toggle w-100 justify-content-center ms-2 fw-bold"
