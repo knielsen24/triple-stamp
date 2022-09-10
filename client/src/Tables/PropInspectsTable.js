@@ -49,12 +49,16 @@ function PropInspectsTable({ propInspections }) {
     return (
         <div className="table-height overflow-auto">
             <table className="table table-responsive table-hover text-capitalize ">
-                <thead className="text-center bg-light sticky-top w-100">
-                    <tr className="sticky-top">
+                <thead className="text-center bg-light sticky-top">
+                    <tr className="sticky-top border-bottom border-3">
                         <th scope="col" className="text-start sticky-top">
                             Unit #
                         </th>
-                        <th scope="col" colSpan="3" className="text-start sticky-top">
+                        <th
+                            scope="col"
+                            colSpan="3"
+                            className="text-start sticky-top"
+                        >
                             Title
                         </th>
                         <th scope="col" className="text-start sticky-top">
@@ -65,7 +69,7 @@ function PropInspectsTable({ propInspections }) {
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody className="bg-white table-group-divider">
+                <tbody className="bg-white">
                     <tr
                         role="button"
                         data-bs-toggle="modal"
