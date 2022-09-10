@@ -4,17 +4,13 @@ import PropertyCard from "./PropertyCard";
 import { Route, Routes } from "react-router-dom";
 import UnitsContainer from "../Dashboard/UnitsContainer";
 import InspectionsContainer from "../InspectionsPage/InspectionsContainer";
-import EditAddModal from "../Modals/EditAddModal";
 import DashboardMain from "./DashboardMain";
 import buildingIcon from "../assets/building-icon.svg";
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import ProfileCard from "./ProfileCard";
 import ItemsContainer from "./ItemsContainer";
-import DeleteProfileModal from "../Modals/DeleteProfileModal";
-import DeletePropertyModal from "../Modals/DeletePropertyModal";
-import DeleteUnitModal from "../Modals/DeleteUnitModal";
-import DeleteInspectionModal from "../Modals/DeleteInspectionModal";
 import ModalsContainer from "./ModalsContainer";
+import WelcomeUser from "./WelcomeUser";
 
 function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
@@ -42,6 +38,7 @@ function DashboardContainer() {
                 </div>
                 <div className="col-md-9 dash-height rounded bg-gradient bg-opacity-25 col-m-12 mt-1 sticky-top ">
                     <div className="row ms-1">
+                        {!user || isError ? null : <WelcomeUser user={user} />}
                         <DashBoardNav />
                         <Routes>
                             <Route path="/main" element={<DashboardMain />} />

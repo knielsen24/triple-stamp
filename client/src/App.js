@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./NavBar/Navbar";
 import Home from "./HomePage/Home";
 import Loading from "./Components/Loading";
-import WelcomeUser from "./Dashboard/WelcomeUser";
 import LoginModal from "./Login-Logout/LoginModal";
 import SignUpModal from "./Modals/SignUpModal";
 
@@ -20,7 +19,7 @@ function App() {
         >
             <SignUpModal />
             <LoginModal />
-            {!user || isError ? null : <WelcomeUser user={user} />}
+
             {!user || isError ? <Navbar /> : null}
             <Loading isLoading={isLoading} />
             <Routes>
@@ -30,7 +29,6 @@ function App() {
                     element={!user || isError ? null : <DashboardContainer />}
                 />
             </Routes>
-
             <Footer />
         </div>
     );
