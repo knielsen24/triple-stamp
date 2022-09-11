@@ -13,13 +13,13 @@ function UnitsContainer() {
 
     const buttonClassName =
         "btn btn-secondary dropdown-toggle bg-transparent border-0 p-0";
+    const tableClassHover =
+        "table table-borderless table-hover text-capitalize";
+    const tableClassNoHover = "table table-borderless";
 
     let renderUnitList;
-    let sortedList;
 
     if (unitsListState) {
-        // sortedList = unitsListState.map(unit => unit.label);
-        // console.log(sortedList);
         renderUnitList = unitsListState
             .map((unit) => {
                 return (
@@ -57,7 +57,7 @@ function UnitsContainer() {
 
     return (
         <div>
-            <table className="table table-borderless table-hover text-capitalize ">
+            <table className={property.name !== "" ? tableClassHover : tableClassNoHover}>
                 <tbody>
                     <tr scope="row">
                         <td colSpan="1"></td>

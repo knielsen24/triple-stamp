@@ -25,7 +25,7 @@ function PropInspectsTable({ propInspections, tableHeight }) {
                     </td>
                     <td className="text-start">{inspect.type_name}</td>
                     <td>{inspect.status}</td>
-                    <td type="date">{inspect.scheduled_date}</td>
+                    <td >{inspect.scheduled_date}</td>
                     <td>
                         <div className="btn-group">
                             <img

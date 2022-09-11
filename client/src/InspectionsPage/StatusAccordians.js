@@ -2,7 +2,7 @@ import PropCompletedInspects from "../AccordianItems/PropCompletedInspects";
 import PropInProgressInspects from "../AccordianItems/PropInProgressInspects";
 import PropUpcomingInspects from "../AccordianItems/PropUpcomingInspects";
 
-function PropInspectAccordians() {
+function StatusAccordians() {
     return (
         <div className="accordion p-0" id="accordionPanelsStayOpenExample">
             <PropUpcomingInspects />
@@ -12,4 +12,4 @@ function PropInspectAccordians() {
     );
 }
 
-export default PropInspectAccordians;
+export default StatusAccordians;
