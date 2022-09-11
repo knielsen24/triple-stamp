@@ -17,15 +17,15 @@ function InspectionsContainer() {
 
     const [tableHeight, setTableHeight] = useState(false);
 
-    const shortcutBar = "text-secondary me-4";
+    const shortcutBar = "btn py-0 text-secondary me-4";
 
     return (
         <div className="container border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto ">
-            <div className="row  bg-light rounded border p-1 mb-2 sticky-top">
+            <div className="row bg-light rounded border p-1 mb-2 sticky-top">
                 <div className="col d-flex justify-content-center">
                     <a
                         href="#"
-                        className="text-secondary"
+                        className="btn py-0 text-secondary"
                         data-bs-toggle="modal"
                         data-bs-target="#add-inspection-form"
                     >
