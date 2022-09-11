@@ -17,73 +17,44 @@ function InspectionsContainer() {
 
     const [tableHeight, setTableHeight] = useState(false);
 
-    const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75";
-    const buttonClassLists =
-        "btn btn-secondary dash-main-btn text-white opacity-75 ";
+    const shortcutBar = "text-secondary me-4";
 
     return (
         <div className="container border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto ">
-            <div className="row align-content-between mb-2 user-select-none">
-                <div className="col-6 p-0 pe-3">
-                    <div className="card shadow-sm">
-                        <div className="card-header fw-bold">
-                            Add a new inspection
-                        </div>
-                        <div className="card-body">
-                            {/* <p className="card-text">
-                                Add a new inspection to an unit
-                            </p> */}
-                            <a
-                                href="#"
-                                className={buttonClass}
-                                data-bs-toggle="modal"
-                                data-bs-target="#add-inspection-form"
-                            >
-                                + Create
-                            </a>
-                        </div>
-                    </div>
+            <div className="row  bg-light rounded border p-1 mb-2 ">
+                <div className="col d-flex justify-content-center">
+                    <a
+                        href="#"
+                        className="text-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#add-inspection-form"
+                    >
+                        + Add Inspection
+                    </a>
                 </div>
-                <div className="col-6 p-0">
-                    <div className="card shadow-sm">
-                        <div className="card-header fw-bold">
-                            View inspections list by{" "}
-                        </div>
-                        <div className="card-body">
-                            {/* <p className="card-text">
-                                Upcoming, in-progress, completed, and all
-                            </p> */}
-                            <div className="row justify-content-between">
-                                <div className="col">
-                                    <Link
-                                        to="status"
-                                        className={buttonClassLists}
-                                        onClick={() => setTableHeight(false)}
-                                    >
-                                        Status
-                                    </Link>
-                                </div>
-                                <div className="col ">
-                                    <Link
-                                        to="type"
-                                        className={buttonClassLists}
-                                        onClick={() => setTableHeight(true)}
-                                    >
-                                        type
-                                    </Link>
-                                </div>
-                                <div className="col ">
-                                    <Link
-                                        to="all"
-                                        className={buttonClassLists}
-                                        onClick={() => setTableHeight(true)}
-                                    >
-                                        All
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="col d-flex justify-content-end">Filter by:</div>
+                <div className="col d-flex justify-content-start">
+                    <Link
+                        to="status"
+                        className={shortcutBar}
+                        onClick={() => setTableHeight(false)}
+                    >
+                        Status
+                    </Link>
+                    <Link
+                        to="type"
+                        className={shortcutBar}
+                        onClick={() => setTableHeight(false)}
+                    >
+                        Type
+                    </Link>
+                    <Link
+                        to="all"
+                        className={shortcutBar}
+                        onClick={() => setTableHeight(true)}
+                    >
+                        All
+                    </Link>
                 </div>
             </div>
             <div className="row">

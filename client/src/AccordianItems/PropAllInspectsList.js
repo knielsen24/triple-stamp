@@ -20,8 +20,8 @@ function PropAllInspectsList({ tableHeight }) {
     return (
         <div className="accordion p-0" id="accordionPanelsStayOpenExample">
             <div className="accordion-item ">
-                <h2
-                    className="accordion-header "
+                <h5
+                    className="accordion-header"
                     id="open-prop-all-inspections"
                 >
                     <button
@@ -34,7 +34,7 @@ function PropAllInspectsList({ tableHeight }) {
                     >
                         All
                     </button>
-                </h2>
+                </h5>
                 <div
                     id="open-prop-all-inspections-collapse"
                     className="accordion-collapse collapse show"

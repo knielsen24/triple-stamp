@@ -175,13 +175,6 @@ footer {
 }
 
 
-.dash-main-btn {
-    text-align: center;
-    font-weight: bold;
-    border: 0;
-    /* height: 30px; */
-}
-
 .dash-height {
     height: 92vh;
 }
@@ -211,11 +204,11 @@ footer {
 }
 
 .table-height {
-    max-height: 51vh;
+    max-height: 60vh;
 }
 
 .table-height-all {
-    max-height: 63vh;
+    max-height: 72vh;
 }
 
 .accordian-purple-muted-bg {
