@@ -21,7 +21,7 @@ function InspectionsContainer() {
 
     return (
         <div className="container border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto ">
-            <div className="row bg-light rounded border p-1 mb-2 sticky-top">
+            <div className="row bg-light rounded border p-1 mb-2">
                 <div className="col d-flex justify-content-center">
                     <a
                         href="#"
@@ -62,6 +62,10 @@ function InspectionsContainer() {
             </div>
             <div className="row">
                 <Routes>
+                    <Route
+                        path="/"
+                        element={property.name ? <StatusAccordians /> : null}
+                    />
                     <Route
                         path="status"
                         element={property.name ? <StatusAccordians /> : null}

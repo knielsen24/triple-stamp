@@ -16,7 +16,7 @@ function DashboardMain() {
                                 Select your property to view
                             </p>
                             <Link
-                                to="/dashboard/inspections/property"
+                                to="/dashboard/inspections/status"
                                 className={buttonClass}
                             >
                                 View list
