@@ -21,7 +21,7 @@ function InspectionsContainer() {
 
     return (
         <div className="container border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto ">
-            <div className="row  bg-light rounded border p-1 mb-2 ">
+            <div className="row  bg-light rounded border p-1 mb-2 sticky-top">
                 <div className="col d-flex justify-content-center">
                     <a
                         href="#"
@@ -32,7 +32,10 @@ function InspectionsContainer() {
                         + Add Inspection
                     </a>
                 </div>
-                <div className="col d-flex justify-content-end">Filter by:</div>
+                <div className="col d-flex justify-content-end">
+                    Filter by:
+                    {/* <input className="search p-0"></input>{" "} */}
+                </div>
                 <div className="col d-flex justify-content-start">
                     <Link
                         to="status"
