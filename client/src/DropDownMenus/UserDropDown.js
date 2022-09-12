@@ -22,9 +22,8 @@ function UserDropDown() {
                     alt="profile-icon"
                     className="align-middle profile-dropdown rounded-circle"
                 />
-
             </a>
-            <ul className="dropdown-menu mt-3 bg-light">
+            <ul className="dropdown-menu mt-3 bg-light p-1">
                 <li>
                     <Link to="/dashboard/profile" className="dropdown-item">
                         <img
@@ -46,7 +45,7 @@ function UserDropDown() {
                     </Link>
                 </li>
                 <li>
-                    <hr className="dropdown-divider m-1" />
+                    <hr className="dropdown-divider mx-2 my-1" />
                 </li>
                 <li>
                     <Logout />

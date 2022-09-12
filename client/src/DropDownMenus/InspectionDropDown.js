@@ -3,8 +3,8 @@ import editIcon from "../assets/edit-icon.svg";
 
 function InspectionDropDown() {
     return (
-        <ul className="dropdown-menu bg-light ">
-            <li>
+        <ul className="dropdown-menu bg-light p-1">
+            <li className="p-0">
                 <a
                     className="dropdown-item"
                     href="#"
@@ -31,9 +31,9 @@ function InspectionDropDown() {
                 </a>
             </li> */}
             <li>
-                <hr className="dropdown-divider" />
+                <hr className="dropdown-divider mx-2 my-1" />
             </li>
-            <li>
+            <li className="p-0">
                 <a
                     className="dropdown-item"
                     href="#"

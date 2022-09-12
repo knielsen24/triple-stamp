@@ -59,23 +59,23 @@ function PropInspectsTable({ propInspections, tableHeight }) {
             <table className="table table-responsive table-hover text-capitalize mb-0">
                 <thead className="text-center bg-light sticky-top">
                     <tr className="border-bottom border-3 sticky-top">
-                        <th scrop="col" className="text-start sticky-top p-1"></th>
-                        <th scope="col" className="text-start sticky-top p-1">
+                        <th scrop="col" className="text-start  p-1"></th>
+                        <th scope="col" className="text-start p-1">
                             Unit #
                         </th>
                         <th
                             scope="col"
                             colSpan="3"
-                            className="text-start sticky-top p-1 "
+                            className="text-start p-1 "
                         >
                             Title
                         </th>
-                        <th scope="col" className="text-start sticky-top p-1 ">
+                        <th scope="col" className="text-start p-1 ">
                             Type
                         </th>
-                        <th scope="col" className="sticky-top p-1">Status</th>
-                        <th scope="col" className="sticky-top p-1">Scheduled Date</th>
-                        <th scope="col" className="sticky-top p-1"></th>
+                        <th scope="col" className="p-1">Status</th>
+                        <th scope="col" className="p-1">Scheduled Date</th>
+                        <th scope="col" className="p-1"></th>
                     </tr>
                 </thead>
                 <tbody className="bg-white">

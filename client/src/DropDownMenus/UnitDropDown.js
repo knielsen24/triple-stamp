@@ -4,13 +4,8 @@ import plusIcon from "../assets/plus-icon.svg";
 
 function UnitDropDown() {
     return (
-        <ul className="dropdown-menu bg-light mt-4">
-            {/* <li>
-                <a className="dropdown-item" href="unit">
-                    View Inspections
-                </a>
-            </li> */}
-            <li>
+        <ul className="dropdown-menu bg-light mt-4 p-1">
+            <li className="p-0">
                 <a
                     className="dropdown-item"
                     role="button"
@@ -26,7 +21,7 @@ function UnitDropDown() {
                     Add Inspection
                 </a>
             </li>
-            <li>
+            <li className="p-0">
                 <a
                     className="dropdown-item"
                     href="#"
@@ -42,9 +37,9 @@ function UnitDropDown() {
                 </a>
             </li>
             <li>
-                <hr className="dropdown-divider" />
+                <hr className="dropdown-divider mx-2 my-1" />
             </li>
-            <li>
+            <li className="p-0">
                 <a
                     className="dropdown-item"
                     href="#"
