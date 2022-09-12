@@ -45,9 +45,9 @@ function EditAddModal({ modalId, header }) {
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
                         <div className="modal-header bg-light">
-                            <h5 className="modal-title" id={modalId}>
+                            <h6 className="modal-title" id={modalId}>
                                 {header}
-                            </h5>
+                            </h6>
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">{renderForm}</div>

@@ -33,12 +33,12 @@ function DeleteProfileModal() {
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
                         <div className="modal-header bg-light">
-                            <h5
+                            <h6
                                 className="modal-title"
                                 id="delete-account-form"
                             >
                                 Are you sure you want to delete your account?
-                            </h5>
+                            </h6>
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">

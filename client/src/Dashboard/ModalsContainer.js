@@ -3,6 +3,7 @@ import DeleteProfileModal from "../Modals/DeleteProfileModal";
 import DeletePropertyModal from "../Modals/DeletePropertyModal";
 import DeleteUnitModal from "../Modals/DeleteUnitModal";
 import EditAddModal from "../Modals/EditAddModal";
+import RedirectModal from "../Modals/RedirectModal";
 
 function ModalsContainer() {
     return (
@@ -36,6 +37,7 @@ function ModalsContainer() {
             <DeleteProfileModal />
             <DeleteUnitModal />
             <DeleteInspectionModal />
+            <RedirectModal />
         </div>
     );
 }

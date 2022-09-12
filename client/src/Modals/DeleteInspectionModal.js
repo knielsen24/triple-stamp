@@ -26,12 +26,12 @@ function DeleteInspectionModal() {
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
                         <div className="modal-header bg-light">
-                            <h5
+                            <h6
                                 className="modal-title"
                                 id="delete-inspections-modal"
                             >
                                 Are you sure you want to delete this inspection?
-                            </h5>
+                            </h6>
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">

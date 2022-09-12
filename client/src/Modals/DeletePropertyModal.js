@@ -49,12 +49,12 @@ function DeletePropertyModal() {
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
                         <div className="modal-header bg-light">
-                            <h5
+                            <h6
                                 className="modal-title"
                                 id="delete-property-form"
                             >
                                 Are you sure you want to delete this property?
-                            </h5>
+                            </h6>
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body">
