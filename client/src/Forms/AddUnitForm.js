@@ -21,6 +21,13 @@ function AddUnitForm() {
         dispatch(unitsList(newUnitsList));
     };
 
+    const initialFormData = {
+        number: "",
+        label: "",
+        square_feet: "",
+        property_id: propertyState.id || "",
+    };
+
     const createSchema = Yup.object().shape({
         number: Yup.string().min(1, "Too Short!").max(20, "Too Long!"),
         label: Yup.string().min(1, "Too Short!").max(30, "Too Long!"),
@@ -30,21 +37,20 @@ function AddUnitForm() {
         <div>
             <Formik
                 enableReinitialize
-                initialValues={{
-                    number: "",
-                    label: "",
-                    square_feet: "",
-                    property_id: propertyState.id || "",
-                }}
+                initialValues={initialFormData}
                 validationSchema={createSchema}
-                onSubmit={(values, { setSubmitting }) => {
+                onSubmit={(values, { setSubmitting, resetForm }) => {
                     console.log(values);
-                    createUnit(values).then((r) => {
-                        handleUnitsListState(r.data);
-                    });
-                    setTimeout(() => {
-                        setSubmitting(false);
-                    }, 400);
+                    createUnit(values)
+                        .then((r) => {
+                            handleUnitsListState(r.data);
+                            resetForm(initialFormData)
+                        })
+                        .then(
+                            setTimeout(() => {
+                                setSubmitting(false);
+                            }, 400)
+                        );
                 }}
             >
                 {({
@@ -110,7 +116,6 @@ function AddUnitForm() {
                                 text={"Add unit"}
                                 isValid={isValid}
                             />
-
                         </div>
                     </form>
                 )}

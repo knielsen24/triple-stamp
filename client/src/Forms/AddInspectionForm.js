@@ -72,11 +72,13 @@ function AddInspectionForm() {
                 initialValues={initialFormData}
                 validationSchema={updateSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    createInspect(values);
-                    setUnitID("");
-                    setTimeout(() => {
-                        setSubmitting(false);
-                    }, 400);
+                    createInspect(values)
+                        .then(setUnitID(""))
+                        .then(
+                            setTimeout(() => {
+                                setSubmitting(false);
+                            }, 400)
+                        );
                 }}
             >
                 {({
@@ -103,7 +105,7 @@ function AddInspectionForm() {
 
                             <select
                                 id="unit_id"
-                                className="form-control form-select"
+                                className="form-control form-select "
                                 type="string"
                                 name="unit_id"
                                 onChange={handleChange && handleUnitId}
@@ -145,7 +147,7 @@ function AddInspectionForm() {
                             </label>
                             <select
                                 id="type_name"
-                                className="form-control form-select"
+                                className="form-control form-select text-capitalize"
                                 type="string"
                                 name="type_name"
                                 // placeholder="Select a type"
@@ -169,7 +171,7 @@ function AddInspectionForm() {
                             </label>
                             <select
                                 id="status"
-                                className="form-control form-select"
+                                className="form-control form-select text-capitalize"
                                 type="string"
                                 name="status"
                                 onChange={handleChange}
@@ -205,7 +207,6 @@ function AddInspectionForm() {
 
                         <div className="float-end">
                             <ButtonCancelModal />
-
                             <ButtonSaveChanges
                                 isValid={isValid}
                                 errors={errors}

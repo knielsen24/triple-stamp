@@ -37,12 +37,25 @@ function AddPropertyForm() {
                     user_id: userId,
                 }}
                 validationSchema={createSchema}
-                onSubmit={(values, { setSubmitting }) => {
-                    createProperty(values).then((r) => {
-                        dispatch(selectProperty(r.data));
-                        dispatch(unitsList(r.data.units));
-                        navigate("/dashboard/details");
-                    });
+                onSubmit={(values, { setSubmitting, resetForm }) => {
+                    createProperty(values)
+                        .then((r) => {
+                            dispatch(selectProperty(r.data));
+                            dispatch(unitsList(r.data.units));
+                            navigate("/dashboard/details");
+                        })
+                        .then(
+                            resetForm({
+                                name: "New property",
+                                address: "",
+                                city: "",
+                                state: "",
+                                postal_code: "",
+                                country: "",
+                                units: [],
+                                user_id: userId,
+                            })
+                        );
                     setTimeout(() => {
                         setSubmitting(false);
                     }, 400);
@@ -55,7 +68,6 @@ function AddPropertyForm() {
                     handleChange,
                     handleBlur,
                     handleSubmit,
-                    handleReset,
                     isSubmitting,
                     isValid,
                 }) => (
@@ -85,7 +97,6 @@ function AddPropertyForm() {
                                 isSubmitting={isSubmitting}
                                 text={"Add Property"}
                                 isValid={isValid}
-                                handleReset={handleReset}
                             />
                         </div>
                     </form>

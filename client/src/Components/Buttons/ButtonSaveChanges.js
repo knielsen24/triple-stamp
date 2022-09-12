@@ -1,5 +1,5 @@
 
-function ButtonSaveChanges({ isSubmitting, text, isValid, handleReset }) {
+function ButtonSaveChanges({ isSubmitting, text, isValid }) {
 
     return (
         <button
@@ -8,7 +8,6 @@ function ButtonSaveChanges({ isSubmitting, text, isValid, handleReset }) {
             className="btn btn-secondary nav-btn-start-now shadow-sm"
             data-bs-dismiss="modal"
             aria-label="Close"
-            onClick={isValid && isSubmitting? handleReset : false}
         >
             {text}
         </button>
