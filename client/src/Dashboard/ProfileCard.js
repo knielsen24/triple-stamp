@@ -31,7 +31,7 @@ function ProfileCard() {
 
                 <div className="card-body p-1">
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item user-select-none">
+                        <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
                                 <div className="col-6 text-end">Email address:</div>
                                 <div className="col-6 ">
@@ -39,7 +39,7 @@ function ProfileCard() {
                                 </div>
                             </div>
                         </li>
-                        <li className="list-group-item user-select-none">
+                        <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
                                 <div className="col-6 text-end">Phone number:</div>
                                 <div className="col-6">
@@ -47,7 +47,7 @@ function ProfileCard() {
                                 </div>
                             </div>
                         </li>
-                        <li className="list-group-item user-select-none">
+                        <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
                                 <div className="col-6 text-end">Business Name:</div>
                                 <div className="col-6">
@@ -55,7 +55,7 @@ function ProfileCard() {
                                 </div>
                             </div>
                         </li>
-                        <li className="list-group-item user-select-none">
+                        <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
                                 <div className="col-6 text-end">
                                     Account Name:

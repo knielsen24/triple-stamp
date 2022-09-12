@@ -60,8 +60,8 @@ function UnitsContainer() {
             <table className={property.name !== "" ? tableClassHover : tableClassNoHover}>
                 <tbody>
                     <tr scope="row">
-                        <td colSpan="1"></td>
-                        <td colSpan="2">
+                        <td colSpan="1" className="p-1 "></td>
+                        <td colSpan="2" className="p-1 ">
                             {property.name !== "" ? (
                                 <ButtonOpenAddUnitModal />
                             ) : null}
