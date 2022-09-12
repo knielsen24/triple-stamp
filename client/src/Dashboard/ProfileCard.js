@@ -19,48 +19,48 @@ function ProfileCard() {
                             className="rounded-circle"
                             src={!userImage ? profileIcon : user.image}
                             alt="profileIcon"
-                            width="115px"
+                            width="116px"
                         />
                     </div>
                     <div className="header text-center">
-                        <h5 className="card-title text-dark m-2 p-1">
+                        <h6 className="card-title text-dark m-2 p-1">
                             {!user ? "" : user.full_name}
-                        </h5>
+                        </h6>
                     </div>
                 </div>
 
                 <div className="card-body p-1">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item user-select-none">
-                            <div className="row d-flex">
-                                <div className="col-5 text-end">Email address:</div>
-                                <div className="col-7">
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-6 text-end">Email address:</div>
+                                <div className="col-6 ">
                                     {!user ? "" : user.email}
                                 </div>
                             </div>
                         </li>
                         <li className="list-group-item user-select-none">
-                            <div className="row d-flex">
-                                <div className="col-5 text-end">Phone number:</div>
-                                <div className="col-7">
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-6 text-end">Phone number:</div>
+                                <div className="col-6">
                                     {!user ? "" : user.phone}
                                 </div>
                             </div>
                         </li>
                         <li className="list-group-item user-select-none">
-                            <div className="row d-flex">
-                                <div className="col-5 text-end">Business Name:</div>
-                                <div className="col-7">
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-6 text-end">Business Name:</div>
+                                <div className="col-6">
                                     {!user ? "" : user.business}
                                 </div>
                             </div>
                         </li>
                         <li className="list-group-item user-select-none">
-                            <div className="row d-flex">
-                                <div className="col-5 text-end">
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-6 text-end">
                                     Account Name:
                                 </div>
-                                <div className="col-7">
+                                <div className="col-6">
                                     {!user ? "" : user.account_name}
                                 </div>
                             </div>
