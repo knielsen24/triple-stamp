@@ -19,7 +19,7 @@ function AddPropertyForm() {
     const userId = user ? user.id : "";
 
     const createSchema = Yup.object().shape({
-        name: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),
+        name: Yup.string().min(2, "Too Short!").max(30, "Too Long!").required(),
     });
 
     return (
@@ -55,6 +55,7 @@ function AddPropertyForm() {
                     handleChange,
                     handleBlur,
                     handleSubmit,
+                    handleReset,
                     isSubmitting,
                     isValid,
                 }) => (
@@ -84,6 +85,7 @@ function AddPropertyForm() {
                                 isSubmitting={isSubmitting}
                                 text={"Add Property"}
                                 isValid={isValid}
+                                handleReset={handleReset}
                             />
                         </div>
                     </form>

@@ -46,33 +46,25 @@ function PropertyCard() {
                                 <div className="col-3 text-end ">Address:</div>
                                 <div className="col-3 text-start">
                                     <div className="row">
-                                        {" "}
                                         {property ? property.address : ""}
                                     </div>
                                     <div className="row">
-                                        {" "}
                                         {property ? property.city : ""}
                                     </div>
                                     <div className="row">
-                                        {" "}
-                                        {property
+                                        {property.address
                                             ? property.state +
-                                              ", " +
+                                              (property.state ? ", " : "") +
                                               property.postal_code
                                             : ""}
                                     </div>
                                     <div className="row text-start">
-                                        {" "}
                                         {property ? property.country : ""}
                                     </div>
                                 </div>
                                 <div className="col-2 text-start">
-                                    <div className="row">
-                                        Total sq/ft:
-                                    </div>
-                                    <div className="row">
-                                        Total units:
-                                    </div>
+                                    <div className="row">Total sq/ft:</div>
+                                    <div className="row">Total units:</div>
                                     <div className="row">
                                         Total Inspections:
                                     </div>
@@ -85,56 +77,15 @@ function PropertyCard() {
                                         {property ? unitsListState.length : ""}
                                     </div>
                                     <div className="row text-start">
-                                        {property ? propInspections.length : ""}
+                                        {propInspections
+                                            ? propInspections.length
+                                            : ""}
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        {/* <li className="list-group-item ">
-                            <div className="row d-flex justify-content-center">
-                                <div className="col-6 text-end">State:</div>
-                                <div className="col-6 ">
-                                    {property ? property.state : ""}
-                                </div>
-                            </div>
-                        </li>
-                        <li className="list-group-item ">
-                            <div className="row d-flex justify-content-center">
-                                <div className="col-6 text-end">Zip code:</div>
-                                <div className="col-6 ">
-                                    {property ? property.postal_code : ""}
-                                </div>
-                            </div>
-                        </li>
-                        <li className="list-group-item ">
-                            <div className="row d-flex justify-content-center">
-                                <div className="col-6 text-end">Country:</div>
-                                <div className="col-6 ">
-                                    {property ? property.country : ""}
-                                </div>
-                            </div>
-                        </li> */}
-                        {/* <li className="list-group-item ">
-                            <div className="row d-flex justify-content-center">
-                                <div className="col-1 text-end"></div>
-                                <div className="col-3 text-end">
-                                    Total units:
-                                </div>
-                                <div className="col-1 ">
-                                    {property ? unitsListState.length : ""}
-                                </div>
-                                <div className="col-3 text-end">
-                                    Total Inspections:
-                                </div>
-                                <div className="col-1 ">
-                                    {property ? propInspections.length : ""}
-                                </div>
-                                <div className="col-1 text-end"></div>
-                            </div>
-                        </li> */}
                     </ul>
                 </div>
-
                 <div className="card-footer bg-white text-muted text-center">
                     {property.name === "" ? null : (
                         <ButtonManageAccountModals
