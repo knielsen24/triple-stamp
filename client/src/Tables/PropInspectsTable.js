@@ -34,11 +34,12 @@ function PropInspectsTable({ propInspections, tableHeight }) {
                     <td>{inspect.status}</td>
                     <td >{inspect.scheduled_date}</td>
                     <td>
-                        <div className="btn-group">
+                        <div className="btn-group dropstart">
                             <img
                                 src={threeDots}
                                 alt="threedots-icon"
                                 role="button"
+                                key={inspect.id}
                                 className="btn btn-secondary dropdown-toggle bg-light bg-opacity-25 border-0 p-0 align-middle"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"

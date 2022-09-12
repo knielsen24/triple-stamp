@@ -20,16 +20,6 @@ function InspectionDropDown() {
                     Edit Inspection
                 </a>
             </li>
-            {/* <li>
-                <a
-                    className="dropdown-item"
-                    href="#"
-                    disable
-                    // href="full_report"
-                >
-                    View Full Report
-                </a>
-            </li> */}
             <li>
                 <hr className="dropdown-divider mx-2 my-1" />
             </li>

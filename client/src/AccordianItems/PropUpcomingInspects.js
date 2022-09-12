@@ -19,7 +19,7 @@ function PropUpcomingInspects() {
     }
 
     return (
-        <div className="accordion-item ">
+        <div className="accordion-item accordian-zIndex">
             <h5 className="accordion-header" id="panelsStayOpen-prop-upcoming">
                 <button
                     className="accordion-button bg-info bg-opacity-25 fw-bold text-secondary py-2"

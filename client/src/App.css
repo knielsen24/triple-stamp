@@ -220,9 +220,13 @@ footer {
 }
 
 .table-dropdown-zIndex {
-    z-index: 800;
+    z-index: 950;
 }
 
 .table-zIndex {
     z-index: 900;
 }
+
+/* .accordian-zIndex {
+    z-index: 900;
+} */

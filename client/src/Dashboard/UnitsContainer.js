@@ -32,7 +32,7 @@ function UnitsContainer() {
                         <td>{unit.number}</td>
                         <td>{unit.label}</td>
                         <td className="pe-0 ">
-                            <div className="btn-group dropend">
+                            <div className="btn-group dropstart">
                                 <img
                                     src={threeDots}
                                     alt="threedots-icon"

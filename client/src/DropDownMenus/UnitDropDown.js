@@ -4,7 +4,7 @@ import plusIcon from "../assets/plus-icon.svg";
 
 function UnitDropDown() {
     return (
-        <ul className="dropdown-menu bg-light mt-4 p-1">
+        <ul className="dropdown-menu bg-light mt-3 p-1">
             <li className="p-0">
                 <a
                     className="dropdown-item"

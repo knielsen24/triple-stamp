@@ -19,7 +19,7 @@ function PropInProgressInspects() {
     }
 
     return (
-        <div className="accordion-item">
+        <div className="accordion-item accordian-zIndex">
             <h2
                 className="accordion-header"
                 id="open-prop-inProgress-inspections"
