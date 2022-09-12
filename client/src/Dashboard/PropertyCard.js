@@ -14,7 +14,7 @@ function PropertyCard() {
             <div className="card" id="profile-main-card-container">
                 <div className="text-center bg-light" id="profile-card-bg">
                     <div className="m-2 p-1">
-                        <img src={homeIcon} alt="home-icon" width="75px"/>
+                        <img src={homeIcon} alt="home-icon" width="115px"/>
                     </div>
                     <div className="header text-center">
                         <h5 className="card-title text-dark m-2 p-1">
@@ -45,7 +45,7 @@ function PropertyCard() {
                         </li>
                     </ul>
                 </div>
-                
+
                 <div className="card-footer bg-white text-muted text-center">
                     {property.name === "" ? null : (
                         <ButtonManageAccountModals

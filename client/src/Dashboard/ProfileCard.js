@@ -2,7 +2,6 @@ import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccount
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import profileIcon from "../assets/person-icon.svg";
 
-
 function ProfileCard() {
     const { data: user } = useFetchUserQuery();
 
@@ -30,19 +29,41 @@ function ProfileCard() {
                     </div>
                 </div>
 
-                <div className="card-body">
+                <div className="card-body p-1">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item user-select-none">
-                            Email: {!user ? "" : user.email}
+                            <div className="row d-flex">
+                                <div className="col-5 text-end">Email address:</div>
+                                <div className="col-7">
+                                    {!user ? "" : user.email}
+                                </div>
+                            </div>
                         </li>
                         <li className="list-group-item user-select-none">
-                            Phone: {!user ? "" : user.phone}
+                            <div className="row d-flex">
+                                <div className="col-5 text-end">Phone number:</div>
+                                <div className="col-7">
+                                    {!user ? "" : user.phone}
+                                </div>
+                            </div>
                         </li>
                         <li className="list-group-item user-select-none">
-                            Business: {!user ? "" : user.business}
+                            <div className="row d-flex">
+                                <div className="col-5 text-end">Business Name:</div>
+                                <div className="col-7">
+                                    {!user ? "" : user.business}
+                                </div>
+                            </div>
                         </li>
                         <li className="list-group-item user-select-none">
-                            Account name: {!user ? "" : user.account_name}
+                            <div className="row d-flex">
+                                <div className="col-5 text-end">
+                                    Account Name:
+                                </div>
+                                <div className="col-7">
+                                    {!user ? "" : user.account_name}
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>

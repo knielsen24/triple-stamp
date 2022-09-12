@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function DashboardMain() {
-    const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75";
+    const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75 py-1";
 
     return (
         <div className="container dash-page-mt">
