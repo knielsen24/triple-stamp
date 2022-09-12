@@ -23,7 +23,7 @@ function PropMoveInInspects() {
         <div className="accordion-item ">
             <h2 className="accordion-header" id="panelsStayOpen-prop-move-in">
                 <button
-                    className="accordion-button bg-info bg-opacity-25 fw-bold text-secondary"
+                    className="accordion-button bg-info bg-opacity-25 fw-bold text-secondary py-2"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-prop-collapse-move-in"

@@ -23,7 +23,7 @@ function PropAnnualInspects() {
         <div className="accordion-item ">
             <h2 className="accordion-header" id="panelsStayOpen-prop-annual">
                 <button
-                    className="accordion-button collapsed ts-muted-green fw-bold text-secondary"
+                    className="accordion-button collapsed ts-muted-green fw-bold text-secondary py-2"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-prop-collapse-annual"

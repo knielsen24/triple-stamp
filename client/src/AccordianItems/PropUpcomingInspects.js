@@ -20,9 +20,9 @@ function PropUpcomingInspects() {
 
     return (
         <div className="accordion-item ">
-            <h2 className="accordion-header" id="panelsStayOpen-prop-upcoming">
+            <h5 className="accordion-header" id="panelsStayOpen-prop-upcoming">
                 <button
-                    className="accordion-button bg-info bg-opacity-25 fw-bold text-secondary"
+                    className="accordion-button bg-info bg-opacity-25 fw-bold text-secondary py-2"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-prop-collapseUpcoming"
@@ -31,7 +31,7 @@ function PropUpcomingInspects() {
                 >
                     Upcoming
                 </button>
-            </h2>
+            </h5>
             <div
                 id="panelsStayOpen-prop-collapseUpcoming"
                 className="accordion-collapse collapse show"

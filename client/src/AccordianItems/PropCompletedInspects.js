@@ -25,7 +25,7 @@ function PropCompletedInspects() {
                 id="open-prop-completed-inspections"
             >
                 <button
-                    className="accordion-button collapsed ts-muted-green text-secondary fw-bold"
+                    className="accordion-button collapsed ts-muted-green text-secondary fw-bold py-2"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#open-prop-completed-inspections-collapse"

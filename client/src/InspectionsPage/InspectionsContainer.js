@@ -1,33 +1,38 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { selectUnit } from "../app/features/unitSlice";
 import { Route, Routes, Link } from "react-router-dom";
 import { setSelectProperty } from "../app/features/propertySlice";
-import { setSelectUnit } from "../app/features/unitSlice";
-import UnitAllInspects from "../AccordianItems/UnitAllInspects";
-import ViewInspectReport from "./ViewInspectReport";
-import { setSelectInspection } from "../app/features/inspectionSlice";
 import PropAllInspectsList from "../AccordianItems/PropAllInspectsList";
 import StatusAccordians from "./StatusAccordians";
 import TypeAccordians from "./TypeAccordians";
 
 function InspectionsContainer() {
     const property = useSelector(setSelectProperty);
-    const unit = useSelector(setSelectUnit);
-    const inspection = useSelector(setSelectInspection);
+    const dispatch = useDispatch();
 
     const [tableHeight, setTableHeight] = useState(false);
+
+    const initialValues = {
+        id: "",
+        number: "",
+        label: "",
+        property_id: "",
+        square_feet: "",
+    };
 
     const shortcutBar = "btn py-0 text-secondary me-4";
 
     return (
         <div className="container border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto ">
             <div className="row bg-light rounded border p-1 mb-2">
-                <div className="col d-flex justify-content-center">
+                <div className="col d-flex justify-content-start">
                     <a
                         href="#"
                         className="btn py-0 text-secondary"
                         data-bs-toggle="modal"
                         data-bs-target="#add-inspection-form"
+                        onClick={() => dispatch(selectUnit(initialValues))}
                     >
                         + Add Inspection
                     </a>
