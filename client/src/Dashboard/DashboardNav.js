@@ -7,7 +7,7 @@ function DashboardNav() {
     const property = useSelector(setSelectProperty);
 
     const navLinkClass = "nav-link h-100";
-    const dropDownClass = "mx-4 dropdown";
+    const dropDownClass = "mx-4 dropdown position-relative dropdown-zIndex";
 
     let activeClass =
         "nav-link fw-bold ts-primary-green text-dark navbar-text rounded pill-height ";
@@ -20,47 +20,49 @@ function DashboardNav() {
         : (detailsLinkhref = "/inspections/property");
 
     return (
-        <nav className="navbar-nav rounded bg-white shadow-sm sticky-top p-0 border ">
-            <ul className="nav nav-justified align-items-center align-items-end">
-                <li className={navLinkClass}>
-                    <NavLink
-                        to="main"
-                        className={({ isActive }) =>
-                            isActive ? activeClass : inactiveClass
-                        }
-                    >
-                        Main{" "}
-                    </NavLink>
-                </li>
-                <li className={navLinkClass}>
-                    <NavLink
-                        to="inspections"
-                        className={({ isActive }) =>
-                            isActive ? activeClass : inactiveClass
-                        }
-                    >
-                        Inspections
-                    </NavLink>
-                </li>
+        <div className="row-fluid p-0">
+            <nav className="navbar-nav rounded bg-white shadow-sm sticky-top p-0 border ">
+                <ul className="nav nav-justified align-items-center align-items-end">
+                    <li className={navLinkClass}>
+                        <NavLink
+                            to="main"
+                            className={({ isActive }) =>
+                                isActive ? activeClass : inactiveClass
+                            }
+                        >
+                            Main{" "}
+                        </NavLink>
+                    </li>
+                    <li className={navLinkClass}>
+                        <NavLink
+                            to="inspections"
+                            className={({ isActive }) =>
+                                isActive ? activeClass : inactiveClass
+                            }
+                        >
+                            Inspections
+                        </NavLink>
+                    </li>
 
-                <li className={navLinkClass}>
-                    <NavLink
-                        to="details"
-                        className={({ isActive }) =>
-                            isActive ? activeClass : inactiveClass
-                        }
-                    >
-                        Details
-                    </NavLink>
-                </li>
-                <div className="vr h-75 align-self-center"></div>
-                <li className={dropDownClass}>
-                    <NavLink to="#">
-                        <UserDropDown />
-                    </NavLink>
-                </li>
-            </ul>
-        </nav>
+                    <li className={navLinkClass}>
+                        <NavLink
+                            to="details"
+                            className={({ isActive }) =>
+                                isActive ? activeClass : inactiveClass
+                            }
+                        >
+                            Details
+                        </NavLink>
+                    </li>
+                    <div className="vr my-2"></div>
+                    <li className={dropDownClass}>
+                        <NavLink to="#">
+                            <UserDropDown />
+                        </NavLink>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     );
 }
 

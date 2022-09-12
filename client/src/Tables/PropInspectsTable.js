@@ -56,9 +56,9 @@ function PropInspectsTable({ propInspections, tableHeight }) {
 
     return (
         <div className={tableHeight ? "table-height-all overflow-auto" : "table-height overflow-auto"}>
-            <table className="table table-responsive table-hover text-capitalize mb-0">
-                <thead className="text-center bg-light sticky-top">
-                    <tr className="border-bottom border-3 sticky-top">
+            <table className="table table-responsive table-hover text-capitalize mb-0 table-zIndex">
+                <thead className="text-center bg-light sticky-top table-zIndex">
+                    <tr className="border-bottom border-3 ">
                         <th scrop="col" className="text-start  p-1"></th>
                         <th scope="col" className="text-start p-1">
                             Unit #

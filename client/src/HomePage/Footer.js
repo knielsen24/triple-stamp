@@ -57,7 +57,7 @@ function Footer() {
                                     />
                                 </a>
                             </div>
-                            <div className="col-2">
+                            {/* <div className="col-2">
                                 <a
                                     className="nav-link text-decoration-none "
                                     id="footer-links"
@@ -69,7 +69,7 @@ function Footer() {
                                         alt="logo-name"
                                     />
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     {/* <div className="col">

@@ -214,3 +214,15 @@ footer {
 .accordian-purple-muted-bg {
     background-color: #E5DFFF;
 }
+
+.dropdown-zIndex {
+    z-index: 1000;
+}
+
+.table-dropdown-zIndex {
+    z-index: 800;
+}
+
+.table-zIndex {
+    z-index: 900;
+}
