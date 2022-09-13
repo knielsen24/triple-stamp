@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import logoName from "../assets/logo-name-white-svg.svg";
 import emailIcon from "../assets/email-icon.svg";
 import linkedInIcon from "../assets/linkedIn-icon.svg";
 import githubIcon from "../assets/github-icon.svg";
+import { useFetchUserQuery } from "../app/api/userApiSlice";
 
 function Footer() {
+    const { data: user, isError } = useFetchUserQuery();
     const emailAddress = "knielsen24@gmail.com";
     const githubUrl = "https://github.com/knielsen24/triple-stamp";
     const linkedinUrl = "https://www.linkedin.com/in/kevin-nielsen-se/";
@@ -16,18 +19,21 @@ function Footer() {
         "mt-auto border-top border-1 py-3 bg-secondary text-white text";
     const aTagClass = "nav-link text-decoration-none";
 
+    const handlePath = (!user || isError) ? "/" : "dashboard/main"
+
     return (
         <footer className={footerClass}>
             <div className="container">
                 <div className="row justify-content-between align-items-end">
                     <div className="col ">
-                        <img
-                            className="footer-logo"
-                            src={logoName}
-                            alt="logo-name"
-                        />
+                        <Link to={handlePath}>
+                            <img
+                                className="footer-logo"
+                                src={logoName}
+                                alt="logo-name"
+                            />
+                        </Link>
                     </div>
-
                     <div className="col">
                         <div className="row justify-content-center">
                             <div className="col-2 align-middle">
