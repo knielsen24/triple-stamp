@@ -7,7 +7,7 @@ function DashboardMain() {
     const property = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
 
-    console.log(property.units.length);
+    console.log(property)
 
     const handleTarget = (prop) => {
         if (prop.name === "") return "#redirect-prop-modal";

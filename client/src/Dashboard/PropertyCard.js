@@ -13,10 +13,6 @@ function PropertyCard() {
         property ? property.id : skipToken
     );
 
-    console.log(propInspections);
-    // console.log(property.units.length)
-    // property.units.length is not updating state on the dom
-
     return (
         <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
             <div className="card" id="profile-main-card-container">
@@ -26,62 +22,98 @@ function PropertyCard() {
                     </div>
                     <div className="header text-center">
                         <h5 className="card-title text-dark m-2 p-1">
-                            {property.name}
+                            {property.name !== ""
+                                ? `${property.name} | ${property.address}`
+                                : ""}
                         </h5>
                     </div>
                 </div>
 
-                <div className="card-body p-1">
-                    <ul className="list-group list-group-flush ">
+                <div className="card-body p-1 border-top">
+                    <ul className="list-group list-group-flush">
                         {/* <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
-
-                                <div className="col-6 ">
-                                    {property ? property.address : ""}
+                                <div className="col-12 text-center">
+                                    Full Address:{" "}
+                                    {property
+                                        ? `${property.address}, ${property.city}, ${property.state}, ${property.postal_code}`
+                                        : ""}
                                 </div>
                             </div>
                         </li> */}
                         <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
-                                <div className="col-3 text-end ">Address:</div>
-                                <div className="col-3 text-start">
-                                    <div className="row">
-                                        {property ? property.address : ""}
+                                <div className="col-6 text-start">
+                                    <h6 className="fw-bold">Property Facts</h6>
+                                    <div className="row d-flex ">
+                                        <div className="col">Square/feet:</div>
+                                        <div className="col">
+                                            {property
+                                                ? property.total_square_feet
+                                                : ""}{" "}
+                                        </div>
                                     </div>
-                                    <div className="row">
-                                        {property ? property.city : ""}
+                                    <div className="row d-flex ">
+                                        <div className="col">No. Units:</div>
+                                        <div className="col">
+                                            {property
+                                                ? unitsListState.length
+                                                : ""}
+                                        </div>
                                     </div>
-                                    <div className="row">
-                                        {property.address
-                                            ? property.state +
-                                              (property.state ? ", " : "") +
-                                              property.postal_code
-                                            : ""}
-                                    </div>
-                                    <div className="row text-start">
-                                        {property ? property.country : ""}
-                                    </div>
-                                </div>
-                                <div className="col-2 text-start">
-                                    <div className="row">Total sq/ft:</div>
-                                    <div className="row">Total units:</div>
-                                    <div className="row">
-                                        Total Inspections:
-                                    </div>
-                                </div>
-                                <div className="col-3 ">
-                                    <div className="row text-start">
-                                        {property ? unitsListState.length : ""}
-                                    </div>
-                                    <div className="row text-start">
-                                        {property ? unitsListState.length : ""}
-                                    </div>
-                                    <div className="row text-start">
-                                        {propInspections
-                                            ? propInspections.length
-                                            : ""}
+                                    <div className="row d-flex">
+                                        <div className="col">
+                                            No. Inspections:
+                                        </div>
+                                        <div className="col">
+                                            {property
+                                                ? propInspections.length
+                                                : ""}
+                                        </div>
                                     </div>
                                 </div>
+                                <div className="col-6 text-start">
+                                    <h6 className="fw-bold">Full Address</h6>
+                                    <div className="row ms-1 d-flex ">
+                                        <div className="col">
+                                            <div className="row ">Street:</div>
+                                            <div className="row">City:</div>
+                                            <div className="row">
+                                                State, Zip:
+                                            </div>
+                                            {/* <div className="row">Country:</div> */}
+                                        </div>
+                                        <div className="col">
+                                            <div className="row ">
+                                                {property
+                                                    ? property.address
+                                                    : ""}
+                                            </div>
+                                            <div className="row">
+                                                {property ? property.city : ""}
+                                            </div>
+                                            <div className="row">
+                                                {property
+                                                    ? `${property.state}, ${property.postal_code}`
+                                                    : ""}
+                                            </div>
+                                            {/* <div className="row ">
+                                                {property
+                                                    ? property.country
+                                                    : ""}
+                                            </div> */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-3"></div>
+                                <div className="col-3 text-end"></div>
+                                <div className="col-2"></div>
+                                <div className="col-4"></div>
+                            </div>
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-6"></div>
                             </div>
                         </li>
                     </ul>

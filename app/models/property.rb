@@ -6,10 +6,7 @@ class Property < ApplicationRecord
     validates :name, presence: true
 
     def total_square_feet
-        self.units(:square_feet).sum
+        self.units.sum(:square_feet)
     end
 
-    # def total_square_feet
-    #     Unit.where(property: self).sum(:square_feet)
-    # end
 end
