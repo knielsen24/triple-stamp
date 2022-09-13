@@ -22,9 +22,8 @@ function PropertyCard() {
                     </div>
                     <div className="header text-center">
                         <h5 className="card-title text-dark m-2 p-1">
-                            {property.name !== ""
-                                ? `${property.name} | ${property.address}`
-                                : ""}
+                            {property.name !== "" ? property.name : ""}{" "}
+                            {property.address ? `| ${property.address}` : ""}
                         </h5>
                     </div>
                 </div>
@@ -66,7 +65,7 @@ function PropertyCard() {
                                             No. Inspections:
                                         </div>
                                         <div className="col">
-                                            {property
+                                            {propInspections
                                                 ? propInspections.length
                                                 : ""}
                                         </div>
@@ -93,7 +92,8 @@ function PropertyCard() {
                                                 {property ? property.city : ""}
                                             </div>
                                             <div className="row">
-                                                {property
+                                                {property.state !== "" &&
+                                                property.postal_code !== ""
                                                     ? `${property.state}, ${property.postal_code}`
                                                     : ""}
                                             </div>
@@ -105,15 +105,6 @@ function PropertyCard() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="row d-flex justify-content-center">
-                                <div className="col-3"></div>
-                                <div className="col-3 text-end"></div>
-                                <div className="col-2"></div>
-                                <div className="col-4"></div>
-                            </div>
-                            <div className="row d-flex justify-content-center">
-                                <div className="col-6"></div>
                             </div>
                         </li>
                     </ul>
