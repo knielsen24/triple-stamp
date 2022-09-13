@@ -21,7 +21,7 @@ function DashboardContainer() {
             <div className="row mh-100">
                 <div className="col dash-height units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top mw-100">
                     <div className="row sticky-top bg-white mb-0">
-                        <div className="text-start user-select-none mt-3 mb-2 ms-4 ps-0 fw-bold sticky-top">
+                        <div className="text-start user-select-none mt-3 mb-3 ms-4 ps-0 fw-bold sticky-top">
                             <img
                                 src={buildingIcon}
                                 alt="edit-icon"
