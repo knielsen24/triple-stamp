@@ -44,7 +44,7 @@ function AddUnitForm() {
                     createUnit(values)
                         .then((r) => {
                             handleUnitsListState(r.data);
-                            resetForm(initialFormData)
+                            resetForm(initialFormData);
                         })
                         .then(
                             setTimeout(() => {
@@ -102,7 +102,26 @@ function AddUnitForm() {
                             />
                             {errors.label && touched.label && errors.label}
                         </div>
-
+                        <div className="mb-3">
+                            <label
+                                htmlFor="square_feet"
+                                className="form-label float-start"
+                            >
+                                Square Feet
+                            </label>
+                            <input
+                                id="square_feet"
+                                className="form-control"
+                                type="string"
+                                name="square_feet"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.square_feet}
+                            />
+                            {errors.square_feet &&
+                                touched.square_feet &&
+                                errors.square_feet}
+                        </div>
                         <div className="float-end">
                             {/*
                                 this needs a conditon

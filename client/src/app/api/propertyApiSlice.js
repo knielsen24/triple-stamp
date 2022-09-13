@@ -5,7 +5,14 @@ export const propertyApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000",
     }),
-    tagTypes: ["properties", "property", "units", "inspections", "items", "UNAUTHORIZED"],
+    tagTypes: [
+        "properties",
+        "property",
+        "units",
+        "inspections",
+        "items",
+        "UNAUTHORIZED",
+    ],
     endpoints(builder) {
         return {
             fetchProperties: builder.query({
@@ -48,7 +55,7 @@ export const propertyApi = createApi({
                     body: data,
                 }),
                 invalidatesTags: (result, error, arg) => [
-                    { type: "properties", id: arg.data},
+                    { type: "properties", id: arg.data },
                 ],
             }),
 
@@ -69,6 +76,7 @@ export const propertyApi = createApi({
                     body: data,
                 }),
                 invalidatesTags: (result, error, arg) => [
+                    "property",
                     { type: "properties", id: arg.data },
                 ],
             }),
@@ -80,6 +88,7 @@ export const propertyApi = createApi({
                     body: data,
                 }),
                 invalidatesTags: (result, error, arg) => [
+                    "property",
                     { type: "units", id: arg.data },
                 ],
             }),
@@ -91,6 +100,7 @@ export const propertyApi = createApi({
                 }),
                 invalidatesTags: (result, error, arg) => [
                     "inspections",
+                    "property",
                     { type: "units", id: arg.id },
                 ],
             }),

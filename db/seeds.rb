@@ -23,7 +23,7 @@ puts "🌱 double stamping..."
     )
 end
 
-labelsArray = ["Dentist office", "Doctor office", "Phyical Therapy", "Dim Sum house", "Dumpling House", "Noodle House", "Spicy Hot Pot", "BBQ Place", "Fish house", "Steak House", "Shrimp House", "House of Potato"]
+labelsArray = ["Dentist office", "Doctor office", "Physical Therapy", "Dim Sum house", "Dumpling House", "Noodle House", "Spicy Hot Pot", "BBQ Place", "Fish house", "Steak House", "Shrimp House", "House of Potato"]
 
 Property.all.each do |property|
     10.times do
