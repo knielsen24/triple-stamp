@@ -28,7 +28,6 @@ function ProfileCard() {
                         </h6>
                     </div>
                 </div>
-
                 <div className="card-body p-1">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item ">

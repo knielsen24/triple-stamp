@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 2022_08_02_171727) do
   end
 
   create_table "units", force: :cascade do |t|
-    t.string "number"
-    t.string "square_feet"
+    t.string "number", default: ""
+    t.integer "square_feet"
+    t.string "label", default: ""
     t.bigint "property_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "label", default: ""
     t.index ["property_id"], name: "index_units_on_property_id"
   end
 
