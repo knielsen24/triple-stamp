@@ -69,7 +69,7 @@ function AddUnitForm() {
                                 htmlFor="number"
                                 className="form-label float-start"
                             >
-                                Unit number. Letters are acceptable!
+                                Add a unit number. Letters are acceptable
                             </label>
                             <input
                                 id="number"

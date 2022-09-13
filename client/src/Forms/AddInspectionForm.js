@@ -98,11 +98,7 @@ function AddInspectionForm() {
                                 className="form-label float-start"
                             >
                                 Unit #{" "}
-                                {unitsListState.length === 0 ? (
-                                    <ButtonOpenAddUnitModal />
-                                ) : null}
                             </label>
-
                             <select
                                 id="unit_id"
                                 className="form-control form-select "

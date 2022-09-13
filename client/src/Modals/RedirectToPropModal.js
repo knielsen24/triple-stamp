@@ -1,17 +1,16 @@
 import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import logo from "../assets/logo-svg.svg";
 
-function RedirectModal() {
-    const buttonClass = "btn btn-secondary text-white opacity-75 py-1";
+function RedirectToPropModal() {
     return (
         <div>
             <div
                 className="modal fade"
-                id="redirect-modal"
+                id="redirect-prop-modal"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabIndex="-1"
-                aria-labelledby="redirect-modal"
+                aria-labelledby="redirect-prop-modal"
                 aria-hidden="true"
             >
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
@@ -20,9 +19,9 @@ function RedirectModal() {
                             <img className="logo ms-1" src={logo} />
                             <h6
                                 className="modal-title w-100"
-                                id="redirect-modal"
+                                id="redirect-prop-modal"
                             >
-                                Opps looks like no property has been selected...
+                                Oops! There is no property selected...
                             </h6>
                             <ButtonCloseModalX />
                         </div>
@@ -32,10 +31,10 @@ function RedirectModal() {
                                     <p className="my-2 text-center">
                                         Select a property from my property list
                                     </p>
-                                    <div className="row justify-content-center ">
+                                    <div className="row  justify-content-center ">
                                         <a
                                             type="button"
-                                            className="btn btn-light border btn-width"
+                                            className="btn btn-light border btn-width mt-2"
                                             data-bs-dismiss="modal"
                                         >
                                             Select Property
@@ -47,12 +46,12 @@ function RedirectModal() {
                                 </div>
                                 <div className="col-5 ">
                                     <p className="my-2 text-center">
-                                        Add a new property before adding an unit
+                                        Add a new property before adding a unit
                                     </p>
                                     <div className="row justify-content-center">
                                         <a
                                             type="button"
-                                            className="btn btn-secondary nav-btn-start-now shadow-sm"
+                                            className="btn btn-secondary nav-btn-start-now mt-2 shadow-sm"
                                             data-bs-toggle="modal"
                                             data-bs-target="#add-property-form"
                                         >
@@ -69,4 +68,4 @@ function RedirectModal() {
     );
 }
 
-export default RedirectModal;
+export default RedirectToPropModal;

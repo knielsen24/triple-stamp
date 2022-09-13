@@ -16,7 +16,7 @@ function DashboardContainer() {
     const { data: user, isError, isLoading } = useFetchUserQuery();
 
     return (
-        <div className="container dashboard-containter ">
+        <div className="container dashboard-containter">
             <ModalsContainer />
             <div className="row mh-100">
                 <div className="col dash-height units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top mw-100">
@@ -32,13 +32,14 @@ function DashboardContainer() {
                         <div className="row justify-content-center">
                             <PropertyDropDown />
                         </div>
-                        <hr className="align-items-center mx-1 mt-3 mb-0"></hr>
+                        <div>
+                            <hr className="mt-3 mb-0"></hr>
+                        </div>
                     </div>
                     <UnitsContainer />
                 </div>
                 <div className="col-md-9 dash-height rounded bg-gradient bg-opacity-25 col-m-12 mt-1 sticky-top ">
                     <div className="row ms-1">
-
                         <DashBoardNav />
                         <Routes>
                             <Route path="/main" element={<DashboardMain />} />

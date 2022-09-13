@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom";
 import { setSelectProperty } from "../app/features/propertySlice";
 import { useSelector } from "react-redux";
+import { setUnitsList } from "../app/features/unitsListSlice";
 
 function DashboardMain() {
     const property = useSelector(setSelectProperty);
+    const unitsListState = useSelector(setUnitsList);
+
+    console.log(property.units.length);
+
+    const handleTarget = (prop) => {
+        if (prop.name === "") return "#redirect-prop-modal";
+        if (prop.name !== "" && unitsListState.length < 1)
+            return "#redirect-unit-modal";
+        if (prop.name !== "" && unitsListState.length > 0)
+            return "#add-inspection-form";
+    };
 
     const buttonClass =
         "btn btn-secondary dash-main-btn text-white opacity-75 py-1";
@@ -40,7 +52,7 @@ function DashboardMain() {
                                 href="#"
                                 className={buttonClass}
                                 data-bs-toggle="modal"
-                                data-bs-target="#add-inspection-form"
+                                data-bs-target={handleTarget(property)}
                             >
                                 + Create new
                             </a>
@@ -62,7 +74,7 @@ function DashboardMain() {
                                 data-bs-toggle="modal"
                                 data-bs-target={
                                     property.name === ""
-                                        ? "#redirect-modal"
+                                        ? "#redirect-prop-modal"
                                         : "#add-unit-form"
                                 }
                             >
