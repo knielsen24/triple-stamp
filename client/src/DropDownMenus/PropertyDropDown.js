@@ -64,7 +64,7 @@ function PropertyDropDown() {
     }
 
     return (
-        <div className="">
+        <div>
             <div className="dropdown-center ">
                 <a
                     className="btn text-white bg-secondary bg-opacity-75 dropdown-toggle w-100 justify-content-center ms-2 fw-bold"
@@ -73,11 +73,10 @@ function PropertyDropDown() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                 >
-                    {!user || isError ? null : property.name}
+                    {!user || isError ? null : (property.name || "Select Property")}
                 </a>
                 <ul className="dropdown-menu p-3 bg-light">
                     <form className="d-flex" role="search">
-                        {/* <i class="bi bi-calendar2"></i> */}
                         <input
                             className="form-control me-2 mb-1 bg-opacity-75"
                             type="search"

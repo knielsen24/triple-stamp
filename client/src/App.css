@@ -226,6 +226,9 @@ footer {
 .table-zIndex {
     z-index: 900;
 }
+.btn-width {
+    width: 150px;
+}
 
 /* .accordian-zIndex {
     z-index: 900;

@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { setSelectProperty } from "../app/features/propertySlice";
-import { useSelector } from "react-redux"
+import { useSelector } from "react-redux";
 
 function DashboardMain() {
     const property = useSelector(setSelectProperty);
 
-    const buttonClass = "btn btn-secondary dash-main-btn text-white opacity-75 py-1";
+    const buttonClass =
+        "btn btn-secondary dash-main-btn text-white opacity-75 py-1";
 
     return (
         <div className="container dash-page-mt">
@@ -59,7 +60,11 @@ function DashboardMain() {
                                 href="#"
                                 className={buttonClass}
                                 data-bs-toggle="modal"
-                                data-bs-target={property.name === "" ? "#redirect-modal" : "#add-unit-form"}
+                                data-bs-target={
+                                    property.name === ""
+                                        ? "#redirect-modal"
+                                        : "#add-unit-form"
+                                }
                             >
                                 + Add unit
                             </a>

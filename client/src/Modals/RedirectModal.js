@@ -1,8 +1,8 @@
 import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
-import SignUpForm from "../Forms/SignUpForm";
 import logo from "../assets/logo-svg.svg";
 
 function RedirectModal() {
+    const buttonClass = "btn btn-secondary text-white opacity-75 py-1";
     return (
         <div>
             <div
@@ -27,14 +27,37 @@ function RedirectModal() {
                             <ButtonCloseModalX />
                         </div>
                         <div className="modal-body pt-1">
-                            <div className="row">
-                                <div className="col text-center">
-                                    <div className="row mt-0">
-                                        <p className="my-2">
-                                            Select a property from your my property list or add a new property
-                                        </p>
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-5">
+                                    <p className="my-2 text-center">
+                                        Select a property from my property list
+                                    </p>
+                                    <div className="row justify-content-center ">
+                                        <a
+                                            type="button"
+                                            className="btn btn-light border btn-width"
+                                            data-bs-dismiss="modal"
+                                        >
+                                            Select Property
+                                        </a>
                                     </div>
-                                    <div className="row">
+                                </div>
+                                <div className="col-1">
+                                    <p className="my-2">or</p>
+                                </div>
+                                <div className="col-5 ">
+                                    <p className="my-2 text-center">
+                                        Add a new property before adding an unit
+                                    </p>
+                                    <div className="row justify-content-center">
+                                        <a
+                                            type="button"
+                                            className="btn btn-secondary nav-btn-start-now shadow-sm"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#add-property-form"
+                                        >
+                                            + Add property
+                                        </a>
                                     </div>
                                 </div>
                             </div>
