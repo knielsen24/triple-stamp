@@ -16,14 +16,14 @@ function Footer() {
         "https://www.figma.com/file/JwTKdTLfaxo4khUwfn2WrT/Triple-Stamp?node-id=0%3A1";
 
     const footerClass =
-        "mt-auto border-top border-1 py-3 bg-secondary bg-gradient text-white text";
+        "mt-auto border-top border-1  bg-secondary bg-gradient text-white text";
     const aTagClass = "nav-link text-decoration-none";
 
-    const handlePath = (!user || isError) ? "/" : "dashboard/main"
+    const handlePath = !user || isError ? "/" : "dashboard/main";
 
     return (
         <footer className={footerClass}>
-            <div className="container">
+            <div className="container py-3">
                 <div className="row justify-content-between align-items-end">
                     <div className="col ">
                         <Link to={handlePath}>
@@ -107,6 +107,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
+            {/* <div className="w-auto ts-primary-green accent-trim-profile-card mt-1"></div> */}
         </footer>
     );
 }

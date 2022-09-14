@@ -242,6 +242,9 @@ footer {
 .accent-trim-profile-card {
     height: 4px;
 }
+.accent-trim-home {
+    height: 6px;
+}
 /* .accordian-zIndex {
     z-index: 900;
 } */

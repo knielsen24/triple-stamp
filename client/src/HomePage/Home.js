@@ -5,7 +5,7 @@ import manageIcon from "../assets/manage-icon.svg";
 
 function Home() {
     const iconClass = "icon-tiles";
-    const iconDiv = "mb-4"
+    const iconDiv = "mb-4";
 
     return (
         <div>
@@ -27,9 +27,10 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <div className="w-auto ts-primary-green accent-trim-home shadow-sm"></div>
             <div className="container mt-5 p-3 d-flex flex-row justify-content-around align-items-center">
                 <div className="col text-center">
-                    <div className={iconDiv} >
+                    <div className={iconDiv}>
                         <img
                             className={iconClass}
                             src={calendarIcon}
@@ -63,10 +64,11 @@ function Home() {
                         />
                     </div>
                     <div>
-                        <h5 >Manage</h5>
+                        <h5>Manage</h5>
                         <p>Manage your empire from start to finish</p>
                     </div>
                 </div>
+
             </div>
         </div>
     );

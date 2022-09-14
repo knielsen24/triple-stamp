@@ -10,7 +10,7 @@ function DashboardNav() {
     const dropDownClass = "mx-4 dropdown position-relative dropdown-zIndex";
 
     let activeClass =
-        "nav-link fw-bold ts-primary-green text-dark navbar-text rounded pill-height ";
+        "nav-link fw-bold ts-primary-green text-dark navbar-text rounded";
     let inactiveClass =
         "nav-link text-dark align-items-center navbar-text rounded ";
 

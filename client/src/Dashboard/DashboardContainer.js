@@ -21,21 +21,20 @@ function DashboardContainer() {
             <div className="row mh-100 ">
                 <div className="col dash-height bg-white units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top mw-100">
                     <div className="row sticky-top bg-white mb-0 ">
-                        <div className="text-start user-select-none mt-3 mb-3 ms-4 ps-0 fw-bold sticky-top ">
+                        <div className="w-auto text-start user-select-none mt-3 mb-2 ms-4 ps-0 fw-bold sticky-top ">
                             <img
                                 src={buildingIcon}
                                 alt="edit-icon"
                                 className="mb-1 me-2"
                             />
                             My property
+                            <div className="w-25 ts-primary-green accent-trim-profile-card m-0 p-0 " />
                         </div>
                         <div className="row justify-content-center">
-
                             <PropertyDropDown />
-
                         </div>
                         <div>
-                        {/* <div className=" mt-2 w-auto ts-primary-green accent-trim-profile-card "></div> */}
+                            {/* <div className=" mt-2 w-auto ts-primary-green accent-trim-profile-card "></div> */}
                             <hr className="mt-3 mb-0 "></hr>
                         </div>
                     </div>

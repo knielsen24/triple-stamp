@@ -45,11 +45,11 @@ function PropertyCard() {
                 <div className="card-body p-1 mx-4">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item ">
-                            <div className="row d-flex justify-content-center">
+                            <div className="row flex-row justify-content-center">
                                 <div className="col-5 text-start">
                                     <h6 className="fw-bold">Property Facts</h6>
                                     <div className="row d-flex ">
-                                        <div className="col">Square/feet:</div>
+                                        <div className="col-6">Square/feet:</div>
                                         <div className="col">
                                             {propertyFetch && !isError
                                                 ? propertyFetch.total_square_feet
@@ -57,7 +57,7 @@ function PropertyCard() {
                                         </div>
                                     </div>
                                     <div className="row d-flex ">
-                                        <div className="col">No. Units:</div>
+                                        <div className="col-6">No. Units:</div>
                                         <div className="col">
                                             {property
                                                 ? unitsListState.length
@@ -65,7 +65,7 @@ function PropertyCard() {
                                         </div>
                                     </div>
                                     <div className="row d-flex">
-                                        <div className="col">
+                                        <div className="col-6">
                                             No. Inspections:
                                         </div>
                                         <div className="col">
@@ -75,11 +75,11 @@ function PropertyCard() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-1"></div>
+                                <div className="col-1 p-0 m-0"></div>
                                 <div className="col-5 text-start">
                                     <h6 className="fw-bold">Full Address</h6>
                                     <div className="row ms-1 d-flex ">
-                                        <div className="col">
+                                        <div className="col-4">
                                             <div className="row ">Street:</div>
                                             <div className="row">City:</div>
                                             <div className="row">
