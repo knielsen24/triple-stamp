@@ -23,8 +23,8 @@ function PropertyCard() {
     return (
         <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
             <div className="card" id="profile-main-card-container">
-                <div className="text-center bg-light bg-gradient rounded-top" id="profile-card-bg">
-                    <div className="m-2 p-1">
+                <div className="text-center ts-bg-secondary-green rounded-top" id="profile-card-bg">
+                    <div className=" m-2 p-1">
                         <img src={homeIcon} alt="home-icon" width="115px" />
                     </div>
                     <div className="header text-center">

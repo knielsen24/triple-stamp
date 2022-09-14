@@ -93,7 +93,7 @@ function Footer() {
                             id="footer-links"
                             href={presentationUrl}
                         >
-                            Flatiron Final Project Presentation
+                            Project Presentation
                         </a>
                     </div>
                     <div className="col">

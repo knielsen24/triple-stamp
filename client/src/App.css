@@ -2,7 +2,7 @@
 
 .App {
     text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #app-main-container {
@@ -17,7 +17,6 @@
 
 #nav-container {
     background-color: white;
-
 }
 
 #logo-name {
@@ -102,7 +101,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-   }
+}
 
 .footer-logo {
     height: 20px;
@@ -136,7 +135,7 @@ footer {
 }
 
 .ts-muted-green {
-    background-color: #D6FFDF;
+    background-color: #d6ffdf;
 }
 
 .ts-primary-orange {
@@ -147,16 +146,20 @@ footer {
     color: #9aeeac;
 }
 
+.ts-primary-border-green {
+    border: 4px solid #9aeeac;
+}
+
 .ts-primary-text-orange {
     color: #ffc179;
 }
 
 .ts-secondary-green {
-    color: #EAFFEE;
+    color: #eaffee;
 }
 
 .ts-bg-secondary-green {
-   background-color:  #EAFFEE;
+    background-color: #eaffee;
 }
 
 .logo {
@@ -177,7 +180,6 @@ footer {
     /* height: 1px; */
     /* margin-top: 10px; */
 }
-
 
 .dash-height {
     height: 92vh;
@@ -200,7 +202,7 @@ footer {
 }
 
 ::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
+    display: none; /* Safari and Chrome */
 }
 
 .dash-page-container {
@@ -220,7 +222,7 @@ footer {
 }
 
 .accordian-purple-muted-bg {
-    background-color: #E5DFFF;
+    background-color: #e5dfff;
 }
 
 .dropdown-zIndex {

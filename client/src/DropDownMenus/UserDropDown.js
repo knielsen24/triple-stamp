@@ -19,7 +19,7 @@ function UserDropDown() {
                 <img
                     src={user ? user.image : personIcon}
                     alt="profile-icon"
-                    className="align-middle profile-dropdown rounded-circle"
+                    className="align-middle profile-dropdown rounded-circle "
                 />
             </div>
             <ul className="dropdown-menu mt-3 bg-light p-1">

@@ -13,22 +13,22 @@ function ProfileCard() {
     return (
         <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
             <div className="card" id="profile-main-card-container">
-                <div className="text-center ts-bg-secondary-green rounded-top" id="profile-card-bg">
-                    <div className="m-2 p-1">
+                <div className="text-center rounded-top " id="profile-card-bg">
+                    <div className="bg-light rounded-top m-4 mb-0 p-2 justify-content-center">
                         <img
-                            className="rounded-circle"
+                            className="rounded-circle ts-primary-border-green"
                             src={!userImage ? profileIcon : user.image}
                             alt="profileIcon"
-                            width="116px"
+                            width="130px"
                         />
                     </div>
-                    <div className="header text-center">
-                        <h6 className="card-title text-dark m-2 p-1">
+                    <div className="header bg-secondary mx-4 rounded-bottom text-center" >
+                        <h5 className="card-title text-white p-2">
                             {!user ? "" : user.full_name}
-                        </h6>
+                        </h5>
                     </div>
                 </div>
-                <div className="card-body p-1">
+                <div className="card-body p-1 mx-4">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
@@ -66,7 +66,7 @@ function ProfileCard() {
                         </li>
                     </ul>
                 </div>
-                <div className="card-footer bg-white text-muted text-center">
+                <div className="card-footer bg-white text-muted text-center mx-4">
                     <ButtonManageAccountModals
                         target={"#update-profile-form"}
                         text={"Edit Account"}

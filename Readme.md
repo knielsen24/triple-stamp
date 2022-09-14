@@ -35,9 +35,9 @@ USER STORIES
 * Sign in with login credentials
 * Edit profile
 * Delete profile
-* Add a property to their account
+* Add a property to user's account
 * Edit property details
-* Delete property from account
+* Delete property from user's account
 * Add a unit to a property
 * Edit unit details
 * Delete unit from a property
