@@ -11,12 +11,12 @@ function Footer() {
     const githubUrl = "https://github.com/knielsen24/triple-stamp";
     const linkedinUrl = "https://www.linkedin.com/in/kevin-nielsen-se/";
     const presentationUrl =
-        "https://docs.google.com/presentation/d/1RXkb_iMTt5zE5fqRE0455yYT9UuW28gb0X53KkuulQg/edit#slide=id.p";
+        "https://docs.google.com/presentation/d/1ff_zpspcUt9NqE5ffa2wu7t1jKYmBwT-l4A6aYbc2D0/edit#slide=id.g14b19b0f5dd_0_5";
     const figmaUrl =
         "https://www.figma.com/file/JwTKdTLfaxo4khUwfn2WrT/Triple-Stamp?node-id=0%3A1";
 
     const footerClass =
-        "mt-auto border-top border-1 py-3 bg-secondary text-white text";
+        "mt-auto border-top border-1 py-3 bg-secondary bg-gradient text-white text";
     const aTagClass = "nav-link text-decoration-none";
 
     const handlePath = (!user || isError) ? "/" : "dashboard/main"
@@ -93,7 +93,7 @@ function Footer() {
                             id="footer-links"
                             href={presentationUrl}
                         >
-                            Project Proposal
+                            Flatiron Final Project Presentation
                         </a>
                     </div>
                     <div className="col">

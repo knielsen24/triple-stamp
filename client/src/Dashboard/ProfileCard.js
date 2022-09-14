@@ -13,7 +13,7 @@ function ProfileCard() {
     return (
         <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
             <div className="card" id="profile-main-card-container">
-                <div className="text-center bg-light" id="profile-card-bg">
+                <div className="text-center ts-bg-secondary-green rounded-top" id="profile-card-bg">
                     <div className="m-2 p-1">
                         <img
                             className="rounded-circle"

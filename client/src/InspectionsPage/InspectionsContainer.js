@@ -24,8 +24,8 @@ function InspectionsContainer() {
     const shortcutBar = "btn py-0 text-secondary me-4";
 
     return (
-        <div className=" container mt-3 border-endtext-center bg-white dash-page-container dash-page-mt overflow-auto ">
-            <div className="row bg-light rounded border p-1 mb-2">
+        <div className=" container mt-3 border-endtext-center dash-page-container dash-page-mt overflow-auto ">
+            <div className="row bg-white rounded border p-1 mb-2 shadow-sm">
                 <div className="col d-flex justify-content-start">
                     <a
                         href="#"

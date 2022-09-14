@@ -19,7 +19,7 @@ function DashboardContainer() {
         <div className="container dashboard-containter">
             <ModalsContainer />
             <div className="row mh-100">
-                <div className="col dash-height units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top mw-100">
+                <div className="col dash-height bg-white units-container border rounded shadow-sm mt-1 overflow-x-0 sticky-top mw-100">
                     <div className="row sticky-top bg-white mb-0">
                         <div className="text-start user-select-none mt-3 mb-3 ms-4 ps-0 fw-bold sticky-top">
                             <img
@@ -38,7 +38,7 @@ function DashboardContainer() {
                     </div>
                     <UnitsContainer />
                 </div>
-                <div className="col-md-9 dash-height rounded bg-gradient bg-opacity-25 col-m-12 mt-1 sticky-top ">
+                <div className="col-md-9 dash-height rounded col-m-12 mt-1 sticky-top ">
                     <div className="row ms-1">
                         <DashBoardNav />
                         <Routes>
