@@ -3,7 +3,10 @@ import { setUnitsList } from "../app/features/unitsListSlice";
 import { useSelector } from "react-redux";
 import ButtonManageAccountModals from "../Components/Buttons/ButtonManageAccountModals";
 import homeIcon from "../assets/home-icon.svg";
-import { useFetchPropInspectionsQuery } from "../app/api/propertyApiSlice";
+import {
+    useFetchPropertyQuery,
+    useFetchPropInspectionsQuery,
+} from "../app/api/propertyApiSlice";
 import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 function PropertyCard() {
@@ -12,6 +15,11 @@ function PropertyCard() {
     const { data: propInspections, isSuccess } = useFetchPropInspectionsQuery(
         property ? property.id : skipToken
     );
+
+    const { data: propertyFetch, isError } = useFetchPropertyQuery(
+        property ? property.id : skipToken
+    );
+
 
     return (
         <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
@@ -29,16 +37,6 @@ function PropertyCard() {
                 </div>
                 <div className="card-body p-1 border-top">
                     <ul className="list-group list-group-flush">
-                        {/* <li className="list-group-item ">
-                            <div className="row d-flex justify-content-center">
-                                <div className="col-12 text-center">
-                                    Full Address:{" "}
-                                    {property
-                                        ? `${property.address}, ${property.city}, ${property.state}, ${property.postal_code}`
-                                        : ""}
-                                </div>
-                            </div>
-                        </li> */}
                         <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
                                 <div className="col-6 text-start">
@@ -46,8 +44,8 @@ function PropertyCard() {
                                     <div className="row d-flex ">
                                         <div className="col">Square/feet:</div>
                                         <div className="col">
-                                            {property
-                                                ? property.total_square_feet
+                                            {propertyFetch || !isError
+                                                ? propertyFetch.total_square_feet
                                                 : ""}{" "}
                                         </div>
                                     </div>

@@ -44,7 +44,7 @@ function PropertyDropDown() {
         });
         renderPropertyList = filteredProperties.map((property) => {
             return (
-                <li key={property.id}>
+                <li className="" key={property.id}>
                     <a
                         key={property.id}
                         className="dropdown-item"
@@ -75,7 +75,7 @@ function PropertyDropDown() {
                 >
                     {!user || isError ? null : (property.name || "Select Property")}
                 </a>
-                <ul className="dropdown-menu p-3 bg-light">
+                <ul className="dropdown-menu p-3 bg-light property-dropdown-height overflow-auto">
                     <form className="d-flex" role="search">
                         <input
                             className="form-control me-2 mb-1 bg-opacity-75"

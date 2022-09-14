@@ -114,6 +114,7 @@ function AddUnitForm() {
                                 className="form-control"
                                 type="string"
                                 name="square_feet"
+                                placeholder="Sq/ft"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.square_feet}

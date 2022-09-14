@@ -211,6 +211,10 @@ footer {
     max-height: 74vh;
 }
 
+.property-dropdown-height {
+    max-height: 75vh;
+}
+
 .accordian-purple-muted-bg {
     background-color: #E5DFFF;
 }
