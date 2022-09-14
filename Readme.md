@@ -31,13 +31,19 @@ MODEL RELATIONSHIPS
 ![models](./client/src/assets/slideshow-models.jpg)
 
 USER STORIES
-* create an account/sign up
-* sign in with login credentials
-* edit profile
-* delete profile
-* add a property to their account
-* add an unit to a property
-* add an inspection to a unit
+* Create an account/sign up
+* Sign in with login credentials
+* Edit profile
+* Delete profile
+* Add a property to their account
+* Edit property details
+* Delete property from account
+* Add a unit to a property
+* Edit unit details
+* Delete unit from a property
+* Add an inspection to a unit
+* Edit inspection details
+* Delete an inspection from a unit
 
 ### CUSTOM UI/UX DESIGN SCREENSHOTS
 Bootstrap 5 CSS
