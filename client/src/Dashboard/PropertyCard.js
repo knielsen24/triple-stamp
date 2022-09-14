@@ -20,21 +20,29 @@ function PropertyCard() {
         property ? property.id : skipToken
     );
 
+    console.log(property);
+
     return (
         <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
             <div className="card" id="profile-main-card-container">
-                <div className="text-center ts-bg-secondary-green rounded-top" id="profile-card-bg">
-                    <div className=" m-2 p-1">
-                        <img src={homeIcon} alt="home-icon" width="115px" />
+                <div className="text-center rounded-top  " id="profile-card-bg">
+                    <div className="bg-light rounded-top m-4 mb-0 p-2 justify-content-center border">
+                        <img
+                            className="rounded"
+                            src={property.image ? property.image : homeIcon}
+                            alt="profileIcon"
+                            width="130px"
+                        />
                     </div>
-                    <div className="header text-center">
-                        <h5 className="card-title text-dark m-2 p-1">
+                    <div className="header bg-secondary bg-gradient mx-4 rounded-bottom text-center shadow-sm">
+                        <div className="w-auto ts-primary-green accent-trim-profile-card "></div>
+                        <h5 className="card-title text-white p-2">
                             {property.name !== "" ? property.name : ""}{" "}
                             {property.address ? `| ${property.address}` : ""}
                         </h5>
                     </div>
                 </div>
-                <div className="card-body p-1 border-top">
+                <div className="card-body p-1 mx-4">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
@@ -43,8 +51,7 @@ function PropertyCard() {
                                     <div className="row d-flex ">
                                         <div className="col">Square/feet:</div>
                                         <div className="col">
-                                            {propertyFetch &&
-                                            !isError
+                                            {propertyFetch && !isError
                                                 ? propertyFetch.total_square_feet
                                                 : "0"}{" "}
                                         </div>
@@ -107,7 +114,7 @@ function PropertyCard() {
                         </li>
                     </ul>
                 </div>
-                <div className="card-footer bg-white text-muted text-center">
+                <div className="card-footer bg-white text-muted text-center mx-4">
                     {property.name === "" ? null : (
                         <ButtonManageAccountModals
                             target={"#edit-property-form"}

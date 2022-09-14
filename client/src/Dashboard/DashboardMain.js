@@ -16,7 +16,7 @@ function DashboardMain() {
     };
 
     const buttonClass =
-        "btn btn-secondary dash-main-btn text-white opacity-75 py-1";
+        "btn btn-secondary dash-main-btn text-white bg-gradient shadow-sm py-1";
 
     return (
         <div className="container dash-page-mt mt-3">

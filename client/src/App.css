@@ -239,7 +239,9 @@ footer {
 .btn-width {
     width: 150px;
 }
-
+.accent-trim-profile-card {
+    height: 4px;
+}
 /* .accordian-zIndex {
     z-index: 900;
 } */
