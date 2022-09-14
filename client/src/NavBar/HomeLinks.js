@@ -15,7 +15,7 @@ function HomeLinks() {
                 data-bs-target="#login-form"
             >
                 Sign in
-                <img src={loginIcon} alt="edit-icon" className="align-b ms-2"/>
+                <img src={loginIcon} alt="edit-icon" className=" ms-2"/>
 
             </a>
         </>
