@@ -32,7 +32,7 @@ function EditPropertyForm() {
 
     const updateSchema = Yup.object().shape({
         id: Yup.number().required(),
-        name: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),
+        name: Yup.string().min(2, "Too Short!").max(30, "Too Long!").required(),
         address: Yup.string(),
         city: Yup.string(),
         state: Yup.string(),

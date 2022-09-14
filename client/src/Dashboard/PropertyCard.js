@@ -20,7 +20,6 @@ function PropertyCard() {
         property ? property.id : skipToken
     );
 
-
     return (
         <div className="container align-content-items-center rounded p-0 mt-3 shadow-sm dash-page-mt">
             <div className="card" id="profile-main-card-container">
@@ -39,14 +38,15 @@ function PropertyCard() {
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item ">
                             <div className="row d-flex justify-content-center">
-                                <div className="col-6 text-start">
+                                <div className="col-5 text-start">
                                     <h6 className="fw-bold">Property Facts</h6>
                                     <div className="row d-flex ">
                                         <div className="col">Square/feet:</div>
                                         <div className="col">
-                                            {propertyFetch || !isError
+                                            {propertyFetch &&
+                                            !isError
                                                 ? propertyFetch.total_square_feet
-                                                : ""}{" "}
+                                                : "0"}{" "}
                                         </div>
                                     </div>
                                     <div className="row d-flex ">
@@ -64,11 +64,12 @@ function PropertyCard() {
                                         <div className="col">
                                             {propInspections
                                                 ? propInspections.length
-                                                : ""}
+                                                : "0"}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-6 text-start">
+                                <div className="col-1"></div>
+                                <div className="col-5 text-start">
                                     <h6 className="fw-bold">Full Address</h6>
                                     <div className="row ms-1 d-flex ">
                                         <div className="col">

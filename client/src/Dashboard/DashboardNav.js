@@ -1,6 +1,6 @@
 import { setSelectProperty } from "../app/features/propertySlice";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import UserDropDown from "../DropDownMenus/UserDropDown";
 
 function DashboardNav() {
@@ -25,6 +25,7 @@ function DashboardNav() {
                 <ul className="nav nav-justified align-items-center align-items-end">
                     <li className={navLinkClass}>
                         <NavLink
+                            as={Link}
                             to="main"
                             className={({ isActive }) =>
                                 isActive ? activeClass : inactiveClass
@@ -35,6 +36,7 @@ function DashboardNav() {
                     </li>
                     <li className={navLinkClass}>
                         <NavLink
+                            as={Link}
                             to="inspections"
                             className={({ isActive }) =>
                                 isActive ? activeClass : inactiveClass
@@ -46,6 +48,7 @@ function DashboardNav() {
 
                     <li className={navLinkClass}>
                         <NavLink
+                            as={Link}
                             to="details"
                             className={({ isActive }) =>
                                 isActive ? activeClass : inactiveClass
@@ -56,7 +59,7 @@ function DashboardNav() {
                     </li>
                     <div className="vr my-2"></div>
                     <li className={dropDownClass}>
-                        <NavLink to="#">
+                        <NavLink as={Link} to="#">
                             <UserDropDown />
                         </NavLink>
                     </li>

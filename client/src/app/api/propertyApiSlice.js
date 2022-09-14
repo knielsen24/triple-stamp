@@ -65,6 +65,7 @@ export const propertyApi = createApi({
                     method: "DELETE",
                 }),
                 invalidatesTags: (result, error, arg) => [
+                    "property",
                     { type: "properties", id: arg.id },
                 ],
             }),

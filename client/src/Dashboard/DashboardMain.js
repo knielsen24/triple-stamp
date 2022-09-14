@@ -7,8 +7,6 @@ function DashboardMain() {
     const property = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
 
-    console.log(property)
-
     const handleTarget = (prop) => {
         if (prop.name === "") return "#redirect-prop-modal";
         if (prop.name !== "" && unitsListState.length < 1)
@@ -21,7 +19,7 @@ function DashboardMain() {
         "btn btn-secondary dash-main-btn text-white opacity-75 py-1";
 
     return (
-        <div className="container dash-page-mt">
+        <div className="container dash-page-mt mt-3">
             <div className="row align-content-between mb-4 user-select-none">
                 <div className="col-6 p-0 pe-3 h-100">
                     <div className="card shadow-sm">
