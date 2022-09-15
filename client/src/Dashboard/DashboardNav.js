@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import UserDropDown from "../DropDownMenus/UserDropDown";
 
 function DashboardNav() {
-    const property = useSelector(setSelectProperty);
+
 
     const navLinkClass = "nav-link h-100";
     const dropDownClass = "mx-4 dropdown position-relative dropdown-zIndex";
@@ -14,10 +14,10 @@ function DashboardNav() {
     let inactiveClass =
         "nav-link text-dark align-items-center navbar-text rounded ";
 
-    let detailsLinkhref;
-    property.name !== ""
-        ? (detailsLinkhref = "#")
-        : (detailsLinkhref = "/inspections/property");
+    // let detailsLinkhref;
+    // property.name !== ""
+    //     ? (detailsLinkhref = "#")
+    //     : (detailsLinkhref = "/inspections/property");
 
     return (
         <div className="row-fluid p-0">

@@ -46,14 +46,13 @@ function DashboardMain() {
                             <p className="card-text">
                                 Add new an inspection to a unit
                             </p>
-                            <a
-                                href="#"
+                            <button
                                 className={buttonClass}
                                 data-bs-toggle="modal"
                                 data-bs-target={handleTarget(property)}
                             >
                                 + Create new
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -66,8 +65,7 @@ function DashboardMain() {
                             <p className="card-text">
                                 Add multiple units to your property
                             </p>
-                            <a
-                                href="#"
+                            <button
                                 className={buttonClass}
                                 data-bs-toggle="modal"
                                 data-bs-target={
@@ -77,7 +75,7 @@ function DashboardMain() {
                                 }
                             >
                                 + Add unit
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -87,14 +85,13 @@ function DashboardMain() {
                         </div>
                         <div className="card-body">
                             <p className="card-text">Fill out details</p>
-                            <a
-                                href="#"
+                            <button
                                 className={buttonClass}
                                 data-bs-toggle="modal"
                                 data-bs-target="#add-property-form"
                             >
                                 + Add property
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>

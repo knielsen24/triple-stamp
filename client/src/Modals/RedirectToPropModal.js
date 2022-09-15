@@ -32,13 +32,12 @@ function RedirectToPropModal() {
                                         Select a property from my property list
                                     </p>
                                     <div className="row  justify-content-center ">
-                                        <a
-                                            type="button"
-                                            className="btn btn-light border btn-width mt-2"
+                                        <button
+                                            className="btn btn-light border btn-width mt-2 shadow-sm bg-gradient"
                                             data-bs-dismiss="modal"
                                         >
                                             Select Property
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                                 <div className="col-1">

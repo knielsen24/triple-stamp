@@ -2,9 +2,8 @@ import plusIcon from "../../assets/plus-icon.svg";
 
 function ButtonOpenAddPropertyModal() {
     return (
-        <a
+        <button
             className="dropdown-item"
-            href="#"
             data-bs-toggle="modal"
             data-bs-target="#add-property-form"
         >
@@ -14,7 +13,7 @@ function ButtonOpenAddPropertyModal() {
                 className="align-middle me-1 mb-1"
             />
             Add property
-        </a>
+        </button>
     );
 }
 
