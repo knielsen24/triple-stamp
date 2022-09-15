@@ -10,13 +10,12 @@ import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
 function LoginForm({ handleSubmitError }) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [loginApi, { error }] = useLoginApiMutation();
+    const [loginApi] = useLoginApiMutation();
     // console.log(error);
 
     const initialData = {
         name: "",
         id: "",
-        name: "",
         address: "",
         city: "",
         state: "",
@@ -30,7 +29,7 @@ function LoginForm({ handleSubmitError }) {
         email: Yup.string().email("Invalid email").required("Required"),
         password: Yup.string()
             .matches(
-                /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
                 "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
             )
             .required("Required"),

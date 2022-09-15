@@ -4,7 +4,6 @@ const initialState = {
     property: {
         name: "",
         id: "",
-        name: "",
         address: "",
         city: "",
         state: "",

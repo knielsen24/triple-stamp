@@ -8,9 +8,9 @@ function UserDropDown() {
     const { data: user, isError } = useFetchUserQuery();
 
     return (
-        <div className="dropdown-center inline p-1">
-            <button
-                className="btn-grp dropdown-toggle text-secondary border-0 bg-transparent"
+        <div className="nav-item dropdown-center inline p-1">
+            <div
+                className="dropdown-toggle text-secondary"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
@@ -20,7 +20,7 @@ function UserDropDown() {
                     alt="profile-icon"
                     className="align-middle profile-dropdown rounded-circle "
                 />
-            </button>
+            </div>
             <ul className="dropdown-menu mt-3 bg-light p-1">
                 <li>
                     <Link

@@ -4,7 +4,7 @@ import logoutIcon from "../assets/logout-icon.svg";
 
 function Logout() {
     const navigate = useNavigate();
-    const [logoutApi, { isLoading }] = useLogoutApiMutation();
+    const [logoutApi] = useLogoutApiMutation();
 
     return (
         <a

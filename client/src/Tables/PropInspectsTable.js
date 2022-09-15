@@ -23,7 +23,7 @@ function PropInspectsTable({ propInspections, tableHeight }) {
         renderInspections = propInspections.map((inspect) => {
             return (
                 <tr className="text-center" key={inspect.id}>
-                    <td scope="col"></td>
+                    <td colSpan="1"></td>
                     <th scope="row" className="text-start">
                         {inspect.unit.number}
                     </th>
@@ -86,8 +86,8 @@ function PropInspectsTable({ propInspections, tableHeight }) {
                         data-bs-target="#add-inspection-form"
                         onClick={() => dispatch(selectUnit(initialValues))}
                     >
-                        <td scope="col" className="p-1"></td>
-                        <td scope="col" className="p-1"></td>
+                        <td colSpan="1" className="p-1"></td>
+                        <td colSpan="1" className="p-1"></td>
                         <td colSpan="3" className="p-1">
                             <img
                                 src={plusIcon}
