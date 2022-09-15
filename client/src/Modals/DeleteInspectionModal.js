@@ -1,12 +1,11 @@
 import { useDeleteInspectMutation } from "../app/api/propertyApiSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 import ButtonCloseModalX from "../Components/Buttons/ButtonCloseModalX";
 import ButtonDeleteItem from "../Components/Buttons/ButtonDeleteItem";
 import { setSelectInspection } from "../app/features/inspectionSlice";
 
 function DeleteInspectionModal() {
-    const dispatch = useDispatch();
     const inspection = useSelector(setSelectInspection);
     const [deleteInspect] = useDeleteInspectMutation();
 

@@ -7,7 +7,7 @@ function Logout() {
     const [logoutApi] = useLogoutApiMutation();
 
     return (
-        <a
+        <button
             className="dropdown-item"
             href="#"
             onClick={(e) => {
@@ -21,7 +21,7 @@ function Logout() {
                 className="align-middle me-3 mb-1"
             />
             Sign out
-        </a>
+        </button>
     );
 }
 

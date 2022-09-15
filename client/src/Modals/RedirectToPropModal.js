@@ -16,7 +16,7 @@ function RedirectToPropModal() {
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
                         <div className="modal-header bg-light text-center ">
-                            <img className="logo ms-1" src={logo} />
+                            <img className="logo ms-1" src={logo} alt="logo" />
                             <h6
                                 className="modal-title w-100"
                                 id="redirect-prop-modal"
@@ -48,14 +48,13 @@ function RedirectToPropModal() {
                                         Add a new property before adding a unit
                                     </p>
                                     <div className="row justify-content-center">
-                                        <a
-                                            type="button"
+                                        <button
                                             className="btn btn-secondary nav-btn-start-now mt-2 shadow-sm"
                                             data-bs-toggle="modal"
                                             data-bs-target="#add-property-form"
                                         >
                                             + Add property
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

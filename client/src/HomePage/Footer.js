@@ -7,6 +7,7 @@ import { useFetchUserQuery } from "../app/api/userApiSlice";
 
 function Footer() {
     const { data: user, isError } = useFetchUserQuery();
+
     const emailAddress = "knielsen24@gmail.com";
     const githubUrl = "https://github.com/knielsen24/triple-stamp";
     const linkedinUrl = "https://www.linkedin.com/in/kevin-nielsen-se/";
@@ -17,7 +18,6 @@ function Footer() {
 
     const footerClass =
         "mt-auto border-top border-1  bg-secondary bg-gradient text-white text";
-    const aTagClass = "nav-link text-decoration-none";
 
     const handlePath = !user || isError ? "/" : "dashboard/main";
 

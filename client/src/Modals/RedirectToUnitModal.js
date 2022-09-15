@@ -16,7 +16,7 @@ function RedirectToUnitModal() {
                 <div className="modal-dialog modal-dialog-centered modal-min-w">
                     <div className="modal-content">
                         <div className="modal-header bg-light text-center ">
-                            <img className="logo ms-1" src={logo} />
+                            <img className="logo ms-1" src={logo} alt="logo" />
                             <h6
                                 className="modal-title w-100"
                                 id="redirect-unit-modal"
@@ -32,21 +32,20 @@ function RedirectToUnitModal() {
                                     adding an inspection
                                 </p>
                                 <div className="row mt-2 justify-content-center ">
-                                    <a
-                                        type="button"
-                                        className="btn btn-light border btn-width me-3"
+                                    <button
+                                        className="btn btn-light border btn-width shadow-sm me-3"
                                         data-bs-dismiss="modal"
                                     >
                                         Cancel
-                                    </a>
-                                    <a
+                                    </button>
+                                    <button
                                         type="button"
                                         className="btn btn-secondary nav-btn-start-now shadow-sm"
                                         data-bs-toggle="modal"
                                         data-bs-target="#add-unit-form"
                                     >
                                         + Add unit
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

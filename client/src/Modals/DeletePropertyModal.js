@@ -11,14 +11,13 @@ import ButtonDeleteItem from "../Components/Buttons/ButtonDeleteItem";
 
 function DeletePropertyModal() {
     const property = useSelector(setSelectProperty);
-    const [deleteProperty, isLoading] = useDeletePropertyMutation();
+    const [deleteProperty] = useDeletePropertyMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const inititialState = {
         name: "",
         id: "",
-        name: "",
         address: "",
         city: "",
         state: "",
