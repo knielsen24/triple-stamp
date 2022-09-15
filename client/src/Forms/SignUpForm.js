@@ -8,7 +8,7 @@ import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 function SignUpForm() {
     const navigate = useNavigate();
 
-    const [createUser, { isLoading }] = useCreateUserMutation();
+    const [createUser] = useCreateUserMutation();
 
     const SignupSchema = Yup.object().shape({
         full_name: Yup.string()

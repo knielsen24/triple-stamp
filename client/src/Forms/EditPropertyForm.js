@@ -11,7 +11,7 @@ import * as Yup from "yup";
 
 function EditPropertyForm() {
     const dispatch = useDispatch();
-    const [updateProperty, isLoading] = useUpdatePropertyMutation();
+    const [updateProperty] = useUpdatePropertyMutation();
 
     const propertyState = useSelector(setSelectProperty);
 

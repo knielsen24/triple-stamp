@@ -3,18 +3,16 @@ import { useCreateUnitMutation } from "../app/api/propertyApiSlice";
 import { setUnitsList, unitsList } from "../app/features/unitsListSlice";
 import ButtonCancelModal from "../Components/Buttons/ButtonCancelModal";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import ButtonSaveChanges from "../Components/Buttons/ButtonSaveChanges";
 
 function AddUnitForm() {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const propertyState = useSelector(setSelectProperty);
     const unitsListState = useSelector(setUnitsList);
 
-    const [createUnit, { isLoading }] = useCreateUnitMutation();
+    const [createUnit] = useCreateUnitMutation();
 
     const handleUnitsListState = (newUnit) => {
         const newUnitsList = [...unitsListState, newUnit];

@@ -9,7 +9,7 @@ import * as Yup from "yup";
 import "yup-phone";
 
 function EditProfileForm() {
-    const [updateUser, { isLoading }] = useUpdateUserMutation();
+    const [updateUser] = useUpdateUserMutation();
 
     const { data: user } = useFetchUserQuery();
 
@@ -72,9 +72,7 @@ function EditProfileForm() {
                                 onBlur={handleBlur}
                                 value={values.image}
                             />
-                            {errors.image &&
-                                touched.image &&
-                                errors.image}
+                            {errors.image && touched.image && errors.image}
                         </div>
                         <div className="mb-3">
                             <label
