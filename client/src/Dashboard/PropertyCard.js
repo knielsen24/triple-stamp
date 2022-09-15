@@ -69,7 +69,7 @@ function PropertyCard() {
                                             No. Inspections:
                                         </div>
                                         <div className="col">
-                                            {propInspections
+                                            {propInspections && isSuccess
                                                 ? propInspections.length
                                                 : "0"}
                                         </div>

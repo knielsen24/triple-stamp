@@ -1,11 +1,7 @@
-import { setSelectProperty } from "../app/features/propertySlice";
-import { useSelector } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 import UserDropDown from "../DropDownMenus/UserDropDown";
 
 function DashboardNav() {
-
-
     const navLinkClass = "nav-link h-100";
     const dropDownClass = "mx-4 dropdown position-relative dropdown-zIndex";
 
@@ -70,31 +66,3 @@ function DashboardNav() {
 }
 
 export default DashboardNav;
-
-{
-    /*
-
-import homeIcon from "../assets/home-icon.svg";
-import calendarIcon from "../assets/calendar-icon.svg";
-import checkListIcon from "../assets/check-list-icon.svg";
-import detailsIcon from "../assets/details-icon.svg";
-
-const imgClass = "me-1 mb-1 ";
-
-<img
-    src={homeIcon}
-    alt="home-icon"
-    className={imgClass}
-/>
-
-<img
-    src={calendarIcon}
-    alt="calendar-icon"
-    className={imgClass}
-/>
-    <img
-    src={detailsIcon}
-    alt="Clipboard-icon"
-    className={imgClass}
-/> */
-}

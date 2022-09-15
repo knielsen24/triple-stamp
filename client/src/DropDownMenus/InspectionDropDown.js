@@ -5,10 +5,8 @@ function InspectionDropDown() {
     return (
         <ul className="dropdown-menu bg-light p-1 table-dropdown-zIndex">
             <li className="p-0">
-                <a
+                <button
                     className="dropdown-item"
-                    href="#"
-                    role="button"
                     data-bs-toggle="modal"
                     data-bs-target="#edit-inspection-form"
                 >
@@ -18,16 +16,14 @@ function InspectionDropDown() {
                         className="align-middle me-3 mb-1"
                     />
                     Edit Inspection
-                </a>
+                </button>
             </li>
             <li>
                 <hr className="dropdown-divider mx-2 my-1" />
             </li>
             <li className="p-0">
-                <a
+                <button
                     className="dropdown-item"
-                    href="#"
-                    role="button"
                     data-bs-toggle="modal"
                     data-bs-target="#delete-inspections-modal"
                 >
@@ -37,7 +33,7 @@ function InspectionDropDown() {
                         className="align-middle me-3 mb-1"
                     />
                     Delete Inspection
-                </a>
+                </button>
             </li>
         </ul>
     );

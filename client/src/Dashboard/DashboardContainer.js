@@ -13,7 +13,7 @@ import ModalsContainer from "./ModalsContainer";
 import WelcomeUser from "./WelcomeUser";
 
 function DashboardContainer() {
-    const { data: user, isError, isLoading } = useFetchUserQuery();
+    const { data: user, isError } = useFetchUserQuery();
 
     return (
         <div className="container dashboard-containter">

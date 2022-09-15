@@ -59,7 +59,7 @@ function UnitsContainer() {
         <div>
             <table className={property.name !== "" ? tableClassHover : tableClassNoHover}>
                 <tbody>
-                    <tr scope="row">
+                    <tr>
                         <td colSpan="1" className="p-1 "></td>
                         <td colSpan="2" className="p-1 ">
                             {property.name !== "" ? (

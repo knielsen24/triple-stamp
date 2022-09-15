@@ -6,12 +6,10 @@ function UnitDropDown() {
     return (
         <ul className="dropdown-menu bg-light mt-3 p-1">
             <li className="p-0">
-                <a
+                <button
                     className="dropdown-item"
-                    role="button"
                     data-bs-toggle="modal"
                     data-bs-target="#add-inspection-form"
-                    href="#"
                 >
                     <img
                         src={plusIcon}
@@ -19,12 +17,11 @@ function UnitDropDown() {
                         className="align-middle me-3 mb-1"
                     />
                     Add Inspection
-                </a>
+                </button>
             </li>
             <li className="p-0">
-                <a
+                <button
                     className="dropdown-item"
-                    href="#"
                     data-bs-toggle="modal"
                     data-bs-target="#update-unit-form"
                 >
@@ -34,13 +31,13 @@ function UnitDropDown() {
                         className="align-middle me-3 mb-1"
                     />
                     Edit Information
-                </a>
+                </button>
             </li>
             <li>
                 <hr className="dropdown-divider mx-2 my-1" />
             </li>
             <li className="p-0">
-                <a
+                <button
                     className="dropdown-item"
                     href="#"
                     data-bs-toggle="modal"
@@ -52,7 +49,7 @@ function UnitDropDown() {
                         className="align-middle me-3 mb-1"
                     />
                     Delete Unit
-                </a>
+                </button>
             </li>
         </ul>
     );

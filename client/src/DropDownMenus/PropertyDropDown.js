@@ -1,3 +1,4 @@
+import ButtonOpenAddPropertyModal from "../Components/Buttons/ButtonOpenAddPropertyModal";
 import {
     selectProperty,
     setSelectProperty,
@@ -8,15 +9,14 @@ import {
 } from "../app/api/propertyApiSlice";
 import { unitsList } from "../app/features/unitsListSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import ButtonOpenAddPropertyModal from "../Components/Buttons/ButtonOpenAddPropertyModal";
 import { useFetchUserQuery } from "../app/api/userApiSlice";
 import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { useState } from "react";
 
 function PropertyDropDown() {
     const dispatch = useDispatch();
     const [search, setSearch] = useState("");
+
     const property = useSelector(setSelectProperty);
 
     const { data: user, isError } = useFetchUserQuery();
@@ -45,11 +45,9 @@ function PropertyDropDown() {
         renderPropertyList = filteredProperties.map((property) => {
             return (
                 <li className="" key={property.id}>
-                    <a
+                    <button
                         key={property.id}
                         className="dropdown-item"
-                        role="button"
-                        href="#"
                         onClick={() => {
                             dispatch(selectProperty(property));
                             dispatch(unitsList(property.units));
@@ -57,7 +55,7 @@ function PropertyDropDown() {
                         }}
                     >
                         {property.name}
-                    </a>
+                    </button>
                 </li>
             );
         });
@@ -66,15 +64,15 @@ function PropertyDropDown() {
     return (
         <div>
             <div className="dropdown-center ">
-                <a
+                <button
                     className="btn text-white bg-secondary bg-gradient shadow-sm dropdown-toggle w-100 justify-content-center ms-2 fw-bold"
-                    href="#"
-                    role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                 >
-                    {!user || isError ? null : (property.name || "Select Property")}
-                </a>
+                    {!user || isError
+                        ? null
+                        : property.name || "Select Property"}
+                </button>
                 <ul className="dropdown-menu p-3 bg-light property-dropdown-height overflow-auto">
                     <form className="d-flex" role="search">
                         <input
