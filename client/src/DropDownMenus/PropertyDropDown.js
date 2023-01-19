@@ -16,19 +16,14 @@ import { useState } from "react";
 function PropertyDropDown() {
     const dispatch = useDispatch();
     const [search, setSearch] = useState("");
-
     const property = useSelector(setSelectProperty);
-
     const { data: user, isError } = useFetchUserQuery();
-
     const { data: properties, isSuccess } = useFetchPropertiesQuery(
         !user || isError ? skipToken : user.id
     );
-
     const { refetch } = useFetchPropertyQuery(
         property && isSuccess ? property.id : skipToken
     );
-
     const handleSearch = (e) => setSearch(e.target.value);
 
     let renderPropertyList;
